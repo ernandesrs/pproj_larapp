@@ -20,6 +20,23 @@ Route::group([], function () {
 /**
  * 
  * 
+ * AUTH ROUTES
+ * 
+ * 
+ */
+Route::group([
+    'prefix' => 'auth'
+], function () {
+
+    Route::get('/login', function () {
+        return view('auth.login');
+    });
+
+});
+
+/**
+ * 
+ * 
  * CUSTOMER ROUTES
  * 
  * 
