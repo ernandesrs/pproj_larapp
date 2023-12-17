@@ -8,6 +8,9 @@ export default defineConfig({
                 'resources/js/front/app.js',
                 'resources/css/front/app.css',
 
+                'resources/js/auth/app.js',
+                'resources/css/auth/app.css',
+
                 'resources/js/customer/app.js',
                 'resources/css/customer/app.css',
 
