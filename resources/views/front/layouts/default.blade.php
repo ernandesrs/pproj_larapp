@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{ config('app.name') }} - {{ $page['title'] }}</title>
+
+    @vite('resources/css/front/app.css')
 </head>
 
 <body>

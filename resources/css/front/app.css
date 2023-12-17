@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.front-primary {
+    @apply bg-green-500;
+}

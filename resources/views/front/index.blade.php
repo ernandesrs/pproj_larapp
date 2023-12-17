@@ -5,5 +5,5 @@
 ])
 
 @section('content')
-    <h1>HOME</h1>
+    <h1 class="front-primary">HOME</h1>
 @endsection
