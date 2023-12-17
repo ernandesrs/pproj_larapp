@@ -7,7 +7,7 @@
 
     <title>{{ config('app.name') }} ADMIN - {{ $page['title'] }}</title>
 
-    @vite('resources/css/admin/app.css')
+    @vite(['resources/js/admin/app.js', 'resources/css/admin/app.css'])
 </head>
 
 <body>

@@ -7,7 +7,7 @@
 
     <title>{{ config('app.name') }} DASH - {{ $page['title'] }}</title>
 
-    @vite('resources/css/customer/app.css')
+    @vite(['resources/js/customer/app.js', 'resources/css/customer/app.css'])
 </head>
 
 <body>
