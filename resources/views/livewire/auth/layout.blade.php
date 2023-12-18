@@ -36,6 +36,10 @@
                         No account?
                         <a class="underline" href="{{ route('auth.register') }}">Sign up</a>
                     </p>
+                    <p class="text-center text-sm text-gray-500">
+                        Forgot your password?
+                        <a class="underline" href="{{ route('auth.forget') }}">Recovery now</a>
+                    </p>
                 @elseif (in_array(Route::currentRouteName(), ['auth.register', 'auth.forget']))
                     <p class="text-center text-sm text-gray-500">
                         Have a account?

@@ -30,6 +30,7 @@ Route::group([
 
     Route::get('/login', \App\Livewire\Auth\Login::class)->name('auth.login');
     Route::get('/register', \App\Livewire\Auth\Register::class)->name('auth.register');
+    Route::get('/forget', \App\Livewire\Auth\Forget::class)->name('auth.forget');
 
 });
 
