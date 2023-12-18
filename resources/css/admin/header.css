@@ -1,0 +1,11 @@
+.header {
+    @apply flex items-center h-16 border-b;
+}
+
+.header-inner {
+    @apply flex justify-between items-center;
+}
+
+.sidebar-toggler {
+    @apply border py-3 px-2 ml-3;
+}

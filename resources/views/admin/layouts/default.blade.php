@@ -12,9 +12,22 @@
 
 <body>
 
-    <main>
-        @yield('content')
-    </main>
+    {{-- sidebar side --}}
+    <div
+        class="layout-left-side">
+        @include('admin.layouts.default.aside')
+    </div>
+
+    {{-- content side --}}
+    <div class="layout-right-side">
+        @include('admin.layouts.default.header')
+
+        <main class="container main">
+            <div class="main-inner">
+                @yield('content')
+            </div>
+        </main>
+    </div>
 
 </body>
 

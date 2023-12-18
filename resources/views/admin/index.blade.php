@@ -5,5 +5,5 @@
 ])
 
 @section('content')
-    <h1 class="admin-primary">HOME</h1>
+    <h1>HOME ADMIN DASHBOARD</h1>
 @endsection

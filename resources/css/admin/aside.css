@@ -1,0 +1,39 @@
+.aside {
+    @apply shadow-md border border-e h-screen overflow-y-auto;
+}
+
+.aside-header {
+    @apply border-b w-full p-4;
+}
+
+.aside-inner {
+    @apply flex flex-1 flex-col bg-white w-full max-h-screen;
+}
+
+.aside-item {
+    @apply px-4 py-3;
+}
+
+.aside-item-title {
+    @apply mb-5 text-lg font-semibold text-gray-500 cursor-default;
+}
+
+.aside-item-nav {
+    @apply space-y-1;
+}
+
+.aside-item-nav-link {
+    @apply block rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700;
+}
+
+.aside-item-subnav-toggler {
+    @apply flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700;
+}
+
+.aside-item-subnav {
+    @apply mt-2 space-y-1 px-4;
+}
+
+.aside-item-subnav-link {
+    @apply block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700;
+}

@@ -1,0 +1,9 @@
+.main {
+    @apply w-full py-8 overflow-x-hidden overflow-y-auto;
+
+    height: calc(100vh - (4rem));
+}
+
+.main-inner {
+    @apply shadow-sm w-full min-h-full border p-8 rounded;
+}
