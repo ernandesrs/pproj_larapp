@@ -26,6 +26,13 @@
                 @endisset
             </div>
 
+            @if ($error = session('error'))
+                <div
+                    class="text-front-danger-dark-1 text-center border border-front-danger-normal py-3 px-4 rounded mb-5">
+                    {{ $error }}
+                </div>
+            @endif
+
             <div>
                 {{ $slot }}
             </div>

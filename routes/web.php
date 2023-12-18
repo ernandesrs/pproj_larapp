@@ -25,7 +25,8 @@ Route::group([], function () {
  * 
  */
 Route::group([
-    'prefix' => 'auth'
+    'prefix' => 'auth',
+    'middleware' => 'guest'
 ], function () {
 
     Route::get('/login', \App\Livewire\Auth\Login::class)->name('auth.login');
@@ -47,7 +48,7 @@ Route::group([
 
     Route::get('/', function () {
         return view('customer.index');
-    });
+    })->name('customer.index');
 
 });
 
