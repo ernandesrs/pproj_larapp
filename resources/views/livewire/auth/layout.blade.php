@@ -13,7 +13,7 @@
 <body>
 
     <main class="w-full min-h-screen flex justify-center items-center">
-        <div class="mx-auto max-w-screen-xl shadow-lg p-6 sm:p-10 border border-front-light-normal rounded">
+        <div class="w-full max-w-lg shadow-lg p-6 sm:p-10 border border-front-light-normal rounded">
             <div class="mb-4">
                 <h1 class="text-center text-2xl font-bold text-front-primary-normal sm:text-3xl">
                     {{ $title }}
@@ -34,12 +34,12 @@
                 @if (in_array(Route::currentRouteName(), ['auth.login', 'auth.login']))
                     <p class="text-center text-sm text-gray-500">
                         No account?
-                        <a class="underline" href="">Sign up</a>
+                        <a class="underline" href="{{ route('auth.register') }}">Sign up</a>
                     </p>
                 @elseif (in_array(Route::currentRouteName(), ['auth.register', 'auth.forget']))
                     <p class="text-center text-sm text-gray-500">
                         Have a account?
-                        <a class="underline" href="">Sign in</a>
+                        <a class="underline" href="{{ route('auth.login') }}">Sign in</a>
                     </p>
                 @endif
             </div>

@@ -29,6 +29,7 @@ Route::group([
 ], function () {
 
     Route::get('/login', \App\Livewire\Auth\Login::class)->name('auth.login');
+    Route::get('/register', \App\Livewire\Auth\Register::class)->name('auth.register');
 
 });
 
