@@ -1,16 +1,9 @@
-<form>
-    <div class="form-group">
-        <label class="form-input-label sr-only" for="email">Email</label>
+<form wire:submit="attemptLogin">
 
-        <input type="email" class="form-input" placeholder="Enter email" />
-    </div>
+    <x-front.form-input wire:model.blur="email" type="email" label="Your e-mail" name="email" />
 
-    <div class="form-group">
-        <label class="form-input-label sr-only" for="password" class="sr-only">Password</label>
-        <input type="password" class="form-input" placeholder="Enter password" />
-    </div>
+    <x-front.form-input wire:model.blur="password" type="password" label="Your password" name="password" />
 
-    <button class="button w-full bg-front-primary-normal text-white" type="submit">
-        Sign in
-    </button>
+    <x-front.button wire:loading.attr="disabled" type="submit" text="Sign in" variant="primary-outlined" full />
+
 </form>
