@@ -15,7 +15,7 @@
 
             {{-- right --}}
             <div>
-                <button class="sidebar-toggler">
+                <button class="sidebar-toggler" id="jsSidebarToggler">
                     <i class="bi bi-list"></i>
                 </button>
             </div>

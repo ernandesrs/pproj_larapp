@@ -17,7 +17,7 @@ body {
 }
 
 .layout-left-side {
-    @apply fixed w-[85vw] -translate-x-full duration-300;
+    @apply fixed z-50 w-[85vw] -translate-x-full duration-300;
 
     /* sm */
     @apply sm:w-full sm:max-w-[300px];
@@ -27,6 +27,10 @@ body {
 
     /* xl */
     @apply xl:basis-2/12;
+}
+
+.layout-left-side-show {
+    @apply -translate-x-0;
 }
 
 .layout-right-side {

@@ -14,7 +14,7 @@
 
     {{-- sidebar side --}}
     <div
-        class="layout-left-side">
+        class="layout-left-side" id="jsSidebar">
         @include('admin.layouts.default.aside')
     </div>
 

@@ -1,5 +1,5 @@
 .aside {
-    @apply shadow-md border border-e h-screen overflow-y-auto;
+    @apply bg-white shadow-md border border-e h-screen overflow-y-auto;
 }
 
 .aside-header {
@@ -7,7 +7,7 @@
 }
 
 .aside-inner {
-    @apply flex flex-1 flex-col bg-white w-full max-h-screen;
+    @apply flex flex-1 flex-col w-full max-h-screen;
 }
 
 .aside-item {
