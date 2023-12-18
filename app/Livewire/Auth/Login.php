@@ -40,4 +40,11 @@ class Login extends Component
 
         return $this->redirectRoute('customer.index');
     }
+
+    public function logout()
+    {
+        \Auth::logout();
+
+        return redirect()->route('auth.login');
+    }
 }

@@ -6,10 +6,28 @@
     @apply w-full;
 }
 
+/* PRIMARY */
 .button-primary {
     @apply bg-front-primary-normal text-front-white;
 }
 
 .button-primary-outlined {
     @apply border border-front-primary-normal text-front-primary-normal;
+}
+
+.button-primary-link {
+    @apply text-front-primary-normal hover:shadow-none hover:underline;
+}
+
+/* DANGER */
+.button-danger {
+    @apply bg-front-danger-normal text-front-white;
+}
+
+.button-danger-outlined {
+    @apply border border-front-danger-normal text-front-danger-normal;
+}
+
+.button-danger-link {
+    @apply text-front-danger-normal hover:shadow-none hover:underline;
 }
