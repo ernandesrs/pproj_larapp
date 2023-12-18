@@ -7,5 +7,5 @@
 }
 
 .sidebar-toggler {
-    @apply border py-3 px-2 ml-3;
+    @apply ml-3 text-2xl lg:text-3xl;
 }

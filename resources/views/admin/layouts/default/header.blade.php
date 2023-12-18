@@ -16,7 +16,7 @@
             {{-- right --}}
             <div>
                 <button class="sidebar-toggler">
-                    menu
+                    <i class="bi bi-list"></i>
                 </button>
             </div>
         </div>
