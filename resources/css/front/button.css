@@ -1,15 +1,15 @@
 .button {
-    @apply px-6 py-3 duration-300 hover:opacity-80 hover:shadow-md;
+    @apply px-6 py-3 duration-300 hover:opacity-80 hover:shadow-md rounded;
+}
+
+.button-full {
+    @apply w-full;
 }
 
 .button-primary {
-    @apply bg-front-primary text-front-white;
+    @apply bg-front-primary-normal text-front-white;
 }
 
 .button-primary-outlined {
-    @apply border border-front-primary text-front-primary;
-}
-
-.button-primary-link {
-    @apply text-front-primary hover:shadow-none;
+    @apply border border-front-primary-normal text-front-primary-normal;
 }

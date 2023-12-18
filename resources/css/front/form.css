@@ -3,11 +3,11 @@
 }
 
 .form-input-label {
-    @apply mb-2 font-medium text-front-dark-lighten-1;
+    @apply mb-2 font-medium text-front-dark-ligth-2;
 }
 
 .form-input {
-    @apply border px-4 py-3 outline-none;
+    @apply w-full rounded border border-front-light-dark-1 p-4 pe-12 text-sm shadow-sm;
 }
 
 .form-input-feedback {
@@ -19,17 +19,17 @@
 }
 
 .form-input-valid {
-    @apply border-green-500 text-green-400;
+    @apply border-front-success-normal text-front-success-dark-1;
 }
 
 .form-input-valid~.form-input-feedback {
-    @apply text-green-500;
+    @apply text-front-success-normal;
 }
 
 .form-input-invalid {
-    @apply border-red-500 text-red-400;
+    @apply border-front-danger-normal text-front-danger-dark-1;
 }
 
 .form-input-invalid~.form-input-feedback {
-    @apply text-red-500;
+    @apply text-front-danger-normal;
 }

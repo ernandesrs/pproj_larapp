@@ -1,5 +1,15 @@
 const colors = require('tailwindcss/colors');
 
+const variantsMaker = (color, base) => {
+  return {
+    'ligth-2': colors[color][(base - 100) < 50 ? 50 : (base - 100)],
+    'ligth-1': colors[color][(base - 100) < 50 ? 50 : (base - 100)],
+    'normal': colors[color][base],
+    'dark-1': colors[color][(base + 100) > 950 ? 950 : (base + 100)],
+    'dark-2': colors[color][(base + 100) > 950 ? 950 : (base + 100)],
+  }
+};
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -12,26 +22,19 @@ module.exports = {
     colors: {
       ...colors,
 
-      // front
-      'front-primary-lighten-2': colors.sky[400],
-      'front-primary-lighten-1': colors.sky[500],
-      'front-primary': colors.sky[600],
-      'front-primary-darken-1': colors.sky[700],
-      'front-primary-darken-2': colors.sky[800],
+      front: {
+        primary: variantsMaker('indigo', 600),
+        secondary: variantsMaker('violet', 600),
+        dark: variantsMaker('gray', 800),
+        light: variantsMaker('slate', 200),
 
-      'front-dark-lighten-2': colors.gray[400],
-      'front-dark-lighten-1': colors.gray[500],
-      'front-dark': colors.gray[600],
-      'front-dark-darken-1': colors.gray[700],
-      'front-dark-darken-2': colors.gray[800],
 
-      'front-light-lighten-2': colors.slate[50],
-      'front-light-lighten-1': colors.slate[100],
-      'front-light': colors.slate[200],
-      'front-light-darken-1': colors.slate[300],
-      'front-light-darken-2': colors.slate[400],
+        success: variantsMaker('teal', 400),
+        info: variantsMaker('blue', 500),
+        danger: variantsMaker('rose', 400),
 
-      'front-white': colors.white
+        white: colors.white
+      },
     }
   },
   plugins: [],

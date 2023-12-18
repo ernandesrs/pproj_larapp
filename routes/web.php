@@ -28,9 +28,7 @@ Route::group([
     'prefix' => 'auth'
 ], function () {
 
-    Route::get('/login', function () {
-        return view('auth.login');
-    });
+    Route::get('/login', \App\Livewire\Auth\Login::class)->name('auth.login');
 
 });
 
