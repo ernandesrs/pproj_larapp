@@ -3,11 +3,11 @@
 }
 
 .form-input-label {
-    @apply mb-2 font-medium;
+    @apply mb-2 font-medium text-front-dark-lighten-1;
 }
 
 .form-input {
-    @apply border px-4 py-2 outline-none rounded;
+    @apply border px-4 py-3 outline-none;
 }
 
 .form-input-feedback {

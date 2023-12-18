@@ -1,21 +1,6 @@
-@import './../common/form.css';
+@import './../front/form.css';
+@import './../front/button.css';
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.button {
-    @apply px-6 py-2 rounded duration-300 hover:opacity-80 hover:shadow-md;
-}
-
-.button-main {
-    @apply bg-slate-800 text-gray-100;
-}
-
-.button-main-outlined {
-    @apply border border-slate-800 text-slate-800;
-}
-
-.button-main-link {
-    @apply text-slate-800 hover:shadow-none;
-}

@@ -5,7 +5,7 @@
 ])
 
 @section('content')
-    <div class="p-2 sm:p-4 md:p-8">
+    <div class="p-2 sm:p-4 md:p-6">
         <form method="post">
             <div class="form-group">
                 <label class="form-input-label" for="email">E-mail</label>
@@ -17,16 +17,16 @@
             </div>
 
             <div class="flex justify-center my-5">
-                <button class="button button-main">
+                <button class="button button-primary">
                     Fazer login
                 </button>
             </div>
 
             <div class="flex justify-center mt-2 py-2 border-t">
-                <a class="button button-main-link" href="">
+                <a class="button button-primary-link" href="">
                     Esquecia a senha
                 </a>
-                <a class="button button-main-link" href="">
+                <a class="button button-primary-link" href="">
                     Cadastrar
                 </a>
             </div>

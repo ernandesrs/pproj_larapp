@@ -13,9 +13,9 @@
 <body>
 
     <main class="w-full h-screen flex justify-center items-center p-4">
-        <div class="w-full max-w-md shadow-lg rounded p-5">
+        <div class="w-full max-w-lg shadow-lg rounded p-5">
             <div class="my-3 py-2">
-                <h1 class="text-2xl font-bold text-center text-gray-600">{{ $page['title'] }}</h1>
+                <h1 class="text-2xl font-bold text-center text-front-dark">{{ $page['title'] }}</h1>
             </div>
             <div class="">
                 @yield('content')
