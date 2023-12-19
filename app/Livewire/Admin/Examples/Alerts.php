@@ -33,7 +33,7 @@ class Alerts extends Component
         $this->alert['text'] = 'This is a normal session alert text';
 
         session()->flash('alert', $this->alert);
-        $this->redirectRoute('admin.examples.alerts');
+        $this->redirect(route('admin.examples.alerts'), true);
     }
 
     public function showFloatAlert()
@@ -50,6 +50,6 @@ class Alerts extends Component
         $this->alert['float'] = 1;
 
         session()->flash('alert', $this->alert);
-        $this->redirectRoute('admin.examples.alerts');
+        $this->redirect(route('admin.examples.alerts'), true);
     }
 }
