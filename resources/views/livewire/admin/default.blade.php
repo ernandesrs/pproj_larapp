@@ -21,8 +21,8 @@
     <div class="layout-right-side">
         @include('livewire.admin.default.header')
 
-        <main class="container main">
-            <div class="main-inner">
+        <main class="main">
+            <div class="container main-inner">
                 {{ $slot }}
             </div>
         </main>

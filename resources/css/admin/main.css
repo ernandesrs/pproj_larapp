@@ -1,5 +1,5 @@
 .main {
-    @apply w-full py-8 overflow-x-hidden overflow-y-auto;
+    @apply w-full py-8 overflow-x-hidden overflow-y-auto bg-red-300;
 
     height: calc(100vh - (4rem));
 }
