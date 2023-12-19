@@ -56,6 +56,12 @@
             'title' => 'Examples',
             'items' => [
                 [
+                    'text' => 'Sections',
+                    'href' => route('admin.examples.sections'),
+                    'activeIn' => ['admin.examples.sections'],
+                    'icon' => 'caret-right-fill',
+                ],
+                [
                     'text' => 'Buttons',
                     'href' => route('admin.examples.buttons'),
                     'activeIn' => ['admin.examples.buttons'],

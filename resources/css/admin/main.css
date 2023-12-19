@@ -5,5 +5,5 @@
 }
 
 .main-inner {
-    @apply shadow-sm w-full min-h-full border p-8 rounded;
+    @apply w-full min-h-full;
 }
