@@ -2,7 +2,7 @@
 
     <div>
         <h1 class="text-xl mb-5">Primary buttons</h1>
-        <div class="flex flex-wrap justify-center gap-x-3 gap-y-5">
+        <div class="flex flex-wrap justify-center items-center gap-x-3 gap-y-5">
             <x-admin.button text='Filled small' variant='primary' small />
             <x-admin.button text='Outlined small' variant='primary-outlined' small />
             <x-admin.button text='Link small' variant='primary-link' small />
@@ -19,7 +19,7 @@
 
     <div>
         <h1 class="text-xl mb-5">Secondary buttons</h1>
-        <div class="flex flex-wrap justify-center gap-x-3 gap-y-5">
+        <div class="flex flex-wrap justify-center items-center gap-x-3 gap-y-5">
             <x-admin.button text='Filled small' variant='secondary' small />
             <x-admin.button text='Outlined small' variant='secondary-outlined' small />
             <x-admin.button text='Link small' variant='secondary-link' small />
@@ -36,7 +36,7 @@
 
     <div>
         <h1 class="text-xl mb-5">Success buttons</h1>
-        <div class="flex flex-wrap justify-center gap-x-3 gap-y-5">
+        <div class="flex flex-wrap justify-center items-center gap-x-3 gap-y-5">
             <x-admin.button text='Filled small' variant='success' small />
             <x-admin.button text='Outlined small' variant='success-outlined' small />
             <x-admin.button text='Link small' variant='success-link' small />
@@ -53,7 +53,7 @@
 
     <div>
         <h1 class="text-xl mb-5">Info buttons</h1>
-        <div class="flex flex-wrap justify-center gap-x-3 gap-y-5">
+        <div class="flex flex-wrap justify-center items-center gap-x-3 gap-y-5">
             <x-admin.button text='Filled small' variant='info' small />
             <x-admin.button text='Outlined small' variant='info-outlined' small />
             <x-admin.button text='Link small' variant='info-link' small />
@@ -70,7 +70,7 @@
 
     <div>
         <h1 class="text-xl mb-5">Danger buttons</h1>
-        <div class="flex flex-wrap justify-center gap-x-3 gap-y-5">
+        <div class="flex flex-wrap justify-center items-center gap-x-3 gap-y-5">
             <x-admin.button text='Filled small' variant='danger' small />
             <x-admin.button text='Outlined small' variant='danger-outlined' small />
             <x-admin.button text='Link small' variant='danger-link' small />
