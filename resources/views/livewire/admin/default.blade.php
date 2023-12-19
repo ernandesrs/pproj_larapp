@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ config('app.name') }} ADMIN - {{ $page['title'] }}</title>
+    <title>{{ config('app.name') }} ADMIN - {{ $title ?? '' }}</title>
 
     @vite(['resources/js/admin/app.js', 'resources/css/admin/app.css'])
 </head>
@@ -13,18 +13,17 @@
 <body>
 
     {{-- sidebar side --}}
-    <div
-        class="layout-left-side" id="jsSidebar">
-        @include('admin.layouts.default.aside')
+    <div class="layout-left-side" id="jsSidebar">
+        @include('livewire.admin.default.aside')
     </div>
 
     {{-- content side --}}
     <div class="layout-right-side">
-        @include('admin.layouts.default.header')
+        @include('livewire.admin.default.header')
 
         <main class="container main">
             <div class="main-inner">
-                @yield('content')
+                {{ $slot }}
             </div>
         </main>
     </div>

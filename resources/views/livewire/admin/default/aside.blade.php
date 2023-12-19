@@ -18,7 +18,7 @@
     </div>
 
     <div class="aside-inner">
-        @include('admin.layouts.default.aside-item', [
+        @include('livewire.admin.default.aside-item', [
             'title' => 'Dashboard',
             'items' => [
                 [
