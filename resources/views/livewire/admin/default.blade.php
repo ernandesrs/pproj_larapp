@@ -23,6 +23,11 @@
 
         <main class="main">
             <div class="container main-inner">
+                @if ($alert = session('alert'))
+                    <x-admin.alert closable :float="$alert['float']" type="{{ $alert['type'] }}" title="{{ $alert['title'] }}"
+                        text="{{ $alert['text'] }}" />
+                @endif
+
                 {{ $slot }}
             </div>
         </main>

@@ -12,11 +12,22 @@
                                 @dump($this->alert)
                             </div>
 
-                            <x-admin.button wire:click="showAlert" text="Show alert" />
-                            <x-admin.button wire:click="showSessionAlert" text="Show session alert" />
+                            <div class="w-full my-6">
+                                <label for="alert_type">Alert type</label>
+                                <select class="py-2 px-6 border ml-2" wire:model.blur="alert.type" id="alert_type">
+                                    <option value="default">Default</option>
+                                    <option value="success">Success</option>
+                                    <option value="info">Info</option>
+                                    <option value="danger">Danger</option>
+                                </select>
+                            </div>
 
-                            <x-admin.button wire:click="showFloatAlert" text="Show float alert" />
-                            <x-admin.button wire:click="showFloatSessionAlert" text="Show float session alert" />
+                            <x-admin.button wire:click="showAlert" text="Show alert" />
+                            <x-admin.button wire:click="showFloatAlert" text="Show float alert" variant="primary-outlined" />
+
+                            <x-admin.button wire:click="showSessionAlert" text="Show session alert" />
+                            <x-admin.button wire:click="showFloatSessionAlert" text="Show float session alert"
+                                variant="primary-outlined" />
 
                         </div>
                     @endslot
