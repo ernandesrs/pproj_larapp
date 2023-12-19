@@ -6,12 +6,11 @@ use Livewire\Component;
 
 class Alerts extends Component
 {
-    public $alert = [
-        'type' => 'success',
-        'float' => 0,
-        'title' => null,
-        'text' => null,
-    ];
+    public $type = 'default';
+
+    public $title = 'Success title';
+
+    public $text = 'This is a lorem success alert';
 
     public function render()
     {
@@ -21,35 +20,17 @@ class Alerts extends Component
         ;
     }
 
-    public function showAlert()
-    {
-        $this->alert['title'] = 'Normal alert';
-        $this->alert['text'] = 'This is a normal alert text';
-    }
-
     public function showSessionAlert()
     {
-        $this->alert['title'] = 'Normal session alert';
-        $this->alert['text'] = 'This is a normal session alert text';
+        \App\Helpers\Alert::add($this->text, $this->title, $this->type)->addFlash();
 
-        session()->flash('alert', $this->alert);
         $this->redirect(route('admin.examples.alerts'), true);
-    }
-
-    public function showFloatAlert()
-    {
-        $this->alert['title'] = 'Float alert';
-        $this->alert['text'] = 'This is a float alert text';
-        $this->alert['float'] = 1;
     }
 
     public function showFloatSessionAlert()
     {
-        $this->alert['title'] = 'Float session alert';
-        $this->alert['text'] = 'This is a float session alert text';
-        $this->alert['float'] = 1;
+        \App\Helpers\Alert::add($this->text, $this->title, $this->type)->float()->addFlash();
 
-        session()->flash('alert', $this->alert);
         $this->redirect(route('admin.examples.alerts'), true);
     }
 }
