@@ -35,6 +35,20 @@ module.exports = {
 
         white: colors.white
       },
+
+      admin: {
+        primary: variantsMaker('indigo', 600),
+        secondary: variantsMaker('violet', 600),
+        dark: variantsMaker('gray', 800),
+        light: variantsMaker('slate', 200),
+
+
+        success: variantsMaker('teal', 400),
+        info: variantsMaker('blue', 500),
+        danger: variantsMaker('rose', 400),
+
+        white: colors.white
+      }
     }
   },
   plugins: [],

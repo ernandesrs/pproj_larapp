@@ -1,9 +1,9 @@
 .aside {
-    @apply bg-white shadow-md border border-e h-screen overflow-y-auto;
+    @apply bg-admin-dark-dark-2 shadow-md border-e h-screen overflow-y-auto;
 }
 
 .aside-header {
-    @apply border-b w-full p-4;
+    @apply border-b border-admin-dark-ligth-2 w-full p-4;
 }
 
 .aside-inner {
@@ -15,7 +15,7 @@
 }
 
 .aside-item-title {
-    @apply mb-3 text-lg font-semibold text-gray-500 cursor-default;
+    @apply mb-3 text-base uppercase font-semibold text-gray-500 cursor-default;
 }
 
 .aside-item-nav {
@@ -23,11 +23,16 @@
 }
 
 .aside-item-nav-link {
-    @apply block rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700;
+    @apply block rounded px-4 py-3 text-base font-medium text-admin-light-dark-2 duration-300;
+}
+
+.aside-item-nav-link-active,
+.aside-item-nav-link:hover {
+    @apply bg-admin-dark-normal;
 }
 
 .aside-item-subnav-toggler {
-    @apply flex cursor-pointer items-center justify-between rounded-lg px-4 py-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700;
+    @apply flex cursor-pointer items-center rounded px-4 py-3 text-admin-light-dark-2 duration-300 hover:bg-admin-dark-normal hover:text-admin-light-dark-2;
 }
 
 .aside-item-subnav {
@@ -35,5 +40,5 @@
 }
 
 .aside-item-subnav-link {
-    @apply block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700;
+    @apply block rounded px-4 py-3 text-base font-medium text-admin-light-dark-2 duration-300 hover:bg-admin-dark-normal;
 }

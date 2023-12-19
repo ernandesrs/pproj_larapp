@@ -8,7 +8,11 @@
         @foreach ($items ?? [] as $navItem)
             @if (!isset($navItem['items']))
                 <li>
-                    <a href="{{ $navItem['href'] }}" class="aside-item-nav-link">
+                    <a href="{{ $navItem['href'] }}"
+                        class="aside-item-nav-link {{ in_array(\Route::currentRouteName(), $navItem['activeIn'] ?? []) ? 'aside-item-nav-link-active' : '' }}">
+                        @isset($navItem['icon'])
+                            <i class="bi bi-{{ $navItem['icon'] }} mr-2"></i>
+                        @endisset
                         {{ $navItem['text'] }}
                     </a>
                 </li>
@@ -16,9 +20,13 @@
                 <li>
                     <details class="group [&_summary::-webkit-details-marker]:hidden">
                         <summary class="aside-item-subnav-toggler">
+                            @isset($navItem['icon'])
+                                <i class="bi bi-{{ $navItem['icon'] }} mr-2"></i>
+                            @endisset
+
                             <span class="text-sm font-medium"> {{ $navItem['text'] }} </span>
 
-                            <span class="shrink-0 transition duration-300 group-open:-rotate-180">
+                            <span class="ml-auto shrink-0 transition duration-300 group-open:-rotate-180">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
                                     fill="currentColor">
                                     <path fill-rule="evenodd"
@@ -29,10 +37,14 @@
                         </summary>
 
                         <ul class="aside-item-subnav">
-                            @foreach ($navItem['items'] as $navSubitems)
+                            @foreach ($navItem['items'] as $navSubitem)
                                 <li>
-                                    <a class="aside-item-subnav-link" href="{{ $navSubitems['href'] }}">
-                                        {{ $navSubitems['text'] }}
+                                    <a class="aside-item-subnav-link {{ in_array(\Route::currentRouteName(), $navSubitem['activeIn'] ?? []) ? ' aside-item-nav-link-active' : '' }}"
+                                        href="{{ $navSubitem['href'] }}">
+                                        @isset($navSubitem['icon'])
+                                            <i class="bi bi-{{ $navSubitem['icon'] }} mr-2"></i>
+                                        @endisset
+                                        {{ $navSubitem['text'] }}
                                     </a>
                                 </li>
                             @endforeach

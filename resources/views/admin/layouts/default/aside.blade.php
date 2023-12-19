@@ -24,19 +24,30 @@
                 [
                     'text' => 'General',
                     'href' => route('admin.index'),
+                    'activeIn' => ['admin.index'],
+                    'icon' => 'pie-chart-fill',
                 ],
                 [
-                    'text' => 'Teams',
+                    'text' => 'Users',
+                    'icon' => 'people-fill',
                     'items' => [
                         [
                             'text' => 'All',
                             'href' => '',
+                            'icon' => 'caret-right-fill',
                         ],
                         [
-                            'text' => 'Banner users',
+                            'text' => 'Administrators',
                             'href' => '',
+                            'icon' => 'caret-right-fill',
                         ],
                     ],
+                ],
+                [
+                    'text' => 'Roles',
+                    'href' => '',
+                    'activeIn' => [],
+                    'icon' => 'shield-lock-fill',
                 ],
             ],
         ])
