@@ -21,16 +21,6 @@
                     @endslot
                 </x-admin.section>
             </div>
-
-            <div class="basis-full">
-                <x-admin.section title="Alert example" subtitle="This is a example of a float alert of type info">
-                    @slot('content')
-                        <x-admin.alert type="info" title="Lorem consectetur adipisicing"
-                            text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus esse excepturi porro delectus dicta!"
-                            closable float />
-                    @endslot
-                </x-admin.section>
-            </div>
         </div>
     @endslot
 </x-admin.page>
