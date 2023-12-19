@@ -64,6 +64,14 @@ Route::group([
 ], function () {
 
     Route::get('/', \App\Livewire\Admin\Home::class)->name('admin.index');
+    Route::group([
+        'prefix' => 'examples'
+    ], function () {
+
+        Route::get('/buttons', \App\Livewire\Admin\Examples\Buttons::class)->name('admin.examples.buttons');
+        Route::get('/alerts', \App\Livewire\Admin\Examples\Alerts::class)->name('admin.examples.alerts');
+
+    });
 
 });
 

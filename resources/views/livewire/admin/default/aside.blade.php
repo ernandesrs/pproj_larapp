@@ -51,5 +51,23 @@
                 ],
             ],
         ])
+
+        @include('livewire.admin.default.aside-item', [
+            'title' => 'Examples',
+            'items' => [
+                [
+                    'text' => 'Buttons',
+                    'href' => route('admin.examples.buttons'),
+                    'activeIn' => ['admin.examples.buttons'],
+                    'icon' => 'caret-right-fill',
+                ],
+                [
+                    'text' => 'Alerts',
+                    'href' => route('admin.examples.alerts'),
+                    'activeIn' => ['admin.examples.alerts'],
+                    'icon' => 'caret-right-fill',
+                ],
+            ],
+        ])
     </div>
 </aside>

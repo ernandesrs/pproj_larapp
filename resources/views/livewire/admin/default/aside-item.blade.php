@@ -8,7 +8,7 @@
         @foreach ($items ?? [] as $navItem)
             @if (!isset($navItem['items']))
                 <li>
-                    <a href="{{ $navItem['href'] }}"
+                    <a wire:navigate href="{{ $navItem['href'] }}"
                         class="aside-item-nav-link {{ in_array(\Route::currentRouteName(), $navItem['activeIn'] ?? []) ? 'aside-item-nav-link-active' : '' }}">
                         @isset($navItem['icon'])
                             <i class="bi bi-{{ $navItem['icon'] }} mr-2"></i>
@@ -39,7 +39,7 @@
                         <ul class="aside-item-subnav">
                             @foreach ($navItem['items'] as $navSubitem)
                                 <li>
-                                    <a class="aside-item-subnav-link {{ in_array(\Route::currentRouteName(), $navSubitem['activeIn'] ?? []) ? ' aside-item-nav-link-active' : '' }}"
+                                    <a wire:navigate class="aside-item-subnav-link {{ in_array(\Route::currentRouteName(), $navSubitem['activeIn'] ?? []) ? ' aside-item-nav-link-active' : '' }}"
                                         href="{{ $navSubitem['href'] }}">
                                         @isset($navSubitem['icon'])
                                             <i class="bi bi-{{ $navSubitem['icon'] }} mr-2"></i>
