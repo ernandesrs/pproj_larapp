@@ -4,6 +4,7 @@
 @import './header.css';
 @import './main.css';
 @import './button.css';
+@import './alert.css';
 
 @tailwind base;
 @tailwind components;

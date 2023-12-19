@@ -1,7 +1,7 @@
 @props(['headerIcon', 'title', 'subtitle', 'noShadow', 'noBorder'])
 
 <div
-    class="{{ isset($noShadow) && $noShadow ? 'shadow-none' : 'shadow-md' }} {{ isset($actions) ? 'pt-5' : 'py-5' }} {{ isset($noBorder) && $noBorder ? 'border-0' : 'border' }} rounded w-full">
+    class="h-full {{ isset($noShadow) && $noShadow ? 'shadow-none' : 'shadow-md' }} {{ isset($actions) ? 'pt-5' : 'py-5' }} {{ isset($noBorder) && $noBorder ? 'border-0' : 'border' }} rounded w-full">
     {{-- header --}}
     @if (isset($title) || isset($subtitle))
         <div class="flex items-start mb-2 px-6">
