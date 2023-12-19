@@ -1,0 +1,80 @@
+.button {
+    @apply px-5 py-3 text-sm duration-300 hover:opacity-80 hover:shadow-md rounded;
+}
+
+.button-full {
+    @apply w-full;
+}
+
+.button-sm {
+    @apply text-xs px-4 py-2;
+}
+
+.button-lg {
+    @apply text-base px-8 py-4;
+}
+
+/* primary */
+.button-primary {
+    @apply !bg-admin-primary-normal text-admin-white;
+}
+
+.button-primary-outlined {
+    @apply border border-admin-primary-normal text-admin-primary-normal;
+}
+
+.button-primary-link {
+    @apply text-admin-primary-normal hover:shadow-none hover:underline;
+}
+
+/* secondary */
+.button-secondary {
+    @apply !bg-admin-secondary-normal text-admin-white;
+}
+
+.button-secondary-outlined {
+    @apply border border-admin-secondary-normal text-admin-secondary-normal;
+}
+
+.button-secondary-link {
+    @apply text-admin-secondary-normal hover:shadow-none hover:underline;
+}
+
+/* success */
+.button-success {
+    @apply !bg-admin-success-normal text-admin-white;
+}
+
+.button-success-outlined {
+    @apply border border-admin-success-normal text-admin-success-normal;
+}
+
+.button-success-link {
+    @apply text-admin-success-normal hover:shadow-none hover:underline;
+}
+
+/* info */
+.button-info {
+    @apply !bg-admin-info-normal text-admin-white;
+}
+
+.button-info-outlined {
+    @apply border border-admin-info-normal text-admin-info-normal;
+}
+
+.button-info-link {
+    @apply text-admin-info-normal hover:shadow-none hover:underline;
+}
+
+/* danger */
+.button-danger {
+    @apply !bg-admin-danger-normal text-admin-white;
+}
+
+.button-danger-outlined {
+    @apply border border-admin-danger-normal text-admin-danger-normal;
+}
+
+.button-danger-link {
+    @apply text-admin-danger-normal hover:shadow-none hover:underline;
+}

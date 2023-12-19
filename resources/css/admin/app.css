@@ -3,6 +3,7 @@
 @import './aside.css';
 @import './header.css';
 @import './main.css';
+@import './button.css';
 
 @tailwind base;
 @tailwind components;
