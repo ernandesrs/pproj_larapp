@@ -42,3 +42,8 @@
 .aside-item-subnav-link {
     @apply block rounded px-4 py-3 text-base font-medium text-admin-light-dark-2 duration-300 hover:bg-admin-dark-normal;
 }
+
+.aside-item-nav-link,
+.aside-item-subnav-link{
+    @apply whitespace-nowrap;
+}
