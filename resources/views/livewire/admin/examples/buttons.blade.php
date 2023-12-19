@@ -14,6 +14,11 @@
             <x-admin.button text='Filled large' variant='primary' large />
             <x-admin.button text='Outlined large' variant='primary-outlined' large />
             <x-admin.button text='Link large' variant='primary-link' large />
+
+            <x-admin.button text='With prepend icon' variant='primary' prepend-icon='arrow-left' />
+            <x-admin.button text='With append icon' variant='primary' append-icon='arrow-right' />
+            <x-admin.button text='With two icon' variant='primary' prepend-icon='arrow-left'
+                append-icon='arrow-right' />
         </div>
     </div>
 
@@ -31,6 +36,11 @@
             <x-admin.button text='Filled large' variant='secondary' large />
             <x-admin.button text='Outlined large' variant='secondary-outlined' large />
             <x-admin.button text='Link large' variant='secondary-link' large />
+
+            <x-admin.button text='With prepend icon' variant='secondary' prepend-icon='arrow-left' />
+            <x-admin.button text='With append icon' variant='secondary' append-icon='arrow-right' />
+            <x-admin.button text='With two icon' variant='secondary' prepend-icon='arrow-left'
+                append-icon='arrow-right' />
         </div>
     </div>
 
@@ -48,6 +58,11 @@
             <x-admin.button text='Filled large' variant='success' large />
             <x-admin.button text='Outlined large' variant='success-outlined' large />
             <x-admin.button text='Link large' variant='success-link' large />
+
+            <x-admin.button text='With prepend icon' variant='success' prepend-icon='arrow-left' />
+            <x-admin.button text='With append icon' variant='success' append-icon='arrow-right' />
+            <x-admin.button text='With two icon' variant='success' prepend-icon='arrow-left'
+                append-icon='arrow-right' />
         </div>
     </div>
 
@@ -65,6 +80,11 @@
             <x-admin.button text='Filled large' variant='info' large />
             <x-admin.button text='Outlined large' variant='info-outlined' large />
             <x-admin.button text='Link large' variant='info-link' large />
+
+            <x-admin.button text='With prepend icon' variant='info' prepend-icon='arrow-left' />
+            <x-admin.button text='With append icon' variant='info' append-icon='arrow-right' />
+            <x-admin.button text='With two icon' variant='info' prepend-icon='arrow-left'
+                append-icon='arrow-right' />
         </div>
     </div>
 
@@ -82,6 +102,25 @@
             <x-admin.button text='Filled large' variant='danger' large />
             <x-admin.button text='Outlined large' variant='danger-outlined' large />
             <x-admin.button text='Link large' variant='danger-link' large />
+
+            <x-admin.button text='With prepend icon' variant='danger' prepend-icon='arrow-left' />
+            <x-admin.button text='With append icon' variant='danger' append-icon='arrow-right' />
+            <x-admin.button text='With two icon' variant='danger' prepend-icon='arrow-left'
+                append-icon='arrow-right' />
+        </div>
+    </div>
+
+    <div>
+        <h1 class="text-xl mb-5">Links</h1>
+        <div class="flex flex-wrap justify-center items-center gap-x-3 gap-y-5">
+            <x-admin.button as="link" text='Link to Google' variant='primary' href="https://google.com"
+                title="Go to Google" target="_blank" />
+
+            <x-admin.button as="link" text='Outlined normal with icon' variant='primary-outlined'
+                prepend-icon="box-arrow-up-right" href="https://google.com" title="Go to Google" target="_blank" />
+
+            <x-admin.button as="link" text='Internal link: go to home' variant='primary-link'
+                href="{{ route('admin.index') }}" title="Go to home" wire:navigate />
         </div>
     </div>
 </div>
