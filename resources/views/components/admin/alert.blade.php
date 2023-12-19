@@ -1,17 +1,25 @@
 @props(['float', 'type', 'closable', 'title', 'text'])
 
 @php
-    $float = $float ?? false;
-    $type = $type ?? 'default';
-    $closable = $closable ?? false;
+    $alert = [
+        'show' => $text ?? null ? true : false,
+        'float' => $float ?? false,
+        'type' => $type ?? 'default',
+        'title' => $title ?? null,
+        'text' => $text ?? null,
+        'closable' => $closable ?? false,
+    ];
 
-    $class = 'alert alert-' . $type . ($float ? ' alert-float' : '');
+    $class = 'alert alert-' . $alert['type'] . ($alert['float'] ? ' alert-float' : '');
 @endphp
 
-<div role="alert" class="{{ $class }}" {{ $attributes }}>
+<div x-data="{{ json_encode($alert) }}" x-show="show" x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0 -translate-y-full" x-transition:enter-end="opacity-100 translate-y-0"
+    x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0"
+    x-transition:leave-end="opacity-0 -translate-y-full" role="alert" class="{{ $class }}" {{ $attributes }}>
     <div class="flex items-start gap-4">
         <span class="alert-icon">
-            @switch($type)
+            @switch($alert['type'])
                 @case('success')
                     <i class="bi bi-check-circle"></i>
                 @break
@@ -34,15 +42,16 @@
         </span>
 
         <div class="flex-1">
-            @if ($title ?? null)
-                <strong class="alert-title"> {{ $title }} </strong>
+            @if ($alert['title'] ?? null)
+                <strong class="alert-title"> {{ $alert['title'] }} </strong>
             @endif
 
-            <p class="alert-text">{{ $text }}</p>
+            <p class="alert-text">{{ $alert['text'] }}</p>
         </div>
 
-        @if ($closable)
-            <button class="text-front-dark-ligth-2 text-opacity-50 transition hover:text-opacity-70">
+        @if ($alert['closable'])
+            <button x-on:click="show = !show"
+                class="text-front-dark-ligth-2 text-opacity-50 transition hover:text-opacity-70">
                 <span class="sr-only">Dismiss popup</span>
 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

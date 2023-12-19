@@ -5,14 +5,18 @@
                 <x-admin.section title="Alerts example" subtitle="This is a example of a alert with title and text">
                     @slot('content')
                         <div class="flex flex-wrap gap-6">
-                            <div class="w-full border p-6">
-                                <div class="text-lg font-semibold mb-3">From session</div>
-                                @dump(session('alert'))
-                                <div class="text-lg font-semibold my-3">Local</div>
-                                @dump($this->alert)
+                            <div class="flex flex-wrap justify-between w-full">
+                                <div class="basis-full md:basis-6/12 p-6">
+                                    <div class="text-lg font-semibold mb-3">From session</div>
+                                    @dump(session('alert'))
+                                </div>
+                                <div class="basis-full md:basis-6/12 p-6">
+                                    <div class="text-lg font-semibold my-3">Local</div>
+                                    @dump($this->alert)
+                                </div>
                             </div>
 
-                            <div class="w-full my-6">
+                            <div class="w-full my-4">
                                 <label for="alert_type">Alert type</label>
                                 <select class="py-2 px-6 border ml-2" wire:model.blur="alert.type" id="alert_type">
                                     <option value="default">Default</option>
