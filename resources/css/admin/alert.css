@@ -1,5 +1,5 @@
 .alert {
-    @apply rounded border bg-white p-4 mb-4 shadow;
+    @apply rounded border bg-white p-4 mb-4 shadow overflow-hidden;
 }
 
 .alert-float {
@@ -22,6 +22,18 @@
     @apply mt-1 text-sm text-opacity-50;
 }
 
+.alert-progress {
+    @apply w-full absolute bottom-0 left-0;
+}
+
+.alert-progress-inner {
+    @apply block rounded-full bg-admin-light-ligth-2;
+}
+
+.alert-progress-load {
+    @apply block h-1 rounded-bl rounded-br;
+}
+
 /* START: ALERT DEFAULT */
 .alert-default {
     @apply border-admin-dark-ligth-2 border-opacity-50;
@@ -31,6 +43,10 @@
 .alert-default .alert-title,
 .alert-default .alert-text {
     @apply text-admin-dark-ligth-2;
+}
+
+.alert-default .alert-progress-load {
+    @apply bg-admin-dark-ligth-2 bg-opacity-50;
 }
 
 /* END: ALERT DEFAULT */
@@ -44,6 +60,10 @@
 .alert-success .alert-title,
 .alert-success .alert-text {
     @apply text-admin-success-dark-2;
+}
+
+.alert-success .alert-progress-load {
+    @apply bg-admin-success-ligth-2 bg-opacity-50;
 }
 
 /* END: ALERT SUCCESS */
@@ -63,6 +83,11 @@
     @apply text-admin-danger-normal;
 }
 
+.alert-danger .alert-progress-load,
+.alert-error .alert-progress-load {
+    @apply bg-admin-danger-ligth-2 bg-opacity-50;
+}
+
 /* END: ALERT DANGER/ERROR */
 
 /* START: ALERT INFO */
@@ -74,6 +99,10 @@
 .alert-info .alert-title,
 .alert-info .alert-text {
     @apply text-admin-info-ligth-1;
+}
+
+.alert-info .alert-progress-load {
+    @apply bg-admin-info-ligth-2 bg-opacity-50;
 }
 
 /* END: ALERT INFO */

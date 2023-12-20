@@ -17,9 +17,16 @@
 
 <div x-data="{
     ...{{ json_encode($alertFromSession) }},
+    timer: 2000,
+    timerHandler: null,
+    progress: 0,
+    progressHandler: null,
     init(e) {
         $nextTick(() => {
             this.show = this.has;
+            if (this.show) {
+                $dispatch('showed');
+            }
         });
     },
     alertFromAlertEvent(event) {
@@ -33,10 +40,22 @@
             this.show = false;
 
             setTimeout(() => {
+                this.remove();
                 this.add(newAlert);
             }, 200);
         } else {
             this.add(newAlert);
+        }
+    },
+    startProgress() {
+        if (this.float) {
+            this.progressHandler = setInterval(() => {
+                this.progress += 1;
+            }, this.timer / 100);
+
+            this.timerHandler = setTimeout(() => {
+                this.close();
+            }, this.timer);
         }
     },
     close() {
@@ -55,8 +74,13 @@
         this.text = newAlert.text;
 
         this.style = 'alert alert-' + (this.type ?? 'default') + (this.float ?? false ? ' alert-float' : '');
+
+        setTimeout(() => {
+            $dispatch('showed');
+        }, 300)
     },
     remove() {
+        this.progress = 0;
         this.type = 'default';
         this.float = false;
         this.has = false;
@@ -65,12 +89,16 @@
         this.text = null;
 
         this.style = null;
+        clearInterval(this.progressHandler);
+        clearTimeout(this.timerHandler);
     }
-}" @server_notifying.window="alertFromAlertEvent" x-show="show" x-transition:enter="transition ease-out duration-300"
-    x-transition:enter-start="opacity-0 scale-110 -translate-y-full" x-transition:enter-end="opacity-100 scale-100 translate-y-0"
-    x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100 translate-y-0"
-    x-transition:leave-end="opacity-0 scale-110 -translate-y-full" :class="style" role="alert" {{ $attributes }}>
-    <div class="flex items-start gap-4">
+}" @showed="startProgress" @server_notifying.window="alertFromAlertEvent" x-show="show"
+    x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-110 -translate-y-full"
+    x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100 scale-100 translate-y-0"
+    x-transition:leave-end="opacity-0 scale-110 -translate-y-full" :class="style" role="alert"
+    {{ $attributes }}>
+    <div class="flex items-start gap-4 relative">
         {{-- icon --}}
         <span class="alert-icon">
             <template x-if="type == 'success'">
@@ -111,4 +139,16 @@
             </button>
         </template>
     </div>
+
+    {{-- progress --}}
+    <template x-if="float">
+        <div class="alert-progress">
+            <span id="ProgressLabel" class="sr-only">Loading</span>
+
+            <span role="progressbar" aria-labelledby="ProgressLabel" :aria-valuenow="progress"
+                class="alert-progress-inner">
+                <span class="alert-progress-load" :style="'width: ' + progress + '%'"></span>
+            </span>
+        </div>
+    </template>
 </div>
