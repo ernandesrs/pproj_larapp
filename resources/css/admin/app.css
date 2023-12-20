@@ -6,6 +6,7 @@
 @import './button.css';
 @import './alert.css';
 @import './dropdown.css';
+@import './../common/dialog.css';
 
 @tailwind base;
 @tailwind components;

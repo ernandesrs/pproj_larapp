@@ -1,7 +1,28 @@
 <x-admin.page title="Others" subtitle="Others many components" icon="pie-chart-fill" :breadcrumbs="[['text' => 'Others', 'href' => '#']]">
 
     @slot('content')
-        <div class="flex flex-wrap justify-center gap-y-10">
+        <div class="flex flex-wrap justify-center gap-y-8">
+            <x-admin.section title="Dialogs" subtitle="Dialogs examples">
+                @slot('content')
+                    <div class="flex flex-wrap justify-center">
+                        <x-common.dialog show icon="app" title="This is a dialog title">
+                            @slot('content')
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde vel adipisci
+                                    blanditiis voluptates eum. Nam, cum minima?
+                                </p>
+                            @endslot
+                            @slot('actions')
+                                <x-admin.button text="Custom actions" />
+                            @endslot
+                        </x-common.dialog>
+
+                        <x-admin.button text="Show dialog" />
+
+                    </div>
+                @endslot
+            </x-admin.section>
+
             <x-admin.section title="Dropdown" subtitle="Dropdown examples">
                 @slot('content')
                     <div class="flex flex-wrap justify-center">
@@ -154,7 +175,8 @@
                                                     fugiat expedita, laboriosam placeat ipsum et?</p>
                                             @endslot
                                             @slot('toggler')
-                                                <div class="border-2 border-admin-primary-normal bg-admin-primary-normal text-white cursor-default rounded px-6 py-2">
+                                                <div
+                                                    class="border-2 border-admin-primary-normal bg-admin-primary-normal text-white cursor-default rounded px-6 py-2">
                                                     CUSTOM DROPDOWN TOGGLER
                                                 </div>
                                             @endslot
