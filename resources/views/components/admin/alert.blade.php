@@ -66,7 +66,7 @@
 
         this.style = null;
     }
-}" @alert.window="alertFromAlertEvent" x-show="show" x-transition:enter="transition ease-out duration-300"
+}" @server_notifying.window="alertFromAlertEvent" x-show="show" x-transition:enter="transition ease-out duration-300"
     x-transition:enter-start="opacity-0 scale-110 -translate-y-full" x-transition:enter-end="opacity-100 scale-100 translate-y-0"
     x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100 translate-y-0"
     x-transition:leave-end="opacity-0 scale-110 -translate-y-full" :class="style" role="alert" {{ $attributes }}>

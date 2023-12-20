@@ -2,6 +2,9 @@
 
 namespace App\Helpers;
 
+use Livewire\Component;
+use Livewire\Events\Dispatcher;
+
 class Alert
 {
     private const ALERT_KEY = 'app_flash_alert';
@@ -23,10 +26,9 @@ class Alert
      * @param string|null $title
      * @param string $type
      * @param boolean $float
-     * @param boolean $session
      * @return Alert
      */
-    public static function add(string $text, ?string $title = null, string $type = 'default', bool $float = false, bool $session = false)
+    public static function add(string $text, ?string $title = null, string $type = 'default', bool $float = false)
     {
         $alert = new Alert();
 
@@ -34,7 +36,7 @@ class Alert
         $alert->float = $float;
         $alert->title = $title;
         $alert->text = $text;
-        $alert->session = $session;
+        $alert->session = false;
 
         return $alert;
     }
@@ -96,6 +98,17 @@ class Alert
     {
         $this->float = true;
         return $this;
+    }
+
+    /**
+     * Send alert notification
+     *
+     * @param \Livewire\Component $component
+     * @return void
+     */
+    public function addAlert(Component $component)
+    {
+        $component->server_notifying($this->data());
     }
 
     /**
