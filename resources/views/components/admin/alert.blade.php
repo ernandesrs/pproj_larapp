@@ -58,7 +58,10 @@
         </div>
 
         @if ($alert['closable'])
-            <button x-on:click="show = !show"
+            <button x-on:click="() => {
+                has = false;
+                show = false;
+            }"
                 class="text-front-dark-ligth-2 text-opacity-50 transition hover:text-opacity-70">
                 <span class="sr-only">Dismiss popup</span>
 
