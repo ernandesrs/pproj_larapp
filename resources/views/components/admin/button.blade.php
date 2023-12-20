@@ -10,21 +10,21 @@
 @if (($as ?? 'button') == 'button')
     <button type="{{ $type ?? 'button' }}" class="{{ $class }}" {{ $attributes }}>
         @isset($prependIcon)
-            <i class="bi bi-{{ $prependIcon }} mr-2"></i>
+            <i class="bi bi-{{ $prependIcon }} {{ $text ?? null ? 'mr-2' : '' }}"></i>
         @endisset
         <span class="text">{{ $text }}</span>
         @isset($appendIcon)
-            <i class="bi bi-{{ $appendIcon }} ml-2"></i>
+            <i class="bi bi-{{ $appendIcon }} {{ $text ?? null ? 'ml-2' : '' }}"></i>
         @endisset
     </button>
 @else
     <a class="{{ $class }}" {{ $attributes }} {{ $attributes }}>
         @isset($prependIcon)
-            <i class="bi bi-{{ $prependIcon }} mr-2"></i>
+            <i class="bi bi-{{ $prependIcon }} {{ $text ?? null ? 'mr-2' : '' }}"></i>
         @endisset
         <span class="text">{{ $text }}</span>
         @isset($appendIcon)
-            <i class="bi bi-{{ $appendIcon }} ml-2"></i>
+            <i class="bi bi-{{ $appendIcon }} {{ $text ?? null ? 'ml-2' : '' }}"></i>
         @endisset
     </a>
 @endif
