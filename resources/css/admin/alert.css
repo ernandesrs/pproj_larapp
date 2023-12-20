@@ -6,6 +6,19 @@
     @apply fixed top-2 right-0 sm:right-2 shadow-lg w-full max-w-lg z-50;
 }
 
+.alert-transition-enter,
+.alert-transition-leave {
+    @apply transition ease-out duration-300;
+}
+
+.alert-transition-initial {
+    @apply opacity-0 -translate-y-full;
+}
+
+.alert-transition-final {
+    @apply opacity-100 translate-y-0;
+}
+
 .alert-icon {
     @apply text-2xl lg:text-3xl;
 }

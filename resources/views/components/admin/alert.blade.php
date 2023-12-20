@@ -17,7 +17,8 @@
 
 <div x-data="{
     ...{{ json_encode($alertFromSession) }},
-    timer: 2000,
+    timer: 3500,
+    time: 0,
     timerHandler: null,
     progress: 0,
     progressHandler: null,
@@ -48,15 +49,29 @@
         }
     },
     startProgress() {
-        if (this.float) {
-            this.progressHandler = setInterval(() => {
-                this.progress += 1;
-            }, this.timer / 100);
-
-            this.timerHandler = setTimeout(() => {
-                this.close();
-            }, this.timer);
+        if (!this.float) {
+            return;
         }
+
+        this.progressHandler = setInterval(() => {
+            this.progress += 1;
+        }, this.timer / 100);
+
+        this.timerHandler = setInterval(() => {
+            if (this.time >= this.timer) {
+                this.close();
+            } else {
+                this.time += this.timer / 100;
+            }
+        }, this.timer / 100);
+    },
+    pauseProgress() {
+        if (!this.float) {
+            return;
+        }
+
+        clearInterval(this.progressHandler);
+        clearInterval(this.timerHandler);
     },
     close() {
         this.show = false;
@@ -80,7 +95,11 @@
         }, 300)
     },
     remove() {
+        clearInterval(this.progressHandler);
+        clearInterval(this.timerHandler);
+        this.time = 0;
         this.progress = 0;
+
         this.type = 'default';
         this.float = false;
         this.has = false;
@@ -89,15 +108,12 @@
         this.text = null;
 
         this.style = null;
-        clearInterval(this.progressHandler);
-        clearTimeout(this.timerHandler);
     }
-}" @showed="startProgress" @server_notifying.window="alertFromAlertEvent" x-show="show"
-    x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-110 -translate-y-full"
-    x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease-in duration-200"
-    x-transition:leave-start="opacity-100 scale-100 translate-y-0"
-    x-transition:leave-end="opacity-0 scale-110 -translate-y-full" :class="style" role="alert"
-    {{ $attributes }}>
+}" x-on:mouseenter="pauseProgress" x-on:mouseleave="startProgress" @showed="startProgress"
+    @server_notifying.window="alertFromAlertEvent" x-show="show" x-transition:enter="alert-transition-enter"
+    x-transition:enter-start="alert-transition-initial" x-transition:enter-end="alert-transition-final"
+    x-transition:leave="alert-transition-leave" x-transition:leave-start="alert-transition-final"
+    x-transition:leave-end="alert-transition-initial" :class="style" role="alert" {{ $attributes }}>
     <div class="flex items-start gap-4 relative">
         {{-- icon --}}
         <span class="alert-icon">

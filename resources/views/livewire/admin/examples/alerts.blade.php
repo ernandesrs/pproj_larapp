@@ -15,7 +15,7 @@
                                 </select>
                             </div>
 
-                            <div class="basis-full">
+                            <div class="basis-full flex flex-wrap items-center gap-4">
                                 <x-admin.button wire:click="showAlert" text="Show alert" />
                                 <x-admin.button wire:click="showFloatAlert" text="Show float alert"
                                     variant="primary-outlined" />

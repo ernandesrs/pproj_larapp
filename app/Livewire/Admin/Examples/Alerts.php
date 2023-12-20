@@ -9,9 +9,9 @@ class Alerts extends Component
 {
     public $type = 'default';
 
-    public $title = 'Success title';
+    public $title = 'This is a lorem ipsum alert title';
 
-    public $text = 'This is a lorem success alert';
+    public $text = 'This is a lorem ipsum alert text, dolor ipsum dolorem its natus sobreuts dolorem';
 
     public function render()
     {
