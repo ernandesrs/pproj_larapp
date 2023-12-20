@@ -2,7 +2,8 @@
 
 @php
     $alert = [
-        'show' => $text ?? null ? true : false,
+        'show' => false,
+        'has' => $text ?? null ? true : false,
         'float' => $float ?? false,
         'type' => $type ?? 'default',
         'title' => $title ?? null,
@@ -13,7 +14,14 @@
     $class = 'alert alert-' . $alert['type'] . ($alert['float'] ? ' alert-float' : '');
 @endphp
 
-<div x-data="{{ json_encode($alert) }}" x-show="show" x-transition:enter="transition ease-out duration-300"
+<div x-data="{
+    ...{{ json_encode($alert) }},
+    init() {
+        $nextTick(() => {
+            this.show = this.has;
+        });
+    }
+}" x-show="show" x-transition:enter="transition ease-out duration-300"
     x-transition:enter-start="opacity-0 -translate-y-full" x-transition:enter-end="opacity-100 translate-y-0"
     x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0"
     x-transition:leave-end="opacity-0 -translate-y-full" role="alert" class="{{ $class }}" {{ $attributes }}>

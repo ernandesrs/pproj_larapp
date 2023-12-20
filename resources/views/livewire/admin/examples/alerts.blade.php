@@ -16,6 +16,9 @@
                             </div>
 
                             <div class="basis-full">
+                                <x-admin.button wire:click="showAlert" text="Show alert" />
+                                <x-admin.button wire:click="showFloatAlert" text="Show float alert"
+                                    variant="primary-outlined" />
                                 <x-admin.button wire:click="showSessionAlert" text="Show session alert" />
                                 <x-admin.button wire:click="showFloatSessionAlert" text="Show float session alert"
                                     variant="primary-outlined" />
