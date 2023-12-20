@@ -23,7 +23,7 @@
 
         <main class="main">
             <div class="container main-inner">
-                <x-admin.alert closable />
+                <x-common.alert closable />
 
                 {{ $slot }}
             </div>
