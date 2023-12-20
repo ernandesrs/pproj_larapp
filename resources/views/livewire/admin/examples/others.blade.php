@@ -106,7 +106,7 @@
                             </x-admin.section>
                         </div>
 
-                        <div class="basis-full">
+                        <div class="basis-full sm:basis-6/12">
                             <x-admin.section title="Button sizes" subtitle="Button small and large" no-shadow no-border>
                                 @slot('content')
                                     <div class="flex justify-between">
@@ -137,6 +137,34 @@
                                 @endslot
                             </x-admin.section>
                         </div>
+
+                        <div class="basis-full sm:basis-6/12">
+                            <x-admin.section title="Custom button" subtitle="Using a custom button to dropdown toggle" no-shadow
+                                no-border>
+                                @slot('content')
+                                    <div class="flex justify-between">
+                                        <x-admin.dropdown location="left">
+                                            @slot('content')
+                                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptates veniam
+                                                    voluptatum
+                                                    optio
+                                                    odio laborum possimus tempore aliquam, velit repellat, excepturi, facere
+                                                    accusantium.
+                                                    Possimus
+                                                    fugiat expedita, laboriosam placeat ipsum et?</p>
+                                            @endslot
+                                            @slot('toggler')
+                                                <div class="border-2 border-admin-primary-normal bg-admin-primary-normal text-white cursor-default rounded px-6 py-2">
+                                                    CUSTOM DROPDOWN TOGGLER
+                                                </div>
+                                            @endslot
+                                        </x-admin.dropdown>
+                                    </div>
+                                @endslot
+                            </x-admin.section>
+                        </div>
+
+                        <div class="mb-96"></div>
                     </div>
 
                 @endslot
