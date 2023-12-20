@@ -11,14 +11,6 @@
 }
 
 .dropdown-group {
-    @apply bg-admin-white absolute z-50 border rounded py-6 px-8 shadow-md;
+    @apply bg-admin-white absolute z-50 border rounded py-6 px-8 shadow-md overflow-hidden;
     top: calc(100% + 2px);
-}
-
-.dropdown-toggler {
-    @apply px-4 py-2 relative bg-admin-light-ligth-2 rounded text-admin-dark-ligth-2 text-opacity-75 duration-300;
-}
-
-.dropdown-toggler-active {
-    @apply shadow bg-admin-light-normal;
 }
