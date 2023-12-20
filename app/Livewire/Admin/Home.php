@@ -9,7 +9,7 @@ class Home extends Component
     public function render()
     {
         return view('livewire..admin.home')
-            ->layout('livewire.admin.default')
+            ->layout('livewire.admin.layout')
             ->title('Dashboard');
     }
 }

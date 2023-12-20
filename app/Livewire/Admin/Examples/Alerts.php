@@ -16,7 +16,7 @@ class Alerts extends Component
     public function render()
     {
         return view('livewire..admin.examples.alerts')
-            ->layout('livewire.admin.default')
+            ->layout('livewire.admin.layout')
             ->title('Alerts');
         ;
     }

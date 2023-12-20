@@ -9,7 +9,7 @@ class Sections extends Component
     public function render()
     {
         return view('livewire..admin.examples.sections')
-            ->layout('livewire.admin.default')
+            ->layout('livewire.admin.layout')
             ->title('Sections');
         ;
     }
