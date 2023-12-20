@@ -73,6 +73,12 @@
                             'activeIn' => ['admin.examples.alerts'],
                             'icon' => 'caret-right-fill',
                         ],
+                        [
+                            'text' => 'Others',
+                            'href' => route('admin.examples.others'),
+                            'activeIn' => ['admin.examples.others'],
+                            'icon' => 'caret-right-fill',
+                        ],
                     ],
                 ],
             ],
