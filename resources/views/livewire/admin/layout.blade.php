@@ -51,33 +51,45 @@
                     ],
                 ],
         
-                // examples
+                // others
                 [
-                    'title' => 'Examples',
+                    'title' => 'Others',
                     'items' => [
                         [
-                            'text' => 'Sections',
-                            'href' => route('admin.examples.sections'),
-                            'activeIn' => ['admin.examples.sections'],
-                            'icon' => 'caret-right-fill',
-                        ],
-                        [
-                            'text' => 'Buttons',
-                            'href' => route('admin.examples.buttons'),
-                            'activeIn' => ['admin.examples.buttons'],
-                            'icon' => 'caret-right-fill',
-                        ],
-                        [
-                            'text' => 'Alerts',
-                            'href' => route('admin.examples.alerts'),
-                            'activeIn' => ['admin.examples.alerts'],
-                            'icon' => 'caret-right-fill',
-                        ],
-                        [
-                            'text' => 'Others',
-                            'href' => route('admin.examples.others'),
-                            'activeIn' => ['admin.examples.others'],
-                            'icon' => 'caret-right-fill',
+                            'text' => 'Examples',
+                            'icon' => 'grid-fill',
+                            'activeIn' => [
+                                'admin.examples.sections',
+                                'admin.examples.buttons',
+                                'admin.examples.alerts',
+                                'admin.examples.others',
+                            ],
+                            'items' => [
+                                [
+                                    'text' => 'Sections',
+                                    'href' => route('admin.examples.sections'),
+                                    'activeIn' => ['admin.examples.sections'],
+                                    'icon' => 'caret-right-fill',
+                                ],
+                                [
+                                    'text' => 'Buttons',
+                                    'href' => route('admin.examples.buttons'),
+                                    'activeIn' => ['admin.examples.buttons'],
+                                    'icon' => 'caret-right-fill',
+                                ],
+                                [
+                                    'text' => 'Alerts',
+                                    'href' => route('admin.examples.alerts'),
+                                    'activeIn' => ['admin.examples.alerts'],
+                                    'icon' => 'caret-right-fill',
+                                ],
+                                [
+                                    'text' => 'Others',
+                                    'href' => route('admin.examples.others'),
+                                    'activeIn' => ['admin.examples.others'],
+                                    'icon' => 'caret-right-fill',
+                                ],
+                            ],
                         ],
                     ],
                 ],

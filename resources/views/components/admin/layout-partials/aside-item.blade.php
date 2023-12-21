@@ -18,7 +18,8 @@
                 </li>
             @else
                 <li>
-                    <details class="group [&_summary::-webkit-details-marker]:hidden">
+                    <details {{ in_array(\Route::currentRouteName(), $navItem['activeIn'] ?? []) ? 'open' : null }}
+                        class="group [&_summary::-webkit-details-marker]:open">
                         <summary class="aside-item-subnav-toggler">
                             @isset($navItem['icon'])
                                 <i class="bi bi-{{ $navItem['icon'] }} mr-2"></i>
@@ -39,7 +40,8 @@
                         <ul class="aside-item-subnav">
                             @foreach ($navItem['items'] as $navSubitem)
                                 <li>
-                                    <a wire:navigate class="aside-item-subnav-link {{ in_array(\Route::currentRouteName(), $navSubitem['activeIn'] ?? []) ? ' aside-item-nav-link-active' : '' }}"
+                                    <a wire:navigate
+                                        class="aside-item-subnav-link {{ in_array(\Route::currentRouteName(), $navSubitem['activeIn'] ?? []) ? ' aside-item-nav-link-active' : '' }}"
                                         href="{{ $navSubitem['href'] }}">
                                         @isset($navSubitem['icon'])
                                             <i class="bi bi-{{ $navSubitem['icon'] }} mr-2"></i>
