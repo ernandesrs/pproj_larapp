@@ -4,6 +4,7 @@
 @import './header.css';
 @import './main.css';
 @import './button.css';
+@import './../common/alert.css';
 @import './alert.css';
 @import './dropdown.css';
 @import './../common/dialog.css';

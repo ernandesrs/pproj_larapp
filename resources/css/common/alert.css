@@ -1,0 +1,127 @@
+/*
+ *
+ * Common alert components cutomization
+ *
+ */
+
+.alert {
+    @apply rounded border bg-white p-4 mb-4 shadow overflow-hidden;
+}
+
+.alert-float {
+    @apply fixed top-2 right-0 sm:right-2 shadow-lg w-full max-w-lg z-50;
+}
+
+.alert-transition-enter,
+.alert-transition-leave {
+    @apply transition ease-out duration-300;
+}
+
+.alert-transition-initial {
+    @apply opacity-0 -translate-y-full;
+}
+
+.alert-transition-final {
+    @apply opacity-100 translate-y-0;
+}
+
+.alert-icon {
+    @apply text-2xl lg:text-3xl;
+}
+
+.alert-icon .bi {
+    @apply text-opacity-80;
+}
+
+.alert-title {
+    @apply block font-medium text-opacity-80;
+}
+
+.alert-text {
+    @apply mt-1 text-sm text-opacity-50;
+}
+
+.alert-progress {
+    @apply w-full absolute bottom-0 left-0;
+}
+
+.alert-progress-inner {
+    @apply block rounded-full bg-gray-100;
+}
+
+.alert-progress-load {
+    @apply block h-1 rounded-bl rounded-br;
+}
+
+/* START: ALERT DEFAULT */
+.alert-default {
+    @apply border-gray-600 border-opacity-50;
+}
+
+.alert-default .alert-icon .bi,
+.alert-default .alert-title,
+.alert-default .alert-text {
+    @apply text-gray-600;
+}
+
+.alert-default .alert-progress-load {
+    @apply bg-gray-600 bg-opacity-50;
+}
+
+/* END: ALERT DEFAULT */
+
+/* START: ALERT SUCCESS */
+.alert-success {
+    @apply border-green-400 border-opacity-50;
+}
+
+.alert-success .alert-icon .bi,
+.alert-success .alert-title,
+.alert-success .alert-text {
+    @apply text-green-600;
+}
+
+.alert-success .alert-progress-load {
+    @apply bg-green-600 bg-opacity-50;
+}
+
+/* END: ALERT SUCCESS */
+
+/* START: ALERT DANGER/ERROR */
+.alert-danger,
+.alert-error {
+    @apply border-red-400 border-opacity-50;
+}
+
+.alert-danger .alert-icon .bi,
+.alert-danger .alert-title,
+.alert-danger .alert-text,
+.alert-error .alert-icon .bi,
+.alert-error .alert-title,
+.alert-error .alert-text {
+    @apply text-red-400;
+}
+
+.alert-danger .alert-progress-load,
+.alert-error .alert-progress-load {
+    @apply bg-red-300 bg-opacity-50;
+}
+
+/* END: ALERT DANGER/ERROR */
+
+/* START: ALERT INFO */
+.alert-info {
+    @apply border-sky-500 border-opacity-50;
+}
+
+.alert-info .alert-icon .bi,
+.alert-info .alert-title,
+.alert-info .alert-text {
+    @apply text-sky-500;
+}
+
+.alert-info .alert-progress-load {
+    @apply bg-sky-300 bg-opacity-50;
+}
+
+/* END: ALERT INFO */

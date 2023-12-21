@@ -1,55 +1,17 @@
-.alert {
-    @apply rounded border bg-white p-4 mb-4 shadow overflow-hidden;
-}
-
-.alert-float {
-    @apply fixed top-2 right-0 sm:right-2 shadow-lg w-full max-w-lg z-50;
-}
-
-.alert-transition-enter,
-.alert-transition-leave {
-    @apply transition ease-out duration-300;
-}
-
-.alert-transition-initial {
-    @apply opacity-0 -translate-y-full;
-}
-
-.alert-transition-final {
-    @apply opacity-100 translate-y-0;
-}
-
-.alert-icon {
-    @apply text-2xl lg:text-3xl;
-}
-
-.alert-icon .bi {
-    @apply text-opacity-80;
-}
-
-.alert-title {
-    @apply block font-medium text-opacity-80;
-}
-
-.alert-text {
-    @apply mt-1 text-sm text-opacity-50;
-}
-
-.alert-progress {
-    @apply w-full absolute bottom-0 left-0;
-}
+/*
+ *
+ * Admin alert cutomization
+ * CSS base in /resources/css/common/alert.css
+ *
+ */
 
 .alert-progress-inner {
-    @apply block rounded-full bg-admin-light-ligth-2;
-}
-
-.alert-progress-load {
-    @apply block h-1 rounded-bl rounded-br;
+    @apply bg-admin-light-ligth-2;
 }
 
 /* START: ALERT DEFAULT */
 .alert-default {
-    @apply border-admin-dark-ligth-2 border-opacity-50;
+    @apply border-admin-dark-ligth-2;
 }
 
 .alert-default .alert-icon .bi,
@@ -59,14 +21,14 @@
 }
 
 .alert-default .alert-progress-load {
-    @apply bg-admin-dark-ligth-2 bg-opacity-50;
+    @apply bg-admin-dark-ligth-2;
 }
 
 /* END: ALERT DEFAULT */
 
 /* START: ALERT SUCCESS */
 .alert-success {
-    @apply border-admin-success-dark-1 border-opacity-50;
+    @apply border-admin-success-dark-1;
 }
 
 .alert-success .alert-icon .bi,
@@ -76,7 +38,7 @@
 }
 
 .alert-success .alert-progress-load {
-    @apply bg-admin-success-ligth-2 bg-opacity-50;
+    @apply bg-admin-success-ligth-2;
 }
 
 /* END: ALERT SUCCESS */
@@ -84,7 +46,7 @@
 /* START: ALERT DANGER/ERROR */
 .alert-danger,
 .alert-error {
-    @apply border-admin-danger-normal border-opacity-50;
+    @apply border-admin-danger-normal;
 }
 
 .alert-danger .alert-icon .bi,
@@ -98,14 +60,14 @@
 
 .alert-danger .alert-progress-load,
 .alert-error .alert-progress-load {
-    @apply bg-admin-danger-ligth-2 bg-opacity-50;
+    @apply bg-admin-danger-ligth-2;
 }
 
 /* END: ALERT DANGER/ERROR */
 
 /* START: ALERT INFO */
 .alert-info {
-    @apply border-admin-info-normal border-opacity-50;
+    @apply border-admin-info-normal;
 }
 
 .alert-info .alert-icon .bi,
@@ -115,7 +77,7 @@
 }
 
 .alert-info .alert-progress-load {
-    @apply bg-admin-info-ligth-2 bg-opacity-50;
+    @apply bg-admin-info-ligth-2;
 }
 
 /* END: ALERT INFO */
