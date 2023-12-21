@@ -2,6 +2,125 @@
 
     @slot('content')
         <div class="flex flex-wrap justify-center gap-y-8">
+            <x-admin.section title="Thumbnail" subtitle="Thumbnail examples">
+                <x-slot name="content">
+                    <div class="flex flex-wrap justify-center gap-10 mb-8">
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Avatar text
+                            </div>
+                            <x-common.thumb alternative-text='Avatar' />
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Avatar photo
+                            </div>
+                            <x-common.thumb image="{{ asset('assets/img/tree-square.jpg') }}" alternative-text='Avatar' />
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Square text
+                            </div>
+                            <x-common.thumb alternative-text='Cover' type="square" />
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Square
+                            </div>
+                            <x-common.thumb image="{{ asset('assets/img/tree-square.jpg') }}" alternative-text='Cover'
+                                type="square" />
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Cover text
+                            </div>
+                            <x-common.thumb alternative-text='Cover' type="cover" />
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Cover
+                            </div>
+                            <x-common.thumb image="{{ asset('assets/img/tree-rectangle.jpg') }}" alternative-text='Cover'
+                                type="cover" />
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-10 mb-8">
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Avatar small
+                            </div>
+                            <x-common.thumb alternative-text='Avatar' size="small" />
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Avatar large
+                            </div>
+                            <x-common.thumb alternative-text='Avatar' size="large" />
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Avatar extralarge
+                            </div>
+                            <x-common.thumb alternative-text='Avatar' size="extralarge" />
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-10 mb-8">
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Square small
+                            </div>
+                            <x-common.thumb alternative-text='Square' type="square" size="small" />
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Square large
+                            </div>
+                            <x-common.thumb alternative-text='Square' type="square" size="large" />
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Square extralarge
+                            </div>
+                            <x-common.thumb alternative-text='Square' type="square" size="extralarge" />
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-10 mb-8">
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Cover small
+                            </div>
+                            <x-common.thumb alternative-text='Cover' type="cover" size="small" />
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Cover large
+                            </div>
+                            <x-common.thumb alternative-text='Cover' type="cover" size="large" />
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center">
+                            <div class="py-2 font-semibold text-gray-500">
+                                Cover extralarge
+                            </div>
+                            <x-common.thumb alternative-text='Cover' type="cover" size="extralarge" />
+                        </div>
+                    </div>
+                </x-slot>
+            </x-admin.section>
+
             <x-admin.section title="Dialogs" subtitle="Dialogs examples">
                 @slot('content')
                     <div class="flex flex-wrap justify-center">
@@ -220,8 +339,8 @@
                         </div>
 
                         <div class="basis-full sm:basis-6/12">
-                            <x-admin.section title="Custom button" subtitle="Using a custom button to dropdown toggle" no-shadow
-                                no-border>
+                            <x-admin.section title="Custom button" subtitle="Using a custom button to dropdown toggle"
+                                no-shadow no-border>
                                 @slot('content')
                                     <div class="flex justify-between">
                                         <x-common.dropdown location="left">
