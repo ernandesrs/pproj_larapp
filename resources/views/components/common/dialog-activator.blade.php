@@ -2,7 +2,7 @@
 
 @php
     if (!($controls ?? null)) {
-        throw new \Exception("Needs 'controls' prop");
+        throw new \Exception("Needs 'controls' prop, must contain id of the dialog that the activator controls");
     }
 @endphp
 

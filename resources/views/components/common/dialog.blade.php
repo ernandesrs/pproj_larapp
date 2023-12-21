@@ -2,7 +2,7 @@
 
 @php
     if (!($id ?? null)) {
-        throw new \Exception('Needs a id prop');
+        throw new \Exception('Needs a id prop. This id must be unique and must be informed to the dialog activating component via the "controls" prop.');
     }
     $medium = $medium ?? false;
     $large = $large ?? false;

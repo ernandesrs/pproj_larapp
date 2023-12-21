@@ -18,11 +18,11 @@
                                     <x-admin.button text="Custom actions" />
                                 @endslot
                             </x-common.dialog>
-                            <x-common.alert-activator controls="dialog1">
+                            <x-common.dialog-activator controls="dialog1">
                                 <x-slot name="activator">
                                     <x-admin.button text="Show dialog #1" />
                                 </x-slot>
-                            </x-common.alert-activator>
+                            </x-common.dialog-activator>
 
                             {{-- dialog 2 --}}
                             <x-common.dialog id="dialog2" icon="app" title="Medium dialog #2 title" medium>
@@ -36,11 +36,11 @@
                                     <x-admin.button text="Custom actions" />
                                 @endslot
                             </x-common.dialog>
-                            <x-common.alert-activator controls="dialog2">
+                            <x-common.dialog-activator controls="dialog2">
                                 <x-slot name="activator">
                                     <x-admin.button text="Show medium dialog #2" />
                                 </x-slot>
-                            </x-common.alert-activator>
+                            </x-common.dialog-activator>
 
                             {{-- dialog 3 --}}
                             <x-common.dialog id="dialog3" icon="app" title="Large dialog #3 title" large>
@@ -54,11 +54,11 @@
                                     <x-admin.button text="Custom actions" />
                                 @endslot
                             </x-common.dialog>
-                            <x-common.alert-activator controls="dialog3">
+                            <x-common.dialog-activator controls="dialog3">
                                 <x-slot name="activator">
                                     <x-admin.button text="Show large dialog #3" />
                                 </x-slot>
-                            </x-common.alert-activator>
+                            </x-common.dialog-activator>
 
                             {{-- dialog 4 --}}
                             <x-common.dialog id="dialog4" icon="app" title="Full dialog #4 title" full>
@@ -72,11 +72,11 @@
                                     <x-admin.button text="Custom actions" />
                                 @endslot
                             </x-common.dialog>
-                            <x-common.alert-activator controls="dialog4">
+                            <x-common.dialog-activator controls="dialog4">
                                 <x-slot name="activator">
                                     <x-admin.button text="Show full dialog #4" />
                                 </x-slot>
-                            </x-common.alert-activator>
+                            </x-common.dialog-activator>
                         </div>
 
                     </div>
