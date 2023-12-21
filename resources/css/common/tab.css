@@ -3,9 +3,36 @@
  * Common tab component cutomization
  *
  */
+.tab {
+    @apply bg-transparent;
+}
+
+.tab_links {
+    @apply hidden sm:block;
+}
+
+.tab_links_inner {
+    @apply border-b border-gray-200;
+}
+
+.tab_links_nav {
+    @apply -mb-px flex gap-6;
+}
+
+.tab_links_mobile {
+    @apply sm:hidden border px-4 bg-gray-100;
+}
+
+.tab_links_mobile select:focus {
+    @apply outline-0;
+}
+
+.tab_links_mobile select {
+    @apply bg-transparent py-3 text-gray-600 rounded-none rounded-tl rounded-tr;
+}
 
 .tab_link {
-    @apply inline-flex shrink-0 items-center gap-2 border-b-2 border-transparent px-1 pb-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700;
+    @apply inline-flex shrink-0 items-center gap-2 border-b-2 border-transparent px-1 pb-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 duration-300;
 }
 
 .tab_link>* {
@@ -13,5 +40,19 @@
 }
 
 .tab_link_active {
-    @apply border-sky-500 text-sky-600;
+    @apply border-sky-500 text-sky-600 pointer-events-none;
+}
+
+.tab_contents {
+    @apply relative overflow-x-hidden border-l border-b border-r;
+}
+
+.tab_content {
+    @apply bg-transparent;
+}
+
+.tab-borderless .tab_links_inner,
+/* .tab-borderless .tab_links_mobile, */
+.tab-borderless .tab_contents {
+    @apply border-none;
 }
