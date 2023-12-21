@@ -5,7 +5,7 @@
  */
 
 .button {
-    @apply px-5 py-3 text-sm duration-300 hover:opacity-80 hover:shadow-md rounded;
+    @apply px-5 py-3 text-sm duration-300 hover:opacity-80 hover:shadow-md rounded flex items-center;
 }
 
 .button-full {

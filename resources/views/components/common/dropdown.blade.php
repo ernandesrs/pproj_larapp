@@ -1,7 +1,8 @@
-@props(['location', 'text', 'variant', 'small', 'large'])
+@props(['location', 'icon', 'text', 'variant', 'small', 'large'])
 
 @php
     $location = $location ?? 'left';
+    $icon = $icon ?? 'three-dots-vertical';
     $small = $small ?? false;
     $large = $large ?? false;
 
@@ -52,8 +53,8 @@
         @if ($toggler ?? null)
             {{ $toggler }}
         @else
-            <x-common.button text="{{ $text ?? '' }}" :small="$small" :large="$large" :prepend-icon="$location == 'left' ? 'three-dots-vertical' : null"
-                :append-icon="$location == 'right' ? 'three-dots-vertical' : null" variant="{{ $variant ?? 'primary' }}" />
+            <x-common.button text="{{ $text ?? '' }}" :small="$small" :large="$large" :prepend-icon="$location == 'left' ? $icon : null"
+                :append-icon="$location == 'right' ? $icon : null" variant="{{ $variant ?? 'primary' }}" />
         @endif
     </div>
 
