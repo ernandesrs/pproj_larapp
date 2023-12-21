@@ -5,7 +5,7 @@
             [
                 'text' => 'Basic data',
                 'icon' => 'person-lines-fill',
-                'active' => false,
+                'active' => true,
             ],
             [
                 'text' => 'Security',
@@ -20,7 +20,7 @@
             [
                 'text' => 'Danger area',
                 'icon' => 'exclamation-circle-fill',
-                'active' => true,
+                'active' => false,
             ],
         ]">
 
