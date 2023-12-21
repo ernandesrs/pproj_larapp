@@ -1,6 +1,12 @@
-@props(['icon', 'title', 'closeText'])
+@props(['id', 'icon', 'title', 'closeText', 'medium', 'large', 'full'])
 
 @php
+    if (!($id ?? null)) {
+        throw new \Exception('Needs a id prop');
+    }
+    $medium = $medium ?? false;
+    $large = $large ?? false;
+    $full = $full ?? false;
     $icon = $icon ?? null;
     $title = $title ?? null;
     $closeText = $closeText ?? 'Close';
@@ -8,7 +14,7 @@
 
 <div x-data="{
     ...{{ json_encode([
-        'id' => $attributes->get('id'),
+        'id' => $id,
         'showWrapper' => false,
         'showContent' => false,
     ]) }},
@@ -36,12 +42,15 @@
 }" @alert_activator_clicked.window="showAlert" class="dialog" x-show="showWrapper"
     x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
     x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-300"
-    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" {{ $attributes }}>
+    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="{{ $id }}"
+    {{ $attributes }}>
 
     <div x-show="showContent" x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
         x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100"
-        x-transition:leave-end="opacity-0 scale-110" class="dialog-inner" role="alert">
+        x-transition:leave-end="opacity-0 scale-110"
+        class="dialog-inner dialog-inner-{{ $medium ? 'medium' : ($large ? 'large' : ($full ? 'full' : '')) }}"
+        role="alert">
 
         {{-- header --}}
         @if ($title)
@@ -67,7 +76,7 @@
                 {{ $actions }}
             @endif
 
-            <div class="ml-auto">
+            <div class="sm:ml-auto">
                 <button x-on:click="close" class="button button-danger-link">
                     <i class="bi bi-x-lg mr-2"></i> <span>{{ $closeText }}</span>
                 </button>

@@ -1,7 +1,9 @@
 @props(['controls'])
 
 @php
-    $controls = $controls ?? time();
+    if (!($controls ?? null)) {
+        throw new \Exception("Needs 'controls' prop");
+    }
 @endphp
 
 <div x-data="{

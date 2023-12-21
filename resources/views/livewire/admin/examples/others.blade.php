@@ -25,7 +25,7 @@
                             </x-common.alert-activator>
 
                             {{-- dialog 2 --}}
-                            <x-common.dialog id="dialog2" icon="app" title="Dialog #2 title">
+                            <x-common.dialog id="dialog2" icon="app" title="Medium dialog #2 title" medium>
                                 @slot('content')
                                     <p>
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde vel adipisci
@@ -38,7 +38,43 @@
                             </x-common.dialog>
                             <x-common.alert-activator controls="dialog2">
                                 <x-slot name="activator">
-                                    <x-admin.button text="Show dialog #2" />
+                                    <x-admin.button text="Show medium dialog #2" />
+                                </x-slot>
+                            </x-common.alert-activator>
+
+                            {{-- dialog 3 --}}
+                            <x-common.dialog id="dialog3" icon="app" title="Large dialog #3 title" large>
+                                @slot('content')
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde vel adipisci
+                                        blanditiis voluptates eum. Nam, cum minima?
+                                    </p>
+                                @endslot
+                                @slot('actions')
+                                    <x-admin.button text="Custom actions" />
+                                @endslot
+                            </x-common.dialog>
+                            <x-common.alert-activator controls="dialog3">
+                                <x-slot name="activator">
+                                    <x-admin.button text="Show large dialog #3" />
+                                </x-slot>
+                            </x-common.alert-activator>
+
+                            {{-- dialog 4 --}}
+                            <x-common.dialog id="dialog4" icon="app" title="Full dialog #4 title" full>
+                                @slot('content')
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde vel adipisci
+                                        blanditiis voluptates eum. Nam, cum minima?
+                                    </p>
+                                @endslot
+                                @slot('actions')
+                                    <x-admin.button text="Custom actions" />
+                                @endslot
+                            </x-common.dialog>
+                            <x-common.alert-activator controls="dialog4">
+                                <x-slot name="activator">
+                                    <x-admin.button text="Show full dialog #4" />
                                 </x-slot>
                             </x-common.alert-activator>
                         </div>

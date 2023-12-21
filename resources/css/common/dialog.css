@@ -5,9 +5,21 @@
 }
 
 .dialog-inner {
-    @apply fixed rounded border bg-gray-200 p-4 shadow-lg sm:p-6 lg:p-8;
+    @apply flex flex-col fixed rounded border bg-gray-200 p-4 shadow-lg sm:p-6 lg:p-8 w-full max-w-md;
 
     z-index: 1000;
+}
+
+.dialog-inner-medium {
+    @apply max-w-3xl;
+}
+
+.dialog-inner-large {
+    @apply max-w-6xl;
+}
+
+.dialog-inner-full {
+    @apply max-w-full h-screen overflow-y-auto;
 }
 
 .dialog-header {
@@ -28,4 +40,8 @@
 
 .dialog-footer {
     @apply mt-6 sm:flex sm:gap-4;
+}
+
+.dialog-inner-full .dialog-footer {
+    @apply mt-auto;
 }
