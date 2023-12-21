@@ -56,6 +56,12 @@
                     'title' => 'Others',
                     'items' => [
                         [
+                            'text' => 'Profile',
+                            'icon' => 'person-circle',
+                            'href' => route('admin.profile'),
+                            'activeIn' => ['admin.profile'],
+                        ],
+                        [
                             'text' => 'Examples',
                             'icon' => 'grid-fill',
                             'activeIn' => [
