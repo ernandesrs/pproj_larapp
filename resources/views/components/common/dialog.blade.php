@@ -77,9 +77,7 @@
             @endif
 
             <div class="sm:ml-auto">
-                <button x-on:click="close" class="button button-danger-link">
-                    <i class="bi bi-x-lg mr-2"></i> <span>{{ $closeText }}</span>
-                </button>
+                <x-common.button x-on:click="close" text="{{ $closeText }}" prepend-icon="x-lg" variant="danger-link" />
             </div>
         </div>
     </div>

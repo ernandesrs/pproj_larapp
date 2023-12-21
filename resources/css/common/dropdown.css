@@ -1,0 +1,26 @@
+/*
+ *
+ * Common dropdown components cutomization
+ *
+ */
+
+.dropdown {
+    @apply rounded flex items-center relative duration-300 w-full max-w-xs;
+}
+
+.dropdown-left {
+    @apply justify-start;
+}
+
+.dropdown-right {
+    @apply justify-end;
+}
+
+.dropdown-group {
+    @apply bg-white absolute z-50 border rounded py-6 px-8 shadow-md overflow-hidden;
+    top: calc(100% + 2px);
+}
+
+.dropdown-toggler {
+    @apply relative z-40;
+}

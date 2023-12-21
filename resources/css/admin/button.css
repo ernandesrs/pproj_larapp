@@ -1,18 +1,9 @@
-.button {
-    @apply px-5 py-3 text-sm duration-300 hover:opacity-80 hover:shadow-md rounded;
-}
-
-.button-full {
-    @apply w-full;
-}
-
-.button-sm {
-    @apply text-xs px-4 py-2;
-}
-
-.button-lg {
-    @apply text-base px-8 py-4;
-}
+/*
+ *
+ * Admin button cutomization
+ * CSS base in /resources/css/common/button.css
+ *
+ */
 
 /* primary */
 .button-primary {
@@ -20,11 +11,11 @@
 }
 
 .button-primary-outlined {
-    @apply border border-admin-primary-normal text-admin-primary-normal;
+    @apply border-admin-primary-normal text-admin-primary-normal;
 }
 
 .button-primary-link {
-    @apply text-admin-primary-normal hover:shadow-none hover:underline;
+    @apply text-admin-primary-normal;
 }
 
 /* secondary */
@@ -33,11 +24,11 @@
 }
 
 .button-secondary-outlined {
-    @apply border border-admin-secondary-normal text-admin-secondary-normal;
+    @apply border-admin-secondary-normal text-admin-secondary-normal;
 }
 
 .button-secondary-link {
-    @apply text-admin-secondary-normal hover:shadow-none hover:underline;
+    @apply text-admin-secondary-normal;
 }
 
 /* success */
@@ -46,11 +37,11 @@
 }
 
 .button-success-outlined {
-    @apply border border-admin-success-normal text-admin-success-normal;
+    @apply border-admin-success-normal text-admin-success-normal;
 }
 
 .button-success-link {
-    @apply text-admin-success-normal hover:shadow-none hover:underline;
+    @apply text-admin-success-normal;
 }
 
 /* info */
@@ -59,11 +50,11 @@
 }
 
 .button-info-outlined {
-    @apply border border-admin-info-normal text-admin-info-normal;
+    @apply border-admin-info-normal text-admin-info-normal;
 }
 
 .button-info-link {
-    @apply text-admin-info-normal hover:shadow-none hover:underline;
+    @apply text-admin-info-normal;
 }
 
 /* danger */
@@ -72,9 +63,9 @@
 }
 
 .button-danger-outlined {
-    @apply border border-admin-danger-normal text-admin-danger-normal;
+    @apply border-admin-danger-normal text-admin-danger-normal;
 }
 
 .button-danger-link {
-    @apply text-admin-danger-normal hover:shadow-none hover:underline;
+    @apply text-admin-danger-normal;
 }

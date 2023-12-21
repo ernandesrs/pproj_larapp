@@ -24,7 +24,7 @@
             <div
                 class="basis-full md:basis-7/12 lg:basis-8/12 flex flex-wrap gap-4 justify- items-center md:justify-end">
                 @isset($actionCreate)
-                    <x-admin.button as="link" href="{{ $actionCreate['href'] }}" prepend-icon="plus-lg"
+                    <x-common.button as="link" href="{{ $actionCreate['href'] }}" prepend-icon="plus-lg"
                         text="{{ $actionCreate['text'] ?? 'New' }}" variant="success" wire:navigate />
                 @endisset
                 @isset($actions)

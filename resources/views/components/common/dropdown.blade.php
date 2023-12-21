@@ -52,7 +52,7 @@
         @if ($toggler ?? null)
             {{ $toggler }}
         @else
-            <x-admin.button text="{{ $text ?? '' }}" :small="$small" :large="$large" :prepend-icon="$location == 'left' ? 'three-dots-vertical' : null"
+            <x-common.button text="{{ $text ?? '' }}" :small="$small" :large="$large" :prepend-icon="$location == 'left' ? 'three-dots-vertical' : null"
                 :append-icon="$location == 'right' ? 'three-dots-vertical' : null" variant="{{ $variant ?? 'primary' }}" />
         @endif
     </div>

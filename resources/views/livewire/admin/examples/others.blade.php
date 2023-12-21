@@ -15,12 +15,12 @@
                                     </p>
                                 @endslot
                                 @slot('actions')
-                                    <x-admin.button text="Custom actions" />
+                                    <x-common.button text="Custom actions" />
                                 @endslot
                             </x-common.dialog>
                             <x-common.dialog-activator controls="dialog1">
                                 <x-slot name="activator">
-                                    <x-admin.button text="Show dialog #1" />
+                                    <x-common.button text="Show dialog #1" />
                                 </x-slot>
                             </x-common.dialog-activator>
 
@@ -33,12 +33,12 @@
                                     </p>
                                 @endslot
                                 @slot('actions')
-                                    <x-admin.button text="Custom actions" />
+                                    <x-common.button text="Custom actions" />
                                 @endslot
                             </x-common.dialog>
                             <x-common.dialog-activator controls="dialog2">
                                 <x-slot name="activator">
-                                    <x-admin.button text="Show medium dialog #2" />
+                                    <x-common.button text="Show medium dialog #2" />
                                 </x-slot>
                             </x-common.dialog-activator>
 
@@ -51,12 +51,12 @@
                                     </p>
                                 @endslot
                                 @slot('actions')
-                                    <x-admin.button text="Custom actions" />
+                                    <x-common.button text="Custom actions" />
                                 @endslot
                             </x-common.dialog>
                             <x-common.dialog-activator controls="dialog3">
                                 <x-slot name="activator">
-                                    <x-admin.button text="Show large dialog #3" />
+                                    <x-common.button text="Show large dialog #3" />
                                 </x-slot>
                             </x-common.dialog-activator>
 
@@ -69,12 +69,12 @@
                                     </p>
                                 @endslot
                                 @slot('actions')
-                                    <x-admin.button text="Custom actions" />
+                                    <x-common.button text="Custom actions" />
                                 @endslot
                             </x-common.dialog>
                             <x-common.dialog-activator controls="dialog4">
                                 <x-slot name="activator">
-                                    <x-admin.button text="Show full dialog #4" />
+                                    <x-common.button text="Show full dialog #4" />
                                 </x-slot>
                             </x-common.dialog-activator>
                         </div>
@@ -89,7 +89,7 @@
                         <div class="basis-full sm:basis-6/12">
                             <x-admin.section title="Left dropdown" subtitle="Left dropdown" no-shadow no-border>
                                 @slot('content')
-                                    <x-admin.dropdown text="Actions" location="left">
+                                    <x-common.dropdown text="Actions" location="left">
                                         @slot('content')
                                             <div class="flex justify-end">
                                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptates veniam
@@ -101,7 +101,7 @@
                                                     fugiat expedita, laboriosam placeat ipsum et?</p>
                                             </div>
                                         @endslot
-                                    </x-admin.dropdown>
+                                    </x-common.dropdown>
                                 @endslot
                             </x-admin.section>
                         </div>
@@ -110,7 +110,7 @@
                             <x-admin.section title="Right dropdown" subtitle="Right dropdown" no-shadow no-border>
                                 @slot('content')
                                     <div class="flex justify-end">
-                                        <x-admin.dropdown text="Actions" location="right">
+                                        <x-common.dropdown text="Actions" location="right">
                                             @slot('content')
                                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptates veniam
                                                     voluptatum
@@ -120,7 +120,7 @@
                                                     Possimus
                                                     fugiat expedita, laboriosam placeat ipsum et?</p>
                                             @endslot
-                                        </x-admin.dropdown>
+                                        </x-common.dropdown>
                                     </div>
                                 @endslot
                             </x-admin.section>
@@ -130,7 +130,7 @@
                             <x-admin.section title="Only icon" subtitle="Only icon" no-shadow no-border>
                                 @slot('content')
                                     <div class="flex justify-start">
-                                        <x-admin.dropdown location="left">
+                                        <x-common.dropdown location="left">
                                             @slot('content')
                                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptates veniam
                                                     voluptatum
@@ -140,7 +140,7 @@
                                                     Possimus
                                                     fugiat expedita, laboriosam placeat ipsum et?</p>
                                             @endslot
-                                        </x-admin.dropdown>
+                                        </x-common.dropdown>
                                     </div>
                                 @endslot
                             </x-admin.section>
@@ -150,7 +150,7 @@
                             <x-admin.section title="Button link variant" subtitle="Button link variant" no-shadow no-border>
                                 @slot('content')
                                     <div class="flex justify-start">
-                                        <x-admin.dropdown location="left" text="Actions" variant="primary-link">
+                                        <x-common.dropdown location="left" text="Actions" variant="primary-link">
                                             @slot('content')
                                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptates veniam
                                                     voluptatum
@@ -160,7 +160,7 @@
                                                     Possimus
                                                     fugiat expedita, laboriosam placeat ipsum et?</p>
                                             @endslot
-                                        </x-admin.dropdown>
+                                        </x-common.dropdown>
                                     </div>
                                 @endslot
                             </x-admin.section>
@@ -171,7 +171,7 @@
                                 no-border>
                                 @slot('content')
                                     <div class="flex justify-start">
-                                        <x-admin.dropdown location="left" text="Actions" variant="secondary-outlined">
+                                        <x-common.dropdown location="left" text="Actions" variant="secondary-outlined">
                                             @slot('content')
                                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptates veniam
                                                     voluptatum
@@ -181,7 +181,7 @@
                                                     Possimus
                                                     fugiat expedita, laboriosam placeat ipsum et?</p>
                                             @endslot
-                                        </x-admin.dropdown>
+                                        </x-common.dropdown>
                                     </div>
                                 @endslot
                             </x-admin.section>
@@ -191,7 +191,7 @@
                             <x-admin.section title="Button sizes" subtitle="Button small and large" no-shadow no-border>
                                 @slot('content')
                                     <div class="flex justify-between">
-                                        <x-admin.dropdown location="left" text="Actions" variant="primary" small>
+                                        <x-common.dropdown location="left" text="Actions" variant="primary" small>
                                             @slot('content')
                                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptates veniam
                                                     voluptatum
@@ -201,9 +201,9 @@
                                                     Possimus
                                                     fugiat expedita, laboriosam placeat ipsum et?</p>
                                             @endslot
-                                        </x-admin.dropdown>
+                                        </x-common.dropdown>
 
-                                        <x-admin.dropdown location="right" text="Actions" variant="primary" large>
+                                        <x-common.dropdown location="right" text="Actions" variant="primary" large>
                                             @slot('content')
                                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptates veniam
                                                     voluptatum
@@ -213,7 +213,7 @@
                                                     Possimus
                                                     fugiat expedita, laboriosam placeat ipsum et?</p>
                                             @endslot
-                                        </x-admin.dropdown>
+                                        </x-common.dropdown>
                                     </div>
                                 @endslot
                             </x-admin.section>
@@ -224,7 +224,7 @@
                                 no-border>
                                 @slot('content')
                                     <div class="flex justify-between">
-                                        <x-admin.dropdown location="left">
+                                        <x-common.dropdown location="left">
                                             @slot('content')
                                                 <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi voluptates veniam
                                                     voluptatum
@@ -240,7 +240,7 @@
                                                     CUSTOM DROPDOWN TOGGLER
                                                 </div>
                                             @endslot
-                                        </x-admin.dropdown>
+                                        </x-common.dropdown>
                                     </div>
                                 @endslot
                             </x-admin.section>

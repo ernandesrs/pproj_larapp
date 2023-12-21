@@ -2,7 +2,7 @@
     :action-create="['text' => 'New section', 'href' => '#']">
 
     @slot('actions')
-        <x-admin.button text="Custom action" />
+        <x-common.button text="Custom action" />
     @endslot
 
     @slot('content')
@@ -63,7 +63,7 @@
                             doloribus iusto aut voluptas.</p>
                     @endslot
                     @slot('actions')
-                        <x-admin.button as="link" text="Button action" variant="primary-link" append-icon="arrow-right"
+                        <x-common.button as="link" text="Button action" variant="primary-link" append-icon="arrow-right"
                             href="#" />
                     @endslot
                 </x-admin.section>

@@ -16,11 +16,11 @@
                             </div>
 
                             <div class="basis-full flex flex-wrap items-center gap-4">
-                                <x-admin.button wire:click="showAlert" text="Show alert" />
-                                <x-admin.button wire:click="showFloatAlert" text="Show float alert"
+                                <x-common.button wire:click="showAlert" text="Show alert" />
+                                <x-common.button wire:click="showFloatAlert" text="Show float alert"
                                     variant="primary-outlined" />
-                                <x-admin.button wire:click="showSessionAlert" text="Show session alert" />
-                                <x-admin.button wire:click="showFloatSessionAlert" text="Show float session alert"
+                                <x-common.button wire:click="showSessionAlert" text="Show session alert" />
+                                <x-common.button wire:click="showFloatSessionAlert" text="Show float session alert"
                                     variant="primary-outlined" />
                             </div>
                         </div>
