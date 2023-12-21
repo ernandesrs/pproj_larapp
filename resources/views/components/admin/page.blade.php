@@ -7,7 +7,7 @@
             {{-- title/breadcrumbs --}}
             <div class="basis-full md:basis-5/12 lg:basis-4/12 flex flex-col mb-4 md:mb-0">
 
-                <x-admin.breadcrumb :items="$breadcrumbs ?? []" />
+                <x-common.breadcrumb :items="$breadcrumbs ?? []" />
 
                 <h1 class="text-2xl md:text-3xl mb-2">
                     @isset($icon)
