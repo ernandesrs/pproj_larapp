@@ -60,7 +60,8 @@ Route::group([
  * 
  */
 Route::group([
-    'prefix' => 'admin'
+    'prefix' => 'admin',
+    'middleware' => 'auth'
 ], function () {
 
     Route::get('/', \App\Livewire\Admin\Home::class)->name('admin.index');
@@ -76,4 +77,3 @@ Route::group([
     });
 
 });
-
