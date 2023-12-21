@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::group([], function () {
 
     Route::get('/', function () {
-        return view('front.index');
+        return view('front.home');
     });
 
 });
@@ -47,7 +47,7 @@ Route::group([
 ], function () {
 
     Route::get('/', function () {
-        return view('customer.index');
+        return view('livewire.customer.home');
     })->name('customer.index');
 
 });

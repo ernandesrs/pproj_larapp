@@ -1,4 +1,4 @@
-@extends('customer.layouts.default', [
+@extends('livewire.customer.layout', [
     'page' => [
         'title' => 'Dashboard',
     ],
