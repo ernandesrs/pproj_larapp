@@ -1,7 +1,6 @@
-@props(['show', 'icon', 'title', 'closeText'])
+@props(['icon', 'title', 'closeText'])
 
 @php
-    $show = $show ?? false;
     $icon = $icon ?? null;
     $title = $title ?? null;
     $closeText = $closeText ?? 'Close';
@@ -9,32 +8,42 @@
 
 <div x-data="{
     ...{{ json_encode([
-        'show' => $show,
+        'id' => $attributes->get('id'),
+        'showWrapper' => false,
         'showContent' => false,
     ]) }},
 
-    init() {
+    showAlert(e) {
+        let controls = e.detail?.controls;
+
+        if (controls != this.id) {
+            return;
+        }
+
+        this.showWrapper = true;
+
         setTimeout(() => {
             this.showContent = true;
-        }, 100);
+        }, 200);
     },
-
     close() {
-
         this.showContent = false;
+
         setTimeout(() => {
-            this.show = false;
+            this.showWrapper = false;
         }, 100);
     }
-}" class="dialog" x-show="show" x-transition:enter="transition ease-out duration-300"
-    x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
-    x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
-    x-transition:leave-end="opacity-0">
+}" @alert_activator_clicked.window="showAlert" class="dialog" x-show="showWrapper"
+    x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" {{ $attributes }}>
 
     <div x-show="showContent" x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
         x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100"
         x-transition:leave-end="opacity-0 scale-110" class="dialog-inner" role="alert">
+
+        {{-- header --}}
         @if ($title)
             <div class="dialog-header">
                 @if ($icon)
@@ -47,10 +56,12 @@
             </div>
         @endif
 
+        {{-- body --}}
         <div class="dialog-body">
             {{ $content ?? null }}
         </div>
 
+        {{-- footer --}}
         <div class="dialog-footer">
             @if ($actions ?? null)
                 {{ $actions }}
