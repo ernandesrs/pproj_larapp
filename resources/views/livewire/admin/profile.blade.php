@@ -28,7 +28,7 @@
                 <x-admin.section title="Your basic data" subtitle="Check and update your basic profile data" no-shadow>
                     <x-slot name="content">
 
-                        <form wire:submit="update">
+                        <form wire:submit="updateBasicData">
                             <div class="flex flex-wrap gap-y-5">
                                 <div class="basis-full sm:basis-6/12 sm:pr-2">
                                     <x-common.form.input wire:model="data.first_name" label="First name"
@@ -46,7 +46,20 @@
                                 </div>
 
                                 <div class="basis-full sm:basis-6/12 sm:pl-2">
-                                    <x-common.form.input wire:model="data.gender" label="Gender"
+                                    <x-common.form.select wire:model="data.gender" :options="[
+                                        [
+                                            'value' => 'n',
+                                            'text' => 'Not defined',
+                                        ],
+                                        [
+                                            'value' => 'm',
+                                            'text' => 'Male',
+                                        ],
+                                        [
+                                            'value' => 'f',
+                                            'text' => 'Female',
+                                        ],
+                                    ]" label="Gender"
                                         error="{{ $errors->first('data.gender') }}" />
                                 </div>
 
@@ -55,7 +68,7 @@
                                         error="{{ $errors->first('data.email') }}" disabled />
                                 </div>
 
-                                <div class="basis-full flex justify-center">
+                                <div class="basis-full flex justify-center items-center">
                                     <x-common.button type="submit" prepend-icon="check-lg" text="Update data" />
                                 </div>
                             </div>

@@ -2,24 +2,37 @@
 
 namespace App\Livewire\Admin;
 
+use App\Helpers\Alert;
 use Illuminate\Validation\Rule;
-use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class Profile extends Component
 {
+    /**
+     * Profile data
+     *
+     * @var array
+     */
     public $data = [
-        'first_name' => null,
-        'last_name' => null,
-        'username' => null,
+        'first_name' => 'User',
+        'last_name' => 'Last name',
+        'username' => 'username',
         'gender' => null
     ];
 
+    /**
+     * Contructor
+     */
     public function __construct()
     {
         $this->data = \Auth::user()->toArray();
     }
 
+    /**
+     * Render view
+     *
+     * @return void
+     */
     public function render()
     {
         return view('livewire..admin.profile')
@@ -27,13 +40,28 @@ class Profile extends Component
             ->title('Dashboard');
     }
 
-    public function update()
+    /**
+     * Update profile data
+     *
+     * @return void
+     */
+    public function updateBasicData()
     {
-        $this->validate();
+        $validated = $this->validate();
 
-        // dump($this->data);
+        if (!\Auth::user()->update($validated['data'])) {
+            Alert::danger('Your profile data updated fails.')->float()->addAlert($this);
+            return;
+        }
+
+        Alert::success('Your profile data has been updated successfully.')->float()->addAlert($this);
     }
 
+    /**
+     * Profile data rules
+     *
+     * @return array
+     */
     public function rules()
     {
         return [
