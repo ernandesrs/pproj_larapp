@@ -3,54 +3,41 @@
 @php
 
     $borderless = $borderless ?? false;
-    $id = uniqid();
-    $activeId = null;
-    $tabs = array_map(function ($tab) use ($id, &$activeId) {
-        $fId = \Str::slug($tab['text'], '_') . '_' . $id;
+    $tabsId = $_GET['tabs'] ?? uniqid();
+    $activeTabId = $_GET['tab'] ?? null;
 
-        $activeId = $tab['active'] ?? false ? $fId : null;
+    $tabs = array_map(function ($tab) use ($tabsId, &$activeTabId) {
+        $fullTabId = \Str::slug($tab['text'], '_') . '_' . $tabsId;
 
-        return [...$tab, 'id' => $fId, 'active' => $tab['active'] ?? false];
+        $activeTabId = $activeTabId ? $activeTabId : ($tab['active'] ?? false ? $fullTabId : null);
+
+        return [...$tab, 'id' => $fullTabId, 'active' => $activeTabId ? ($activeTabId == $fullTabId ? true : false) : $tab['active'] ?? false];
     }, $tabs ?? []);
 
-    if (!$activeId && count($tabs) > 0) {
+    if (!$activeTabId && count($tabs) > 0) {
         $tabs[0]['active'] = true;
-        $activeId = $tabs[0]['id'];
+        $activeTabId = $tabs[0]['id'];
     }
 
 @endphp
 
 <div x-data="{
     ...{{ json_encode([
-        'showedId' => $activeId,
-        'showedContentId' => 'tab_content_' . $activeId,
+        'tabsId' => $tabsId,
+        'activeTabId' => $activeTabId,
+        'activeTabContentId' => 'tab_content_' . $activeTabId,
     ]) }},
 
-    tabChange(event) {
-        const localName = event.target.localName;
-        const contentId = localName == 'select' ? event.target.value : event.target.getAttribute('id');
-
-        if (contentId == this.showedId) {
-            return;
-        }
-
-        // old content to hidden
-        $el.querySelector('#' + this.showedId).classList.remove('tab_link_active');
-        $el.querySelector('#' + this.showedContentId).classList.add('hidden');
-
-        // new content to show
-        $el.querySelector('#' + contentId).classList.add('tab_link_active');
-        $el.querySelector('#tab_content_' + contentId).classList.remove('hidden');
-
-        this.showedId = contentId;
-        this.showedContentId = 'tab_content_' + contentId;
+    toggleTab(event) {
+        this.activeTabId = event.target.getAttribute('id');
+        this.activeTabContentId = 'tab_content_' + event.target.getAttribute('id');
     }
 }" class="tab {{ $borderless ? 'tab-borderless' : '' }}">
     {{-- mobile tabs --}}
     <div class="tab_links_mobile">
-        <label for="tabs_{{ $id }}" class="sr-only">Tab</label>
+        <label for="tabs_{{ $tabsId }}" class="sr-only">Tab</label>
 
-        <select x-on:change="tabChange" id="tabs_{{ $id }}" x-model="showedId"
+        <select x-on:change="toggleTab" id="tabs_{{ $tabsId }}" x-model="activeTabId"
             class="w-full rounded-md border-gray-200">
             @foreach ($tabs as $key => $tab)
                 <option {{ $tab['active'] ? 'selected' : '' }} value="{{ $tab['id'] }}">{{ $tab['text'] }}</option>
@@ -62,11 +49,10 @@
     <div class="tab_links">
         <div class="tab_links_inner">
             <nav class="tab_links_nav" aria-label="Tabs">
-                @foreach ($tabs as $key => $tab)
-                    <a x-on:click="tabChange" id="{{ $tab['id'] }}" href="#"
-                        class="tab_link {{ $tab['active'] ? 'tab_link_active' : '' }}">
+                @foreach ($tabs as $tab)
+                    <a x-on:click.prevent="toggleTab" id="{{ $tab['id'] }}" href="#"
+                        :class="['tab_link', ($el.getAttribute('id') == activeTabId) ? 'tab_link_active' : '']">
                         <i class="bi bi-{{ $tab['icon'] ?? null }}"></i>
-
                         <span>{{ $tab['text'] }}</span>
                     </a>
                 @endforeach
@@ -80,7 +66,8 @@
             @php
                 $slotName = 'content' . ($key + 1);
             @endphp
-            <div class="tab_content {{ $tab['active'] ? '' : 'hidden' }}" id="tab_content_{{ $tab['id'] }}">
+            <div x-show="$el.getAttribute('id') == activeTabContentId" class="tab_content"
+                id="tab_content_{{ $tab['id'] }}" style="display:none;">
                 {{ $$slotName }}
             </div>
         @endforeach
