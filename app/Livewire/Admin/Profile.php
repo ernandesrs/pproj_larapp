@@ -47,8 +47,6 @@ class Profile extends Component
      */
     public function updateBasicData()
     {
-        sleep(2);
-        
         $validated = $this->validate();
 
         if (!\Auth::user()->update($validated['data'])) {
