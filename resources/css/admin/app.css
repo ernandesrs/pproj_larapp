@@ -23,6 +23,8 @@
 @import './../common/tab.css';
 @import './tab.css';
 
+@import './../common/form/input.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

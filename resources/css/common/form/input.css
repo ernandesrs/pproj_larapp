@@ -1,0 +1,27 @@
+.input-group {
+    @apply w-full relative text-base;
+}
+
+.input-label {
+    @apply block text-gray-400 mb-1;
+}
+
+.input-field {
+    @apply w-full px-4 py-3 rounded border border-gray-400 outline-none duration-300 text-gray-500 focus:border-indigo-500 focus:border-opacity-75 focus:shadow-md;
+}
+
+.input-field:disabled {
+    @apply opacity-60;
+}
+
+.input-feedback {
+    @apply mt-1;
+}
+
+.input-group.invalid .input-field {
+    @apply border-red-400 text-red-500;
+}
+
+.input-group.invalid .input-feedback {
+    @apply text-red-400 text-xs;
+}
