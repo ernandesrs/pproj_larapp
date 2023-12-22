@@ -66,14 +66,15 @@ class Profile extends Component
     {
         $validated = $this->validate();
 
-        if (
-            !\Auth::user()->update([
-                'password' => \Hash::make($validated['password']['password'])
-            ])
-        ) {
+        if (!\Auth::user()->update(['password' => \Hash::make($validated['password']['password'])])) {
             Alert::danger('Password update fails')->float()->addAlert($this);
             return;
         }
+
+        $this->password = [
+            'password' => null,
+            'password_confirmation' => null
+        ];
 
         Alert::success('Your password has been updated successfully.')->float()->addAlert($this);
     }
