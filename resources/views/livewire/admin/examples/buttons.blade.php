@@ -22,6 +22,10 @@
                         <x-common.button text='With append icon' variant='primary' append-icon='arrow-right' />
                         <x-common.button text='With two icon' variant='primary' prepend-icon='arrow-left'
                             append-icon='arrow-right' />
+
+                        <x-common.button text='Loading button' variant='primary' prepend-icon='arrow-right' loading />
+                        <x-common.button as="link" href="#" text='Loading link' variant='primary'
+                            prepend-icon='arrow-right' loading />
                     </div>
                 @endslot
 

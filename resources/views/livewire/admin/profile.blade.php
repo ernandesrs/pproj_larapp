@@ -69,7 +69,9 @@
                                 </div>
 
                                 <div class="basis-full flex justify-center items-center">
-                                    <x-common.button type="submit" prepend-icon="check-lg" text="Update data" />
+                                    <x-common.button wire:loading.remove type="submit" prepend-icon="check-lg"
+                                        text="Update data" />
+                                    <x-common.button wire:loading type="submit" text="Updating data" loading />
                                 </div>
                             </div>
                         </form>
