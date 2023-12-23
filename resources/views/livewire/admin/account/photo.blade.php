@@ -5,6 +5,6 @@
         </x-slot>
     @endif
     <x-slot name="content">
-        <x-common.form.input wire:model="photo" type="file" error="{{ $errors->first('photo') }}" />
+        <x-common.form.file wire:model="photo" upload-text="Choose a new photo" error="{{ $errors->first('photo') }}" />
     </x-slot>
 </x-common.form.form>
