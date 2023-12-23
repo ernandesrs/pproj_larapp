@@ -36,7 +36,7 @@ class Profile extends Component
     /**
      * Render view
      *
-     * @return void
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function render()
     {
@@ -62,23 +62,6 @@ class Profile extends Component
         Alert::success('Your profile data has been updated successfully.')->float()->addAlert($this);
     }
 
-    // public function updatePassword()
-    // {
-    //     $validated = $this->validate();
-
-    //     if (!\Auth::user()->update(['password' => \Hash::make($validated['password']['password'])])) {
-    //         Alert::danger('Password update fails')->float()->addAlert($this);
-    //         return;
-    //     }
-
-    //     $this->password = [
-    //         'password' => null,
-    //         'password_confirmation' => null
-    //     ];
-
-    //     Alert::success('Your password has been updated successfully.')->float()->addAlert($this);
-    // }
-
     /**
      * Profile data rules
      *
@@ -91,10 +74,7 @@ class Profile extends Component
             'data.first_name' => ['required', 'string', 'max:25'],
             'data.last_name' => ['required', 'string', 'max:50'],
             'data.username' => ['required', 'string', 'max:25'],
-            'data.gender' => ['nullable', 'string', Rule::in('n', 'm', 'f')],
-
-            // 'password' => ['array'],
-            // 'password.password' => ['required', 'confirmed'],
+            'data.gender' => ['nullable', 'string', Rule::in('n', 'm', 'f')]
         ];
     }
 }
