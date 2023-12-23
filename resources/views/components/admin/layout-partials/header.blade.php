@@ -22,7 +22,7 @@
 
                         <div class="flex flex-col items-center justify-center">
                             <x-common.thumb size="large" alternative-text="{{ \Auth::user()->first_name }}"
-                                image="{{ \Auth::user()->photo }}" />
+                                image="{{ \Storage::url(\Auth::user()->photo) }}" />
                             <div class="w-full text-center py-3">
                                 <p class="font-semibold text-lg mb-4">
                                     {{ \Auth::user()->first_name }} {{ \Auth::user()->last_name }}
