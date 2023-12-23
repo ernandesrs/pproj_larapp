@@ -39,7 +39,7 @@
 }
 
 .dialog-footer {
-    @apply mt-6 sm:flex sm:gap-4;
+    @apply mt-6 flex items-center gap-4;
 }
 
 .dialog-inner-full .dialog-footer {

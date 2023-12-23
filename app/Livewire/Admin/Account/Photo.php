@@ -61,8 +61,9 @@ class Photo extends Component
      *
      * @return void
      */
-    public function photoDelete()
+    public function deletePhoto()
     {
+        sleep(2);
         if ($oldPhoto = \Auth::user()->photo) {
             \Storage::disk('public')->delete($oldPhoto);
         }
