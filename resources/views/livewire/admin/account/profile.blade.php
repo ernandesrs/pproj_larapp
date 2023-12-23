@@ -19,7 +19,14 @@
                     no-border>
                     <x-slot name="content">
 
-                        <livewire:admin.account.photo />
+                        <div class="flex flex-wrap items-center">
+                            <x-common.thumb size="extralarge" image="{{ \Storage::url(\Auth::user()->photo) }}"
+                                alternative-text="{{ \Auth::user()->first_name }}" />
+
+                            <div class="mt-6 sm:mt-0 ml-4">
+                                <livewire:admin.account.photo />
+                            </div>
+                        </div>
 
                     </x-slot>
                 </x-admin.section>

@@ -3,7 +3,6 @@
 namespace App\Livewire\Admin\Account;
 
 use App\Helpers\Alert;
-use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -17,8 +16,6 @@ class Photo extends Component
      * @var mixed
      */
     public $photo = null;
-
-    public $currentPhoto = null;
 
     public function __construct()
     {
