@@ -20,7 +20,8 @@
                     <x-slot name="content">
 
                         <div class="flex flex-wrap items-center">
-                            <x-common.thumb size="extralarge" image="{{ \Storage::url(\Auth::user()->photo) }}"
+                            <x-common.thumb size="extralarge"
+                                image="{{ \Auth::user()->photo ? \Storage::url(\Auth::user()->photo) : '' }}"
                                 alternative-text="{{ \Auth::user()->first_name }}" />
 
                             <div class="mt-6 sm:mt-0 ml-4">

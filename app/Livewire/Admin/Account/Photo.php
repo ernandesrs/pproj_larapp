@@ -26,6 +26,9 @@ class Photo extends Component
      */
     public $photo = null;
 
+    /**
+     * Constructor
+     */
     public function __construct()
     {
         $this->currentPhoto = \Storage::url(\Auth::user()->photo);
@@ -41,6 +44,11 @@ class Photo extends Component
         return view('livewire..admin.account.photo');
     }
 
+    /**
+     * Upload photo
+     *
+     * @return void
+     */
     public function uploadPhoto()
     {
         $validated = $this->validate();
@@ -48,6 +56,30 @@ class Photo extends Component
         $this->updtPhoto($validated['photo']);
     }
 
+    /**
+     * Delete photo
+     *
+     * @return void
+     */
+    public function photoDelete()
+    {
+        if ($oldPhoto = \Auth::user()->photo) {
+            \Storage::disk('public')->delete($oldPhoto);
+        }
+
+        \Auth::user()->update(['photo' => null]);
+
+        Alert::success('Your profile photo has been deleted successfully.')->float()->addFlash();
+
+        $this->redirect(route('admin.profile'), true);
+    }
+
+    /**
+     * Delete old photo and update photo
+     *
+     * @param mixed $photo
+     * @return void
+     */
     private function updtPhoto($photo)
     {
         if ($oldPhoto = \Auth::user()->photo) {
