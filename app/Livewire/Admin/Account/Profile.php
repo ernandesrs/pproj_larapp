@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Admin;
+namespace App\Livewire\Admin\Account;
 
 use App\Helpers\Alert;
 use Illuminate\Validation\Rule;
@@ -40,9 +40,9 @@ class Profile extends Component
      */
     public function render()
     {
-        return view('livewire..admin.profile')
+        return view('livewire..admin.account.profile')
             ->layout('livewire.admin.layout')
-            ->title('Dashboard');
+            ->title('My account');
     }
 
     /**
