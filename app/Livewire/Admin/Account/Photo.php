@@ -3,12 +3,21 @@
 namespace App\Livewire\Admin\Account;
 
 use App\Helpers\Alert;
+use Illuminate\Http\Request;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
 class Photo extends Component
 {
     use WithFileUploads;
+
+    /**
+     * Listeners
+     *
+     * @var array
+     */
+    protected $listeners = ['filePreValidated' => 'handleFilePreValidation'];
 
     /**
      * Photo
@@ -52,7 +61,9 @@ class Photo extends Component
         }
 
         $this->currentPhoto = \Storage::url($newPhoto);
-        Alert::success('Your profile photo has been updated successfully.')->float()->addAlert($this);
+        Alert::success('Your profile photo has been updated successfully.')->float()->addFlash();
+
+        $this->redirect(route('admin.profile'), true);
     }
 
     /**
