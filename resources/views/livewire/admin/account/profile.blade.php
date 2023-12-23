@@ -1,7 +1,7 @@
 <x-admin.page title="My profile" subtitle="Manage your profile data" icon="person-circle">
     <x-slot name="content">
 
-        <x-common.tab borderless :tabs="[
+        <x-common.tab :tabs="[
             [
                 'text' => 'Basic data',
                 'icon' => 'person-lines-fill',
@@ -12,20 +12,20 @@
                 'icon' => 'key-fill',
                 'active' => false,
             ],
-            [
-                'text' => 'Payment',
-                'icon' => 'credit-card-fill',
-                'active' => false,
-            ],
-            [
-                'text' => 'Danger area',
-                'icon' => 'exclamation-circle-fill',
-                'active' => false,
-            ],
         ]">
 
             <x-slot name="content1">
-                <x-admin.section title="Your basic data" subtitle="Check and update your basic profile data" no-shadow>
+                <x-admin.section title="Your profile photo" subtitle="Update or delete your profile photo" no-shadow
+                    no-border>
+                    <x-slot name="content">
+
+                        <livewire:admin.account.photo />
+
+                    </x-slot>
+                </x-admin.section>
+
+                <x-admin.section title="Your basic data" subtitle="Check and update your basic profile data" no-shadow
+                    no-border>
                     <x-slot name="content">
 
                         <x-common.form.form wire:submit="updateBasicData" submit-text="Update profile"
@@ -82,32 +82,6 @@
                     <x-slot name="content">
 
                         <livewire:admin.account.password />
-
-                    </x-slot>
-                </x-admin.section>
-            </x-slot>
-
-            <x-slot name="content3">
-                <x-admin.section title="Your payment data" subtitle="Check and update your payments data" no-shadow>
-                    <x-slot name="content">
-                    </x-slot>
-                </x-admin.section>
-            </x-slot>
-
-            <x-slot name="content4">
-                <x-admin.section title="Delete account" no-shadow>
-                    <x-slot name="content">
-
-                        <div class="text-admin-danger-normal">
-                            <p class="mb-4">
-                                By clicking the button your account will be deleted permanently, this will delete
-                                everything
-                                related to it and cannot be recovered.
-                            </p>
-
-                            <x-common.button variant="danger-outlined" prepend-icon="exclamation-circle"
-                                text="I know this and I want to delete my account!" />
-                        </div>
 
                     </x-slot>
                 </x-admin.section>
