@@ -14,7 +14,7 @@
             </div>
 
             {{-- right --}}
-            <div>
+            <div class="flex items-center">
                 <x-common.dropdown location="right" variant="primary-link" icon="person-circle"
                     text="{{ \Auth::user()->first_name }}">
 
