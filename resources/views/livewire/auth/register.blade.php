@@ -63,7 +63,5 @@
         </div>
     </div>
 
-    <button class="button w-full bg-front-primary-normal text-white" type="submit">
-        Create account
-    </button>
+    <x-front.button type="submit" text="Create account" variant="primary" full />
 </form>

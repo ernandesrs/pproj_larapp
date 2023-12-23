@@ -8,7 +8,7 @@
 
 /* PRIMARY */
 .button-primary {
-    @apply bg-front-primary-normal text-front-white;
+    @apply !bg-front-primary-normal text-front-white;
 }
 
 .button-primary-outlined {
@@ -21,7 +21,7 @@
 
 /* DANGER */
 .button-danger {
-    @apply bg-front-danger-normal text-front-white;
+    @apply !bg-front-danger-normal text-front-white;
 }
 
 .button-danger-outlined {

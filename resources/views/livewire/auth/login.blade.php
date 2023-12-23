@@ -4,6 +4,6 @@
 
     <x-front.form-input wire:model="password" type="password" label="Your password" name="password" />
 
-    <x-front.button type="submit" text="Sign in" variant="primary-outlined" full />
+    <x-front.button type="submit" text="Sign in" variant="primary" full />
 
 </form>

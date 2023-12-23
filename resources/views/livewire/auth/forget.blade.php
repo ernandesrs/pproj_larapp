@@ -5,7 +5,5 @@
         <input type="email" class="form-input" id="email" name="email" placeholder="Enter your registered email" />
     </div>
 
-    <button class="button w-full bg-front-primary-normal text-white" type="submit">
-        Recovery now
-    </button>
+    <x-front.button type="submit" text="Recovery now" variant="primary" full />
 </form>
