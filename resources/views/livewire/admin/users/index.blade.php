@@ -6,7 +6,15 @@
             'href' => route('admin.users'),
         ],
     ]"
+    :actionCreate="[
+        'text' => __('words.new') . ' ' . __('words.user'),
+        'href' => '#',
+    ]"
     icon="people-fill">
+    <x-slot name="actions">
+        <x-common.button text="{{ __('words.administrators') }}" prepend-icon="person-fill-gear" />
+    </x-slot>
+
     <x-slot name="content">
 
         <x-common.confirmation-dialog id="list_delete_item_confirmation" confirm-action="">

@@ -46,5 +46,6 @@ return [
     'delete' => 'Excluir',
     'edit' => 'Editar',
     'see' => 'Ver',
-    'show' => 'Mostrar'
+    'show' => 'Mostrar',
+    'new' => 'Novo'
 ];
