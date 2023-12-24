@@ -1,22 +1,23 @@
-<x-admin.page title="My profile" subtitle="Manage your profile data" icon="person-circle">
+<x-admin.page title="{{ __('phrases.my_profile') }}" subtitle="{{ __('phrases.manage_profile_data') }}"
+    icon="person-circle">
     <x-slot name="content">
 
         <x-common.tab :tabs="[
             [
-                'text' => 'Basic data',
+                'text' => __('phrases.basic_data'),
                 'icon' => 'person-lines-fill',
                 'active' => true,
             ],
             [
-                'text' => 'Security',
+                'text' => __('words.security'),
                 'icon' => 'key-fill',
                 'active' => false,
             ],
         ]">
 
             <x-slot name="content1">
-                <x-admin.section title="Your profile photo" subtitle="Update or delete your profile photo" no-shadow
-                    no-border>
+                <x-admin.section title="{{ __('phrases.profile_picture') }}"
+                    subtitle="{{ __('phrases.update_profile_picture') }}" no-shadow no-border>
                     <x-slot name="content">
 
                         <div class="flex flex-wrap items-center">
@@ -32,8 +33,8 @@
                     </x-slot>
                 </x-admin.section>
 
-                <x-admin.section title="Your basic data" subtitle="Check and update your basic profile data" no-shadow
-                    no-border>
+                <x-admin.section title="{{ __('phrases.basic_data') }}" subtitle="{{ __('phrases.update_basic_data') }}"
+                    no-shadow no-border>
                     <x-slot name="content">
 
                         <livewire:admin.account.basic-data />
@@ -43,7 +44,8 @@
             </x-slot>
 
             <x-slot name="content2">
-                <x-admin.section title="Your security data" subtitle="Check and update your security data" no-shadow>
+                <x-admin.section title="{{ __('phrases.security_data') }}"
+                    subtitle="{{ __('phrases.update_security_data') }}" no-shadow>
                     <x-slot name="content">
 
                         <livewire:admin.account.password />
