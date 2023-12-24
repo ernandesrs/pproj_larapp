@@ -1,5 +1,5 @@
 <x-admin.page
-    title="{{ $title }}" subtitle="{{ __('words.users') }} list"
+    title="{{ $title }}"
     :breadcrumbs="[
         [
             'text' => __('words.users'),
@@ -17,7 +17,7 @@
 
     <x-slot name="content">
 
-        <x-common.confirmation-dialog id="list_delete_item_confirmation" confirm-action="">
+        <x-common.confirmation-dialog id="delete_item_confirmation" confirm-action="">
         </x-common.confirmation-dialog>
 
         <x-common.list.table
@@ -43,7 +43,15 @@
                 @foreach ($users as $user)
                     <tr>
                         <td>
-                            <x-common.list.list-actions></x-common.list.list-actions>
+                            <x-common.list.list-actions
+                                action-edit="{{ route('admin.users.edit', ['user' => $user->id]) }}"
+                                action-show="{{ route('admin.users.show', ['user' => $user->id]) }}">
+                                {{-- custom actions prepend --}}
+                                <x-slot name="prependActions"></x-slot>
+
+                                {{-- custom actions append --}}
+                                <x-slot name="appendActions"></x-slot>
+                            </x-common.list.list-actions>
                         </td>
                         <td>
                             <x-common.thumb type="avatar" size="extrasmall" alternative-text="{{ $user->first_name }}"
