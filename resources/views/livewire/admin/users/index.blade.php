@@ -9,7 +9,7 @@
     icon="people-fill">
     <x-slot name="content">
 
-        @dump($users)
+        <x-common.list.table></x-common.list.table>
 
     </x-slot>
 </x-admin.page>

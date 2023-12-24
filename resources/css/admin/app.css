@@ -14,6 +14,7 @@
 @import './dropdown.css';
 
 @import './../common/dialog.css';
+@import './dialog.css';
 
 @import './../common/breadcrumb.css';
 @import './breadcrumb.css';
@@ -24,6 +25,10 @@
 @import './tab.css';
 
 @import './../common/form/input.css';
+@import './form/input.css';
+
+@import './../common/list/table.css';
+/* @import './list/table.css' */
 
 @tailwind base;
 @tailwind components;

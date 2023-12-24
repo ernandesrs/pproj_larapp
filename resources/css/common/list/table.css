@@ -1,0 +1,34 @@
+/*
+ *
+ * Common list/table component cutomization
+ *
+ */
+.table-wrapper {
+    @apply rounded border border-gray-200;
+}
+
+.table-wrapper-inner {
+    @apply overflow-x-auto rounded-t;
+}
+
+.table-wrapper-inner table {
+    @apply min-w-full divide-y-2 divide-gray-200 bg-white;
+}
+
+.table-wrapper-inner table thead tr th,
+.table-wrapper-inner table tbody tr td {
+    @apply whitespace-nowrap px-4 py-3 text-gray-700;
+}
+
+.table-wrapper-inner table thead tr th.highlight,
+.table-wrapper-inner table tbody tr td.highlight {
+    @apply font-medium text-gray-900;
+}
+
+.table-wrapper-inner table thead {
+    @apply ltr:text-left rtl:text-right;
+}
+
+.table-wrapper-inner table tbody {
+    @apply divide-y divide-gray-200;
+}
