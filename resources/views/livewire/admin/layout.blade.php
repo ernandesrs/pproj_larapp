@@ -29,13 +29,13 @@
                         [
                             'text' => __('words.users'),
                             'icon' => 'people-fill',
-                            'activeIn' => ['admin.users'],
+                            'activeIn' => ['admin.users', 'admin.users.show', 'admin.users.edit', 'admin.users.create'],
                             'items' => [
                                 [
                                     'text' => __('words.all'),
                                     'href' => route('admin.users'),
                                     'icon' => 'caret-right-fill',
-                                    'activeIn' => ['admin.users'],
+                                    'activeIn' => ['admin.users', 'admin.users.show', 'admin.users.edit', 'admin.users.create'],
                                 ],
                                 [
                                     'text' => __('words.administrators'),

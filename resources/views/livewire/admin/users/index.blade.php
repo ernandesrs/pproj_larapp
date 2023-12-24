@@ -8,7 +8,7 @@
     ]"
     :actionCreate="[
         'text' => __('words.new') . ' ' . __('words.user'),
-        'href' => '#',
+        'href' => route('admin.users.create'),
     ]"
     icon="people-fill">
     <x-slot name="actions">
