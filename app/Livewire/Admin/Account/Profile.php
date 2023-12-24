@@ -2,8 +2,6 @@
 
 namespace App\Livewire\Admin\Account;
 
-use App\Helpers\Alert;
-use Illuminate\Validation\Rule;
 use Livewire\Component;
 
 class Profile extends Component
