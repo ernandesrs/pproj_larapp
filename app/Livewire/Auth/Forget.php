@@ -10,10 +10,10 @@ class Forget extends Component
     {
         return view('livewire..auth.forget')
             ->layout('livewire.auth.layout', [
-                'title' => 'Recovery your account now',
-                'subtitle' => 'Regain access to your account and access all our free resources right now'
+                'title' => __('phrases.recovery_account'),
+                'subtitle' => __('phrases.recovery_account_long')
             ])
-            ->title('Recovery your account now');
+            ->title(__('phrases.recovery_account'));
         ;
     }
 }

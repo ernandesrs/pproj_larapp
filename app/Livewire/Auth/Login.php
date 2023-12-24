@@ -3,7 +3,6 @@
 namespace App\Livewire\Auth;
 
 use App\Models\User;
-use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class Login extends Component
@@ -21,10 +20,10 @@ class Login extends Component
     {
         return view('livewire.auth.login')
             ->layout('livewire.auth.layout', [
-                'title' => 'Sign in to your account!',
-                'subtitle' => 'Access your account and access all our free resources right now'
+                'title' => __('phrases.sign_in_your_account'),
+                'subtitle' => __('phrases.sign_in_your_account_long')
             ])
-            ->title('Sign in to your account!');
+            ->title(__('phrases.sign_in_your_account'));
     }
 
     public function login()
@@ -34,7 +33,7 @@ class Login extends Component
         $user = User::where('email', $this->email)->first();
 
         if (!$user || !\Auth::attempt(['email' => $user->email, 'password' => $this->password])) {
-            $this->addError('email', 'E-mail and/or password is inválid');
+            $this->addError('email', __('messages.auth.login_fail'));
             return;
         }
 

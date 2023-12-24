@@ -40,17 +40,17 @@
             <div class="py-4">
                 @if (in_array(Route::currentRouteName(), ['auth.login', 'auth.login']))
                     <p class="text-center text-sm text-gray-500">
-                        No account?
-                        <a class="underline" href="{{ route('auth.register') }}">Sign up</a>
+                        {{ __('phrases.no_account') }}?
+                        <a class="underline" href="{{ route('auth.register') }}">{{ __('words.register_account') }}.</a>
                     </p>
                     <p class="text-center text-sm text-gray-500">
-                        Forgot your password?
-                        <a class="underline" href="{{ route('auth.forget') }}">Recovery now</a>
+                        {{ __('phrases.forgot_password') }}?
+                        <a class="underline" href="{{ route('auth.forget') }}">{{ __('words.recovery_now') }}.</a>
                     </p>
                 @elseif (in_array(Route::currentRouteName(), ['auth.register', 'auth.forget']))
                     <p class="text-center text-sm text-gray-500">
-                        Have a account?
-                        <a class="underline" href="{{ route('auth.login') }}">Sign in</a>
+                        {{ __(Route::currentRouteName() == 'auth.forget' ? 'phrases.remember_password' : 'phrases.have_account') }}?
+                        <a class="underline" href="{{ route('auth.login') }}">{{ __('words.login_now') }}.</a>
                     </p>
                 @endif
             </div>

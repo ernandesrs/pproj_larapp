@@ -32,4 +32,9 @@ return [
     'examples' => 'Examplos',
     'example' => 'Examplo',
     'others' => 'Outros',
+    'login' => 'Entrar',
+    'login_now' => 'Entrar agora',
+    'register' => 'Cadastrar',
+    'register_account' => 'Cadastrar conta',
+    'recovery_now' => 'Recuperar agora'
 ];

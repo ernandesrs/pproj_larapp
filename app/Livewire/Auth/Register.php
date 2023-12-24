@@ -10,9 +10,9 @@ class Register extends Component
     {
         return view('livewire..auth.register')
             ->layout('livewire.auth.layout', [
-                'title' => 'Create your account now',
-                'subtitle' => 'Create your account and access all our free resources right now'
+                'title' => __('phrases.create_account'),
+                'subtitle' => __('phrases.create_account_long')
             ])
-            ->title('Create your account now');
+            ->title(__('phrases.create_account'));
     }
 }
