@@ -70,7 +70,7 @@ class Photo extends Component
 
         \Auth::user()->update(['photo' => null]);
 
-        Alert::success('Your profile photo has been deleted successfully.')->float()->addFlash();
+        Alert::success(__('messages.alert.profile_picture_deleted'))->float()->addFlash();
 
         $this->redirect(route('admin.profile'), true);
     }
@@ -89,12 +89,12 @@ class Photo extends Component
 
         $newPhoto = $photo->store('avatars', 'public');
         if (!\Auth::user()->update(['photo' => $newPhoto])) {
-            Alert::danger('Fail on update your profile photo')->float()->addAlert($this);
+            Alert::danger(__('messages.alert.profile_update_fail'))->float()->addAlert($this);
             return;
         }
 
         $this->currentPhoto = \Storage::url($newPhoto);
-        Alert::success('Your profile photo has been updated successfully.')->float()->addFlash();
+        Alert::success(__('messages.alert.profile_updated'))->float()->addFlash();
 
         $this->redirect(route('admin.profile'), true);
     }

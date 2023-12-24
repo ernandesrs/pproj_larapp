@@ -11,4 +11,10 @@ return [
     'auth' => [
         'login_fail' => 'E-mail e/ou senha inválido(s)'
     ],
+
+    'alert' => [
+        'profile_picture_deleted' => 'Foto de perfil excluída com sucesso.',
+        'profile_updated' => 'Os dados do perfil foram atualizados com sucesso.',
+        'profile_update_fail' => 'Falha ao tentar atualizar o perfil.',
+    ],
 ];

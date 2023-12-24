@@ -48,11 +48,11 @@ class BasicData extends Component
         $validated = $this->validate();
 
         if (!\Auth::user()->update($validated['data'])) {
-            Alert::danger('Your profile data updated fails.')->float()->addAlert($this);
+            Alert::danger(__('messages.alert.profile_update_fail'))->float()->addAlert($this);
             return;
         }
 
-        Alert::success('Your profile data has been updated successfully.')->float()->addAlert($this);
+        Alert::success(__('messages.alert.profile_updated'))->float()->addAlert($this);
     }
 
     /**

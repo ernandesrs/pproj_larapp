@@ -37,7 +37,7 @@ class Password extends Component
         $validated = $this->validate();
 
         if (!\Auth::user()->update(['password' => \Hash::make($validated['password']['password'])])) {
-            Alert::danger('Password update fails')->float()->addAlert($this);
+            Alert::danger(__('messages.alert.profile_update_fail'))->float()->addAlert($this);
             return;
         }
 
@@ -46,7 +46,7 @@ class Password extends Component
             'password_confirmation' => null
         ];
 
-        Alert::success('Your password has been updated successfully.')->float()->addAlert($this);
+        Alert::success(__('messages.alert.profile_updated'))->float()->addAlert($this);
     }
 
     /**
