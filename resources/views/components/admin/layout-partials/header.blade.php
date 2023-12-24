@@ -30,10 +30,11 @@
 
                                 <div class="flex gap-x-4">
 
-                                    <x-common.button as="link" href="#" text="Perfil"
+                                    <x-common.button as="link" href="#" text="{{ __('words.profile') }}"
                                         prepend-icon="person-circle" variat="primary" small />
-                                    <x-common.button as="link" href="{{ route('auth.logout') }}" text="Sair"
-                                        prepend-icon="box-arrow-right" variant="danger-link" small />
+                                    <x-common.button as="link" href="{{ route('auth.logout') }}"
+                                        text="{{ __('words.logout') }}" prepend-icon="box-arrow-right"
+                                        variant="danger-link" small />
 
                                 </div>
                             </div>

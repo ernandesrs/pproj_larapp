@@ -18,7 +18,7 @@
             'navs' => [
                 // dashboard
                 [
-                    'title' => 'Dashboard',
+                    'title' => __('words.dashboard'),
                     'items' => [
                         [
                             'text' => 'General',
@@ -27,23 +27,23 @@
                             'icon' => 'pie-chart-fill',
                         ],
                         [
-                            'text' => 'Users',
+                            'text' => __('words.users'),
                             'icon' => 'people-fill',
                             'items' => [
                                 [
-                                    'text' => 'All',
+                                    'text' => __('words.all'),
                                     'href' => '',
                                     'icon' => 'caret-right-fill',
                                 ],
                                 [
-                                    'text' => 'Administrators',
+                                    'text' => __('words.administrators'),
                                     'href' => '',
                                     'icon' => 'caret-right-fill',
                                 ],
                             ],
                         ],
                         [
-                            'text' => 'Roles',
+                            'text' => __('words.roles'),
                             'href' => '',
                             'activeIn' => [],
                             'icon' => 'shield-lock-fill',
@@ -53,16 +53,16 @@
         
                 // others
                 [
-                    'title' => 'Others',
+                    'title' => __('words.others'),
                     'items' => [
                         [
-                            'text' => 'Profile',
+                            'text' => __('words.profile'),
                             'icon' => 'person-circle',
                             'href' => route('admin.profile'),
                             'activeIn' => ['admin.profile'],
                         ],
                         [
-                            'text' => 'Examples',
+                            'text' => __('words.examples'),
                             'icon' => 'grid-fill',
                             'activeIn' => [
                                 'admin.examples.sections',
