@@ -29,18 +29,18 @@
     ]) }},
 
     toggleTab(event) {
-        this.activeTabId = event.target.getAttribute('id');
-        this.activeTabContentId = 'tab_content_' + event.target.getAttribute('id');
+        this.activeTabId = event.target.localName == 'select' ? event.target.value : event.target.getAttribute('id');
+        this.activeTabContentId = 'tab_content_' + this.activeTabId;
     }
 }" class="tab {{ $borderless ? 'tab-borderless' : '' }}">
     {{-- mobile tabs --}}
     <div class="tab_links_mobile">
         <label for="tabs_{{ $tabsId }}" class="sr-only">Tab</label>
 
-        <select x-on:change="toggleTab" id="tabs_{{ $tabsId }}" x-model="activeTabId"
-            class="w-full rounded-md border-gray-200">
+        <select x-on:change="toggleTab" x-model="activeTabId" class="w-full rounded-md border-gray-200"
+            id="tabs_{{ $tabsId }}">
             @foreach ($tabs as $key => $tab)
-                <option {{ $tab['active'] ? 'selected' : '' }} value="{{ $tab['id'] }}">{{ $tab['text'] }}</option>
+                <option value="{{ $tab['id'] }}">{{ $tab['text'] }}</option>
             @endforeach
         </select>
     </div>
