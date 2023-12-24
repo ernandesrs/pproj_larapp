@@ -1,4 +1,4 @@
-@props(['id', 'icon', 'title', 'closeText', 'medium', 'large', 'full'])
+@props(['id', 'icon', 'title', 'closeText', 'medium', 'large', 'full', 'persistent'])
 
 @php
     if (!($id ?? null)) {
@@ -17,6 +17,7 @@
         'id' => $id,
         'showWrapper' => false,
         'showContent' => false,
+        'persistent' => $persistent ?? false,
     ]) }},
 
     showAlert(e) {
@@ -32,6 +33,15 @@
             this.showContent = true;
         }, 200);
     },
+    dialogWrapperClick(e) {
+        if ($el != e.target) {
+            return;
+        }
+
+        if (!this.persistent) {
+            this.close();
+        }
+    },
     close() {
         this.showContent = false;
 
@@ -39,8 +49,8 @@
             this.showWrapper = false;
         }, 100);
     }
-}" @alert_activator_clicked.window="showAlert" class="dialog" x-show="showWrapper"
-    x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+}" @alert_activator_clicked.window="showAlert" x-on:click="dialogWrapperClick" class="dialog"
+    x-show="showWrapper" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
     x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-300"
     x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="{{ $id }}"
     {{ $attributes }}>
@@ -77,7 +87,8 @@
             @endif
 
             <div class="sm:ml-auto">
-                <x-common.button x-on:click="close" text="{{ $closeText }}" prepend-icon="x-lg" variant="danger-link" />
+                <x-common.button x-on:click="close" text="{{ $closeText }}" prepend-icon="x-lg"
+                    variant="danger-link" />
             </div>
         </div>
     </div>

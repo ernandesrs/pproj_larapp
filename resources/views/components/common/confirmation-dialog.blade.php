@@ -4,7 +4,7 @@
     $variant = ['default' => 'danger', 'danger' => 'danger', 'success' => 'success', 'info' => 'info'][$type ?? 'default'];
 @endphp
 
-<x-common.dialog id="{{ $id }}" title="{{ $title }}">
+<x-common.dialog id="{{ $id }}" title="{{ $title }}" {{ $attributes }}>
     <x-slot name="content">
         {{ $text }}
     </x-slot>
