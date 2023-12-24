@@ -14,4 +14,7 @@ return [
     'choose_photo' => 'Escolher foto',
     'delete_photo' => 'Deletar foto',
     'deleting_photo' => 'Deletando foto',
+    'choose_file' => 'Escolher arquivo',
+    'choose_a_file' => 'Escolher um arquivo',
+    'choose_a_photo' => 'Escolher uma foto',
 ];

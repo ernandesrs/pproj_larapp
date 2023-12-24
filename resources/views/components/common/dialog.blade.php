@@ -9,7 +9,7 @@
     $full = $full ?? false;
     $icon = $icon ?? null;
     $title = $title ?? null;
-    $closeText = $closeText ?? 'Close';
+    $closeText = $closeText ?? __('words.close');
 @endphp
 
 <div x-data="{

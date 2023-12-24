@@ -4,8 +4,8 @@
     $id = $attributes->get('id') ?? ($attributes->get('name') ?? uniqid());
     $type = $type ?? 'text';
     $label = $label ?? null;
-    $uploadButtonText = empty($uploadButtonText) ? 'Upload' : $uploadButtonText;
-    $uploadText = empty($uploadText) ? 'Choose a file' : $uploadText;
+    $uploadButtonText = empty($uploadButtonText) ? __('words.upload') : $uploadButtonText;
+    $uploadText = empty($uploadText) ? __('phrases.choose_a_file') : $uploadText;
     $error = empty($error ?? null) ? null : $error;
 @endphp
 

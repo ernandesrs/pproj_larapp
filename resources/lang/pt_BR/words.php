@@ -14,4 +14,9 @@ return [
     'undefined' => 'Não definido',
     'male' => 'Masculino',
     'female' => 'Feminino',
+    'confirm' => 'Confirmar',
+    'wait' => 'Aguarde',
+    'close' => 'Fechar',
+    'submit' => 'Enviar',
+    'upload' => 'Enviar'
 ];

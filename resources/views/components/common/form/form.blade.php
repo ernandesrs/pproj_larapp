@@ -1,8 +1,8 @@
 @props(['submitText', 'submittingText', 'noActions', 'actionsStart', 'actionsEnd'])
 
 @php
-    $submitText = $submitText ?? 'Submit';
-    $submittingText = $submittingText ?? 'Wait...';
+    $submitText = $submitText ?? __('words.submit');
+    $submittingText = $submittingText ?? __('words.wait') . '...';
     $noActions = $noActions ?? false;
     $actionsStart = $actionsStart ?? false;
     $actionsEnd = $actionsEnd ?? false;
