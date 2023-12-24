@@ -1,5 +1,14 @@
 /*
  *
  * Admin tab component cutomization
+ * Customization base in: resources/css/common/tab.css
  *
  */
+
+.tab_link {
+    @apply text-admin-dark-ligth-2 text-opacity-75 hover:border-admin-light-dark-2 hover:text-opacity-100;
+}
+
+.tab_link_active {
+    @apply border-admin-primary-ligth-2 text-admin-primary-normal;
+}
