@@ -1,0 +1,56 @@
+/* chrome */
+*::-webkit-scrollbar {
+    width: .6rem;
+}
+
+*::-webkit-scrollbar-track {
+    @apply bg-admin-white;
+}
+
+*::-webkit-scrollbar-thumb {
+    @apply bg-admin-primary-dark-2;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    @apply bg-admin-primary-ligth-2;
+}
+
+/* firefox */
+*::-moz-scrollbar {
+    width: .6rem;
+}
+
+*::-moz-scrollbar-thumb {
+    @apply bg-admin-primary-dark-2;
+}
+
+*::-moz-scrollbar-thumb:hover {
+    @apply bg-admin-primary-ligth-2;
+}
+
+
+/*
+ *
+ * Custom scrollbar to .aside
+ *
+ */
+
+.aside::-webkit-scrollbar-track {
+    @apply bg-admin-dark-dark-2;
+}
+
+.aside::-webkit-scrollbar {
+    @apply w-1;
+}
+
+.aside::-moz-scrollbar {
+    @apply w-1;
+}
+
+.aside::-webkit-scrollbar-thumb {
+    @apply rounded-full;
+}
+
+.aside::-moz-scrollbar-thumb {
+    @apply rounded-full;
+}
