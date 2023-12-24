@@ -2,6 +2,8 @@
 
 @php
     $variant = ['default' => 'danger', 'danger' => 'danger', 'success' => 'success', 'info' => 'info'][$type ?? 'default'];
+    $title = $title ?? __('messages.confirmation.default_title');
+    $text = $text ?? __('messages.confirmation.default_text');
 @endphp
 
 <x-common.dialog id="{{ $id }}" title="{{ $title }}" {{ $attributes }}>

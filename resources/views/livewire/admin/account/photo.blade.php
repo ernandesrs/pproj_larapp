@@ -3,8 +3,8 @@
     @if (\Auth::user()->photo)
         <x-slot name="prependActions">
             <x-common.confirmation-dialog type="danger" id="photo_delete_confirmation"
-                title="{{ __('messages.confirmation.deleting_photo.title') }}"
-                text="{{ __('messages.confirmation.deleting_photo.message') }}" confirm-action="deletePhoto" />
+                title="{{ __('messages.confirmation.deleting_photo_title') }}"
+                text="{{ __('messages.confirmation.deleting_photo_text') }}" confirm-action="deletePhoto" />
 
             <x-common.dialog-activator controls="photo_delete_confirmation">
                 <x-slot name="activator">
