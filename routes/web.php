@@ -66,8 +66,25 @@ Route::group([
 
     Route::get('/', \App\Livewire\Admin\Home::class)->name('admin.index');
 
+    /*
+     * USERS
+     */
+    Route::group([
+        'prefix' => 'users'
+    ], function () {
+
+        Route::get('/', \App\Livewire\Admin\Users\Index::class)->name('admin.users');
+
+    });
+
+    /*
+     * PROFILE
+     */
     Route::get('/profile', \App\Livewire\Admin\Account\Profile::class)->name('admin.profile');
 
+    /*
+     * EXAMPLES
+     */
     Route::group([
         'prefix' => 'examples'
     ], function () {

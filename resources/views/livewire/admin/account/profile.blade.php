@@ -1,5 +1,12 @@
-<x-admin.page title="{{ __('phrases.my_profile') }}" subtitle="{{ __('phrases.manage_profile_data') }}"
-    icon="person-circle">
+<x-admin.page
+    title="{{ __('phrases.my_profile') }}" subtitle="{{ __('phrases.manage_profile_data') }}"
+    icon="person-circle"
+    :breadcrumbs="[
+        [
+            'text' => __('words.profile'),
+            'href' => route('admin.profile'),
+        ],
+    ]">
     <x-slot name="content">
 
         <x-common.tab :tabs="[

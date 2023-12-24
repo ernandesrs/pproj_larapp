@@ -32,7 +32,7 @@
                             'items' => [
                                 [
                                     'text' => __('words.all'),
-                                    'href' => '',
+                                    'href' => route('admin.users'),
                                     'icon' => 'caret-right-fill',
                                 ],
                                 [
