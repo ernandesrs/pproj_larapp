@@ -21,7 +21,7 @@
                     'title' => __('words.dashboard'),
                     'items' => [
                         [
-                            'text' => 'General',
+                            'text' => __('words.overview'),
                             'href' => route('admin.index'),
                             'activeIn' => ['admin.index'],
                             'icon' => 'pie-chart-fill',

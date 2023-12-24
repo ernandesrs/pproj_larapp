@@ -25,7 +25,7 @@ return [
     'users' => 'Usuários',
     'user' => 'Usuário',
     'all' => 'Todos',
-    'administrators' => 'Administradors',
+    'administrators' => 'Administradores',
     'administrator' => 'Administrador',
     'roles' => 'Funções',
     'role' => 'Função',
@@ -36,5 +36,7 @@ return [
     'login_now' => 'Entrar agora',
     'register' => 'Cadastrar',
     'register_account' => 'Cadastrar conta',
-    'recovery_now' => 'Recuperar agora'
+    'recovery_now' => 'Recuperar agora',
+    'general' => 'Geral',
+    'overview' => 'Resumo geral'
 ];
