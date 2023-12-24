@@ -16,6 +16,16 @@
     @apply w-32 h-20;
 }
 
+/* size extrasmall */
+.thumbnail-extrasmall.thumbnail-avatar,
+.thumbnail-extrasmall.thumbnail-square {
+    @apply w-10 h-10;
+}
+
+.thumbnail-extrasmall.thumbnail-cover {
+    @apply w-16 h-10;
+}
+
 /* size small */
 .thumbnail-small.thumbnail-avatar,
 .thumbnail-small.thumbnail-square {
