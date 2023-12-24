@@ -9,7 +9,7 @@
     icon="people-fill">
     <x-slot name="content">
 
-        Users
+        @dump($users)
 
     </x-slot>
 </x-admin.page>
