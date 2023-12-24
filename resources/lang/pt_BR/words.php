@@ -38,5 +38,13 @@ return [
     'register_account' => 'Cadastrar conta',
     'recovery_now' => 'Recuperar agora',
     'general' => 'Geral',
-    'overview' => 'Resumo geral'
+    'overview' => 'Resumo geral',
+    'name' => 'Nome',
+    'action' => 'Ação',
+    'actions' => 'Ações',
+    'avatar' => 'Avatar',
+    'delete' => 'Excluir',
+    'edit' => 'Editar',
+    'see' => 'Ver',
+    'show' => 'Mostrar'
 ];

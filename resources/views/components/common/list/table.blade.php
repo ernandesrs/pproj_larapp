@@ -1,22 +1,22 @@
+@props(['columns'])
+
+@php
+    $columns = $columns ?? [];
+@endphp
+
 <div class="table-wrapper">
     <div class="table-wrapper-inner">
         <table>
             <thead>
                 <tr>
-                    <th class="highlight">Name</th>
-                    <th class="highlight">Date of Birth</th>
-                    <th class="highlight">Role</th>
-                    <th class="highlight">Salary</th>
+                    @foreach ($columns as $column)
+                        <th class="highlight">{{ $column['text'] }}</th>
+                    @endforeach
                 </tr>
             </thead>
 
             <tbody>
-                <tr>
-                    <td>John Doe</td>
-                    <td>24/05/1995</td>
-                    <td>Web Developer</td>
-                    <td>$120,000</td>
-                </tr>
+                {{ $content }}
             </tbody>
         </table>
     </div>

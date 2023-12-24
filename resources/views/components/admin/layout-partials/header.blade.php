@@ -21,7 +21,7 @@
                     <x-slot name="content">
 
                         <div class="flex flex-col items-center justify-center">
-                            <x-common.thumb size="large" alternative-text="{{ \Auth::user()->first_name }}"
+                            <x-common.thumb size="default" alternative-text="{{ \Auth::user()->first_name }}"
                                 image="{{ \Auth::user()->photo ? \Storage::url(\Auth::user()->photo) : '' }}" />
                             <div class="w-full text-center py-3">
                                 <p class="font-semibold text-lg mb-4">

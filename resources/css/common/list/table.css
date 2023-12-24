@@ -26,7 +26,7 @@
 }
 
 .table-wrapper-inner table thead {
-    @apply ltr:text-left rtl:text-right;
+    @apply text-left;
 }
 
 .table-wrapper-inner table tbody {

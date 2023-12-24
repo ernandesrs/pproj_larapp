@@ -1,6 +1,6 @@
 <div class="aside-header">
     <div class="flex flex-wrap justify-center">
-        <x-common.thumb type="avatar" size="default"
+        <x-common.thumb type="avatar" size="small"
             image="{{ \Auth::user()->photo ? \Storage::url(\Auth::user()->photo) : '' }}"
             alternative-text="{{ \Auth::user()->first_name }}" />
 
