@@ -1,0 +1,19 @@
+/*
+ *
+ * Admin form input cutomization
+ * CSS base in /resources/css/common/form/input.css
+ *
+ */
+
+.input-field {
+    @apply focus:border-admin-primary-normal;
+}
+
+.input-group.invalid .input-field,
+.input-group.invalid .input-file {
+    @apply border-admin-danger-ligth-2 text-admin-danger-normal;
+}
+
+.input-group.invalid .input-feedback {
+    @apply text-admin-danger-ligth-1 text-xs;
+}
