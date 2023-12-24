@@ -11,15 +11,8 @@
         'href' => route('admin.users.create'),
     ]"
     icon="people-fill">
-    <x-slot name="actions">
-        <x-common.button text="{{ __('words.administrators') }}" prepend-icon="person-fill-gear" />
-    </x-slot>
 
     <x-slot name="content">
-
-        <x-common.confirmation-dialog id="delete_item_confirmation" confirm-action="">
-        </x-common.confirmation-dialog>
-
         <x-common.list.table
             :columns="[
                 [
@@ -54,7 +47,8 @@
                             </x-common.list.list-actions>
                         </td>
                         <td>
-                            <x-common.thumb type="avatar" size="extrasmall" alternative-text="{{ $user->first_name }}"
+                            <x-common.thumb type="avatar" size="extrasmall"
+                                alternative-text="{{ $user->first_name }}"
                                 image="{{ $user->photo ? \Storage::url($user->photo) : '' }}" />
                         </td>
                         <td>
