@@ -22,17 +22,23 @@ class Index extends Component
             ->title(__('words.users'));
     }
 
+    /**
+     * Delete a user
+     *
+     * @param int|string $id
+     * @return void
+     */
     public function delete($id)
     {
         $user = User::where('id', $id)->firstOrFail();
 
         if ($user->id == \Auth::user()->id) {
-            Alert::danger('Não pode excluir sua própria conta por aqui.')->float()->addFlash();
+            Alert::danger(__('messages.alert.cannot_delete_your_own_account'))->float()->addFlash();
             return $this->redirect(route('admin.users'), true);
         }
 
         $user->delete();
 
-        Alert::info('Usuário excluído com sucesso.')->float()->addAlert($this);
+        Alert::info(__('messages.alert.user_deleted'))->float()->addAlert($this);
     }
 }

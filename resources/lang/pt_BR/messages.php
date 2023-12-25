@@ -19,5 +19,8 @@ return [
         'profile_picture_deleted' => 'Foto de perfil excluída com sucesso.',
         'profile_updated' => 'Os dados do perfil foram atualizados com sucesso.',
         'profile_update_fail' => 'Falha ao tentar atualizar o perfil.',
+
+        'cannot_delete_your_own_account' => 'Não pode excluir sua própria conta.',
+        'user_deleted' => 'Usuário excluído com sucesso.'
     ],
 ];
