@@ -1,4 +1,4 @@
-@props(['id', 'icon', 'title', 'closeText', 'medium', 'large', 'full', 'persistent'])
+@props(['id', 'icon', 'title', 'text', 'closeText', 'medium', 'large', 'full', 'persistent'])
 
 @php
     if (!($id ?? null)) {
@@ -9,75 +9,100 @@
     $full = $full ?? false;
     $icon = $icon ?? null;
     $title = $title ?? null;
+    $text = $text ?? null;
     $closeText = $closeText ?? __('words.close');
 @endphp
 
-<div x-data="{
-    ...{{ json_encode([
-        'id' => $id,
-        'showWrapper' => false,
-        'showContent' => false,
-        'persistent' => $persistent ?? false,
-    ]) }},
-
-    showAlert(e) {
-        let controls = e.detail?.controls;
-
-        if (controls != this.id) {
-            return;
-        }
-
-        this.showWrapper = true;
-
-        setTimeout(() => {
-            this.showContent = true;
-        }, 200);
-    },
-    dialogWrapperClick(e) {
-        if ($el != e.target) {
-            return;
-        }
-
-        if (!this.persistent) {
+<div
+    x-data="{
+        ...{{ json_encode([
+            'id' => $id,
+            'showWrapper' => false,
+            'showContent' => false,
+            'persistent' => $persistent ?? false,
+            'data' => [
+                'icon' => $icon,
+                'title' => $title,
+                'text' => $text,
+            ],
+        ]) }},
+    
+        activatorClicked(e) {
+            if (e.detail?.controls != this.id) {
+                return;
+            }
+    
+            this.data = e.detail?.dataInfo ?? this.data;
+    
+            this.show();
+        },
+        wrapperClick(e) {
+            if ($el != e.target || this.persistent) {
+                return;
+            }
+    
             this.close();
+        },
+        show() {
+            this.showWrapper = true;
+    
+            setTimeout(() => {
+                this.showContent = true;
+            }, 200);
+        },
+        close() {
+            this.showContent = false;
+    
+            setTimeout(() => {
+                this.showWrapper = false;
+            }, 100);
         }
-    },
-    close() {
-        this.showContent = false;
+    }"
 
-        setTimeout(() => {
-            this.showWrapper = false;
-        }, 100);
-    }
-}" @alert_activator_clicked.window="showAlert" x-on:click="dialogWrapperClick" class="dialog"
-    x-show="showWrapper" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
-    x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-300"
-    x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" id="{{ $id }}" style="display: none;"
-    {{ $attributes }}>
+    @alert_activator_clicked.window="activatorClicked"
+    x-on:click="wrapperClick"
 
-    <div x-show="showContent" x-transition:enter="transition ease-out duration-300"
-        x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100"
-        x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 scale-100"
+    x-show="showWrapper"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+
+    id="{{ $id }}" class="dialog" style="display: none;" {{ $attributes }}>
+
+    {{-- dialog inner --}}
+    <div
+        x-show="showContent"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 scale-90"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 scale-100"
         x-transition:leave-end="opacity-0 scale-110"
         class="dialog-inner dialog-inner-{{ $medium ? 'medium' : ($large ? 'large' : ($full ? 'full' : '')) }}"
         role="alert">
 
         {{-- header --}}
-        @if ($title)
-            <div class="dialog-header">
-                @if ($icon)
-                    <span class="dialog-icon">
-                        <i class="bi bi-{{ $icon }}"></i>
-                    </span>
-                @endif
+        <div x-show="data.title" class="dialog-header">
+            <span x-show="data.icon" class="dialog-icon">
+                <i :class="'bi bi-' + data.icon"></i>
+            </span>
 
-                <h4 class="dialog-title">{{ $title }}</h4>
-            </div>
-        @endif
+            <h4 class="dialog-title" x-text="data.title"></h4>
+        </div>
 
         {{-- body --}}
         <div class="dialog-body">
-            {{ $content ?? null }}
+            <template x-if="data.text">
+                <p x-text="data.text"></p>
+            </template>
+            <template x-if="!data.text">
+                <div>
+                    {{ $content ?? null }}
+                </div>
+            </template>
         </div>
 
         {{-- footer --}}

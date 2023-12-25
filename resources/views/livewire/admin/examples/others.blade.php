@@ -2,6 +2,118 @@
 
     @slot('content')
         <div class="flex flex-wrap justify-center gap-y-8">
+
+            <x-admin.section title="Dialogs" subtitle="Dialogs examples">
+                @slot('content')
+                    <div class="flex flex-wrap justify-center">
+                        <div class="flex flex-wrap gap-5">
+                            {{-- dialog 1 --}}
+                            <x-common.dialog id="dialog1" icon="app" title="Dialog #1 title">
+                                @slot('content')
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde vel adipisci
+                                        blanditiis voluptates eum. Nam, cum minima?
+                                    </p>
+                                @endslot
+                                @slot('actions')
+                                    <x-common.button text="Custom actions" />
+                                @endslot
+                            </x-common.dialog>
+                            <x-common.dialog-activator controls="dialog1">
+                                <x-slot name="activator">
+                                    <x-common.button text="Show dialog #1" />
+                                </x-slot>
+                            </x-common.dialog-activator>
+
+                            {{-- dialog 2 --}}
+                            <x-common.dialog id="dialog2" icon="app" title="Medium dialog #2 title" medium>
+                                @slot('content')
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde vel adipisci
+                                        blanditiis voluptates eum. Nam, cum minima?
+                                    </p>
+                                @endslot
+                                @slot('actions')
+                                    <x-common.button text="Custom actions" />
+                                @endslot
+                            </x-common.dialog>
+                            <x-common.dialog-activator controls="dialog2">
+                                <x-slot name="activator">
+                                    <x-common.button text="Show medium dialog #2" />
+                                </x-slot>
+                            </x-common.dialog-activator>
+
+                            {{-- dialog 3 --}}
+                            <x-common.dialog id="dialog3" icon="app" title="Large dialog #3 title" large>
+                                @slot('content')
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde vel adipisci
+                                        blanditiis voluptates eum. Nam, cum minima?
+                                    </p>
+                                @endslot
+                                @slot('actions')
+                                    <x-common.button text="Custom actions" />
+                                @endslot
+                            </x-common.dialog>
+                            <x-common.dialog-activator controls="dialog3">
+                                <x-slot name="activator">
+                                    <x-common.button text="Show large dialog #3" />
+                                </x-slot>
+                            </x-common.dialog-activator>
+
+                            {{-- dialog 4 --}}
+                            <x-common.dialog id="dialog4" icon="app" title="Full dialog #4 title" full>
+                                @slot('content')
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde vel adipisci
+                                        blanditiis voluptates eum. Nam, cum minima?
+                                    </p>
+                                @endslot
+                                @slot('actions')
+                                    <x-common.button text="Custom actions" />
+                                @endslot
+                            </x-common.dialog>
+                            <x-common.dialog-activator controls="dialog4">
+                                <x-slot name="activator">
+                                    <x-common.button text="Show full dialog #4" />
+                                </x-slot>
+                            </x-common.dialog-activator>
+
+                            {{-- dialog 5 --}}
+                            <x-common.dialog id="dialog5" />
+                            <x-common.dialog-activator
+                                controls="dialog5"
+                                data-info="{{ json_encode([
+                                    'icon' => 'rocket-takeoff-fill',
+                                    'title' => 'Title received via activator',
+                                    'text' =>
+                                        'This text was received via the data-info property through the dialog activator. This is ideal when you want to use the same dialog to display dynamic content, such as messages, simply inserting a JSON with the icon, title and text fields in the data-info property.',
+                                ]) }}">
+                                <x-slot name="activator">
+                                    <x-common.button text="Dialog with data from activator" />
+                                </x-slot>
+                            </x-common.dialog-activator>
+
+                            {{-- dialog 6 --}}
+                            <x-common.dialog id="dialog6" persistent />
+                            <x-common.dialog-activator
+                                controls="dialog6"
+                                data-info="{{ json_encode([
+                                    'icon' => 'rocket-takeoff-fill',
+                                    'title' => 'This is a persistent dialog',
+                                    'text' =>
+                                        'This is a good example of a persistent dialog. Click on the bottom of the modal and see that it does not close, this is a persistent dialog.',
+                                ]) }}">
+                                <x-slot name="activator">
+                                    <x-common.button text="Dialog persistent" />
+                                </x-slot>
+                            </x-common.dialog-activator>
+                        </div>
+
+                    </div>
+                @endslot
+            </x-admin.section>
+
             <x-admin.section title="Thumbnail" subtitle="Thumbnail examples">
                 <x-slot name="content">
                     <div class="flex flex-wrap justify-center gap-10 mb-8">
@@ -119,87 +231,6 @@
                         </div>
                     </div>
                 </x-slot>
-            </x-admin.section>
-
-            <x-admin.section title="Dialogs" subtitle="Dialogs examples">
-                @slot('content')
-                    <div class="flex flex-wrap justify-center">
-                        <div class="flex flex-wrap gap-5">
-                            {{-- dialog 1 --}}
-                            <x-common.dialog id="dialog1" icon="app" title="Dialog #1 title">
-                                @slot('content')
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde vel adipisci
-                                        blanditiis voluptates eum. Nam, cum minima?
-                                    </p>
-                                @endslot
-                                @slot('actions')
-                                    <x-common.button text="Custom actions" />
-                                @endslot
-                            </x-common.dialog>
-                            <x-common.dialog-activator controls="dialog1">
-                                <x-slot name="activator">
-                                    <x-common.button text="Show dialog #1" />
-                                </x-slot>
-                            </x-common.dialog-activator>
-
-                            {{-- dialog 2 --}}
-                            <x-common.dialog id="dialog2" icon="app" title="Medium dialog #2 title" medium>
-                                @slot('content')
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde vel adipisci
-                                        blanditiis voluptates eum. Nam, cum minima?
-                                    </p>
-                                @endslot
-                                @slot('actions')
-                                    <x-common.button text="Custom actions" />
-                                @endslot
-                            </x-common.dialog>
-                            <x-common.dialog-activator controls="dialog2">
-                                <x-slot name="activator">
-                                    <x-common.button text="Show medium dialog #2" />
-                                </x-slot>
-                            </x-common.dialog-activator>
-
-                            {{-- dialog 3 --}}
-                            <x-common.dialog id="dialog3" icon="app" title="Large dialog #3 title" large>
-                                @slot('content')
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde vel adipisci
-                                        blanditiis voluptates eum. Nam, cum minima?
-                                    </p>
-                                @endslot
-                                @slot('actions')
-                                    <x-common.button text="Custom actions" />
-                                @endslot
-                            </x-common.dialog>
-                            <x-common.dialog-activator controls="dialog3">
-                                <x-slot name="activator">
-                                    <x-common.button text="Show large dialog #3" />
-                                </x-slot>
-                            </x-common.dialog-activator>
-
-                            {{-- dialog 4 --}}
-                            <x-common.dialog id="dialog4" icon="app" title="Full dialog #4 title" full>
-                                @slot('content')
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam ea quo unde vel adipisci
-                                        blanditiis voluptates eum. Nam, cum minima?
-                                    </p>
-                                @endslot
-                                @slot('actions')
-                                    <x-common.button text="Custom actions" />
-                                @endslot
-                            </x-common.dialog>
-                            <x-common.dialog-activator controls="dialog4">
-                                <x-slot name="activator">
-                                    <x-common.button text="Show full dialog #4" />
-                                </x-slot>
-                            </x-common.dialog-activator>
-                        </div>
-
-                    </div>
-                @endslot
             </x-admin.section>
 
             <x-admin.section title="Dropdown" subtitle="Dropdown examples">

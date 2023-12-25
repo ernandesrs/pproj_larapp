@@ -27,7 +27,7 @@
 }
 
 .dialog-icon {
-    @apply shrink-0 rounded-full bg-blue-400 text-gray-200 w-10 h-10 flex justify-center items-center mr-4;
+    @apply shrink-0 rounded-full bg-blue-400 text-gray-200 w-10 h-10 flex justify-center items-center;
 }
 
 .dialog-title {
