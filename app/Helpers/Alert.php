@@ -90,6 +90,18 @@ class Alert
     }
 
     /**
+     * Error
+     *
+     * @param string $text
+     * @param string|null $title
+     * @return Alert
+     */
+    public static function error(string $text, ?string $title = null)
+    {
+        return self::add($text, $title, 'error');
+    }
+
+    /**
      * Float alert
      *
      * @return Alert

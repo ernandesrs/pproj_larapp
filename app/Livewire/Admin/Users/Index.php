@@ -33,7 +33,7 @@ class Index extends Component
         $user = User::where('id', $id)->firstOrFail();
 
         if ($user->id == \Auth::user()->id) {
-            Alert::danger(__('messages.alert.cannot_delete_your_own_account'))->float()->addFlash();
+            Alert::error(__('messages.alert.cannot_delete_your_own_account'))->float()->addFlash();
             return $this->redirect(route('admin.users'), true);
         }
 
