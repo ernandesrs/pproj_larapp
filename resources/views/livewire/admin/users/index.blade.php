@@ -13,7 +13,7 @@
     icon="people-fill">
 
     <x-slot name="content">
-        <x-common.confirmation-dialog type="info" id="delete_user_confirmation" />
+        <x-common.confirmation-dialog type="danger" id="delete_user_confirmation" />
 
         <x-common.list.table
             :columns="[
