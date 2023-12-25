@@ -20,4 +20,9 @@ class Index extends Component
         ])->layout('livewire.admin.layout')
             ->title(__('words.users'));
     }
+
+    public function delete($id)
+    {
+        dump($id);
+    }
 }

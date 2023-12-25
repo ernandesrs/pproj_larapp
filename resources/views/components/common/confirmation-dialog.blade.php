@@ -18,7 +18,9 @@
 
             <x-common.button wire:loading text="{{ __('words.wait') }}" variant="{{ $variant }}" loading />
         @else
-            <x-common.button text="{{ __('words.confirm') }}"
+            <x-common.button
+                x-on:click="alert('confirmado')"
+                text="{{ __('words.confirm') }}"
                 variant="{{ $variant }}" prepend-icon="check-lg" />
         @endif
     </x-slot>
