@@ -63,10 +63,10 @@ body {
 }
 
 .layout-right-side {
-    @apply basis-full relative z-10;
+    @apply w-full relative z-10;
 
     /* lg */
-    @apply lg:basis-9/12;
+    @apply lg:w-auto lg:basis-9/12;
 
     /* xl */
     @apply xl:basis-10/12;
