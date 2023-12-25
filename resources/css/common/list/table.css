@@ -4,7 +4,7 @@
  *
  */
 .table-wrapper {
-    @apply rounded border border-gray-200;
+    @apply max-w-full lg:max-w-screen-sm xl:max-w-full rounded border border-gray-200;
 }
 
 .table-wrapper-inner {
@@ -12,7 +12,7 @@
 }
 
 .table-wrapper-inner table {
-    @apply min-w-full divide-y-2 divide-gray-200 bg-white;
+    @apply w-full divide-y-2 divide-gray-200 bg-white;
 }
 
 .table-wrapper-inner table thead tr th,

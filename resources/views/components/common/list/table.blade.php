@@ -22,7 +22,7 @@
     </div>
 
     {{-- pagination --}}
-    <div class="hidden rounded-b-lg border-t border-gray-200 px-4 py-2">
+    <div class=" rounded-b-lg border-t border-gray-200 px-4 py-2">
         <ol class="flex justify-end gap-1 text-xs font-medium">
             <li>
                 <a
