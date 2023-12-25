@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Users;
 
+use App\Helpers\Alert;
 use App\Models\User;
 use Livewire\Component;
 
@@ -23,6 +24,15 @@ class Index extends Component
 
     public function delete($id)
     {
-        dump($id);
+        $user = User::where('id', $id)->firstOrFail();
+
+        if ($user->id == \Auth::user()->id) {
+            Alert::danger('Não pode excluir sua própria conta por aqui.')->float()->addFlash();
+            return $this->redirect(route('admin.users'), true);
+        }
+
+        $user->delete();
+
+        Alert::info('Usuário excluído com sucesso.')->float()->addAlert($this);
     }
 }
