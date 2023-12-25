@@ -39,8 +39,8 @@
                         <x-common.confirmation-dialog
                             type="danger"
                             confirm-action="delete({{ $user->id }})"
-                            title="Excluir {{ $user->first_name }}?"
-                            text="Você está excluindo o usuário {{ $user->first_name }} {{ $user->last_name }}, após confirmar isso não poderá ser desfeito."
+                            title="{{ __('messages.confirmation.delete_user_title', ['name' => $user->first_name]) }}"
+                            text="{{ __('messages.confirmation.delete_user_text', ['name' => $user->first_name . ' ' . $user->last_name]) }}"
                             id="delete_user_confirmation_{{ $user->id }}" />
 
                         <td>

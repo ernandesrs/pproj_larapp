@@ -5,7 +5,10 @@ return [
         'default_title' => 'Confirme sua ação',
         'default_text' => 'Tem certeza de que deseja executar esta ação? Confirme para prosseguir.',
         'deleting_photo_title' => 'Excluindo foto de perfil',
-        'deleting_photo_text' => 'Após confirmar, a exclusão não poderá ser desfeita'
+        'deleting_photo_text' => 'Após confirmar, a exclusão não poderá ser desfeita',
+
+        'delete_user_title' => 'Excluir :name?',
+        'delete_user_text' => 'Você está excluindo o usuário :name. Após confirmar, isso não poderá ser desfeito.',
     ],
 
     'auth' => [
