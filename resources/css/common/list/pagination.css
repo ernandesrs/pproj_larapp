@@ -14,12 +14,10 @@
     @apply bg-indigo-600 text-white pointer-events-none;
 }
 
-.pagination-link-previous,
-.pagination-link-next {
+.pagination-link-alt {
     @apply border-none hover:bg-white hover:text-gray-900;
 }
 
-.pagination-link-previous.pagination-link-active,
-.pagination-link-next.pagination-link-active {
+.pagination-link-alt.pagination-link-active {
     @apply bg-transparent text-gray-400;
 }
