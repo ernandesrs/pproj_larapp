@@ -42,10 +42,7 @@ class BasicData extends Component
     {
         $validated = $this->validate();
 
-        if (!\Auth::user()->update($validated['data'])) {
-            Alert::danger(__('messages.alert.profile_update_fail'))->float()->addAlert($this);
-            return;
-        }
+        UserService::update(\Auth::user(), $validated['data']);
 
         Alert::success(__('messages.alert.profile_updated'))->float()->addAlert($this);
     }
@@ -57,6 +54,6 @@ class BasicData extends Component
      */
     public function rules()
     {
-        return UserService::getUpdateDataRules();
+        return UserService::getBasicDataRules();
     }
 }

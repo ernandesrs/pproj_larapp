@@ -22,6 +22,19 @@ class UserService
     }
 
     /**
+     * Update
+     *
+     * @param \Illuminate\Contracts\Auth\Authenticatable|User $user
+     * @param array $validated
+     * @return User
+     */
+    public static function update(\Illuminate\Contracts\Auth\Authenticatable|User $user, array $validated)
+    {
+        $user->update($validated);
+        return $user->fresh();
+    }
+
+    /**
      * 
      * 
      * =================================
