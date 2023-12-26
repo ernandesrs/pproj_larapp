@@ -23,6 +23,9 @@ return [
         'cannot_delete_your_own_account' => 'Não pode excluir sua própria conta.',
         'user_deleted' => 'Usuário excluído com sucesso.',
 
-        'user_registered' => 'O usuário foi registrado com sucesso!'
+        'update_fail' => 'Erro desconhecido ao tentar fazer atualização!',
+
+        'user_registered' => 'O usuário foi registrado com sucesso!',
+        'user_updated' => 'O usuário foi atualizado com sucesso!'
     ],
 ];
