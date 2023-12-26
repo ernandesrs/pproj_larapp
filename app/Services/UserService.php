@@ -53,6 +53,21 @@ class UserService
     }
 
     /**
+     * Delete photo
+     *
+     * @param Authenticatable|User $user
+     * @return null|User null on fail, User on success
+     */
+    public static function deletePhoto(Authenticatable|User $user)
+    {
+        if ($oldPhoto = $user->photo) {
+            \Storage::disk('public')->delete($oldPhoto);
+        }
+
+        return $user->update(['photo' => null]) ? $user->fresh() : null;
+    }
+
+    /**
      * 
      * 
      * =================================

@@ -58,12 +58,7 @@ class Photo extends Component
      */
     public function deletePhoto()
     {
-        sleep(2);
-        if ($oldPhoto = \Auth::user()->photo) {
-            \Storage::disk('public')->delete($oldPhoto);
-        }
-
-        \Auth::user()->update(['photo' => null]);
+        UserService::deletePhoto(\Auth::user());
 
         Alert::success(__('messages.alert.profile_picture_deleted'))->float()->addFlash();
 
