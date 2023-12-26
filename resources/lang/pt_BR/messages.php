@@ -26,6 +26,7 @@ return [
         'update_fail' => 'Erro desconhecido ao tentar fazer atualização!',
 
         'user_registered' => 'O usuário foi registrado com sucesso!',
-        'user_updated' => 'O usuário foi atualizado com sucesso!'
+        'user_updated' => 'O usuário foi atualizado com sucesso!',
+        'password_updated' => 'A senha foi atualizada com sucesso!',
     ],
 ];

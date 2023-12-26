@@ -65,8 +65,22 @@ class Edit extends Component
         Alert::success(__('messages.alert.user_updated'))->float()->addAlert($this);
     }
 
+    /**
+     * Password update
+     *
+     * @return void
+     */
     public function updatePassword()
     {
-        sleep(3);
+        $validated = $this->validate(UserService::getPasswordDataRules());
+
+        if (!UserService::update($this->user, $validated['data'])) {
+            Alert::error(__('messages.alert.update_fail'))->float()->addAlert($this);
+            return;
+        }
+
+        Alert::success(__('messages.alert.password_updated'))->float()->addFlash();
+
+        $this->redirect(route('admin.users.edit', ['user' => $this->user->id]));
     }
 }
