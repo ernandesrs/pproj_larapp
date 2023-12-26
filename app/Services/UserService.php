@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Validation\Rule;
 use \App\Models\User;
 
@@ -24,14 +25,31 @@ class UserService
     /**
      * Update
      *
-     * @param \Illuminate\Contracts\Auth\Authenticatable|User $user
+     * @param Authenticatable|User $user
      * @param array $validated
-     * @return User
+     * @return null|User null on fail, User on success
      */
-    public static function update(\Illuminate\Contracts\Auth\Authenticatable|User $user, array $validated)
+    public static function update(Authenticatable|User $user, array $validated)
     {
-        $user->update($validated);
-        return $user->fresh();
+        return $user->update($validated) ? $user->fresh() : null;
+    }
+
+    /**
+     * Update photo
+     *
+     * @param Authenticatable|User $user
+     * @param mixed $photo
+     * @return null|User null on fail, User on success
+     */
+    public static function updatePhoto(Authenticatable|User $user, mixed $photo)
+    {
+        if ($oldPhoto = $user->photo) {
+            \Storage::disk('public')->delete($oldPhoto);
+        }
+
+        $newPhoto = $photo->store('avatars', 'public');
+
+        return $user->update(['photo' => $newPhoto]) ? $user->fresh() : null;
     }
 
     /**

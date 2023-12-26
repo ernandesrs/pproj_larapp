@@ -3,8 +3,7 @@
 namespace App\Livewire\Admin\Account;
 
 use App\Helpers\Alert;
-use Illuminate\Http\Request;
-use Livewire\Attributes\On;
+use App\Services\UserService;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -27,14 +26,6 @@ class Photo extends Component
     public $photo = null;
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->currentPhoto = \Storage::url(\Auth::user()->photo);
-    }
-
-    /**
      * Render view
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -53,7 +44,11 @@ class Photo extends Component
     {
         $validated = $this->validate();
 
-        $this->updtPhoto($validated['photo']);
+        UserService::updatePhoto(\Auth::user(), $validated['photo']);
+
+        Alert::success(__('messages.alert.profile_updated'))->float()->addFlash();
+
+        $this->redirect(route('admin.profile'), true);
     }
 
     /**
@@ -71,30 +66,6 @@ class Photo extends Component
         \Auth::user()->update(['photo' => null]);
 
         Alert::success(__('messages.alert.profile_picture_deleted'))->float()->addFlash();
-
-        $this->redirect(route('admin.profile'), true);
-    }
-
-    /**
-     * Delete old photo and update photo
-     *
-     * @param mixed $photo
-     * @return void
-     */
-    private function updtPhoto($photo)
-    {
-        if ($oldPhoto = \Auth::user()->photo) {
-            \Storage::disk('public')->delete($oldPhoto);
-        }
-
-        $newPhoto = $photo->store('avatars', 'public');
-        if (!\Auth::user()->update(['photo' => $newPhoto])) {
-            Alert::danger(__('messages.alert.profile_update_fail'))->float()->addAlert($this);
-            return;
-        }
-
-        $this->currentPhoto = \Storage::url($newPhoto);
-        Alert::success(__('messages.alert.profile_updated'))->float()->addFlash();
 
         $this->redirect(route('admin.profile'), true);
     }
