@@ -1,7 +1,7 @@
-@props(['model'])
+@props(['model', 'eachSide'])
 
 @php
-    $pagination = $model ? $model->linkCollection() : null;
+    $pagination = $model ? $model->onEachSide($eachSide ?? 3)->linkCollection() : null;
 
     if ($pagination) {
         $total = $pagination->count();

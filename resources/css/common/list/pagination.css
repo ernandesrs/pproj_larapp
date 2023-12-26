@@ -3,7 +3,7 @@
 }
 
 .pagination-nav {
-    @apply flex justify-end gap-1 text-xs font-medium;
+    @apply flex justify-center gap-1 text-xs font-medium;
 }
 
 .pagination-link {

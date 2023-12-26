@@ -81,7 +81,7 @@
             </x-slot>
 
             <x-slot name="pagination">
-                <x-common.list.list-pagination :model="$users" />
+                <x-common.list.list-pagination :model="$users" each-side="0" />
             </x-slot>
 
         </x-common.list.table>
