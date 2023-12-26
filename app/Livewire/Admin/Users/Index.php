@@ -5,9 +5,12 @@ namespace App\Livewire\Admin\Users;
 use App\Helpers\Alert;
 use App\Models\User;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+
     /**
      * Render view
      *
@@ -17,7 +20,7 @@ class Index extends Component
     {
         return view('livewire..admin.users.index', [
             'title' => __('words.users'),
-            'users' => User::whereNotNull('id')->paginate(10)->withQueryString()
+            'users' => User::paginate(4)
         ])->layout('livewire.admin.layout')
             ->title(__('words.users'));
     }

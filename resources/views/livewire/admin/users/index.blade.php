@@ -80,6 +80,10 @@
                 @endforeach
             </x-slot>
 
+            <x-slot name="pagination">
+                <x-common.list.list-pagination :model="$users" />
+            </x-slot>
+
         </x-common.list.table>
 
     </x-slot>
