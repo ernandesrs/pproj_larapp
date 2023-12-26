@@ -21,6 +21,8 @@ return [
         'profile_update_fail' => 'Falha ao tentar atualizar o perfil.',
 
         'cannot_delete_your_own_account' => 'Não pode excluir sua própria conta.',
-        'user_deleted' => 'Usuário excluído com sucesso.'
+        'user_deleted' => 'Usuário excluído com sucesso.',
+
+        'user_registered' => 'O usuário foi registrado com sucesso!'
     ],
 ];

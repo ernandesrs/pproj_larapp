@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Account;
 
 use App\Helpers\Alert;
+use App\Services\UserService;
 use Livewire\Component;
 
 class Password extends Component
@@ -12,10 +13,17 @@ class Password extends Component
      *
      * @var array
      */
-    public $password = [
-        'password' => null,
-        'password_confirmation' => null
-    ];
+    public $data = [];
+
+    /**
+     * Mount
+     *
+     * @return void
+     */
+    public function mount()
+    {
+        $this->data = UserService::getPasswordDataFields();
+    }
 
     /**
      * Render component
@@ -36,15 +44,12 @@ class Password extends Component
     {
         $validated = $this->validate();
 
-        if (!\Auth::user()->update(['password' => \Hash::make($validated['password']['password'])])) {
+        if (!\Auth::user()->update(['password' => \Hash::make($validated['data']['password'])])) {
             Alert::danger(__('messages.alert.profile_update_fail'))->float()->addAlert($this);
             return;
         }
 
-        $this->password = [
-            'password' => null,
-            'password_confirmation' => null
-        ];
+        $this->data = UserService::getPasswordDataFields();
 
         Alert::success(__('messages.alert.profile_updated'))->float()->addAlert($this);
     }
@@ -56,9 +61,6 @@ class Password extends Component
      */
     public function rules()
     {
-        return [
-            'password' => ['array'],
-            'password.password' => ['required', 'confirmed'],
-        ];
+        return UserService::getPasswordDataRules();
     }
 }

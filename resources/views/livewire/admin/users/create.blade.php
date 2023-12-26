@@ -12,5 +12,13 @@
     ]">
     <x-slot name="content">
 
+        <x-common.form.form wire:submit="register" submit-text="{{ __('words.register') }} {{ __('words.user') }}">
+            <x-slot name="content">
+                <x-common.view-partials.user-basic-data />
+                <div class="py-3"></div>
+                <x-common.view-partials.user-password />
+            </x-slot>
+        </x-common.form.form>
+
     </x-slot>
 </x-admin.page>

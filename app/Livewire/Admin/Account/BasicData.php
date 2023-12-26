@@ -3,7 +3,7 @@
 namespace App\Livewire\Admin\Account;
 
 use App\Helpers\Alert;
-use Illuminate\Validation\Rule;
+use App\Services\UserService;
 use Livewire\Component;
 
 class BasicData extends Component
@@ -13,17 +13,12 @@ class BasicData extends Component
      *
      * @var array
      */
-    public $data = [
-        'first_name' => 'User',
-        'last_name' => 'Last name',
-        'username' => 'username',
-        'gender' => null
-    ];
+    public $data = [];
 
     /**
      * Contructor
      */
-    public function __construct()
+    public function mount()
     {
         $this->data = \Auth::user()->toArray();
     }
@@ -62,12 +57,6 @@ class BasicData extends Component
      */
     public function rules()
     {
-        return [
-            'data' => ['array'],
-            'data.first_name' => ['required', 'string', 'max:25'],
-            'data.last_name' => ['required', 'string', 'max:50'],
-            'data.username' => ['required', 'string', 'max:25'],
-            'data.gender' => ['nullable', 'string', Rule::in('n', 'm', 'f')]
-        ];
+        return UserService::getUpdateDataRules();
     }
 }
