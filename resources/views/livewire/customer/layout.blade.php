@@ -79,10 +79,25 @@
                 <div class="flex">
 
                     <div class="ml-auto flex gap-x-4">
-                        <button class="w-12 h-12 rounded-full text-customer-dark-normal duration-300 relative hover:bg-opacity-80 border border-gray-300">
-                            <x-customer.icon icon="bell" class="2xl" />
-                            <span class="w-5 h-5 rounded-full text-xs flex items-center justify-center bg-front-primary-normal text-white absolute top-0 right-0">4</span>
-                        </button>
+
+                        <x-customer.dropdown size="small">
+                            <x-slot name="activator">
+                                <button
+                                    class="w-12 h-12 rounded-full text-customer-dark-normal duration-300 relative hover:bg-opacity-80 border border-gray-300">
+                                    <x-customer.icon icon="bell" class="2xl" />
+                                    <span
+                                        class="w-5 h-5 rounded-full text-xs flex items-center justify-center bg-front-primary-normal text-white absolute top-0 right-0">4</span>
+                                </button>
+                            </x-slot>
+                            <x-slot name="content">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum tempora soluta
+                                    repellendus porro animi laborum ipsa libero reprehenderit quae quasi corrupti
+                                    molestias voluptatem dolore, voluptates exercitationem molestiae blanditiis
+                                    veritatis. Animi.
+                                </p>
+                            </x-slot>
+                        </x-customer.dropdown>
 
                         <button
                             class="ml-auto bg-gradient-to-b from-customer-primary-dark-2 to-customer-primary-normal w-12 h-12 rounded-full text-white duration-300 hover:bg-opacity-80"
