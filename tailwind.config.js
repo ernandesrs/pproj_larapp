@@ -2,8 +2,8 @@ const colors = require('tailwindcss/colors');
 
 const variantsMaker = (color, base) => {
   return {
-    'ligth-2': colors[color][(base - 100) < 50 ? 50 : (base - 100)],
-    'ligth-1': colors[color][(base - 100) < 50 ? 50 : (base - 100)],
+    'light-2': colors[color][(base - 100) < 50 ? 50 : (base - 100)],
+    'light-1': colors[color][(base - 100) < 50 ? 50 : (base - 100)],
     'normal': colors[color][base],
     'dark-1': colors[color][(base + 100) > 950 ? 950 : (base + 100)],
     'dark-2': colors[color][(base + 100) > 950 ? 950 : (base + 100)],

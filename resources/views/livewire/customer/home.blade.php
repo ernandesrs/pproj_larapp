@@ -9,6 +9,11 @@
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus illum, culpa possimus
                         similique voluptate adipisci ad illo mollitia ut laboriosam.
                     </x-customer.p>
+                    <div class="flex gap-4 mt-4">
+                        <x-customer.buttons.btn text="Lorem dolor now!" prepend-icon="arrow-left" />
+
+                        <x-customer.buttons.btn text="Lorem dolor now!" append-icon="arrow-right" outlined />
+                    </div>
                 </div>
             </div>
         </x-customer.card>
