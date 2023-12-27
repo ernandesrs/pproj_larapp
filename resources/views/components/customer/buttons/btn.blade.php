@@ -8,6 +8,7 @@
 ])
 
 {{--
+    bg-customer-white
 
     from-customer-primary-normal
     to-customer-primary-light-2
@@ -46,13 +47,15 @@
         {{ $attributes->merge([
             'class' => implode(' ', [
                 // default
-                'px-8 py-4 rounded-3xl bg-gradient-to-br shadow duration-300',
+                'px-8 py-4 rounded-3xl ' . ($outlined ? '' : 'bg-gradient-to-br') . ' shadow duration-300',
         
                 // text color
                 $outlined ? 'text-customer-' . $variant . '-normal' : 'text-white',
         
                 // bg-color: from bg
-                $outlined ? 'border border-customer-' . $variant . '-normal' : 'from-customer-' . $variant . '-normal',
+                $outlined
+                    ? 'bg-customer-white bg-opacity-90 border border-customer-' . $variant . '-normal'
+                    : 'from-customer-' . $variant . '-normal',
         
                 // bg-color: to bg
                 $outlined ? '' : 'to-customer-' . $variant . '-light-2',
@@ -81,7 +84,9 @@
                 $outlined ? 'text-customer-' . $variant . '-normal' : 'text-white',
         
                 // bg-color: from bg
-                $outlined ? 'border border-customer-' . $variant . '-normal' : 'from-customer-' . $variant . '-normal',
+                $outlined
+                    ? 'bg-customer-white border border-customer-' . $variant . '-normal'
+                    : 'from-customer-' . $variant . '-normal',
         
                 // bg-color: to bg
                 $outlined ? '' : 'to-customer-' . $variant . '-light-2',
