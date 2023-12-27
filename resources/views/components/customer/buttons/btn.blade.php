@@ -5,6 +5,8 @@
     'appendIcon' => null,
     'variant' => 'primary',
     'outlined' => false,
+    'small' => false,
+    'large' => false,
 ])
 
 {{--
@@ -47,7 +49,10 @@
         {{ $attributes->merge([
             'class' => implode(' ', [
                 // default
-                'flex items-center px-8 py-4 rounded-3xl ' . ($outlined ? '' : 'bg-gradient-to-br') . ' shadow duration-300',
+                'flex items-center rounded-full ' . ($outlined ? '' : 'bg-gradient-to-br') . ' shadow duration-300',
+        
+                // sizes
+                $small ? 'text-sm px-5 py-2' : ($large ? 'text-lg px-10 py-4' : 'text-base px-8 py-4'),
         
                 // text color
                 $outlined ? 'text-customer-' . $variant . '-normal' : 'text-white',
