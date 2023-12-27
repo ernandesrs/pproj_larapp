@@ -73,16 +73,29 @@
             ],
         ]" />
 
-    <div class="flex-1 h-screen">
-        <header class="bg-customer-primary-normal h-14 flex items-center">
+    <div class="flex-1 h-screen pt-4 px-4">
+        <header class="h-14 flex items-center mb-4">
             <div class="container">
                 <div class="flex">
-                    <button class="ml-auto" x-on:click="sidebarToggle">MENU</button>
+
+                    <div class="ml-auto flex gap-x-4">
+                        <button class="w-12 h-12 rounded-full text-customer-dark-normal duration-300 relative hover:bg-opacity-80 border border-gray-300">
+                            <x-customer.icon icon="bell" class="2xl" />
+                            <span class="w-5 h-5 rounded-full text-xs flex items-center justify-center bg-front-primary-normal text-white absolute top-0 right-0">4</span>
+                        </button>
+
+                        <button
+                            class="ml-auto bg-gradient-to-b from-customer-primary-dark-2 to-customer-primary-normal w-12 h-12 rounded-full text-white duration-300 hover:bg-opacity-80"
+                            x-on:click="sidebarToggle">
+                            <x-customer.icon x-show="!show" icon="list" class="text-2xl" />
+                            <x-customer.icon x-show="show" icon="list-nested" class="text-2xl" />
+                        </button>
+                    </div>
                 </div>
             </div>
         </header>
 
-        <main class="overflow-x-auto" style="height: calc(100vh - 3.5rem)">
+        <main class="overflow-y-auto overflow-x-hidden p-4" style="height: calc(100vh - (3.5rem + 2rem))">
             <div class="container">
                 {{ $slot }}
             </div>
