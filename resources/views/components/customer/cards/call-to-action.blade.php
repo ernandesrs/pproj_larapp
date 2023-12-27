@@ -71,7 +71,7 @@
         {{-- link --}}
         <div class="">
             <x-customer.buttons.btn as="link" href="{{ $buttonUrl }}" text="{{ $buttonText }}"
-                append-icon="arrow-right" variant="secondary" />
+                append-icon="arrow-right" variant="secondary" large />
         </div>
     </div>
 </x-customer.cards.card>
