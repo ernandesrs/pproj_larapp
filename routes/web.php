@@ -46,9 +46,7 @@ Route::group([
     'prefix' => 'dash'
 ], function () {
 
-    Route::get('/', function () {
-        return view('livewire.customer.home');
-    })->name('customer.index');
+    Route::get('/', \App\Livewire\Customer\Home::class)->name('customer.index');
 
 });
 
