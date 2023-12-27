@@ -12,7 +12,7 @@
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    @apply bg-admin-primary-ligth-2;
+    @apply bg-admin-primary-light-2;
 }
 
 /* firefox */
@@ -25,7 +25,7 @@
 }
 
 *::-moz-scrollbar-thumb:hover {
-    @apply bg-admin-primary-ligth-2;
+    @apply bg-admin-primary-light-2;
 }
 
 

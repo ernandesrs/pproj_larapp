@@ -145,7 +145,7 @@
 
         {{-- close button --}}
         <template x-if="closable">
-            <button x-on:click="close" class="text-front-dark-ligth-2 text-opacity-50 transition hover:text-opacity-70">
+            <button x-on:click="close" class="text-front-dark-light-2 text-opacity-50 transition hover:text-opacity-70">
                 <span class="sr-only">Dismiss popup</span>
 
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

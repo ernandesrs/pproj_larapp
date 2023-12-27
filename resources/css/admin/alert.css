@@ -6,22 +6,22 @@
  */
 
 .alert-progress-inner {
-    @apply bg-admin-light-ligth-2;
+    @apply bg-admin-light-light-2;
 }
 
 /* START: ALERT DEFAULT */
 .alert-default {
-    @apply border-admin-dark-ligth-2;
+    @apply border-admin-dark-light-2;
 }
 
 .alert-default .alert-icon .bi,
 .alert-default .alert-title,
 .alert-default .alert-text {
-    @apply text-admin-dark-ligth-2;
+    @apply text-admin-dark-light-2;
 }
 
 .alert-default .alert-progress-load {
-    @apply bg-admin-dark-ligth-2;
+    @apply bg-admin-dark-light-2;
 }
 
 /* END: ALERT DEFAULT */
@@ -38,7 +38,7 @@
 }
 
 .alert-success .alert-progress-load {
-    @apply bg-admin-success-ligth-2;
+    @apply bg-admin-success-light-2;
 }
 
 /* END: ALERT SUCCESS */
@@ -60,7 +60,7 @@
 
 .alert-danger .alert-progress-load,
 .alert-error .alert-progress-load {
-    @apply bg-admin-danger-ligth-2;
+    @apply bg-admin-danger-light-2;
 }
 
 /* END: ALERT DANGER/ERROR */
@@ -73,11 +73,11 @@
 .alert-info .alert-icon .bi,
 .alert-info .alert-title,
 .alert-info .alert-text {
-    @apply text-admin-info-ligth-1;
+    @apply text-admin-info-light-1;
 }
 
 .alert-info .alert-progress-load {
-    @apply bg-admin-info-ligth-2;
+    @apply bg-admin-info-light-2;
 }
 
 /* END: ALERT INFO */

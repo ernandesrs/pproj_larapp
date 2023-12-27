@@ -3,7 +3,7 @@
 }
 
 .aside-header {
-    @apply border-b border-admin-dark-ligth-2 w-full p-4;
+    @apply border-b border-admin-dark-light-2 w-full p-4;
 }
 
 .aside-inner {

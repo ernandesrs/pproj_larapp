@@ -7,18 +7,18 @@
         <div class="flex items-start mb-2 px-6">
             @isset($headerIcon)
                 <div class="hidden text-5xl mr-3 sm:block">
-                    <i class="bi bi-{{ $headerIcon }} text-admin-dark-ligth-2 opacity-90"></i>
+                    <i class="bi bi-{{ $headerIcon }} text-admin-dark-light-2 opacity-90"></i>
                 </div>
             @endisset
             <div class="">
                 @isset($title)
-                    <h4 class="font-medium text-admin-dark-ligth-2 opacity-90 md:font-semibold text-lg sm:text-xl">
+                    <h4 class="font-medium text-admin-dark-light-2 opacity-90 md:font-semibold text-lg sm:text-xl">
                         {{ $title }}
                     </h4>
                 @endisset
 
                 @isset($subtitle)
-                    <p class="text-admin-dark-ligth-2 text-opacity-60">
+                    <p class="text-admin-dark-light-2 text-opacity-60">
                         {{ $subtitle }}
                     </p>
                 @endisset

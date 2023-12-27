@@ -11,9 +11,9 @@
 
 .input-group.invalid .input-field,
 .input-group.invalid .input-file {
-    @apply border-admin-danger-ligth-2 text-admin-danger-normal;
+    @apply border-admin-danger-light-2 text-admin-danger-normal;
 }
 
 .input-group.invalid .input-feedback {
-    @apply text-admin-danger-ligth-1 text-xs;
+    @apply text-admin-danger-light-1 text-xs;
 }

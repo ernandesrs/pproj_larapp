@@ -52,7 +52,7 @@
         <div class="py-6">
             {{-- title --}}
             <x-customer.h1 text="{{ $title }}"
-                class="xl:text-5xl text-customer-white" />
+                class="xl:text-5xl !text-customer-white" />
 
             {{-- details --}}
             @if ($features)
