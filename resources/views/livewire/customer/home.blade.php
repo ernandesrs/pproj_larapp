@@ -1,8 +1,6 @@
 <div class="grid grid-cols-12 gap-8">
     <div class="col-span-12">
-        <x-customer.cards.card class="">
-            <hr>
-        </x-customer.cards.card>
+        <x-customer.cards.call-to-action />
     </div>
 
     <div class="col-span-12 lg:col-span-7">
