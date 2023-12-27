@@ -1,4 +1,7 @@
-@props(['text', 'icon'])
+@props([
+    'text' => 'H1 title via prop "text"',
+    'icon' => null,
+])
 
 <h1
     {{ $attributes->merge(['class' => 'flex items-center text-2xl lg:text-3xl xl:text-4xl font-bold text-customer-dark-ligth-2 mb-4']) }}>
