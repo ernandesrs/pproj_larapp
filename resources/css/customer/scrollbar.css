@@ -1,0 +1,29 @@
+/* chrome */
+*::-webkit-scrollbar {
+    width: .3rem;
+}
+
+*::-webkit-scrollbar-track {
+    @apply bg-customer-white;
+}
+
+*::-webkit-scrollbar-thumb {
+    @apply bg-gray-500;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    @apply bg-customer-primary-light-2;
+}
+
+/* firefox */
+*::-moz-scrollbar {
+    width: .3rem;
+}
+
+*::-moz-scrollbar-thumb {
+    @apply bg-gray-500;
+}
+
+*::-moz-scrollbar-thumb:hover {
+    @apply bg-customer-primary-light-2;
+}
