@@ -154,7 +154,7 @@
             </div>
         </header>
 
-        <main class="overflow-y-auto overflow-x-hidden" style="height: calc(100vh - (3.5rem + 2rem))">
+        <main class="overflow-y-auto overflow-x-hidden py-8" style="height: calc(100vh - (3.5rem + 2rem))">
             <div class="container">
                 {{ $slot }}
             </div>
