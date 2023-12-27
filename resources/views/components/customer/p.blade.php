@@ -1,4 +1,7 @@
-@props(['muted'])
+@props([
+    'muted' => false,
+    'size' => 'normal',
+])
 
 @php
     $muted = $muted ?? false;
@@ -6,7 +9,8 @@
 
 <p
     {{ $attributes->merge([
-        'class' => 'cursor-default ' . ($muted ? 'text-gray-400' : 'text-gray-600') . ' mb-2',
-    ]) }}>
+        'class' => implode(' ', ['cursor-default mb-2', $muted ? 'text-gray-400' : 'text-gray-600', 'text-' . $size]),
+    ]) }}
+    {{ $attributes }}>
     {{ $slot }}
 </p>

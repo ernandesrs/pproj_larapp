@@ -5,7 +5,7 @@
             <div class="flex relative">
                 <div class="basis-full">
                     <x-customer.h1 text="Lorem ipsum dolor sit amet, consectetur!" />
-                    <x-customer.p muted>
+                    <x-customer.p muted size="lg">
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus illum, culpa possimus
                         similique voluptate adipisci ad illo mollitia ut laboriosam.
                     </x-customer.p>
