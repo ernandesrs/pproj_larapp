@@ -5,6 +5,8 @@
     'appendIcon' => null,
     'variant' => 'primary',
     'outlined' => false,
+    'link' => false,
+    'noBg' => false,
     'small' => false,
     'large' => false,
 ])
@@ -44,36 +46,32 @@
 
 --}}
 
+@php
+    $styles = [
+        // default
+        'flex items-center rounded-full ' . ($outlined || $link ? '' : 'bg-gradient-to-br') . ' shadow duration-300',
+
+        // sizes and quare button if text is empty
+        $small ? ('text-sm ' . empty($text) ? 'px-3 py-2' : 'px-5 py-2') : ($large ? ('text-lg ' . empty($text) ? 'px-5 py-4' : 'px-10 py-4') : 'text-base ' . (empty($text) ? 'px-4 py-3' : 'px-8 py-4')),
+
+        // text color
+        $outlined || $link ? 'text-customer-' . $variant . '-normal' : 'text-white',
+
+        // bg-color: from bg
+        $outlined ? ($noBg ? 'bg-transparent' : 'bg-customer-white') . ' bg-opacity-90 border border-customer-' . $variant . '-normal' : ($link ? 'shadow-none hover:shadow-none hover:underline hover:scale-100' : 'from-customer-' . $variant . '-normal'),
+
+        // bg-color: to bg
+        $outlined || $link ? '' : 'to-customer-' . $variant . '-light-2',
+
+        // hover
+        'hover:shadow-lg hover:to-customer-' . $variant . '-normal hover:scale-105',
+    ];
+@endphp
+
 @if ($as == 'button')
     <button
         {{ $attributes->merge([
-            'class' => implode(' ', [
-                // default
-                'flex items-center rounded-full ' . ($outlined ? '' : 'bg-gradient-to-br') . ' shadow duration-300',
-        
-                // sizes and quare button if text is empty
-                $small
-                    ? 'text-sm ' . (empty($text) ? 'px-3 py-2' : 'px-5 py-2')
-                    : (($large
-                            ? 'text-lg ' . (empty($text) ? 'px-5 py-4' : 'px-10 py-4')
-                            : 'text-base ' . empty($text))
-                        ? 'px-4 py-3'
-                        : 'px-8 py-4'),
-        
-                // text color
-                $outlined ? 'text-customer-' . $variant . '-normal' : 'text-white',
-        
-                // bg-color: from bg
-                $outlined
-                    ? 'bg-customer-white bg-opacity-90 border border-customer-' . $variant . '-normal'
-                    : 'from-customer-' . $variant . '-normal',
-        
-                // bg-color: to bg
-                $outlined ? '' : 'to-customer-' . $variant . '-light-2',
-        
-                // hover
-                'hover:shadow-lg hover:to-customer-' . $variant . '-normal hover:scale-105',
-            ]),
+            'class' => implode(' ', $styles),
         ]) }}
         {{ $attributes }}>
         @if ($prependIcon)
@@ -87,24 +85,7 @@
 @else
     <a
         {{ $attributes->merge([
-            'class' => implode(' ', [
-                // default
-                'flex items-center px-8 py-4 rounded-3xl bg-gradient-to-br shadow duration-300',
-        
-                // text color
-                $outlined ? 'text-customer-' . $variant . '-normal' : 'text-white',
-        
-                // bg-color: from bg
-                $outlined
-                    ? 'bg-customer-white border border-customer-' . $variant . '-normal'
-                    : 'from-customer-' . $variant . '-normal',
-        
-                // bg-color: to bg
-                $outlined ? '' : 'to-customer-' . $variant . '-light-2',
-        
-                // hover
-                'hover:shadow-lg hover:to-customer-' . $variant . '-normal hover:scale-105',
-            ]),
+            'class' => implode(' ', $styles),
         ]) }}
         {{ $attributes }}>
         @if ($prependIcon)
