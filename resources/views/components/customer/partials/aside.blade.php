@@ -1,0 +1,29 @@
+@props(['items'])
+
+<aside
+    x-show="show"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="-translate-x-full"
+    x-transition:enter-end="-translate-x-0"
+    x-transition:leave="transition ease-in duration-300"
+    x-transition:leave-start="-translate-x-0"
+    x-transition:leave-end="-translate-x-full"
+
+    class="w-[85vw] h-screen fixed sm:w-96 lg:w-80 lg:relative p-4"
+    style="display: none;">
+
+    {{-- inner --}}
+    <div class="bg-gradient-to-b from-customer-primary-dark-2 to-customer-primary-normal h-full rounded-3xl px-6 py-4">
+
+        {{-- head --}}
+        <x-customer.partials.head />
+
+        @foreach ($items as $item)
+            <x-customer.partials.navigation-group
+                title="{{ $item['title'] }}"
+                :items="$item['items']" />
+        @endforeach
+
+    </div>
+
+</aside>
