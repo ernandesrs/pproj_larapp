@@ -90,7 +90,9 @@
                                     class="w-12 h-12 rounded-full text-customer-dark-normal duration-300 relative hover:bg-opacity-80 border border-gray-300">
                                     <x-customer.icon icon="bell" class="2xl" />
                                     <span
-                                        class="w-5 h-5 rounded-full text-xs flex items-center justify-center bg-customer-danger-normal text-white absolute top-0 right-0">4</span>
+                                        class="w-5 h-5 rounded-full text-xs flex items-center justify-center bg-customer-danger-normal text-white absolute top-0 right-0">
+                                        3
+                                    </span>
                                 </button>
                             </x-slot>
                             <x-slot name="content">
@@ -100,7 +102,7 @@
 
                                     <span
                                         class="flex items-center justify-center px-3 py-2 rounded-3xl bg-customer-danger-normal text-white text-sm">
-                                        <span>Unread</span><span class="pl-1">4</span>
+                                        <span>Unread</span><span class="pl-1">3</span>
                                     </span>
                                 </div>
 
