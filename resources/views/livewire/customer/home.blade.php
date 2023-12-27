@@ -3,6 +3,12 @@
         <x-customer.cards.call-to-action
             timer="30"
             title="75% OFF! Get Your Annual Premium Package Now"
+            :features="[
+                'Lorem ipsum dolor sit amet',
+                'In iure, perspiciatis',
+                'Aperiam cumque provident',
+                'Blanditiis ad velit expedita',
+            ]"
             button-text="I Want My Premium Package!" />
     </div>
 
