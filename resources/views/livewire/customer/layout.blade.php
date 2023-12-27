@@ -73,7 +73,7 @@
             ],
         ]" />
 
-    <div class="flex-1 h-screen pt-4 px-4">
+    <div class="flex-1 h-screen pt-4">
         <header class="h-14 flex items-center mb-4">
             <div class="container">
                 <div class="flex items-center">
@@ -214,7 +214,7 @@
             </div>
         </header>
 
-        <main class="overflow-y-auto overflow-x-hidden p-4" style="height: calc(100vh - (3.5rem + 2rem))">
+        <main class="overflow-y-auto overflow-x-hidden" style="height: calc(100vh - (3.5rem + 2rem))">
             <div class="container">
                 {{ $slot }}
             </div>

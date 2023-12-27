@@ -8,5 +8,5 @@
 @tailwind utilities;
 
 .container {
-    @apply mx-auto relative;
+    @apply mx-auto relative px-4;
 }
