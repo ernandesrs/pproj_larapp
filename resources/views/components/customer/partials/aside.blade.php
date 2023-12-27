@@ -9,11 +9,11 @@
     x-transition:leave-start="-translate-x-0"
     x-transition:leave-end="-translate-x-full"
 
-    class="w-[85vw] h-screen fixed sm:w-96 lg:w-80 lg:relative p-4"
+    class="w-[85vw] h-screen fixed z-50 p-4 sm:w-96 lg:w-80 lg:relative lg:z-0"
     style="display: none;">
 
     {{-- inner --}}
-    <div class="bg-gradient-to-b from-customer-primary-dark-2 to-customer-primary-normal h-full rounded-3xl px-6 py-4">
+    <div class="bg-gradient-to-b from-customer-primary-dark-2 to-customer-primary-normal h-full rounded-3xl px-6 py-4 shadow-lg">
 
         {{-- head --}}
         <x-customer.partials.head />
