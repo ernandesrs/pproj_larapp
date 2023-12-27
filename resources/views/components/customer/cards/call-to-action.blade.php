@@ -1,6 +1,9 @@
 @props([
     // time left in minutes
     'timer' => null,
+    'title' => 'Call to action title via prop title',
+    'buttonText' => 'Text via prop buttonText',
+    'buttonUrl' => '#',
 ])
 
 <x-customer.cards.card
@@ -33,7 +36,7 @@
             this.timerDisplayable.seconds = (this.timer % 60).toString().padStart(2, '0');
         },
     }"
-    class="bg-gradient-to-b from-customer-secondary-normal to-customer-primary-dark-2">
+    class="bg-gradient-to-b from-customer-secondary-normal to-customer-primary-dark-2 cursor-default group">
     <div class="flex flex-col items-center text-center xl:px-28">
         <template x-if="timer != -1">
             <div
@@ -43,11 +46,12 @@
             </div>
         </template>
 
-        <x-customer.h1 text="75% OFF! Get Your Annual Premium Package Now"
-            class="xl:text-5xl text-customer-white" />
+        <x-customer.h1 text="{{ $title }}"
+            class="xl:text-5xl text-customer-white duration-300 group-hover:scale-105" />
 
         <div class="mt-5">
-            <x-customer.buttons.btn text="I Want My Premium Package!" append-icon="arrow-right" variant="secondary" />
+            <x-customer.buttons.btn as="link" href="{{ $buttonUrl }}" text="{{ $buttonText }}"
+                append-icon="arrow-right" variant="secondary" />
         </div>
     </div>
 </x-customer.cards.card>
