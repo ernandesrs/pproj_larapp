@@ -48,6 +48,8 @@ Route::group([
 
     Route::get('/', \App\Livewire\Customer\Home::class)->name('customer.index');
 
+    Route::get('/account', \App\Livewire\Customer\Account\Account::class)->name('customer.account');
+
 });
 
 /**

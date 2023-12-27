@@ -31,7 +31,7 @@
                     [
                         'text' => 'Dashboard',
                         'icon' => 'bar-chart-line-fill',
-                        'href' => '#',
+                        'href' => route('customer.index'),
                         'activeIn' => ['customer.index'],
                     ],
                     [
@@ -57,7 +57,8 @@
                     [
                         'text' => 'Account',
                         'icon' => 'person-circle',
-                        'href' => '#',
+                        'href' => route('customer.account'),
+                        'activeIn' => ['customer.account'],
                     ],
                     [
                         'text' => 'Settings',
@@ -97,7 +98,7 @@
                                 ],
                                 [
                                     'icon' => 'person-exclamation',
-                                    'text' => "Your account needs important settings",
+                                    'text' => 'Your account needs important settings',
                                     'read' => false,
                                     'action' => [
                                         'href' => route('customer.index'),
@@ -131,7 +132,7 @@
                                 ],
                                 [
                                     'icon' => 'calendar2-event',
-                                    'text' => "Lorem dolor natus sit lodolor",
+                                    'text' => 'Lorem dolor natus sit lodolor',
                                     'read' => true,
                                     'action' => [
                                         'href' => '#',
