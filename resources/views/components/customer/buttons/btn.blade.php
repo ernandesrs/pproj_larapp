@@ -47,7 +47,7 @@
         {{ $attributes->merge([
             'class' => implode(' ', [
                 // default
-                'px-8 py-4 rounded-3xl ' . ($outlined ? '' : 'bg-gradient-to-br') . ' shadow duration-300',
+                'flex items-center px-8 py-4 rounded-3xl ' . ($outlined ? '' : 'bg-gradient-to-br') . ' shadow duration-300',
         
                 // text color
                 $outlined ? 'text-customer-' . $variant . '-normal' : 'text-white',
@@ -78,7 +78,7 @@
         {{ $attributes->merge([
             'class' => implode(' ', [
                 // default
-                'px-8 py-4 rounded-3xl bg-gradient-to-br shadow duration-300',
+                'flex items-center px-8 py-4 rounded-3xl bg-gradient-to-br shadow duration-300',
         
                 // text color
                 $outlined ? 'text-customer-' . $variant . '-normal' : 'text-white',
