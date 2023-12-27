@@ -30,23 +30,23 @@
                 'items' => [
                     [
                         'text' => 'Dashboard',
-                        'icon' => '',
+                        'icon' => 'bar-chart-line-fill',
                         'href' => '#',
                         'activeIn' => ['customer.index'],
                     ],
                     [
                         'text' => 'Wallet',
-                        'icon' => '',
+                        'icon' => 'wallet',
                         'href' => '#',
                     ],
                     [
                         'text' => 'History',
-                        'icon' => '',
+                        'icon' => 'clock-history',
                         'href' => '#',
                     ],
                     [
                         'text' => 'Statements',
-                        'icon' => '',
+                        'icon' => 'journal-text',
                         'href' => '#',
                     ],
                 ],
@@ -56,17 +56,17 @@
                 'items' => [
                     [
                         'text' => 'Account',
-                        'icon' => '',
+                        'icon' => 'person-circle',
                         'href' => '#',
                     ],
                     [
                         'text' => 'Settings',
-                        'icon' => '',
+                        'icon' => 'gear',
                         'href' => '#',
                     ],
                     [
                         'text' => 'Logout',
-                        'icon' => '',
+                        'icon' => 'door-closed',
                         'href' => '#',
                     ],
                 ],
