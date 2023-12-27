@@ -24,7 +24,6 @@
             this.turnTimerDisplayable();
     
             setInterval(() => {
-                console.log('jklasf')
                 this.timer--;
     
                 this.turnTimerDisplayable();

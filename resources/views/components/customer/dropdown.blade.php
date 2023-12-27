@@ -13,17 +13,42 @@
 
 <div
     x-data="{
-        show: false
+        showDropdown: false,
+    
+        toggle() {
+            this.showDropdown ? this.close() : this.show();
+        },
+        show() {
+            this.showDropdown = true;
+            this.clickOutMonitorAdd();
+        },
+        close() {
+            this.showDropdown = false;
+            this.clickOutMonitorRemove();
+        },
+        clickOutMonitorAdd() {
+            document.addEventListener('click', this.clickOutHandler);
+        },
+        clickOutMonitorRemove() {
+            document.removeEventListener('click', this.clickOutHandler);
+        },
+        clickOutHandler(event) {
+            if ($el.contains(event.target)) {
+                return;
+            }
+    
+            $data.close();
+        }
     }"
     class="relative">
     <div
-        x-on:click="show=!show"
+        x-on:click="toggle"
         class="relative z-50">
         {{ $activator }}
     </div>
 
     <div
-        x-show="show"
+        x-show="showDropdown"
         x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 -skew-x-3 -translate-y-12 blur-sm z-40"
         x-transition:enter-end="opacity-100 skew-x-0 -translate-y-0 z-50"
