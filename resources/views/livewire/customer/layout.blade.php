@@ -76,11 +76,27 @@
     <div class="flex-1 h-screen pt-4 px-4">
         <header class="h-14 flex items-center mb-4">
             <div class="container">
-                <div class="flex">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+
+                        <x-customer.dropdown size="small" location="left">
+                            <x-slot name="activator">
+                                <x-customer.buttons.btn prepend-icon="arrow-down" />
+                            </x-slot>
+                            <x-slot name="content">
+                                <p>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere mollitia modi,
+                                    repellendus sunt deserunt ut, magni facilis fuga placeat eligendi quisquam nam illum
+                                    quos repudiandae fugit vel inventore delectus necessitatibus?
+                                </p>
+                            </x-slot>
+                        </x-customer.dropdown>
+
+                    </div>
 
                     <div class="ml-auto flex gap-x-4">
 
-                        <x-customer.dropdown size="small">
+                        <x-customer.dropdown size="small" location="right">
                             <x-slot name="activator">
                                 <button
                                     class="w-12 h-12 rounded-full text-customer-dark-normal duration-300 relative hover:bg-opacity-80 border border-gray-300">

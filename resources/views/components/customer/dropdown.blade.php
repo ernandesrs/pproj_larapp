@@ -1,5 +1,6 @@
 @props([
     'size' => 'normal',
+    'location' => 'left',
 ])
 
 @php
@@ -32,7 +33,10 @@
         x-transition:leave-end="opacity-0 -skew-x-3 -translate-y-12 blur-sm z-40"
 
         {{ $attributes->merge([
-            'class' => implode(' ', ['absolute right-0 top-16 z-50 shadow-lg rounded-3xl overflow-hidden']),
+            'class' => implode(' ', [
+                'absolute top-16 z-50 shadow-lg rounded-3xl overflow-hidden',
+                $location == 'left' ? 'left-0' : 'right-0',
+            ]),
         ]) }}
         style="display:none;">
         <div class="relative w-auto {{ $sizes[$size] }} bg-white p-6">
