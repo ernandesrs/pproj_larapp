@@ -66,11 +66,11 @@
         ]) }}
         {{ $attributes }}>
         @if ($prependIcon)
-            <x-customer.icon icon="{{ $prependIcon }}" class="mr-2" />
+            <x-customer.icon icon="{{ $prependIcon }}" class="{{ empty($text) ? '' : 'mr-2' }}" />
         @endif
         <span>{{ $text }}</span>
         @if ($appendIcon)
-            <x-customer.icon icon="{{ $appendIcon }}" class="ml-2" />
+            <x-customer.icon icon="{{ $appendIcon }}" class="{{ empty($text) ? '' : 'ml-2' }}" />
         @endif
     </button>
 @else
@@ -97,11 +97,11 @@
         ]) }}
         {{ $attributes }}>
         @if ($prependIcon)
-            <x-customer.icon icon="{{ $prependIcon }}" class="mr-2" />
+            <x-customer.icon icon="{{ $prependIcon }}" class="{{ empty($text) ? '' : 'mr-2' }}" />
         @endif
         <span>{{ $text }}</span>
         @if ($appendIcon)
-            <x-customer.icon icon="{{ $appendIcon }}" class="ml-2" />
+            <x-customer.icon icon="{{ $appendIcon }}" class="{{ empty($text) ? '' : 'ml-2' }}" />
         @endif
     </a>
 @endif
