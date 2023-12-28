@@ -1,0 +1,86 @@
+/*
+ *
+ * Common alert components cutomization
+ *
+ */
+
+.alert {
+    @apply rounded-xl bg-customer-white p-6;
+}
+
+.alert-float {
+    @apply top-4;
+}
+
+/* START: ALERT DEFAULT */
+.alert-default {
+    @apply border-gray-600 border-opacity-50;
+}
+
+.alert-default .alert-icon .bi,
+.alert-default .alert-title,
+.alert-default .alert-text {
+    @apply text-gray-600;
+}
+
+.alert-default .alert-progress-load {
+    @apply bg-gray-600 bg-opacity-50;
+}
+
+/* END: ALERT DEFAULT */
+
+/* START: ALERT SUCCESS */
+.alert-success {
+    @apply border-customer-success-normal border-opacity-50;
+}
+
+.alert-success .alert-icon .bi,
+.alert-success .alert-title,
+.alert-success .alert-text {
+    @apply text-customer-success-dark-1;
+}
+
+.alert-success .alert-progress-load {
+    @apply bg-customer-success-dark-1 bg-opacity-50;
+}
+
+/* END: ALERT SUCCESS */
+
+/* START: ALERT DANGER/ERROR */
+.alert-danger,
+.alert-error {
+    @apply border-customer-danger-normal border-opacity-50;
+}
+
+.alert-danger .alert-icon .bi,
+.alert-danger .alert-title,
+.alert-danger .alert-text,
+.alert-error .alert-icon .bi,
+.alert-error .alert-title,
+.alert-error .alert-text {
+    @apply text-customer-danger-normal;
+}
+
+.alert-danger .alert-progress-load,
+.alert-error .alert-progress-load {
+    @apply bg-customer-danger-light-1 bg-opacity-50;
+}
+
+/* END: ALERT DANGER/ERROR */
+
+/* START: ALERT INFO */
+.alert-info {
+    @apply border-customer-info-normal border-opacity-50;
+}
+
+.alert-info .alert-icon .bi,
+.alert-info .alert-title,
+.alert-info .alert-text {
+    @apply text-customer-info-normal;
+}
+
+.alert-info .alert-progress-load {
+    @apply bg-customer-info-light-2 bg-opacity-50;
+}
+
+/* END: ALERT INFO */

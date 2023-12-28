@@ -49,6 +49,6 @@ class BasicData extends Component
             return;
         }
 
-        Alert::error(__('messages.alert.profile_updated'))->float()->addAlert($this);
+        Alert::success(__('messages.alert.profile_updated'))->float()->addAlert($this);
     }
 }

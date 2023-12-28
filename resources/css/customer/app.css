@@ -3,6 +3,9 @@
 @import './../common/scrollbar.css';
 @import './scrollbar.css';
 
+@import './../common/alert.css';
+@import './alert.css';
+
 @import './../common/tab.css';
 @import './tab.css';
 
