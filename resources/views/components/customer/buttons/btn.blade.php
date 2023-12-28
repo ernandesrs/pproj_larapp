@@ -8,6 +8,7 @@
     'link' => false,
     'noBg' => false,
     'noTransform' => false,
+    'flat' => false,
     'small' => false,
     'large' => false,
 ])
@@ -45,6 +46,18 @@
     border-customer-success-normal
     text-customer-success-normal
 
+    from-customer-light-normal
+    to-customer-light-light-2
+    hover:to-customer-light-normal
+    border-customer-light-normal
+    text-customer-light-normal
+
+    from-customer-dark-normal
+    to-customer-dark-light-2
+    hover:to-customer-dark-normal
+    border-customer-dark-normal
+    text-customer-dark-normal
+
 --}}
 
 @php
@@ -53,15 +66,13 @@
         'flex items-center rounded-full ' . ($outlined || $link ? '' : 'bg-gradient-to-br') . ' shadow duration-300',
 
         // sizes and quare button if text is empty
-        // $small ? ('text-sm ' . empty($text) ? 'px-3 py-2' : 'px-5 py-2') : ($large ? ('text-lg ' . empty($text) ? 'px-5 py-4' : 'px-10 py-4') : 'text-base ' . (empty($text) ? 'px-4 py-3' : 'px-8 py-4')),
-        // text size
         $small ? 'text-sm' : ($large ? 'text-lg' : 'text-base'),
 
         // padding
         $small ? (empty($text) ? 'px-3 py-2' : 'px-5 py-2') : ($large ? (empty($text) ? 'px-5 py-4' : 'px-10 py-4') : (empty($text) ? 'px-4 py-3' : 'px-8 py-4')),
 
         // text color
-        $outlined || $link ? 'text-customer-' . $variant . '-normal' : 'text-white',
+        ($outlined || $link) && $variant != 'light' ? 'text-customer-' . $variant . '-normal' : ($variant == 'light' ? 'text-customer-dark-normal text-opacity-50 hover:text-opacity-80' : 'text-customer-white'),
 
         // bg-color: from bg
         $outlined ? ($noBg ? 'bg-transparent' : 'bg-customer-white') . ' bg-opacity-90 border border-customer-' . $variant . '-normal' : ($link ? 'shadow-none hover:shadow-none hover:underline hover:scale-100' : 'from-customer-' . $variant . '-normal'),
@@ -70,7 +81,13 @@
         $outlined || $link ? '' : 'to-customer-' . $variant . '-light-2',
 
         // hover
-        'hover:shadow-lg hover:to-customer-' . $variant . '-normal ' . ($noTransform ? '' : 'hover:scale-105'),
+        'hover:to-customer-' . $variant . '-normal',
+
+        // hover shadow
+        $flat ? '' : 'hover:shadow-lg',
+
+        // hover scale
+        $noTransform || $flat ? '' : 'hover:scale-105',
     ];
 @endphp
 
