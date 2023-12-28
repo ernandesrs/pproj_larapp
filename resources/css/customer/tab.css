@@ -18,7 +18,7 @@
 
 .tab_link_active {
     /* @apply border-sky-500 text-sky-600 pointer-events-none; */
-    @apply bg-customer-primary-normal text-customer-white;
+    @apply bg-customer-info-normal text-customer-white;
 }
 
 .tab_contents {

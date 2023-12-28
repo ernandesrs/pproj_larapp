@@ -23,7 +23,7 @@
         {{-- tab #1 --}}
         <x-slot name="content1">
 
-            opa
+            <livewire:customer.account.basic-data />
 
         </x-slot>
 
