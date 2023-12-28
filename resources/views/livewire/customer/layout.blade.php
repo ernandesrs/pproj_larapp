@@ -68,7 +68,7 @@
                     [
                         'text' => 'Logout',
                         'icon' => 'door-closed',
-                        'href' => '#',
+                        'href' => route('auth.logout'),
                     ],
                 ],
             ],
