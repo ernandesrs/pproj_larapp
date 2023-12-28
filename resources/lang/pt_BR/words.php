@@ -55,4 +55,6 @@ return [
     'unread' => 'Não lido',
     'read' => 'Lido',
     'empty' => 'Vazio',
+    'photo' => 'Foto',
+    'picture' => 'Foto',
 ];

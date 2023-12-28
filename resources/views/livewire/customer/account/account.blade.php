@@ -23,8 +23,14 @@
         {{-- tab #1 --}}
         <x-slot name="content1">
 
-            <div class="pt-8">
-                <livewire:customer.account.basic-data />
+            <div class="grid grid-cols-12 gap-8 pt-10">
+                <div class="col-span-12 lg:col-span-4">
+                    <livewire:customer.account.picture />
+                </div>
+
+                <div class="col-span-12 lg:col-span-8">
+                    <livewire:customer.account.basic-data />
+                </div>
             </div>
 
         </x-slot>

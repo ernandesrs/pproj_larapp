@@ -1,6 +1,6 @@
 @props([
     'type' => 'text',
-    'label' => 'Label via label prop',
+    'label' => null,
     'error' => null,
 
     'options' => [],
@@ -23,7 +23,10 @@
     ]) }}>
 
     {{-- label --}}
-    <label class="block mb-2 font-medium text-gray-400" for="{{ $attributes->first('id') }}">{{ $label }}</label>
+    @if ($label)
+        <label class="block mb-2 font-medium text-gray-400"
+            for="{{ $attributes->first('id') }}">{{ $label }}</label>
+    @endif
 
     {{-- field --}}
     @if ($type == 'select')

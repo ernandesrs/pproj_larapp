@@ -169,6 +169,19 @@ class UserService
     }
 
     /**
+     * Get photo data rules
+     *
+     * @return array
+     */
+    public static function getPhotoDataRules()
+    {
+        return [
+            'data' => ['array'],
+            'data.photo' => ['required', 'file', 'mimes:jpeg,jpg,png', 'max:1024', 'dimensions:min_width=250,min_height=250']
+        ];
+    }
+
+    /**
      * Get create data Rules
      *
      * @return array
