@@ -23,7 +23,9 @@
         {{-- tab #1 --}}
         <x-slot name="content1">
 
-            <livewire:customer.account.basic-data />
+            <div class="pt-8">
+                <livewire:customer.account.basic-data />
+            </div>
 
         </x-slot>
 
