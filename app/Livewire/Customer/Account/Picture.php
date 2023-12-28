@@ -56,6 +56,23 @@ class Picture extends Component
 
         Alert::success(__('messages.alert.profile_updated'))->float()->addFlash();
 
-        $this->redirect(route('customer.account'));
+        $this->redirect(route('customer.account'), true);
+    }
+
+    /**
+     * Delete picture
+     *
+     * @return void
+     */
+    public function deletePicture()
+    {
+        if (!UserService::deletePhoto(\Auth::user())) {
+            Alert::error(__('messages.alert.profile_update_fail'))->float()->addAlert($this);
+            return;
+        }
+
+        Alert::success(__('messages.alert.profile_updated'))->float()->addFlash();
+
+        $this->redirect(route('customer.account'), true);
     }
 }

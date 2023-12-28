@@ -7,7 +7,13 @@
             image="{{ \Auth::user()->photo ? \Storage::url(\Auth::user()->photo) : null }}"
             alternative-text="{{ \Auth::user()->first_name }}" />
 
-        <x-customer.buttons.btn prepend-icon="trash3-fill" variant="danger" no-transform class="absolute -bottom-4" />
+        @if (\Auth::user()->photo)
+            <x-customer.buttons.btn
+                wire:click="deletePicture"
+                wire:confirm="{{ __('messages.confirmation.deleting_photo_text') }}" prepend-icon="trash3-fill"
+                variant="danger"
+                no-transform class="absolute -bottom-4" />
+        @endif
     </div>
 
     <x-customer.form.form
