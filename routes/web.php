@@ -43,7 +43,8 @@ Route::group([
  * 
  */
 Route::group([
-    'prefix' => 'dash'
+    'prefix' => 'dash',
+    'middleware' => 'auth'
 ], function () {
 
     Route::get('/', \App\Livewire\Customer\Home::class)->name('customer.index');
