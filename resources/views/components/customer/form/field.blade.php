@@ -10,7 +10,7 @@
 
     $wrapperStyle = 'w-full';
 
-    $fieldStyle = 'w-full border ' . (empty($error) ? 'border-customer-light-dark-2 text-gray-500' : 'border-customer-danger-normal text-customer-danger-normal') . ' px-6 py-4 rounded-xl';
+    $fieldStyle = 'w-full border ' . (empty($error) ? 'border-customer-light-dark-2 text-customer-dark-light-2 text-opacity-70' : 'border-customer-danger-normal text-customer-danger-normal') . ' px-6 py-4 rounded-xl';
 
     if (!$attributes->has('id')) {
         $attributes = $attributes->merge(['id' => uniqid()]);
@@ -24,7 +24,7 @@
 
     {{-- label --}}
     @if ($label)
-        <label class="block mb-2 font-medium text-gray-400"
+        <label class="block mb-2 font-medium text-customer-dark-light-2"
             for="{{ $attributes->first('id') }}">{{ $label }}</label>
     @endif
 
