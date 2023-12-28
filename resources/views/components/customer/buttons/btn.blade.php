@@ -7,6 +7,7 @@
     'outlined' => false,
     'link' => false,
     'noBg' => false,
+    'noTransform' => false,
     'small' => false,
     'large' => false,
 ])
@@ -69,7 +70,7 @@
         $outlined || $link ? '' : 'to-customer-' . $variant . '-light-2',
 
         // hover
-        'hover:shadow-lg hover:to-customer-' . $variant . '-normal hover:scale-105',
+        'hover:shadow-lg hover:to-customer-' . $variant . '-normal ' . ($noTransform ? '' : 'hover:scale-105'),
     ];
 @endphp
 

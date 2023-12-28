@@ -49,7 +49,7 @@
         {{-- footer --}}
         <div class="flex justify-end mt-4">
             <x-customer.buttons.btn text="Todas notificações" append-icon="arrow-right"
-                variant="primary" link small />
+                variant="primary" link small no-transform />
         </div>
     </x-slot>
 </x-customer.dropdown>
