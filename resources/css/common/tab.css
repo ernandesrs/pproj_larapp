@@ -16,7 +16,7 @@
 }
 
 .tab_links_nav {
-    @apply -mb-px flex gap-6;
+    @apply -mb-px flex flex-wrap gap-6;
 }
 
 .tab_links_mobile {
