@@ -15,6 +15,6 @@ class Account extends Component
     {
         return view('livewire..customer.account.account')
             ->layout('livewire.customer.layout')
-            ->title(__('phrases.my_profile'));
+            ->title(__('phrases.my_account'));
     }
 }

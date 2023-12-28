@@ -29,5 +29,6 @@ return [
     'choose_file' => 'Escolher arquivo',
     'choose_a_file' => 'Escolher um arquivo',
     'choose_a_photo' => 'Escolher uma foto',
-    'enter_registered_email' => 'Informe o e-mail cadastrado'
+    'enter_registered_email' => 'Informe o e-mail cadastrado',
+    'my_account' => 'Minha conta',
 ];
