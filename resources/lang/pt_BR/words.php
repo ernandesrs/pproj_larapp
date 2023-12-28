@@ -57,4 +57,5 @@ return [
     'empty' => 'Vazio',
     'photo' => 'Foto',
     'picture' => 'Foto',
+    'create' => 'Criar'
 ];
