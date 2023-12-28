@@ -26,29 +26,39 @@
     {{-- content --}}
     <x-slot name="content">
         {{-- notifications head --}}
-        <div class="flex justify-between items-center mb-4">
-            <x-customer.h4 icon="bell-fill" text="Notifications" class="mb-0" />
+        <div class="flex justify-between items-center mb-6">
+            <x-customer.h4 icon="bell-fill" text="{{ __('words.notifications') }}" class="!mb-0" />
 
             <span
                 class="flex items-center justify-center px-3 py-2 rounded-3xl bg-customer-danger-normal text-white text-sm">
-                <span>Unread</span><span class="pl-1">{{ $unread }}</span>
+                <span>{{ __('words.unread') }}</span><span class="pl-1">{{ $unread }}</span>
             </span>
         </div>
 
         {{-- notifications list --}}
         <div class="max-h-[60vh] overflow-y-auto">
-            @foreach ($notifications as $notification)
-                <x-customer.partials.notification.notification-item
-                show-delete
-                    :active="$notification['active'] ?? false"
-                    text="{{ $notification['text'] }}"
-                    :action="$notification['action'] ?? []" />
-            @endforeach
+            @if (count($notifications))
+                @foreach ($notifications as $notification)
+                    <x-customer.partials.notification.notification-item
+                        show-delete
+                        icon="{{ $notification['icon'] }}"
+                        :active="$notification['active'] ?? false"
+                        text="{{ $notification['text'] }}"
+                        :action="$notification['action'] ?? []" />
+                @endforeach
+            @else
+                <div class="border text-center rounded-xl py-4">
+                    <x-customer.p muted class="text-xl !mb-0">
+                        0 {{ strtolower(__('words.notifications')) }}
+                    </x-customer.p>
+                </div>
+            @endif
         </div>
 
         {{-- footer --}}
         <div class="flex justify-end mt-4">
-            <x-customer.buttons.btn text="Todas notificações" append-icon="arrow-right"
+            <x-customer.buttons.btn text="{{ __('words.all') }} {{ __('words.notifications') }}"
+                append-icon="arrow-right"
                 variant="primary" link small no-transform />
         </div>
     </x-slot>

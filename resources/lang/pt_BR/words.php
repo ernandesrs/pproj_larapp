@@ -50,4 +50,9 @@ return [
     'new' => 'Novo',
     'payment' => 'Pagamento',
     'payments' => 'Pagamentos',
+    'notification' => 'Notificação',
+    'notifications' => 'Notificações',
+    'unread' => 'Não lido',
+    'read' => 'Lido',
+    'empty' => 'Vazio',
 ];
