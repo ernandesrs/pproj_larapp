@@ -47,5 +47,7 @@ return [
     'edit' => 'Editar',
     'see' => 'Ver',
     'show' => 'Mostrar',
-    'new' => 'Novo'
+    'new' => 'Novo',
+    'payment' => 'Pagamento',
+    'payments' => 'Pagamentos',
 ];

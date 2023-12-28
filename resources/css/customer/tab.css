@@ -1,0 +1,26 @@
+/*
+ *
+ * Common tab component cutomization
+ *
+ */
+.tab_links_inner {
+    @apply border-none;
+}
+
+.tab_links_mobile {
+    @apply bg-customer-light-light-2 rounded-3xl;
+}
+
+.tab_link {
+    /* @apply inline-flex shrink-0 items-center gap-2 border-b-2 border-transparent px-1 pb-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700 duration-300; */
+    @apply bg-gray-100 border-none rounded-full py-4 px-8 hover:bg-gray-200 hover:text-gray-700;
+}
+
+.tab_link_active {
+    /* @apply border-sky-500 text-sky-600 pointer-events-none; */
+    @apply bg-customer-primary-normal text-customer-white;
+}
+
+.tab_contents {
+    @apply border-none;
+}

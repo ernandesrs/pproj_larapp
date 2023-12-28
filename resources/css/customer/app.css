@@ -3,6 +3,9 @@
 @import './../common/scrollbar.css';
 @import './scrollbar.css';
 
+@import './../common/tab.css';
+@import './tab.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

@@ -1,8 +1,21 @@
-@props(['tabs', 'borderless'])
+@props([
+    'tabs' => [
+        [
+            'text' => "Text via tabs['text'] prop",
+            'icon' => 'app',
+            'active' => false,
+        ],
+        [
+            'text' => "Tab #2",
+            'icon' => 'app',
+            'active' => false,
+        ],
+    ],
+    'borderless' => false,
+])
 
 @php
 
-    $borderless = $borderless ?? false;
     $tabsId = $_GET['tabs'] ?? uniqid();
     $activeTabId = $_GET['tab'] ?? null;
 
