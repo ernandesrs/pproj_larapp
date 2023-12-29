@@ -8,11 +8,16 @@
             alternative-text="{{ \Auth::user()->first_name }}" />
 
         @if (\Auth::user()->photo)
-            <x-customer.buttons.btn
-                wire:click="deletePicture"
-                wire:confirm="{{ __('messages.confirmation.deleting_photo_text') }}" prepend-icon="trash3-fill"
-                variant="danger"
-                no-transform class="absolute -bottom-4" />
+            <x-customer.buttons.btn-confirmation
+                wire-confirm-action="deletePicture"
+                class="absolute -bottom-4">
+                <x-slot name="activator">
+                    <x-customer.buttons.btn
+                        prepend-icon="trash3-fill"
+                        variant="danger"
+                        no-transform />
+                </x-slot>
+            </x-customer.buttons.btn-confirmation>
         @endif
     </div>
 

@@ -60,5 +60,6 @@ return [
     'create' => 'Criar',
     'settings' => 'Configurações',
     'setting' => 'Configuração',
-    'account' => 'Conta'
+    'account' => 'Conta',
+    'cancel' => 'Cancelar'
 ];

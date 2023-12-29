@@ -31,4 +31,6 @@ return [
     'choose_a_photo' => 'Escolher uma foto',
     'enter_registered_email' => 'Informe o e-mail cadastrado',
     'my_account' => 'Minha conta',
+
+    'confirm_to_continue' => 'Confirme para continuar'
 ];

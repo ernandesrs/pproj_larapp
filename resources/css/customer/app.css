@@ -18,3 +18,8 @@
 .container {
     @apply mx-auto relative px-4;
 }
+
+button.loading,
+a.loading {
+    @apply animate-pulse pointer-events-none;
+}
