@@ -19,8 +19,16 @@
         },
         sidebarToggle() {
             this.show = !this.show;
+        },
+        sidebarStatus() {
+            if (window.innerWidth <= 1024 && this.show) {
+                this.show = false;
+            } else if (window.innerWidth > 1024 && !this.show) {
+                this.show = true;
+            }
         }
     }"
+    @resize.window="sidebarStatus"
     class="w-full bg-customer-light-normal flex">
 
     <x-customer.partials.aside
