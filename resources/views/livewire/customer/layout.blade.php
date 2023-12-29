@@ -55,18 +55,19 @@
                 'title' => 'Others',
                 'items' => [
                     [
-                        'text' => 'Account',
+                        'text' => __('phrases.my_account'),
                         'icon' => 'person-circle',
                         'href' => route('customer.account'),
                         'activeIn' => ['customer.account'],
                     ],
                     [
-                        'text' => 'Settings',
+                        'text' => __('words.settings'),
                         'icon' => 'gear',
-                        'href' => '#',
+                        'href' => route('customer.settings'),
+                        'activeIn' => ['customer.settings'],
                     ],
                     [
-                        'text' => 'Logout',
+                        'text' => __('words.logout'),
                         'icon' => 'door-closed',
                         'href' => route('auth.logout'),
                     ],

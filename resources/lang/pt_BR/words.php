@@ -57,5 +57,8 @@ return [
     'empty' => 'Vazio',
     'photo' => 'Foto',
     'picture' => 'Foto',
-    'create' => 'Criar'
+    'create' => 'Criar',
+    'settings' => 'Configurações',
+    'setting' => 'Configuração',
+    'account' => 'Conta'
 ];

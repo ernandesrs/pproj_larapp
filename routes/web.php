@@ -50,6 +50,7 @@ Route::group([
     Route::get('/', \App\Livewire\Customer\Home::class)->name('customer.index');
 
     Route::get('/account', \App\Livewire\Customer\Account\Account::class)->name('customer.account');
+    Route::get('/settings', \App\Livewire\Customer\Settings\Setting::class)->name('customer.settings');
 
 });
 
