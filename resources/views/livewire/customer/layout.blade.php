@@ -75,7 +75,7 @@
         ]" />
 
     <div class="flex-1 h-screen pt-4">
-        <header class="h-14 flex items-center mb-4">
+        <header class="h-14 flex items-center">
             <div class="container">
                 <div class="flex items-center">
                     {{-- left side --}}
@@ -155,8 +155,8 @@
             </div>
         </header>
 
-        <main class="overflow-y-auto overflow-x-hidden py-8" style="height: calc(100vh - (3.5rem + 2rem))">
-            <div class="container">
+        <main class="overflow-y-auto overflow-x-hidden" style="height: calc(100vh - (3.5rem + 2rem))">
+            <div class="container pt-4 min-h-full flex flex-col">
                 <x-common.alert closable />
 
                 {{ $slot }}

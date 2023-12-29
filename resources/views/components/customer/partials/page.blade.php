@@ -4,7 +4,7 @@
     'actionCreate' => [],
 ])
 
-<div class="bg-customer-white px-8 py-8 rounded-3xl border border-customer-light-dark-1">
+<div class="bg-customer-white px-8 py-8 rounded-3xl border border-customer-light-dark-1 flex-1">
 
     {{-- page head --}}
     <div class="flex items-center mb-10">
