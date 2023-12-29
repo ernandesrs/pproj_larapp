@@ -4,18 +4,13 @@
     'prependIcon' => null,
     'appendIcon' => null,
     'variant' => 'primary',
-
     'outlined' => false,
     'link' => false,
-
     'noBg' => false,
     'noTransform' => false,
     'flat' => false,
-
-    'extraSmall' => false,
     'small' => false,
     'large' => false,
-
     'loading' => false,
 ])
 
@@ -69,40 +64,34 @@
 @php
     $styles = [
         // default
-        'flex items-center rounded-full shadow duration-300 whitespace-nowrap',
+        'flex items-center rounded-full ' . ($outlined || $link ? '' : 'bg-gradient-to-br') . ' shadow duration-300 whitespace-nowrap',
 
-        // button background, when the button is not outlined or link
-        !$outlined && !$link ? 'bg-gradient-to-br ' . 'from-customer-' . $variant . '-normal to-customer-' . $variant . '-light-2 hover:to-customer-' . $variant . '-normal' : '',
+        // sizes and quare button if text is empty
+        $small ? 'text-sm' : ($large ? 'text-lg' : 'text-base'),
 
-        // button background/border when the button is outlined(white or transparent background)
-        $outlined ? ($noBg ? 'bg-transparent' : 'bg-customer-white bg-opacity-90') . ' border border-customer-' . $variant . '-normal' : '',
+        // padding
+        $small ? (empty($text) ? 'px-3 py-2' : 'px-5 py-2') : ($large ? (empty($text) ? 'px-5 py-4' : 'px-10 py-4') : (empty($text) ? 'px-4 py-3' : 'px-8 py-4')),
 
-        // button background when the button is link
-        $link ? 'shadow-none hover:shadow-none hover:underline' : '',
+        // text color
+        ($outlined || $link) && $variant != 'light' ? 'text-customer-' . $variant . '-normal' : ($variant == 'light' ? 'text-customer-dark-normal text-opacity-50 hover:text-opacity-80' : 'text-customer-white'),
 
-        // remove shadown on hover when button is flat
+        // bg-color: from bg
+        $outlined ? ($noBg ? 'bg-transparent' : 'bg-customer-white') . ' bg-opacity-90 border border-customer-' . $variant . '-normal' : ($link ? 'shadow-none hover:shadow-none hover:underline hover:scale-100' : 'from-customer-' . $variant . '-normal'),
+
+        // bg-color: to bg
+        $outlined || $link ? '' : 'to-customer-' . $variant . '-light-2',
+
+        // hover
+        'hover:to-customer-' . $variant . '-normal',
+
+        // hover shadow
         $flat ? '' : 'hover:shadow-lg',
 
-        // button has scale effect when button is not flat or noTransform is false
+        // hover scale
         $noTransform || $flat ? '' : 'hover:scale-105',
 
-        // button padding when button not have text
-        empty($text) ? ($extraSmall ? 'px-3 py-2' : ($small ? 'px-3 py-2' : ($large ? 'px-5 py-4' : 'px-4 py-3'))) : '',
-
-        // button padding when button have text
-        !empty($text) ? ($extraSmall ? 'px-5 py-2' : ($small ? 'px-5 py-3' : ($large ? 'px-10 py-4' : 'px-8 py-4'))) : '',
-
-        // text sizes
-        $extraSmall ? 'text-xs' : ($small ? 'text-sm' : ($large ? 'text-lg' : 'text-base')),
-
-        // text color when button is link or outlined
-        ($outlined || $link) && $variant != 'light' ? 'text-customer-' . $variant . '-normal' : ($variant != 'light' ? 'text-customer-white' : ''),
-
-        // text color when button is not link or outlined
-        $variant == 'light' ? 'text-customer-dark-normal text-opacity-50 hover:text-opacity-80' : '',
-
-        // button is loading
-        $loading ? 'loading' : '',
+        // loading
+        $loading ? 'animate-pulse opacity-70' : '',
     ];
 @endphp
 
