@@ -72,7 +72,7 @@
         x-transition:leave-start="opacity-100 scale-100"
         x-transition:leave-end="scale-75"
 
-        class="absolute px-6 py-4 border bg-customer-white bg-opacity-80 shadow-2xl rounded-2xl cursor-default">
+        class="absolute px-6 py-4 border bg-customer-white shadow-2xl rounded-2xl cursor-default">
 
         {{-- confirmation text --}}
         <div
