@@ -13,12 +13,12 @@
         </div>
 
         <div class="flex items-center gap-2 ml-auto">
-            {{-- action button group --}}
-            <x-customer.buttons.btn-group
+            {{-- page actions --}}
+            <x-customer.partials.page-actions
                 :show-action-create="$showActionCreate"
                 :action-create="$actionCreate">
                 {{ $actions ?? null }}
-            </x-customer.buttons.btn-group>
+            </x-customer.partials.page-actions>
         </div>
     </div>
 

@@ -64,7 +64,7 @@
 @php
     $styles = [
         // default
-        'flex items-center rounded-full ' . ($outlined || $link ? '' : 'bg-gradient-to-br') . ' shadow duration-300',
+        'flex items-center rounded-full ' . ($outlined || $link ? '' : 'bg-gradient-to-br') . ' shadow duration-300 whitespace-nowrap',
 
         // sizes and quare button if text is empty
         $small ? 'text-sm' : ($large ? 'text-lg' : 'text-base'),

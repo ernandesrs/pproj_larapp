@@ -5,6 +5,7 @@
 
 @php
     $sizes = [
+        'auto' => '',
         'small' => 'sm:w-[300px]',
         'normal' => 'sm:w-[400px]',
         'large' => 'sm:w-[500px]',
@@ -65,7 +66,7 @@
         ]) }}
         style="display:none;">
         <div class="relative w-auto {{ $sizes[$size] }} bg-white p-6">
-            {{ $content }}
+            {{ $content ?? $slot }}
         </div>
     </div>
 </div>
