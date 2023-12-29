@@ -35,6 +35,18 @@ class UserService
     }
 
     /**
+     * Update password
+     *
+     * @param Authenticatable|User $user
+     * @param array $validated
+     * @return null|User null on fail, User on success
+     */
+    public static function updatePassword(Authenticatable|User $user, array $validated)
+    {
+        return $user->update(['password' => \Hash::make($validated['password'])]) ? $user : null;
+    }
+
+    /**
      * Update photo
      *
      * @param Authenticatable|User $user

@@ -36,7 +36,13 @@
         </x-slot>
 
         {{-- tab #2 --}}
-        <x-slot name="content2"></x-slot>
+        <x-slot name="content2">
+
+            <div class="pt-10">
+                <livewire:customer.account.password />
+            </div>
+
+        </x-slot>
 
         {{-- tab #3 --}}
         <x-slot name="content3"></x-slot>
