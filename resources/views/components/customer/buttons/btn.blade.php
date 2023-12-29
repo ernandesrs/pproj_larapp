@@ -11,6 +11,7 @@
     'flat' => false,
     'small' => false,
     'large' => false,
+    'loading' => false,
 ])
 
 {{--
@@ -88,6 +89,9 @@
 
         // hover scale
         $noTransform || $flat ? '' : 'hover:scale-105',
+
+        // loading
+        $loading ? 'animate-pulse opacity-70' : '',
     ];
 @endphp
 
