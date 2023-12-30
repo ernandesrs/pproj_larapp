@@ -42,7 +42,7 @@
                     <x-customer.partials.notification.notification-item
                         show-delete
                         icon="{{ $notification['icon'] }}"
-                        :active="$notification['active'] ?? false"
+                        :read="$notification['read'] ?? false"
                         text="{{ $notification['text'] }}"
                         :action="$notification['action'] ?? []" />
                 @endforeach
