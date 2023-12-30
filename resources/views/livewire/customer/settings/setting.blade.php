@@ -1,4 +1,5 @@
 <x-customer.partials.page
+    show-actions
     title="{{ __('words.settings') }}">
 
     <x-slot name="actions">

@@ -1,5 +1,6 @@
 @props([
     'title' => 'Title via prop title',
+    'showActions' => false,
     'showActionCreate' => false,
     'actionCreate' => [],
 ])
@@ -14,11 +15,13 @@
 
         <div class="flex items-center gap-2 ml-auto">
             {{-- page actions --}}
-            <x-customer.partials.page-actions
-                :show-action-create="$showActionCreate"
-                :action-create="$actionCreate">
-                {{ $actions ?? null }}
-            </x-customer.partials.page-actions>
+            @if ($showActions)
+                <x-customer.partials.page-actions
+                    :show-action-create="$showActionCreate"
+                    :action-create="$actionCreate">
+                    {{ $actions ?? null }}
+                </x-customer.partials.page-actions>
+            @endif
         </div>
     </div>
 
