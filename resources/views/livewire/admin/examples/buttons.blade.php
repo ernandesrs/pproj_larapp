@@ -20,6 +20,16 @@
                     <option value="light">Light</option>
                 </select>
             </div>
+
+            <div class="flex flex-col">
+                <label class="mb-2" for="">Button size</label>
+                <select wire:model.blur="size">
+                    <option {{ $this->size == null ? 'selected' : '' }}>Default</option>
+                    <option value="xs">XS</option>
+                    <option value="sm">SM</option>
+                    <option value="lg">LG</option>
+                </select>
+            </div>
         </div>
 
         <div class="flex justify-center gap-x-6 py-6">
@@ -28,21 +38,27 @@
                 as="button"
                 text="Only text"
                 variant="{{ $this->variant }}"
-                xs />
+                :xs="$this->size == 'xs'"
+                :sm="$this->size == 'sm'"
+                :lg="$this->size == 'lg'" />
 
             <x-admin.buttons.clickable
                 as="button"
                 prepend-icon="arrow-left"
                 text="Prepend icon"
                 variant="{{ $this->variant }}"
-                xs />
+                :xs="$this->size == 'xs'"
+                :sm="$this->size == 'sm'"
+                :lg="$this->size == 'lg'" />
 
             <x-admin.buttons.clickable
                 as="button"
                 append-icon="arrow-right"
                 text="Append icon"
                 variant="{{ $this->variant }}"
-                xs />
+                :xs="$this->size == 'xs'"
+                :sm="$this->size == 'sm'"
+                :lg="$this->size == 'lg'" />
 
             <x-admin.buttons.clickable
                 as="button"
@@ -50,99 +66,11 @@
                 append-icon="arrow-right"
                 text="Two icons"
                 variant="{{ $this->variant }}"
-                xs />
+                :xs="$this->size == 'xs'"
+                :sm="$this->size == 'sm'"
+                :lg="$this->size == 'lg'" />
 
         </div>
-
-        <div class="flex justify-center gap-x-6 py-6">
-
-            <x-admin.buttons.clickable
-                as="button"
-                text="Only text"
-                variant="{{ $this->variant }}"
-                sm />
-
-            <x-admin.buttons.clickable
-                as="button"
-                prepend-icon="arrow-left"
-                text="Prepend icon"
-                variant="{{ $this->variant }}"
-                sm />
-
-            <x-admin.buttons.clickable
-                as="button"
-                append-icon="arrow-right"
-                text="Append icon"
-                variant="{{ $this->variant }}"
-                sm />
-
-            <x-admin.buttons.clickable
-                as="button"
-                prepend-icon="arrow-left"
-                append-icon="arrow-right"
-                text="Two icons"
-                variant="{{ $this->variant }}"
-                sm />
-
-        </div>
-
-        <div class="flex justify-center gap-x-6 py-6">
-
-            <x-admin.buttons.clickable
-                as="button"
-                text="Only text"
-                variant="{{ $this->variant }}" />
-
-            <x-admin.buttons.clickable
-                as="button"
-                prepend-icon="arrow-left"
-                text="Prepend icon"
-                variant="{{ $this->variant }}" />
-
-            <x-admin.buttons.clickable
-                as="button"
-                append-icon="arrow-right"
-                text="Append icon"
-                variant="{{ $this->variant }}" />
-
-            <x-admin.buttons.clickable
-                as="button"
-                prepend-icon="arrow-left"
-                append-icon="arrow-right"
-                text="Two icons"
-                variant="{{ $this->variant }}" />
-
-        </div>
-
-        <div class="flex justify-center gap-x-6 py-6">
-
-            <x-admin.buttons.clickable
-                as="button"
-                text="Only text"
-                variant="{{ $this->variant }}"
-                lg />
-
-            <x-admin.buttons.clickable
-                as="button"
-                prepend-icon="arrow-left"
-                text="Prepend icon"
-                variant="{{ $this->variant }}"
-                lg />
-
-            <x-admin.buttons.clickable
-                as="button"
-                append-icon="arrow-right"
-                text="Append icon"
-                variant="{{ $this->variant }}"
-                lg />
-
-            <x-admin.buttons.clickable
-                as="button"
-                prepend-icon="arrow-left"
-                append-icon="arrow-right"
-                text="Two icons"
-                variant="{{ $this->variant }}"
-                lg />
 
         </div>
     </x-admin.section>
