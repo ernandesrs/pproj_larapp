@@ -6,6 +6,8 @@ use Livewire\Component;
 
 class Buttons extends Component
 {
+    public $variant = 'primary';
+
     /**
      * Render view
      *

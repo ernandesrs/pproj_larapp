@@ -1,5 +1,7 @@
 @props([
     'as' => 'button',
+    'prependIcon' => null,
+    'appendIcon' => null,
     'text' => null,
     'variant' => 'primary',
 
@@ -40,8 +42,18 @@
 
 @if ($as == 'button')
     <button {{ $attributes->merge(['class' => implode(' ', $style)]) }}>
+        @if ($prependIcon)
+            <x-admin.icon
+                name="{{ $prependIcon }}"
+                class="pointer-events-none mr-2" />
+        @endif
         @if (!empty($text))
-            <span>{{ $text }}</span>
+            <span class="pointer-events-none">{{ $text }}</span>
+        @endif
+        @if ($appendIcon)
+            <x-admin.icon
+                name="{{ $appendIcon }}"
+                class="pointer-events-none ml-2" />
         @endif
     </button>
 @else
