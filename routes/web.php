@@ -95,6 +95,7 @@ Route::group([
     ], function () {
 
         Route::get('/', \App\Livewire\Admin\Examples\Sections::class)->name('admin.examples.sections');
+        Route::get('/buttons', \App\Livewire\Admin\Examples\Buttons::class)->name('admin.examples.buttons');
 
     });
 

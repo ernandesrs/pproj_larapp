@@ -86,7 +86,7 @@
                     [
                         'text' => __('words.examples'),
                         'icon' => 'grid-fill',
-                        'activeIn' => ['admin.examples.sections'],
+                        'activeIn' => ['admin.examples.sections', 'admin.examples.buttons'],
                         'items' => [
                             [
                                 'text' => 'Sections',
@@ -96,11 +96,11 @@
                                 'activeIn' => ['admin.examples.sections'],
                             ],
                             [
-                                'text' => 'Other #1',
+                                'text' => 'Buttons',
                                 'icon' => 'grid-fill',
-                                'href' => '#',
+                                'href' => route('admin.examples.buttons'),
                                 'external' => false,
-                                'activeIn' => [],
+                                'activeIn' => ['admin.examples.buttons'],
                             ],
                             [
                                 'text' => 'Other #2',
