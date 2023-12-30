@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" theme="light">
 
 <head>
     <meta charset="utf-8">
@@ -13,9 +13,20 @@
 <body
     x-data="{
         show_sidebar: false,
+        current_theme: 'light',
     
         init() {
             this.show_sidebar = window.innerWidth >= 1024 ? true : false;
+            this.current_theme = localStorage.getItem('admin_theme') ?? 'light';
+            this.setTheme();
+        },
+        setTheme() {
+            document.querySelector('html').setAttribute('theme', this.current_theme);
+        },
+        toggleTheme() {
+            this.current_theme = this.current_theme == 'light' ? 'dark' : 'light';
+            localStorage.setItem('admin_theme', this.current_theme);
+            this.setTheme();
         },
         toggleSidebar() {
             this.show_sidebar ? this.closeSidebar() : this.showSidebar();

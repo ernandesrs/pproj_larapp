@@ -12,6 +12,7 @@ const variantsMaker = (color, base) => {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class', '[theme="dark"]'],
   content: [
     "./resources/**/*.blade.php",
     "./resources/**/*.js",

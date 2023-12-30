@@ -9,10 +9,17 @@
                 </a>
             </div>
 
-            <div class="ml-auto">
+            <div class="ml-auto flex items-center gap-1">
+                <button
+                    x-on:click="toggleTheme"
+                    class="text-xl w-12 h-12 flex items-center justify-center">
+                    <x-admin.icon x-show="current_theme=='light'" name="moon-fill" />
+                    <x-admin.icon x-show="current_theme=='dark'" name="brightness-high-fill" />
+                </button>
+
                 <button
                     x-on:click="toggleSidebar"
-                    class="text-3xl">
+                    class="text-3xl w-12 h-12 flex items-center justify-center">
                     <x-admin.icon name="list" />
                 </button>
             </div>
