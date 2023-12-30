@@ -67,7 +67,7 @@
             ]),
         ]) }}
         style="display:none;">
-        <div class="relative w-auto {{ $sizes[$size] }} bg-white p-6">
+        <div class="relative w-auto {{ $sizes[$size] }} bg-customer-white p-6">
             {{ $content ?? $slot }}
         </div>
     </div>
