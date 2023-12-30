@@ -65,9 +65,16 @@
                     [
                         'text' => __('words.users'),
                         'icon' => 'people-fill',
-                        'href' => route('admin.users'),
-                        'external' => false,
                         'activeIn' => ['admin.users', 'admin.users.create', 'admin.users.show', 'admin.users.edit'],
+                        'items' => [
+                            [
+                                'text' => __('words.all') . ' ' . __('words.users'),
+                                'icon' => 'people-fill',
+                                'href' => route('admin.users'),
+                                'external' => false,
+                                'activeIn' => ['admin.users'],
+                            ],
+                        ],
                     ],
                     [
                         'text' => __('words.examples'),

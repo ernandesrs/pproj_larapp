@@ -10,6 +10,8 @@
     <x-admin.layout.sidebar.nav>
         @foreach ($nav['items'] as $link)
             @if ($link['items'] ?? null)
+                <x-admin.layout.sidebar.subnav
+                    :sub-nav="$link" />
             @else
                 <x-admin.layout.sidebar.nav-link
                     icon="{{ $link['icon'] }}"
