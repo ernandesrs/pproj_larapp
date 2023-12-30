@@ -38,7 +38,9 @@
 
     $style = [
         // default
-        'flex flex-wrap items-center whitespace-nowrap border duration-300 shadow-sm cursor-pointer' . ($outlined || $link ? '' : ' bg-gradient-to-tl ') . 'hover:shadow-md hover:opacity-90 hover:scale-105',
+        'flex flex-wrap items-center whitespace-nowrap duration-300 cursor-pointer' . ($outlined || $link ? '' : ' bg-gradient-to-tl ') . ' hover:opacity-90 hover:scale-105',
+
+        $link ? 'hover:underline' : 'border shadow-sm hover:shadow-md',
 
         // variant
         $outlined || $link ? $variants['outlined'][$variant] ?? $variants['outlined']['primary'] : $variants['default'][$variant] ?? $variants['default']['primary'],

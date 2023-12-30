@@ -8,7 +8,7 @@ class Buttons extends Component
 {
     public $variant = 'primary';
     public $size = null;
-    public $style = 'outlined';
+    public $style = 'link';
 
     /**
      * Render view
