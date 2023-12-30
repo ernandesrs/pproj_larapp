@@ -84,7 +84,7 @@
         ]" />
 
     <div class="flex-1 h-screen pt-4">
-        <header class="h-14 flex items-center">
+        <header class="h-14 flex items-center relative z-20">
             <div class="container">
                 <div class="flex items-center">
                     {{-- left side --}}
@@ -164,7 +164,7 @@
             </div>
         </header>
 
-        <main class="overflow-y-auto overflow-x-hidden" style="height: calc(100vh - (3.5rem + 2rem))">
+        <main class="overflow-y-auto overflow-x-hidden relative z-10" style="height: calc(100vh - (3.5rem + 2rem))">
             <div class="container py-4 min-h-full flex flex-col">
                 <x-common.alert closable />
 
