@@ -13,7 +13,7 @@
                 <button
                     x-on:click="toggleSidebar"
                     class="text-3xl">
-                    <i class="bi bi-list"></i>
+                    <x-admin.icon name="list" />
                 </button>
             </div>
         </div>
