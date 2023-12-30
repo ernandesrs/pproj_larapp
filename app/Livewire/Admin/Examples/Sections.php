@@ -4,7 +4,7 @@ namespace App\Livewire\Admin\Examples;
 
 use Livewire\Component;
 
-class Index extends Component
+class Sections extends Component
 {
     /**
      * Render view
@@ -13,8 +13,8 @@ class Index extends Component
      */
     public function render()
     {
-        return view('livewire..admin.examples.index')
+        return view('livewire..admin.examples.sections')
             ->layout('livewire.admin.layout')
-            ->title('Examples');
+            ->title('Sections');
     }
 }

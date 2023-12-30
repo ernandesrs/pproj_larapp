@@ -76,17 +76,24 @@
                             ],
                         ],
                     ],
+                ],
+            ],
+        
+            // 2
+            [
+                'title' => __('words.others'),
+                'items' => [
                     [
                         'text' => __('words.examples'),
                         'icon' => 'grid-fill',
-                        'activeIn' => ['admin.examples'],
+                        'activeIn' => ['admin.examples.sections'],
                         'items' => [
                             [
-                                'text' => __('words.all'),
+                                'text' => 'Sections',
                                 'icon' => 'grid-fill',
-                                'href' => route('admin.examples'),
+                                'href' => route('admin.examples.sections'),
                                 'external' => false,
-                                'activeIn' => ['admin.examples'],
+                                'activeIn' => ['admin.examples.sections'],
                             ],
                             [
                                 'text' => 'Other #1',
@@ -104,13 +111,6 @@
                             ],
                         ],
                     ],
-                ],
-            ],
-        
-            // 2
-            [
-                'title' => __('words.others'),
-                'items' => [
                     [
                         'text' => __('words.account'),
                         'icon' => 'person-fill',
