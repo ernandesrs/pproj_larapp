@@ -27,3 +27,7 @@
 *::-moz-scrollbar-thumb:hover {
     @apply bg-customer-primary-light-2;
 }
+
+.aside::-webkit-scrollbar-track {
+    @apply bg-transparent;
+}

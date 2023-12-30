@@ -13,7 +13,7 @@
     style="display: none;">
 
     {{-- inner --}}
-    <div class="bg-gradient-to-b from-customer-primary-dark-2 to-customer-primary-normal h-full rounded-3xl px-6 py-4 shadow-lg">
+    <div class="aside bg-gradient-to-b from-customer-primary-dark-2 to-customer-primary-normal h-full overflow-y-auto rounded-3xl px-6 py-4 shadow-lg">
 
         {{-- head --}}
         <x-customer.partials.head />
