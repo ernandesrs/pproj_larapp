@@ -57,15 +57,15 @@
                 'items' => [
                     [
                         'text' => __('words.overview'),
-                        'icon' => 'pie-chart',
-                        'href' => '',
+                        'icon' => 'pie-chart-fill',
+                        'href' => route('admin.index'),
                         'external' => false,
                         'activeIn' => ['admin.index'],
                     ],
                     [
                         'text' => __('words.users'),
                         'icon' => 'people-fill',
-                        'href' => '',
+                        'href' => route('admin.users'),
                         'external' => false,
                         'activeIn' => ['admin.users', 'admin.users.create', 'admin.users.show', 'admin.users.edit'],
                     ],
@@ -77,16 +77,16 @@
                 'title' => __('words.others'),
                 'items' => [
                     [
-                        'text' => 'Profile',
+                        'text' => __('words.account'),
                         'icon' => 'person-fill',
-                        'href' => '',
+                        'href' => route('admin.profile'),
                         'external' => false,
                         'activeIn' => ['admin.profile'],
                     ],
                     [
                         'text' => __('words.logout'),
                         'icon' => 'door-closed-fill',
-                        'href' => '',
+                        'href' => route('auth.logout'),
                         'external' => false,
                     ],
                 ],
