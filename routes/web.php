@@ -94,10 +94,7 @@ Route::group([
         'prefix' => 'examples'
     ], function () {
 
-        Route::get('/buttons', \App\Livewire\Admin\Examples\Buttons::class)->name('admin.examples.buttons');
-        Route::get('/alerts', \App\Livewire\Admin\Examples\Alerts::class)->name('admin.examples.alerts');
-        Route::get('/sections', \App\Livewire\Admin\Examples\Sections::class)->name('admin.examples.sections');
-        Route::get('/others', \App\Livewire\Admin\Examples\Others::class)->name('admin.examples.others');
+        
 
     });
 
