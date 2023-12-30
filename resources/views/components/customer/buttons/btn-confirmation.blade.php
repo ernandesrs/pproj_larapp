@@ -81,7 +81,7 @@
         </div>
 
         {{-- cancel/confirm --}}
-        <div class="flex justify-center gap-x-4">
+        <div class="flex justify-center items-center gap-x-4">
             <x-customer.buttons.btn
                 x-on:click="methodClose"
                 prepend-icon="x-lg"

@@ -74,8 +74,11 @@
         // button background, when the button is not outlined or link
         !$outlined && !$link ? 'bg-gradient-to-br ' . 'from-customer-' . $variant . '-normal to-customer-' . $variant . '-light-2 hover:to-customer-' . $variant . '-normal' : '',
 
+        // border
+        !$link ? ' border border-customer-' . $variant . '-normal' : '',
+
         // button background/border when the button is outlined(white or transparent background)
-        $outlined ? ($noBg ? 'bg-transparent' : 'bg-customer-white bg-opacity-90') . ' border border-customer-' . $variant . '-normal' : '',
+        $outlined ? ($noBg ? 'bg-transparent' : 'bg-customer-white bg-opacity-90') : '',
 
         // button background when the button is link
         $link ? 'shadow-none hover:shadow-none hover:underline' : '',
