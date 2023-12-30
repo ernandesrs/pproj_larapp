@@ -8,25 +8,40 @@
     'xs' => false,
     'sm' => false,
     'lg' => false,
+
+    'outlined' => false,
+    'flat' => false,
+    'link' => false,
 ])
 
 @php
     $variants = [
-        'primary' => 'from-admin-primary-dark-1 to-admin-primary-normal text-admin-white border-admin-primary-normal',
-        'secondary' => 'from-admin-secondary-dark-1 to-admin-secondary-normal text-admin-white border-admin-secondary-normal',
-        'success' => 'from-admin-success-dark-1 to-admin-success-normal text-admin-white border-admin-success-normal',
-        'danger' => 'from-admin-danger-dark-1 to-admin-danger-normal text-admin-white border-admin-danger-normal',
-        'info' => 'from-admin-info-dark-1 to-admin-info-normal text-admin-white border-admin-info-normal',
-        'light' => 'from-admin-light-normal to-admin-light-light-2 text-admin-dark-light-2 border-admin-light-normal',
-        'dark' => 'from-admin-dark-dark-1 to-admin-dark-normal text-admin-light-normal border-admin-dark-normal',
+        'default' => [
+            'primary' => 'from-admin-primary-dark-1 to-admin-primary-normal text-admin-white border-admin-primary-normal',
+            'secondary' => 'from-admin-secondary-dark-1 to-admin-secondary-normal text-admin-white border-admin-secondary-normal',
+            'success' => 'from-admin-success-dark-1 to-admin-success-normal text-admin-white border-admin-success-normal',
+            'danger' => 'from-admin-danger-dark-1 to-admin-danger-normal text-admin-white border-admin-danger-normal',
+            'info' => 'from-admin-info-dark-1 to-admin-info-normal text-admin-white border-admin-info-normal',
+            'light' => 'from-admin-light-normal to-admin-light-light-2 text-admin-dark-light-2 border-admin-light-normal',
+            'dark' => 'from-admin-dark-dark-1 to-admin-dark-normal text-admin-light-normal border-admin-dark-normal',
+        ],
+        'outlined' => [
+            'primary' => 'text-admin-primary-normal border-admin-primary-normal',
+            'secondary' => 'text-admin-secondary-normal border-admin-secondary-normal',
+            'success' => 'text-admin-success-normal border-admin-success-normal',
+            'danger' => 'text-admin-danger-normal border-admin-danger-normal',
+            'info' => 'text-admin-info-normal border-admin-info-normal',
+            'light' => 'text-admin-light-dark-2 border-admin-light-normal',
+            'dark' => 'text-admin-dark-normal border-admin-dark-normal',
+        ],
     ];
 
     $style = [
         // default
-        'flex flex-wrap items-center whitespace-nowrap border duration-300 shadow-sm cursor-pointer bg-gradient-to-tl hover:shadow-md hover:opacity-90 hover:scale-105',
+        'flex flex-wrap items-center whitespace-nowrap border duration-300 shadow-sm cursor-pointer' . ($outlined || $link ? '' : ' bg-gradient-to-tl ') . 'hover:shadow-md hover:opacity-90 hover:scale-105',
 
         // variant
-        $variants[$variant] ?? $variants['primary'],
+        $outlined || $link ? $variants['outlined'][$variant] ?? $variants['outlined']['primary'] : $variants['default'][$variant] ?? $variants['default']['primary'],
 
         // size when empty text
         empty($text) ? (($xs ? 'px-3 py-2' : $sm) ? 'px-3 py-2' : ($lg ? 'px-5 py-4' : 'px-4 py-3')) : '',

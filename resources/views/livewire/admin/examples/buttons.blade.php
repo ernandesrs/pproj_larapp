@@ -30,6 +30,16 @@
                     <option value="lg">LG</option>
                 </select>
             </div>
+
+            <div class="flex flex-col">
+                <label class="mb-2" for="">Button style</label>
+                <select wire:model.blur="style">
+                    <option {{ $this->size == null ? 'selected' : '' }}>Default</option>
+                    <option value="outlined">Outlined</option>
+                    <option value="flat">Flat</option>
+                    <option value="link">Link</option>
+                </select>
+            </div>
         </div>
 
         <div class="flex justify-center gap-x-6 py-6">
@@ -40,7 +50,11 @@
                 variant="{{ $this->variant }}"
                 :xs="$this->size == 'xs'"
                 :sm="$this->size == 'sm'"
-                :lg="$this->size == 'lg'" />
+                :lg="$this->size == 'lg'"
+
+                :outlined="$this->style == 'outlined'"
+                :flat="$this->style == 'flat'"
+                :link="$this->style == 'link'" />
 
             <x-admin.buttons.clickable
                 as="button"
@@ -49,7 +63,11 @@
                 variant="{{ $this->variant }}"
                 :xs="$this->size == 'xs'"
                 :sm="$this->size == 'sm'"
-                :lg="$this->size == 'lg'" />
+                :lg="$this->size == 'lg'"
+
+                :outlined="$this->style == 'outlined'"
+                :flat="$this->style == 'flat'"
+                :link="$this->style == 'link'" />
 
             <x-admin.buttons.clickable
                 as="button"
@@ -58,7 +76,11 @@
                 variant="{{ $this->variant }}"
                 :xs="$this->size == 'xs'"
                 :sm="$this->size == 'sm'"
-                :lg="$this->size == 'lg'" />
+                :lg="$this->size == 'lg'"
+
+                :outlined="$this->style == 'outlined'"
+                :flat="$this->style == 'flat'"
+                :link="$this->style == 'link'" />
 
             <x-admin.buttons.clickable
                 as="button"
@@ -68,7 +90,11 @@
                 variant="{{ $this->variant }}"
                 :xs="$this->size == 'xs'"
                 :sm="$this->size == 'sm'"
-                :lg="$this->size == 'lg'" />
+                :lg="$this->size == 'lg'"
+
+                :outlined="$this->style == 'outlined'"
+                :flat="$this->style == 'flat'"
+                :link="$this->style == 'link'" />
 
         </div>
 
