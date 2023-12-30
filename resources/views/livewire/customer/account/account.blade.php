@@ -1,4 +1,4 @@
-<x-customer.partials.page
+<x-customer.layout-partials.page
     title="{{ __('phrases.my_account') }}">
 
     <x-common.tab
@@ -49,4 +49,4 @@
 
     </x-common.tab>
 
-</x-customer.partials.page>
+</x-customer.layout-partials.page>

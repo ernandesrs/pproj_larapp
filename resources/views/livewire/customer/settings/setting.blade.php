@@ -1,4 +1,4 @@
-<x-customer.partials.page
+<x-customer.layout-partials.page
     show-actions
     title="{{ __('words.settings') }}">
 
@@ -19,4 +19,4 @@
             class="rounded-tl-none rounded-bl-none" />
     </x-slot>
 
-</x-customer.partials.page>
+</x-customer.layout-partials.page>

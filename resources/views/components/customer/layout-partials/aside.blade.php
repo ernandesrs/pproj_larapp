@@ -16,10 +16,10 @@
     <div class="aside bg-gradient-to-b from-customer-primary-dark-2 to-customer-primary-normal h-full overflow-y-auto rounded-3xl px-6 py-4 shadow-lg">
 
         {{-- head --}}
-        <x-customer.partials.head />
+        <x-customer.layout-partials.head />
 
         @foreach ($items as $item)
-            <x-customer.partials.navigation-group
+            <x-customer.layout-partials.navigation-group
                 title="{{ $item['title'] }}"
                 :items="$item['items']" />
         @endforeach

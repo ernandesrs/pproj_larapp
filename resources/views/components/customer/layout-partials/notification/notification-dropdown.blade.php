@@ -39,7 +39,7 @@
         <div class="max-h-[60vh] overflow-y-auto">
             @if (count($notifications))
                 @foreach ($notifications as $notification)
-                    <x-customer.partials.notification.notification-item
+                    <x-customer.layout-partials.notification.notification-item
                         show-delete
                         icon="{{ $notification['icon'] }}"
                         :read="$notification['read'] ?? false"
