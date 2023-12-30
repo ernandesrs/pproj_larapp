@@ -10,6 +10,6 @@ class Home extends Component
     {
         return view('livewire..admin.home')
             ->layout('livewire.admin.layout')
-            ->title('Dashboard');
+            ->title('Admin Dashboard');
     }
 }

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ config('app.name') }} DASH - {{ $title ?? 'Page Title' }}</title>
+    <title>{{ config('app.name') }} - {{ $title ?? 'Page Title' }}</title>
 
     @vite(['resources/js/customer/app.js', 'resources/css/customer/app.css'])
 </head>

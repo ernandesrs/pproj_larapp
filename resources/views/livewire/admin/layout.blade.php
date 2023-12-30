@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ config('app.name') }} ADMIN - {{ $title ?? '' }}</title>
+    <title>Admin {{ config('app.name') }} - {{ $title ?? '' }}</title>
 
     @vite(['resources/js/admin/app.js', 'resources/css/admin/app.css'])
 </head>
@@ -29,13 +29,23 @@
                         [
                             'text' => __('words.users'),
                             'icon' => 'people-fill',
-                            'activeIn' => ['admin.users', 'admin.users.show', 'admin.users.edit', 'admin.users.create'],
+                            'activeIn' => [
+                                'admin.users',
+                                'admin.users.show',
+                                'admin.users.edit',
+                                'admin.users.create',
+                            ],
                             'items' => [
                                 [
                                     'text' => __('words.all'),
                                     'href' => route('admin.users'),
                                     'icon' => 'caret-right-fill',
-                                    'activeIn' => ['admin.users', 'admin.users.show', 'admin.users.edit', 'admin.users.create'],
+                                    'activeIn' => [
+                                        'admin.users',
+                                        'admin.users.show',
+                                        'admin.users.edit',
+                                        'admin.users.create',
+                                    ],
                                 ],
                                 [
                                     'text' => __('words.administrators'),

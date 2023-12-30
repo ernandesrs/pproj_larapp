@@ -15,6 +15,6 @@ class Home extends Component
     {
         return view('livewire..customer.home')
             ->layout('livewire.customer.layout')
-            ->title('Home dashboard');
+            ->title('Customer Dashboard');
     }
 }
