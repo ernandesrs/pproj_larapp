@@ -164,8 +164,8 @@
             </div>
         </header>
 
-        <main class="overflow-y-auto overflow-x-hidden relative z-10" style="height: calc(100vh - (3.5rem + 2rem))">
-            <div class="container py-4 min-h-full flex flex-col">
+        <main class="overflow-y-auto overflow-x-hidden" style="height: calc(100vh - (3.5rem + 2rem))">
+            <div class="container pt-6 pb-4 min-h-full flex flex-col">
                 <x-common.alert closable />
 
                 {{ $slot }}
