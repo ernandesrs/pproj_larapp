@@ -1,8 +1,6 @@
 @props([
     'title' => 'Title via prop title',
     'showActions' => false,
-    'showActionCreate' => false,
-    'actionCreate' => [],
 ])
 
 <div class="bg-customer-white px-8 py-8 rounded-3xl border border-customer-light-dark-1 flex-1 relative z-10">
@@ -16,11 +14,10 @@
         <div class="flex items-center gap-2 ml-auto">
             {{-- page actions --}}
             @if ($showActions)
-                <x-customer.partials.page-actions
-                    :show-action-create="$showActionCreate"
-                    :action-create="$actionCreate">
+                <x-customer.buttons.btn-group
+                    contained>
                     {{ $actions ?? null }}
-                </x-customer.partials.page-actions>
+                </x-customer.buttons.btn-group>
             @endif
         </div>
     </div>
