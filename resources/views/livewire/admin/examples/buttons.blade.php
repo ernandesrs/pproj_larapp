@@ -42,7 +42,19 @@
             </div>
         </div>
 
-        <div class="flex justify-center gap-x-6 py-6">
+        <div class="flex flex-wrap justify-center items-center gap-6 py-6">
+
+            <x-admin.buttons.clickable
+                as="button"
+                prepend-icon="app"
+                variant="{{ $this->variant }}"
+                :xs="$this->size == 'xs'"
+                :sm="$this->size == 'sm'"
+                :lg="$this->size == 'lg'"
+
+                :outlined="$this->style == 'outlined'"
+                :flat="$this->style == 'flat'"
+                :link="$this->style == 'link'" />
 
             <x-admin.buttons.clickable
                 as="button"
@@ -51,6 +63,20 @@
                 :xs="$this->size == 'xs'"
                 :sm="$this->size == 'sm'"
                 :lg="$this->size == 'lg'"
+
+                :outlined="$this->style == 'outlined'"
+                :flat="$this->style == 'flat'"
+                :link="$this->style == 'link'" />
+
+            <x-admin.buttons.clickable
+                as="button"
+                prepend-icon="app"
+                text="Loading"
+                variant="{{ $this->variant }}"
+                :xs="$this->size == 'xs'"
+                :sm="$this->size == 'sm'"
+                :lg="$this->size == 'lg'"
+                loading
 
                 :outlined="$this->style == 'outlined'"
                 :flat="$this->style == 'flat'"

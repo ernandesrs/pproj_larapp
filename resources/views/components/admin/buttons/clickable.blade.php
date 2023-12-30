@@ -13,6 +13,7 @@
     'flat' => false,
     'link' => false,
     'noTransform' => false,
+    'loading' => false,
 ])
 
 @php
@@ -39,7 +40,7 @@
 
     $style = [
         // default
-        'flex flex-wrap items-center whitespace-nowrap duration-300 cursor-pointer' . ($outlined || $link ? '' : ' bg-gradient-to-tl ') . ' hover:opacity-90',
+        'flex items-center whitespace-nowrap duration-300 cursor-pointer disabled:cursor-default disabled:pointer-events-none disabled:opacity-90' . ($outlined || $link ? '' : ' bg-gradient-to-tl ') . ' hover:opacity-90',
 
         $flat || $noTransform ? '' : 'hover:scale-105',
 
@@ -49,31 +50,42 @@
         $outlined || $link ? $variants['outlined'][$variant] ?? $variants['outlined']['primary'] : $variants['default'][$variant] ?? $variants['default']['primary'],
 
         // size when empty text
-        empty($text) ? (($xs ? 'px-3 py-2' : $sm) ? 'px-3 py-2' : ($lg ? 'px-5 py-4' : 'px-4 py-3')) : '',
+        empty($text) ? ($xs ? 'px-3 py-2' : ($sm ? 'px-3 py-2' : ($lg ? 'px-5 py-4' : 'px-4 py-3'))) : '',
 
         // size when not empty text
-        !empty($text) ? (($xs ? 'px-5 py-2' : $sm) ? 'px-5 py-3' : ($lg ? 'px-12 py-4' : 'px-8 py-3')) : '',
+        !empty($text) ? ($xs ? 'px-5 py-2' : ($sm ? 'px-5 py-3' : ($lg ? 'px-12 py-4' : 'px-8 py-3'))) : '',
 
         // text-size
         $xs ? 'text-xs' : ($sm ? 'text-sm' : ($lg ? 'text-lg' : 'text-base')),
+
+        $loading ? 'animate-pulse' : '',
     ];
+
+    if ($loading) {
+        $attributes = $attributes->merge(['disabled' => true]);
+    }
 
 @endphp
 
 @if ($as == 'button')
     <button {{ $attributes->merge(['class' => implode(' ', $style)]) }}>
-        @if ($prependIcon)
+        @if ($loading)
+            <x-admin.icon
+                name="arrow-clockwise"
+                class="pointer-events-none {{ empty($text) ? '' : 'mr-2' }} {{ $loading ? 'animate-spin' : '' }}" />
+        @endif
+        @if ($prependIcon && !$loading)
             <x-admin.icon
                 name="{{ $prependIcon }}"
-                class="pointer-events-none mr-2" />
+                class="pointer-events-none {{ empty($text) ? '' : 'mr-2' }}" />
         @endif
         @if (!empty($text))
             <span class="pointer-events-none">{{ $text }}</span>
         @endif
-        @if ($appendIcon)
+        @if ($appendIcon && !$loading)
             <x-admin.icon
                 name="{{ $appendIcon }}"
-                class="pointer-events-none ml-2" />
+                class="pointer-events-none {{ empty($text) ? '' : ' ml-2' }}" />
         @endif
     </button>
 @else
@@ -81,7 +93,7 @@
         @if ($prependIcon)
             <x-admin.icon
                 name="{{ $prependIcon }}"
-                class="pointer-events-none mr-2" />
+                class="pointer-events-none {{ empty($text) ? '' : 'mr-2' }}" />
         @endif
         @if (!empty($text))
             <span class="pointer-events-none">{{ $text }}</span>
@@ -89,7 +101,7 @@
         @if ($appendIcon)
             <x-admin.icon
                 name="{{ $appendIcon }}"
-                class="pointer-events-none ml-2" />
+                class="pointer-events-none {{ empty($text) ? '' : ' ml-2' }}" />
         @endif
     </a>
 @endif
