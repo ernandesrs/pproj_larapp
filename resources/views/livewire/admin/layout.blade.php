@@ -10,9 +10,65 @@
     @vite(['resources/js/admin/app.js', 'resources/css/admin/app.css'])
 </head>
 
-<body>
+<body
+    x-data="{
+        show_sidebar: true,
+    
+        showSidebar() {
+            this.show_sidebar = true;
+        },
+        closeSidebar() {
+            this.show_sidebar = false;
+        }
+    }">
 
-    {{ $slot }}
+    <x-admin.layout-partials.sidebar
+        :navigations="[
+            // 1
+            [
+                'title' => __('words.dashboard'),
+                'items' => [
+                    [
+                        'text' => __('words.overview'),
+                        'icon' => 'pie-chart',
+                        'href' => '',
+                        'external' => false,
+                        'activeIn' => ['admin.index'],
+                    ],
+                    [
+                        'text' => __('words.users'),
+                        'icon' => 'people-fill',
+                        'href' => '',
+                        'external' => false,
+                        'activeIn' => ['admin.users', 'admin.users.create', 'admin.users.show', 'admin.users.edit'],
+                    ],
+                ],
+            ],
+        
+            // 2
+            [
+                'title' => __('words.others'),
+                'items' => [
+                    [
+                        'text' => 'Profile',
+                        'icon' => 'person-fill',
+                        'href' => '',
+                        'external' => false,
+                        'activeIn' => ['admin.profile'],
+                    ],
+                    [
+                        'text' => __('words.logout'),
+                        'icon' => 'door-closed-fill',
+                        'href' => '',
+                        'external' => false,
+                    ],
+                ],
+            ],
+        ]" />
+
+    <x-admin.layout-partials.content>
+        {{ $slot }}
+    </x-admin.layout-partials.content>
 
 </body>
 
