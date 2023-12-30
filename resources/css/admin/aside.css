@@ -15,7 +15,7 @@
 }
 
 .aside-item-title {
-    @apply mb-3 text-base uppercase font-semibold text-gray-500 cursor-default;
+    @apply mb-5 text-xs uppercase font-semibold text-admin-light-dark-2 text-opacity-50 cursor-default;
 }
 
 .aside-item-nav {

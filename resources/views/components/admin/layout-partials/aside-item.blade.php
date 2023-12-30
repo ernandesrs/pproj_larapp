@@ -1,4 +1,7 @@
-@props(['title', 'items'])
+@props([
+    'title' => 'Nav group title',
+    'items' => [],
+])
 
 <div class="aside-item">
     @isset($title)
