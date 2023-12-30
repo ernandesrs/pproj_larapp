@@ -4,9 +4,6 @@
     <div class="container">
         <div class="flex items-center">
             <div>
-                <a wire:navigate href="{{ route('admin.index') }}">
-                    <span>{{ strtoupper(config('app.name')) }}</span><span class="font-semibold">ADMIN</span>
-                </a>
             </div>
 
             <div class="ml-auto flex items-center gap-1">

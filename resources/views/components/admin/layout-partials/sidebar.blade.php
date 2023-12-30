@@ -14,6 +14,16 @@
     class="bg-admin-dark-dark-2 dark:bg-admin-dark-dark-2 dark:border-r dark:border-admin-dark-normal text-admin-light-light-2 text-opacity-75 fixed z-50 w-[80vw] h-screen shadow-2xl overflow-y-auto sm:w-[325px] lg:relative lg:z-0"
     style="display: none">
 
-    <h1>SIDEBAR</h1>
+    {{-- head --}}
+    <div class="flex flex-wrap items-center justify-center py-6 px-6">
+        <a
+            wire:navigate
+            class="text-xl font-normal"
+            href="{{ route('admin.index') }}">
+            <span class="font-bold">ADMIN</span><span>{{ strtoupper(config('app.name')) }}</span>
+        </a>
+    </div>
+
+    {{-- sidebar items --}}
 
 </div>
