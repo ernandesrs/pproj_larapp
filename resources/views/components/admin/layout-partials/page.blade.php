@@ -18,7 +18,7 @@
         </div>
     @endif
 
-    <div class="flex-1 {{ $notContained ? '' : 'border bg-admin-white py-4 px-6' }}">
+    <div class="flex-1 {{ $notContained ? '' : 'border dark:border-admin-dark-normal bg-admin-light-light-2 dark:bg-admin-dark-normal dark:bg-opacity-10 py-4 px-6' }}">
         {{ $slot }}
     </div>
 </div>

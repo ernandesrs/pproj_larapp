@@ -1,1 +1,12 @@
-/*  */
+*::-webkit-scrollbar-track {
+    @apply dark:bg-transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    @apply dark:bg-admin-primary-dark-2;
+}
+
+/* firefox */
+*::-moz-scrollbar-thumb {
+    @apply dark:bg-admin-primary-dark-2;
+}

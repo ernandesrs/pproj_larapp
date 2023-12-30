@@ -47,7 +47,7 @@
     }"
     @resize.window="sidebarStatus"
 
-    class="flex bg-admin-light-light-2">
+    class="flex bg-admin-light-light-2 dark:bg-admin-dark-dark-2 dark:text-admin-light-dark-1 dark:text-opacity-75">
 
     <x-admin.layout-partials.sidebar
         :navigations="[

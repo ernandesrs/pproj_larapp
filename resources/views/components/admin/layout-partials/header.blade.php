@@ -1,6 +1,6 @@
 @props([])
 
-<header class="flex items-center bg-customer-light-light-1 border-b h-16">
+<header class="flex items-center bg-admin-light-light-1 dark:bg-admin-dark-dark-2 border-b dark:border-admin-dark-normal h-16">
     <div class="container">
         <div class="flex items-center">
             <div>
