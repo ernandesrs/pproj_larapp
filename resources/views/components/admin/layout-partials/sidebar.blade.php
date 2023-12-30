@@ -11,7 +11,9 @@
     x-transition:leave-start="-translate-x-0"
     x-transition:leave-end="-translate-x-full"
 
-    class="bg-admin-dark-normal dark:bg-admin-dark-dark-2 fixed z-50 w-[80vw] h-screen shadow-2xl sm:w-[325px] lg:relative lg:z-0"
+    class="bg-admin-dark-normal dark:bg-admin-dark-dark-2 fixed z-50 w-[80vw] h-screen shadow-2xl overflow-y-auto sm:w-[325px] lg:relative lg:z-0"
     style="display: none">
-    SIDEBAR
+
+    <h1>SIDEBAR</h1>
+
 </div>
