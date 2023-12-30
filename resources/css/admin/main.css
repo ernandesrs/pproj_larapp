@@ -1,9 +1,0 @@
-.main {
-    @apply w-full py-8 overflow-x-hidden overflow-y-auto;
-
-    height: calc(100vh - (4rem));
-}
-
-.main-inner {
-    @apply w-full min-h-full;
-}
