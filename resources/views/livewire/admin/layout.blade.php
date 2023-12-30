@@ -69,6 +69,13 @@
                         'external' => false,
                         'activeIn' => ['admin.users', 'admin.users.create', 'admin.users.show', 'admin.users.edit'],
                     ],
+                    [
+                        'text' => __('words.examples'),
+                        'icon' => 'grid-fill',
+                        'href' => route('admin.examples'),
+                        'external' => false,
+                        'activeIn' => ['admin.examples'],
+                    ],
                 ],
             ],
         

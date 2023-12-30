@@ -94,7 +94,7 @@ Route::group([
         'prefix' => 'examples'
     ], function () {
 
-        
+        Route::get('/', \App\Livewire\Admin\Examples\Index::class)->name('admin.examples');
 
     });
 
