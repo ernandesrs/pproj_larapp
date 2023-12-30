@@ -26,7 +26,7 @@
 
     {{-- sidebar items --}}
     @foreach ($navigations as $navigation)
-        <x-admin.layout-partials.sidebar.item
+        <x-admin.layout.sidebar.item
             :nav="$navigation" />
     @endforeach
 

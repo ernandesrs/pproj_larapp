@@ -49,7 +49,7 @@
 
     class="flex bg-admin-light-light-2 dark:bg-admin-dark-dark-2 dark:text-admin-light-dark-1 dark:text-opacity-75">
 
-    <x-admin.layout-partials.sidebar.sidebar
+    <x-admin.layout.sidebar.sidebar
         :navigations="[
             // 1
             [
@@ -121,9 +121,9 @@
             ],
         ]" />
 
-    <x-admin.layout-partials.content>
+    <x-admin.layout.content>
         {{ $slot }}
-    </x-admin.layout-partials.content>
+    </x-admin.layout.content>
 
 </body>
 
