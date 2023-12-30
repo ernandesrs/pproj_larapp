@@ -1,7 +1,21 @@
 @props([])
 
-<header>
+<header class="flex items-center bg-customer-light-light-1 border-b h-16">
     <div class="container">
-        HEADER
+        <div class="flex items-center">
+            <div>
+                <a wire:navigate href="{{ route('admin.index') }}">
+                    <span>{{ strtoupper(config('app.name')) }}</span><span class="font-semibold">ADMIN</span>
+                </a>
+            </div>
+
+            <div class="ml-auto">
+                <button
+                    x-on:click="toggleSidebar"
+                    class="text-3xl">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+        </div>
     </div>
 </header>

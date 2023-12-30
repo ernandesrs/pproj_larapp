@@ -12,15 +12,31 @@
 
 <body
     x-data="{
-        show_sidebar: true,
+        show_sidebar: false,
     
+        init() {
+            this.show_sidebar = window.innerWidth >= 1024 ? true : false;
+        },
+        toggleSidebar() {
+            this.show_sidebar ? this.closeSidebar() : this.showSidebar();
+        },
         showSidebar() {
             this.show_sidebar = true;
         },
         closeSidebar() {
             this.show_sidebar = false;
+        },
+        sidebarStatus() {
+            if (window.innerWidth <= 1024 && this.show_sidebar) {
+                this.show_sidebar = false;
+            } else if (window.innerWidth > 1024 && !this.show_sidebar) {
+                this.show_sidebar = true;
+            }
         }
-    }">
+    }"
+    @resize.window="sidebarStatus"
+
+    class="flex bg-admin-light-light-2">
 
     <x-admin.layout-partials.sidebar
         :navigations="[
