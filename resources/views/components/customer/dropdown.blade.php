@@ -1,6 +1,7 @@
 @props([
     'size' => 'normal',
     'location' => 'left',
+    'persistent' => false,
 ])
 
 @php
@@ -15,6 +16,7 @@
 <div
     x-data="{
         showDropdown: false,
+        ...{{ json_encode(['persistent' => $persistent]) }},
     
         toggle() {
             this.showDropdown ? this.close() : this.show();
@@ -34,7 +36,7 @@
             document.removeEventListener('click', this.clickOutHandler);
         },
         clickOutHandler(event) {
-            if ($el.contains(event.target)) {
+            if ($el.contains(event.target) || $data.persistent) {
                 return;
             }
     
