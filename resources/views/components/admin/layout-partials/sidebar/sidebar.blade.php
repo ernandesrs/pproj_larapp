@@ -26,23 +26,8 @@
 
     {{-- sidebar items --}}
     @foreach ($navigations as $navigation)
-        <div class="mb-8">
-            <h5 class="text-xs uppercase px-8 mb-3">
-                {{ $navigation['title'] }}
-            </h5>
-
-            <nav
-                class="">
-                @foreach ($navigation['items'] as $nav)
-                    <a
-                        wire:navigate
-                        class="block py-5 px-8 mb-2 border-r-4 hover:border-admin-primary-normal duration-300 {{ in_array(\Route::currentRouteName(), $nav['activeIn'] ?? []) ? 'border-admin-primary-normal bg-admin-dark-dark-1' : 'border-transparent' }}"
-                        href="{{ $nav['href'] }}">
-                        <x-admin.icon name="{{ $nav['icon'] }}" class="mr-2 text-xl" /> <span>{{ $nav['text'] }}</span>
-                    </a>
-                @endforeach
-            </nav>
-        </div>
+        <x-admin.layout-partials.sidebar.item
+            :nav="$navigation" />
     @endforeach
 
 </div>

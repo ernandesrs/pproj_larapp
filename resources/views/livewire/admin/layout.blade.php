@@ -49,7 +49,7 @@
 
     class="flex bg-admin-light-light-2 dark:bg-admin-dark-dark-2 dark:text-admin-light-dark-1 dark:text-opacity-75">
 
-    <x-admin.layout-partials.sidebar
+    <x-admin.layout-partials.sidebar.sidebar
         :navigations="[
             // 1
             [
@@ -72,9 +72,30 @@
                     [
                         'text' => __('words.examples'),
                         'icon' => 'grid-fill',
-                        'href' => route('admin.examples'),
-                        'external' => false,
                         'activeIn' => ['admin.examples'],
+                        'items' => [
+                            [
+                                'text' => __('words.all'),
+                                'icon' => 'grid-fill',
+                                'href' => route('admin.examples'),
+                                'external' => false,
+                                'activeIn' => ['admin.examples'],
+                            ],
+                            [
+                                'text' => 'Other #1',
+                                'icon' => 'grid-fill',
+                                'href' => '#',
+                                'external' => false,
+                                'activeIn' => [],
+                            ],
+                            [
+                                'text' => 'Other #2',
+                                'icon' => 'grid-fill',
+                                'href' => '#',
+                                'external' => false,
+                                'activeIn' => [],
+                            ],
+                        ],
                     ],
                 ],
             ],
