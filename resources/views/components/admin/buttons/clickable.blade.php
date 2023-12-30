@@ -12,6 +12,7 @@
     'outlined' => false,
     'flat' => false,
     'link' => false,
+    'noTransform' => false,
 ])
 
 @php
@@ -38,7 +39,9 @@
 
     $style = [
         // default
-        'flex flex-wrap items-center whitespace-nowrap duration-300 cursor-pointer' . ($outlined || $link ? '' : ' bg-gradient-to-tl ') . ' hover:opacity-90 hover:scale-105',
+        'flex flex-wrap items-center whitespace-nowrap duration-300 cursor-pointer' . ($outlined || $link ? '' : ' bg-gradient-to-tl ') . ' hover:opacity-90',
+
+        $flat || $noTransform ? '' : 'hover:scale-105',
 
         $link ? 'hover:underline' : 'border shadow-sm hover:shadow-md',
 
