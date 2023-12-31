@@ -41,13 +41,17 @@
         {{-- security data --}}
         <x-slot name="content2">
 
-            <x-admin.section
-                title="{{ __('words.security') }}"
-                subtitle="{{ __('phrases.update_security_data') }}">
+            <div class="py-6">
 
-                <livewire:admin.account.password />
+                <x-admin.section
+                    title="{{ __('words.security') }}"
+                    subtitle="{{ __('phrases.update_security_data') }}">
 
-            </x-admin.section>
+                    <livewire:admin.account.password />
+
+                </x-admin.section>
+
+            </div>
 
         </x-slot>
 
