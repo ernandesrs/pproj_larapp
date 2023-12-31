@@ -72,7 +72,7 @@
                                 'icon' => 'people-fill',
                                 'href' => route('admin.users'),
                                 'external' => false,
-                                'activeIn' => ['admin.users'],
+                                'activeIn' => ['admin.users', 'admin.users.create', 'admin.users.show', 'admin.users.edit'],
                             ],
                         ],
                     ],
