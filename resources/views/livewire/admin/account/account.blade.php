@@ -19,19 +19,10 @@
         <x-slot name="content1">
 
             <x-admin.section
-                title="{{ __('words.profile') }} {{ __('words.photo') }}"
-                subtitle="{{ __('phrases.update_profile_picture') }}"
-                class="my-6">
-
-
-
-            </x-admin.section>
-
-            <x-admin.section
                 title="{{ __('phrases.basic_data') }}"
                 subtitle="{{ __('phrases.update_basic_data') }}">
 
-
+                <livewire:admin.account.basic-data />
 
             </x-admin.section>
 
