@@ -83,4 +83,21 @@ class Edit extends Component
 
         $this->redirect(route('admin.users.edit', ['user' => $this->user->id]), true);
     }
+
+    /**
+     * Delete photo
+     *
+     * @return void
+     */
+    public function deletePhoto()
+    {
+        if (!UserService::deletePhoto($this->user)) {
+            Alert::error(__('messages.alert.update_fail'))->float()->addAlert($this);
+            return;
+        }
+
+        Alert::success(__('messages.alert.user_updated'))->float()->addFlash();
+
+        $this->redirect(route('admin.users.edit', ['user' => $this->user->id]), true);
+    }
 }
