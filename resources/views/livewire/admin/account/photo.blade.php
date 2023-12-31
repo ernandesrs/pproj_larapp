@@ -24,6 +24,7 @@
             submitText="{{ __('phrases.upload_photo') }}"
             submittingText="{{ __('phrases.uploading_photo') }}">
             <x-admin.form.field
+                upload-field-text="{{ __('phrases.choose_a_photo') }}"
                 wire:model="data.photo"
                 type="file"
                 error="{{ $errors->first('data.photo') }}" />
