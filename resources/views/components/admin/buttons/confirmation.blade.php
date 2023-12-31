@@ -1,6 +1,7 @@
 @props([
     'variant' => 'danger',
     'sm' => false,
+    'location' => 'center',
     'confirmText' => __('phrases.confirm_to_continue'),
     'buttonConfirm' => __('words.confirm'),
     'buttonCancel' => __('words.cancel'),
@@ -56,7 +57,7 @@
             $data.methodClose();
         }
     }"
-    {{ $attributes->only(['class'])->merge(['class' => 'flex justify-center items-center']) }}>
+    {{ $attributes->only(['class'])->merge(['class' => 'flex ' . ($location == 'left' ? 'justify-start' : ($location == 'right' ? 'justify-end' : 'justify-center')) . ' items-center']) }}>
 
     {{-- activator --}}
     <div x-on:click="methodShow">
@@ -83,7 +84,8 @@
         </div>
 
         {{-- cancel/confirm --}}
-        <div class="flex justify-center items-center gap-x-4">
+        <div
+            class="flex justify-center items-center gap-x-4">
             <x-admin.buttons.clickable
                 x-on:click="methodClose"
                 prepend-icon="x-lg"
