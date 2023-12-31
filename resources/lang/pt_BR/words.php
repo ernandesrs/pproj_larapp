@@ -61,5 +61,7 @@ return [
     'settings' => 'Configurações',
     'setting' => 'Configuração',
     'account' => 'Conta',
-    'cancel' => 'Cancelar'
+    'cancel' => 'Cancelar',
+    'detail' => 'Detalhe',
+    'details' => 'Detalhes'
 ];
