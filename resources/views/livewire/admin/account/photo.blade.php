@@ -10,6 +10,8 @@
         @if (\Auth::user()->photo)
             <x-admin.buttons.confirmation
                 wire-confirm-action="deletePhoto"
+                confirm-text="{{ __('phrases.delete_photo') }}?"
+                button-confirm="{{ __('words.delete') }}"
                 class="absolute bottom-0 translate-y-1/2"
                 variant="danger">
                 <x-slot name="activator">
