@@ -19,6 +19,7 @@
             variant="primary" />
 
         <x-admin.buttons.clickable
+            wire:target="{{ $action }}"
             wire:loading
             wire:loading.class="animate-pulse"
             as="button"

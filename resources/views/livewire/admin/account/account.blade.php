@@ -18,13 +18,23 @@
         {{-- basic data --}}
         <x-slot name="content1">
 
-            <x-admin.section
-                title="{{ __('phrases.basic_data') }}"
-                subtitle="{{ __('phrases.update_basic_data') }}">
+            <div class="grid grid-cols-12 gap-6 py-6">
 
-                <livewire:admin.account.basic-data />
+                <x-admin.section
+                    class="col-span-12 xl:col-span-4"
+                    title="{{ __('phrases.profile_picture') }}"
+                    subtitle="{{ __('phrases.update_profile_picture') }}">
+                    <livewire:admin.account.photo />
+                </x-admin.section>
 
-            </x-admin.section>
+                <x-admin.section
+                    class="col-span-12 xl:col-span-8"
+                    title="{{ __('phrases.basic_data') }}"
+                    subtitle="{{ __('phrases.update_basic_data') }}">
+                    <livewire:admin.account.basic-data />
+                </x-admin.section>
+
+            </div>
 
         </x-slot>
 

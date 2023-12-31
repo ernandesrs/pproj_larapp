@@ -48,7 +48,7 @@ class Photo extends Component
 
         Alert::success(__('messages.alert.profile_updated'))->float()->addFlash();
 
-        $this->redirect(route('admin.profile'), true);
+        $this->redirect(route('admin.account'), true);
     }
 
     /**
@@ -62,7 +62,7 @@ class Photo extends Component
 
         Alert::success(__('messages.alert.profile_picture_deleted'))->float()->addFlash();
 
-        $this->redirect(route('admin.profile'), true);
+        $this->redirect(route('admin.account'), true);
     }
 
     /**
