@@ -83,9 +83,9 @@ Route::group([
     });
 
     /*
-     * PROFILE
+     * ACCOUNT
      */
-    Route::get('/profile', \App\Livewire\Admin\Account\Profile::class)->name('admin.profile');
+    Route::get('/account', \App\Livewire\Admin\Account\Account::class)->name('admin.account');
 
     /*
      * EXAMPLES

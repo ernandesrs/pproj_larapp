@@ -1,1 +1,29 @@
-/*  */
+/*
+ *
+ * Common tab component cutomization
+ *
+ */
+
+.tab_links_inner {
+    @apply border-admin-light-normal dark:border-admin-dark-normal;
+}
+
+.tab_links_mobile {
+    @apply bg-admin-light-light-2 border-admin-light-light-2 dark:bg-admin-dark-dark-1 dark:border-admin-dark-normal dark:text-admin-light-light-2;
+}
+
+.tab_links_mobile select {
+    @apply text-admin-dark-light-2;
+}
+
+.tab_link {
+    @apply text-admin-dark-light-2 text-opacity-70 hover:border-admin-light-dark-1 hover:text-admin-dark-normal dark:text-admin-light-dark-2 dark:hover:border-admin-dark-light-2;
+}
+
+.tab_link_active {
+    @apply border-admin-primary-light-2 text-admin-primary-normal;
+}
+
+.tab_contents {
+    @apply dark:border-front-dark-normal;
+}

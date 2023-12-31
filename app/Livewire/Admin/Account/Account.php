@@ -4,7 +4,7 @@ namespace App\Livewire\Admin\Account;
 
 use Livewire\Component;
 
-class Profile extends Component
+class Account extends Component
 {
     /**
      * Contructor
@@ -21,8 +21,8 @@ class Profile extends Component
      */
     public function render()
     {
-        return view('livewire..admin.account.profile')
+        return view('livewire..admin.account.account')
             ->layout('livewire.admin.layout')
-            ->title('My account');
+            ->title(__('phrases.my_account'));
     }
 }

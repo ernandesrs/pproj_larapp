@@ -10,10 +10,10 @@
     @if (!empty($title))
         <div class="flex flex-wrap items-center pb-6">
             <div
-                class="basis-full md:basis-6/12 xl:basis-5/12 font-medium flex items-start text-admin-dark-normal dark:text-admin-light-dark-1">
+                class="basis-full md:basis-6/12 xl:basis-5/12 font-medium flex items-center text-admin-dark-normal dark:text-admin-light-dark-1">
                 @if ($icon)
                     <x-admin.icon name="{{ $icon }}"
-                        class="mr-3 mt-1 hidden sm:inline-block text-4xl xl:text-5xl" />
+                        class="mr-3 hidden sm:inline-block text-4xl xl:text-5xl" />
                 @endif
                 <div>
                     <h1 class="text-xl font-semibold xl:text-2xl">

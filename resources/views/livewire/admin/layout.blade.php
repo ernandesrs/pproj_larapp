@@ -112,11 +112,11 @@
                         ],
                     ],
                     [
-                        'text' => __('words.account'),
+                        'text' => __('phrases.my_account'),
                         'icon' => 'person-fill',
-                        'href' => route('admin.profile'),
+                        'href' => route('admin.account'),
                         'external' => false,
-                        'activeIn' => ['admin.profile'],
+                        'activeIn' => ['admin.account'],
                     ],
                     [
                         'text' => __('words.logout'),
