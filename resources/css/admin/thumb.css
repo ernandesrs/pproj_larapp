@@ -1,1 +1,7 @@
-/*  */
+.thumbnail {
+    @apply bg-admin-light-normal border-4 border-admin-white dark:bg-admin-dark-normal dark:border-admin-dark-light-2;
+}
+
+.thumbnail .alternative {
+    @apply text-admin-light-dark-2;
+}

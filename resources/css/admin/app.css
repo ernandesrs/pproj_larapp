@@ -10,6 +10,7 @@
 @import './tab.css';
 
 @import './../common/thumb.css';
+@import './thumb.css';
 
 @tailwind base;
 @tailwind components;
