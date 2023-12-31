@@ -1,5 +1,6 @@
 @props([
     'variant' => 'danger',
+    'sm' => false,
     'confirmText' => __('phrases.confirm_to_continue'),
     'buttonConfirm' => __('words.confirm'),
     'buttonCancel' => __('words.cancel'),
@@ -59,7 +60,7 @@
 
     {{-- activator --}}
     <div x-on:click="methodShow">
-        {{ $activator }}
+        {{ $slot ?? $activator }}
     </div>
 
     {{-- cancel/confirm buttons --}}
@@ -73,11 +74,11 @@
         x-transition:leave-start="opacity-100 scale-100"
         x-transition:leave-end="scale-75"
 
-        class="absolute px-6 py-4 border bg-admin-white shadow-2xl cursor-default dark:bg-admin-dark-light-1 dark:border-admin-dark-light-1">
+        class="absolute {{ $sm ? 'px-4 py-3' : 'px-6 py-4' }} border bg-admin-white shadow-2xl cursor-default dark:bg-admin-dark-light-1 dark:border-admin-dark-light-1">
 
         {{-- confirmation text --}}
         <div
-            class="text-center font-semibold mb-4 text-lg lg:text-xl text-admin-{{ $variant }}-normal">
+            class="text-center font-medium {{ $sm ? 'mb-2' : 'mb-4' }} text-admin-{{ $variant }}-normal {{ $sm ? 'text-sm lg:text-base' : 'text-lg lg:text-xl' }}">
             {{ $confirmText }}
         </div>
 
@@ -86,9 +87,10 @@
             <x-admin.buttons.clickable
                 x-on:click="methodClose"
                 prepend-icon="x-lg"
-                text="{{ $buttonCancel }}"
+                text="{{ $sm ? '' : $buttonCancel }}"
                 outlined
-                sm
+                :xs="$sm"
+                :sm="!$sm"
                 variant="{{ $variant }}"
                 {{ $attributes->only(['wire:target', 'wire:loading.attr', 'wire:loading.class']) }} />
 
@@ -96,9 +98,10 @@
             <x-admin.buttons.clickable
                 x-on:click="methodConfirmed"
                 prepend-icon="check-lg"
-                text="{{ $buttonConfirm }}"
+                text="{{ $sm ? '' : $buttonConfirm }}"
                 flat
-                sm
+                :xs="$sm"
+                :sm="!$sm"
                 variant="{{ $variant }}"
                 {{ $attributes->only(['wire:target', 'wire:click', 'wire:loading.attr', 'wire:loading.class']) }} />
         </div>
