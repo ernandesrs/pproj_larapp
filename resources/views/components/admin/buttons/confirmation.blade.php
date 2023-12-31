@@ -61,7 +61,7 @@
 
     {{-- activator --}}
     <div x-on:click="methodShow">
-        {{ $slot ?? $activator }}
+        {{ $slot }}
     </div>
 
     {{-- cancel/confirm buttons --}}
