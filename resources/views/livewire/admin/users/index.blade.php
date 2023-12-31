@@ -33,6 +33,7 @@
                 <x-admin.list.table.col
                     class="flex justify-end items-center">
                     <x-admin.list.actions
+                        wire-action-edit="{{ route('admin.users.edit', ['user' => $user->id]) }}"
                         wire-action-delete="delete({{ $user->id }})" />
                 </x-admin.list.table.col>
             </x-admin.list.table.row>
