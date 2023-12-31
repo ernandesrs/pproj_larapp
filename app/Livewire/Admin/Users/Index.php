@@ -42,6 +42,7 @@ class Index extends Component
 
         $user->delete();
 
-        Alert::info(__('messages.alert.user_deleted'))->float()->addAlert($this);
+        Alert::info(__('messages.alert.user_deleted'))->float()->addFlash();
+        return $this->redirect(route('admin.users'), true);
     }
 }

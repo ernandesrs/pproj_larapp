@@ -7,6 +7,9 @@
             [
                 'label' => __('words.details') . ' ' . strtolower(__('words.user')),
             ],
+            [
+                'label' => '',
+            ],
         ]">
 
         @foreach ($users as $user)
@@ -25,6 +28,12 @@
                             text="{{ $user->first_name }} {{ $user->last_name }}"
                             label="{{ $user->email }}" />
                     </div>
+                </x-admin.list.table.col>
+
+                <x-admin.list.table.col
+                    class="flex justify-end">
+                    <x-admin.list.actions
+                        wire-action-delete="delete({{ $user->id }})" />
                 </x-admin.list.table.col>
             </x-admin.list.table.row>
         @endforeach

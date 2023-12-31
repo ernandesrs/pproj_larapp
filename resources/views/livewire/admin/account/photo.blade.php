@@ -14,13 +14,11 @@
                 button-confirm="{{ __('words.delete') }}"
                 class="absolute bottom-0 translate-y-1/2"
                 variant="danger">
-                <x-slot name="activator">
-                    <x-admin.buttons.clickable
-                        class="rounded-full"
-                        prepend-icon="trash3-fill"
-                        variant="danger"
-                        flat />
-                </x-slot>
+                <x-admin.buttons.clickable
+                    class="rounded-full"
+                    prepend-icon="trash3-fill"
+                    variant="danger"
+                    flat />
             </x-admin.buttons.confirmation>
         @endif
     </div>

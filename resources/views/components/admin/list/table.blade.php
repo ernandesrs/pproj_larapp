@@ -4,7 +4,7 @@
 
 <div class="overflow-x-auto">
     <table
-        class="w-full divide-y-2 divide-admin-light-dark-2 bg-admin-light-light-2 dark:bg-admin-dark-dark-1 table-fixed border dark:border-admin-dark-normal">
+        class="w-full bg-admin-light-light-2 dark:bg-admin-dark-dark-1 table-fixed border dark:border-admin-dark-normal">
         <thead>
             <x-admin.list.table.row>
                 @foreach ($columns as $column)
@@ -17,7 +17,7 @@
             </x-admin.list.table.row>
         </thead>
 
-        <tbody class="divide-y divide-admin-light-dark-2">
+        <tbody class="">
             {{ $slot }}
         </tbody>
     </table>
