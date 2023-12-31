@@ -54,7 +54,7 @@
             @endif
 
             <input
-                class="{{ $fieldStyles }}"
+                class="{{ $fieldStyles }} {{ $type == 'file' ? '!opacity-0' : '' }}"
                 type="{{ $type }}"
                 {{ $attributes->exceptProps(['class']) }} />
         </div>
