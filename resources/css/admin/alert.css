@@ -1,1 +1,11 @@
-/*  */
+.alert {
+    @apply rounded-sm bg-admin-white dark:bg-admin-dark-normal;
+}
+
+.alert-float {
+    @apply fixed top-5 md:right-5;
+}
+
+.alert-progress-inner {
+    @apply block rounded-full bg-admin-white dark:bg-admin-dark-normal;
+}
