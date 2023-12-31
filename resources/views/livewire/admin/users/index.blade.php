@@ -31,7 +31,7 @@
                 </x-admin.list.table.col>
 
                 <x-admin.list.table.col
-                    class="flex justify-end">
+                    class="flex justify-end items-center">
                     <x-admin.list.actions
                         wire-action-delete="delete({{ $user->id }})" />
                 </x-admin.list.table.col>

@@ -75,7 +75,8 @@
         x-transition:leave-start="opacity-100 scale-100"
         x-transition:leave-end="scale-75"
 
-        class="absolute {{ $sm ? 'px-4 py-3' : 'px-6 py-4' }} border bg-admin-white shadow-2xl cursor-default dark:bg-admin-dark-light-1 dark:border-admin-dark-light-1">
+        class="absolute {{ $sm ? 'px-4 py-3' : 'px-6 py-4' }} border bg-admin-white shadow-2xl cursor-default dark:bg-admin-dark-light-1 dark:border-admin-dark-light-1"
+        style="display: none">
 
         {{-- confirmation text --}}
         <div
