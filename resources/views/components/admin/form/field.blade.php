@@ -43,11 +43,11 @@
                 <span
                     class="{{ $fieldStyles }} flex items-center absolute h-full bottom-0 left-0 pointer-events-none px-0 py-0 overflow-hidden">
                     <span
-                        class="inline-flex items-center h-full bg-admin-light-normal px-6 font-medium text-admin-dark-light-2 dark:bg-admin-dark-normal dark:text-admin-light-dark-2 dark:text-opacity-60">
+                        class="inline-flex items-center bg-admin-light-normal px-6 py-2 font-medium text-admin-dark-light-2 dark:bg-admin-dark-dark-1 dark:text-admin-light-normal dark:text-opacity-50">
                         {{ $uploadButtonText }}
                     </span>
                     <span
-                        class="inline-flex items-center w-full h-full bg-admin-white px-6 text-admin-dark-light-2 dark:bg-admin-dark-light-1 dark:text-admin-light-dark-2">
+                        class="inline-flex items-center w-full px-6">
                         {{ $uploadFieldText }}
                     </span>
                 </span>
