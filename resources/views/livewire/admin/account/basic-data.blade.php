@@ -8,19 +8,22 @@
             class="col-span-12 sm:col-span-6"
             label="{{ __('words.first_name') }}"
             wire:model="data.first_name"
-            type="text" />
+            type="text"
+            error="{{ $errors->first('data.first_name') }}" />
 
         <x-admin.form.field
             class="col-span-12 sm:col-span-6"
             label="{{ __('words.last_name') }}"
             wire:model="data.last_name"
-            type="text" />
+            type="text"
+            error="{{ $errors->first('data.last_name') }}" />
 
         <x-admin.form.field
             class="col-span-12 sm:col-span-6"
             label="{{ __('words.username') }}"
             wire:model="data.username"
-            type="text" />
+            type="text"
+            error="{{ $errors->first('data.username') }}" />
 
         <x-admin.form.field
             class="col-span-12 sm:col-span-6"
@@ -40,7 +43,8 @@
                     'label' => __('words.female'),
                     'value' => 'f',
                 ],
-            ]" />
+            ]"
+            error="{{ $errors->first('data.gender') }}" />
 
         <x-admin.form.field
             class="col-span-12"
