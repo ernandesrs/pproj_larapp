@@ -12,18 +12,16 @@ class Photo extends Component
     use WithFileUploads;
 
     /**
-     * Listeners
+     * Photo
      *
      * @var array
      */
-    protected $listeners = ['filePreValidated' => 'handleFilePreValidation'];
+    public $data;
 
-    /**
-     * Photo
-     *
-     * @var mixed
-     */
-    public $photo = null;
+    public function mount()
+    {
+        $this->data = ['photo' => null];
+    }
 
     /**
      * Render view
@@ -42,9 +40,9 @@ class Photo extends Component
      */
     public function uploadPhoto()
     {
-        $validated = $this->validate();
+        $validated = $this->validate(UserService::getPhotoDataRules());
 
-        UserService::updatePhoto(\Auth::user(), $validated['photo']);
+        UserService::updatePhoto(\Auth::user(), $validated['data']['photo']);
 
         Alert::success(__('messages.alert.profile_updated'))->float()->addFlash();
 
@@ -63,17 +61,5 @@ class Photo extends Component
         Alert::success(__('messages.alert.profile_picture_deleted'))->float()->addFlash();
 
         $this->redirect(route('admin.account'), true);
-    }
-
-    /**
-     * Rules
-     *
-     * @return array
-     */
-    public function rules()
-    {
-        return [
-            'photo' => ['required', 'file', 'mimes:jpeg,jpg,png', 'max:1024', 'dimensions:min_width=250,min_height=250']
-        ];
     }
 }
