@@ -36,17 +36,52 @@
                         link
                         no-transform />
 
-                    <x-admin.dropdown
-                        size="normal"
-                        location="right">
-                        <x-slot name="activator">
-                            <x-admin.buttons.clickable
-                                prepend-icon="bell-fill"
-                                variant="primary"
-                                link
-                                no-transform />
-                        </x-slot>
-                    </x-admin.dropdown>
+                    <x-admin.layout.notification
+                        :notifications="[
+                            [
+                                'icon' => 'person-fill-exclamation',
+                                'title' => 'You have something important on the customer dashboard.',
+                                'read' => false,
+                                'action' => [
+                                    'text' => 'Go to my dashboard',
+                                    'href' => route('customer.index'),
+                                ],
+                            ],
+                            [
+                                'icon' => 'google',
+                                'title' => 'This is a example of a notification with external link.',
+                                'read' => false,
+                                'action' => [
+                                    'text' => 'Go to Google',
+                                    'external' => true,
+                                    'href' => 'https://google.com',
+                                ],
+                            ],
+                            [
+                                'icon' => 'person-fill-x',
+                                'title' => 'Attention! Your account has something important to do.',
+                                'read' => true,
+                                'action' => [
+                                    'text' => 'Go to account',
+                                    'href' => route('admin.account'),
+                                ],
+                            ],
+                            [
+                                'icon' => 'rocket-takeoff-fill',
+                                'title' => 'This is lorem ipsum dolor sit read notification example.',
+                                'read' => false,
+                            ],
+                            [
+                                'icon' => 'rocket-takeoff-fill',
+                                'title' => 'This is lorem ipsum dolor sit read notification example.',
+                                'read' => true,
+                            ],
+                            [
+                                'icon' => 'rocket-takeoff-fill',
+                                'title' => 'This is lorem ipsum dolor sit read notification example.',
+                                'read' => true,
+                            ],
+                        ]" />
                 </div>
 
                 <button
