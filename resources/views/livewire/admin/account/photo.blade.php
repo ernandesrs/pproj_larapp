@@ -9,6 +9,8 @@
 
         @if (\Auth::user()->photo)
             <x-admin.buttons.clickable
+                wire:confirm="{{ __('phrases.deleting_photo') }}, {{ strtolower(__('phrases.confirm_to_continue')) }}."
+                wire:click="deletePhoto"
                 class="absolute bottom-0 translate-y-1/2 rounded-full"
                 prepend-icon="trash3-fill"
                 variant="danger"
