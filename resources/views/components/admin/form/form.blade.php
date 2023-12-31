@@ -8,7 +8,7 @@
 
     {{ $slot }}
 
-    <div class="flex justify-center mt-4">
+    <div class="flex justify-center mt-8">
         <x-admin.buttons.clickable
             wire:target="{{ $action }}"
             wire:loading.remove

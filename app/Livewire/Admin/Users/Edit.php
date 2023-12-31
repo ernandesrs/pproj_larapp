@@ -81,6 +81,6 @@ class Edit extends Component
 
         Alert::success(__('messages.alert.password_updated'))->float()->addFlash();
 
-        $this->redirect(route('admin.users.edit', ['user' => $this->user->id]));
+        $this->redirect(route('admin.users.edit', ['user' => $this->user->id]), true);
     }
 }
