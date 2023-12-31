@@ -1,6 +1,6 @@
-<div class="flex flex-col py-4">
+<div class="flex flex-col gap-y-10 py-4">
 
-    <div class="relative flex justify-center items-center">
+    <div class="relative z-10 flex justify-center items-center">
         <x-common.thumb
             type="avatar"
             size="extralarge"
@@ -8,17 +8,22 @@
             alternative-text="{{ \Auth::user()->first_name }}" />
 
         @if (\Auth::user()->photo)
-            <x-admin.buttons.clickable
-                wire:confirm="{{ __('phrases.deleting_photo') }}, {{ strtolower(__('phrases.confirm_to_continue')) }}."
-                wire:click="deletePhoto"
-                class="absolute bottom-0 translate-y-1/2 rounded-full"
-                prepend-icon="trash3-fill"
-                variant="danger"
-                flat />
+            <x-admin.buttons.confirmation
+                wire-confirm-action="deletePhoto"
+                class="absolute bottom-0 translate-y-1/2"
+                variant="danger">
+                <x-slot name="activator">
+                    <x-admin.buttons.clickable
+                        class="rounded-full"
+                        prepend-icon="trash3-fill"
+                        variant="danger"
+                        flat />
+                </x-slot>
+            </x-admin.buttons.confirmation>
         @endif
     </div>
 
-    <div class="pt-14">
+    <div class="relative z-0">
         <x-admin.form.form
             action="uploadPhoto"
             submitText="{{ __('phrases.upload_photo') }}"
