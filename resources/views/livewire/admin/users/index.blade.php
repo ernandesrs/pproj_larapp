@@ -22,6 +22,8 @@
 
     </x-slot>
 
+    <x-admin.list.filter />
+
     <x-admin.list.table
         :columns="[
             [

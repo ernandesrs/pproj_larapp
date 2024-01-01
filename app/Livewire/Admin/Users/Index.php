@@ -4,12 +4,26 @@ namespace App\Livewire\Admin\Users;
 
 use App\Helpers\Alert;
 use App\Models\User;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 class Index extends Component
 {
     use WithPagination;
+
+    /**
+     * Search
+     *
+     * @var string
+     */
+    #[Url(except: '')]
+    public $search;
+
+    public function mount()
+    {
+        $this->search = '';
+    }
 
     /**
      * Render view

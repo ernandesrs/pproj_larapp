@@ -63,5 +63,10 @@ return [
     'account' => 'Conta',
     'cancel' => 'Cancelar',
     'detail' => 'Detalhe',
-    'details' => 'Detalhes'
+    'details' => 'Detalhes',
+    'search' => 'Buscar',
+    'searching' => 'Buscando',
+    'search_by' => 'Buscar por',
+    'filter' => 'Filtrar',
+    'filtering' => 'Filtrando',
 ];
