@@ -20,7 +20,7 @@ class Index extends Component
     {
         return view('livewire..admin.users.index', [
             'title' => __('words.users'),
-            'users' => User::paginate(10)
+            'users' => User::paginate(15)->withQueryString()
         ])->layout('livewire.admin.layout')
             ->title(__('words.users'));
     }

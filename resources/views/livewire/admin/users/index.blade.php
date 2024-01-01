@@ -61,4 +61,7 @@
 
     </x-admin.list.table>
 
+    <x-admin.list.pagination
+        :model="$users" each-side="1" />
+
 </x-admin.layout.page>
