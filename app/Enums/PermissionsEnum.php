@@ -30,7 +30,7 @@ enum PermissionsEnum: string
             static::CREATE_USERS => __('admin/phrases.create_users'),
             static::EDIT_USERS => __('admin/phrases.edit_users'),
             static::DELETE_USERS => __('admin/phrases.delete_users'),
-            static::PROMOVE_USERS => __('admin/phrases.promove_users'),
+            static::PROMOTE_USERS => __('admin/phrases.promote_users'),
             static::DEMOTE_USERS => __('admin/phrases.demote_users'),
         };
     }

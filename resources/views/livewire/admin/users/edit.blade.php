@@ -62,7 +62,7 @@
 
         <x-admin.section
             title="{{ __('phrases.basic_data') }}"
-            class="col-span-12 lg:col-span-8">
+            class="col-span-12 lg:col-start-5 lg:col-span-8">
 
             <x-admin.form.form
                 action="update"
@@ -76,7 +76,7 @@
 
         <x-admin.section
             title="{{ __('phrases.security_data') }}"
-            class="col-span-12 lg:col-span-8 lg:col-start-5">
+            class="col-span-12 lg:col-start-5 lg:col-span-8">
 
             <x-admin.form.form
                 action="updatePassword"
