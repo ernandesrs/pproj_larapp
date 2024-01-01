@@ -7,11 +7,11 @@
             action="register"
             submit-text="{{ __('words.register') }} {{ __('words.user') }}">
 
-            <x-common.views.user-basic-data />
+            <x-admin.views.user-basic-data />
 
-            <div class="mt-6"></div>
+            <div class="mt-8"></div>
 
-            <x-common.views.user-password />
+            <x-admin.views.user-password />
 
         </x-admin.form.form>
 

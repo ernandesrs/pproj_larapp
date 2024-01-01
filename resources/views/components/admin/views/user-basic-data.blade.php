@@ -48,6 +48,6 @@
         type="text"
         label="{{ __('words.email') }}"
         error="{{ $errors->first('data.email') }}"
-        :disabled="$this->user ?? null ? true : false" />
+        :disabled="$this->data['id'] ?? null ? true : false" />
 
 </div>

@@ -41,7 +41,7 @@
                 action="update"
                 submit-text="{{ __('words.update') }} {{ __('words.user') }}">
 
-                <x-common.views.user-basic-data />
+                <x-admin.views.user-basic-data />
 
             </x-admin.form.form>
 
@@ -55,7 +55,7 @@
                 action="updatePassword"
                 submit-text="{{ __('words.update') }} {{ __('words.user') }}">
 
-                <x-common.views.user-password />
+                <x-admin.views.user-password />
 
             </x-admin.form.form>
 

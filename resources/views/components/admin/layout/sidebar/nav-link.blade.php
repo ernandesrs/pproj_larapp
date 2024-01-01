@@ -15,7 +15,7 @@
         // default
         'flex items-center px-8 py-3 mb-2 text-admin-light-dark-2 border-l-4 duration-300 ',
         !$toggler ? 'hover:border-admin-primary-normal' : 'hover:text-opacity-50',
-        $active && !$toggler ? 'border-admin-primary-normal bg-admin-dark-dark-1 pointer-events-none' : 'border-transparent',
+        $active && !$toggler ? 'border-admin-primary-normal bg-admin-dark-dark-1' : 'border-transparent',
         $active && $toggler ? 'text-opacity-50' : '',
     ]);
 
