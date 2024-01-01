@@ -1,4 +1,12 @@
 <x-admin.layout.page
+    :breadcrumbs="[
+        [
+            'label' => __('words.users'),
+            'route' => [
+                'name' => 'admin.users',
+            ],
+        ],
+    ]"
     title="{{ __('words.users') }}"
     subtitle="{{ __('admin/phrases.manage_users') }}">
 
