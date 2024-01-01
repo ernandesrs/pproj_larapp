@@ -12,7 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $call = [];
+        $call = [
+            \Database\Seeders\RolesAndPermissionsSeeder::class
+        ];
 
         if (\App\Models\User::count() == 0) {
             $call[] = UserSeeder::class;
