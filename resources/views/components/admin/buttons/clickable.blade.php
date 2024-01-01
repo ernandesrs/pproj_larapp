@@ -54,7 +54,7 @@
         empty($text) ? ($xs ? 'px-3 py-2' : ($sm ? 'px-3 py-2' : ($lg ? 'px-5 py-4' : 'px-4 py-3'))) : '',
 
         // size when not empty text
-        !empty($text) ? ($xs ? 'px-5 py-2' : ($sm ? 'px-5 py-3' : ($lg ? 'px-12 py-4' : 'px-8 py-3'))) : '',
+        !empty($text) ? ($xs ? 'px-5 py-2' : ($sm ? 'px-6 py-3' : ($lg ? 'px-12 py-4' : 'px-6 py-3'))) : '',
 
         // text-size
         $xs ? 'text-xs' : ($sm ? 'text-sm' : ($lg ? 'text-lg' : 'text-base')),

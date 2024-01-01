@@ -34,7 +34,7 @@
                     @foreach ($breadcrumbs as $bread)
                         <a
                             wire:navigate
-                            class="inline-block text-admin-primary-light-1 duration-300 hover:text-admin-primary-dark-2"
+                            class="inline-block text-admin-primary-light-1 text-sm duration-300 hover:text-admin-primary-dark-2"
                             href="{{ route($bread['route']['name'], $bread['route']['params'] ?? []) }}"
                             title="{{ $bread['title'] ?? $bread['label'] }}">
                             @if ($bread['icon'] ?? null)

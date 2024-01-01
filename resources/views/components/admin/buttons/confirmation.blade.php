@@ -80,7 +80,7 @@
 
         {{-- confirmation text --}}
         <div
-            class="text-center font-medium {{ $sm ? 'mb-2' : 'mb-4' }} text-admin-{{ $variant }}-normal {{ $sm ? 'text-sm lg:text-base' : 'text-lg lg:text-xl' }}">
+            class="text-center font-medium {{ $sm ? 'mb-2' : 'mb-4' }} text-admin-{{ $variant }}-normal {{ $sm ? 'text-sm lg:text-base' : 'text-base lg:text-lg' }}">
             {{ $confirmText }}
         </div>
 
@@ -88,23 +88,24 @@
         <div
             class="flex justify-center items-center gap-x-4">
             <x-admin.buttons.clickable
+                class="py-3"
                 x-on:click="methodClose"
                 prepend-icon="x-lg"
                 text="{{ $sm ? '' : $buttonCancel }}"
                 outlined
-                :xs="$sm"
-                :sm="!$sm"
+                no-transform
+                xs
                 variant="{{ $variant }}"
                 {{ $attributes->only(['wire:target', 'wire:loading.attr', 'wire:loading.class']) }} />
 
             {{-- confirm --}}
             <x-admin.buttons.clickable
+                class="py-3"
                 x-on:click="methodConfirmed"
                 prepend-icon="check-lg"
                 text="{{ $sm ? '' : $buttonConfirm }}"
                 flat
-                :xs="$sm"
-                :sm="!$sm"
+                xs
                 variant="{{ $variant }}"
                 {{ $attributes->only(['wire:target', 'wire:click', 'wire:loading.attr', 'wire:loading.class']) }} />
         </div>
