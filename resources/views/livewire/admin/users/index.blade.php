@@ -2,6 +2,18 @@
     title="{{ __('words.users') }}"
     subtitle="{{ __('admin/phrases.manage_users') }}">
 
+    <x-slot name="actions">
+
+        <x-admin.buttons.clickable
+            as="link"
+            href="{{ route('admin.users.create') }}"
+            prepend-icon="plus-lg"
+            variant="success"
+            text="{{ __('words.new') }}"
+            sm flat />
+
+    </x-slot>
+
     <x-admin.list.table
         :columns="[
             [
@@ -40,6 +52,5 @@
         @endforeach
 
     </x-admin.list.table>
-
 
 </x-admin.layout.page>
