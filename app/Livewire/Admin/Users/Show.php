@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Users;
 
+use App\Enums\PermissionsEnum;
 use App\Models\User;
 use Livewire\Component;
 
@@ -33,6 +34,8 @@ class Show extends Component
      */
     public function render()
     {
+        $this->authorize(PermissionsEnum::SHOW_USERS->value);
+
         return view('livewire..admin.users.show', [
             'title' => __('words.see') . ' ' . __('words.user')
         ])->layout('livewire.admin.layout')

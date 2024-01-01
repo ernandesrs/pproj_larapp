@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Users;
 
+use App\Enums\PermissionsEnum;
 use App\Helpers\Alert;
 use App\Models\User;
 use Livewire\Attributes\Url;
@@ -37,6 +38,8 @@ class Index extends Component
      */
     public function render()
     {
+        $this->authorize(PermissionsEnum::LIST_USERS->value);
+
         return $this->applyFilter();
     }
 
@@ -48,6 +51,8 @@ class Index extends Component
      */
     public function delete($id)
     {
+        $this->authorize([PermissionsEnum::DELETE_USERS->value]);
+
         $user = User::where('id', $id)->firstOrFail();
 
         if ($user->id == \Auth::user()->id) {

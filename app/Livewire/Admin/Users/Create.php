@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Users;
 
+use App\Enums\PermissionsEnum;
 use App\Helpers\Alert;
 use App\Services\UserService;
 use Livewire\Component;
@@ -32,6 +33,8 @@ class Create extends Component
      */
     public function render()
     {
+        $this->authorize(PermissionsEnum::CREATE_USERS->value);
+
         return view('livewire..admin.users.create', [
             'title' => __('words.register') . ' ' . __('words.user')
         ])->layout('livewire.admin.layout')->title(__('words.register') . ' ' . __('words.user'));
@@ -44,6 +47,8 @@ class Create extends Component
      */
     public function register()
     {
+        $this->authorize(PermissionsEnum::CREATE_USERS->value);
+
         $validated = $this->validate();
 
         $user = UserService::create($validated['data']);

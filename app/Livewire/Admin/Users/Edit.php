@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Users;
 
+use App\Enums\PermissionsEnum;
 use App\Helpers\Alert;
 use App\Models\User;
 use App\Services\UserService;
@@ -42,6 +43,8 @@ class Edit extends Component
      */
     public function render()
     {
+        $this->authorize(PermissionsEnum::EDIT_USERS->value);
+
         return view('livewire..admin.users.edit', [
             'title' => __('words.edit') . ' ' . __('words.user'),
             'user' => $this->user
@@ -55,6 +58,8 @@ class Edit extends Component
      */
     public function update()
     {
+        $this->authorize(PermissionsEnum::EDIT_USERS->value);
+
         $validated = $this->validate(UserService::getBasicDataRules());
 
         if (!UserService::update($this->user, $validated['data'])) {
@@ -72,6 +77,8 @@ class Edit extends Component
      */
     public function updatePassword()
     {
+        $this->authorize(PermissionsEnum::EDIT_USERS->value);
+
         $validated = $this->validate(UserService::getPasswordDataRules());
 
         if (!UserService::update($this->user, $validated['data'])) {
@@ -91,6 +98,8 @@ class Edit extends Component
      */
     public function deletePhoto()
     {
+        $this->authorize(PermissionsEnum::EDIT_USERS->value);
+
         if (!UserService::deletePhoto($this->user)) {
             Alert::error(__('messages.alert.update_fail'))->float()->addAlert($this);
             return;
