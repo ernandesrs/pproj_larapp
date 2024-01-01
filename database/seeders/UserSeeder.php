@@ -16,6 +16,7 @@ class UserSeeder extends Seeder
             'first_name' => 'Super',
             'last_name' => 'User',
             'username' => 'superuser',
+            'is_super' => true,
             'email' => env('APP_SUPER_USER_EMAIL', 'super@mail.com'),
         ]);
 
