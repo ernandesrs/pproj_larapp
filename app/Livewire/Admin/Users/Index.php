@@ -20,6 +20,11 @@ class Index extends Component
     #[Url(except: '')]
     public $search;
 
+    /**
+     * Mount
+     *
+     * @return void
+     */
     public function mount()
     {
         $this->search = '';
@@ -32,11 +37,7 @@ class Index extends Component
      */
     public function render()
     {
-        return view('livewire..admin.users.index', [
-            'title' => __('words.users'),
-            'users' => User::paginate(15)
-        ])->layout('livewire.admin.layout')
-            ->title(__('words.users'));
+        return $this->applyFilter();
     }
 
     /**
@@ -58,5 +59,22 @@ class Index extends Component
 
         Alert::info(__('messages.alert.user_deleted'))->float()->addFlash();
         return $this->redirect(route('admin.users'), true);
+    }
+
+    /**
+     * Apply filter and render view
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
+    public function applyFilter()
+    {
+        return view('livewire..admin.users.index', [
+            'title' => __('words.users'),
+            'users' => (empty($this->search) ?
+                User::whereNotNull('id') :
+                User::search($this->search))
+                ->orderBy('created_at', 'desc')->paginate(15)
+        ])->layout('livewire.admin.layout')
+            ->title(__('words.users'));
     }
 }

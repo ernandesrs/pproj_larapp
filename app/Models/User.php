@@ -10,7 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, TraitFilter;
 
     /**
      * The attributes that are mass assignable.
@@ -46,4 +46,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    /**
+     * Set searchable fields
+     *
+     * @return array
+     */
+    public static function searchableFields()
+    {
+        return ['first_name', 'last_name', 'username', 'email'];
+    }
 }
