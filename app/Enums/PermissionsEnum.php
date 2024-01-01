@@ -6,6 +6,12 @@ enum PermissionsEnum: string
 {
     /**
      * 
+     * GENERAL
+     */
+    case ADMIN_ACCESS = 'admin_access';
+
+    /**
+     * 
      * USER
      * 
      */
@@ -25,6 +31,8 @@ enum PermissionsEnum: string
     public function label()
     {
         return match ($this) {
+            static::ADMIN_ACCESS => __('admin/phrases.admin_access'),
+
             static::LIST_USERS => __('admin/phrases.list_users'),
             static::SHOW_USERS => __('admin/phrases.show_users'),
             static::CREATE_USERS => __('admin/phrases.create_users'),

@@ -10,6 +10,7 @@ enum RolesEnum: string
      * 
      */
     case SUPER_USER = 'super_user';
+    case ADMIN_USER = 'admin_user';
 
     /**
      * Label
@@ -20,6 +21,7 @@ enum RolesEnum: string
     {
         return match ($this) {
             static::SUPER_USER => __('admin/phrases.super_user'),
+            static::ADMIN_USER => __('admin/phrases.admin_user'),
         };
     }
 

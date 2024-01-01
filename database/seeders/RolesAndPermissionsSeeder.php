@@ -40,7 +40,8 @@ class RolesAndPermissionsSeeder extends Seeder
          * 
          */
         foreach (RolesEnum::cases() as $role) {
-            Role::create(['name' => $role->value]);
+            $role = Role::create(['name' => $role->value]);
+            $role->givePermissionTo(PermissionsEnum::ADMIN_ACCESS);
         }
     }
 }

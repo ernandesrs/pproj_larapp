@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Enums\RolesEnum;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -22,7 +23,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Gate::before(function ($user, $ability) {
-            return $user->is_super ? true : null;
+            return $user->hasRole(RolesEnum::SUPER_USER) ? true : null;
         });
     }
 }

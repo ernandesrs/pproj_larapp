@@ -11,4 +11,8 @@ return [
     'delete_users' => 'Excluir usuários',
     'promote_users' => 'Promover usuários',
     'demote_users' => 'Rebaixar usuários',
+
+    'super_user' => 'Super usuário',
+    'admin_user' => 'Administrador',
+    'admin_access' => 'Acesso ao administrativo',
 ];
