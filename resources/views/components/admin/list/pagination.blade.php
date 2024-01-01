@@ -5,7 +5,7 @@
 
 @if ($model)
     @php
-        $pages = $model->onEachSide($eachSide)->linkCollection();
+        $pages = $model->onEachSide($eachSide)->withQueryString()->linkCollection();
     @endphp
     <nav
         class="w-full flex justify-center gap-1 mt-6">
