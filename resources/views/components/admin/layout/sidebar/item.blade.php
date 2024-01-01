@@ -15,11 +15,13 @@
                         :sub-nav="$link" />
                 @endcan
             @else
-                <x-admin.layout.sidebar.nav-link
-                    icon="{{ $link['icon'] }}"
-                    text="{{ $link['text'] }}"
-                    href="{{ $link['href'] }}"
-                    :active="in_array(\Route::currentRouteName(), $link['activeIn'] ?? [])" />
+                @can($link['permissionsNeeded'] ?? [])
+                    <x-admin.layout.sidebar.nav-link
+                        icon="{{ $link['icon'] }}"
+                        text="{{ $link['text'] }}"
+                        href="{{ $link['href'] }}"
+                        :active="in_array(\Route::currentRouteName(), $link['activeIn'] ?? [])" />
+                @endcan
             @endif
         @endforeach
     </x-admin.layout.sidebar.nav>
