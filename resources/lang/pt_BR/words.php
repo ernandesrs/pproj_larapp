@@ -69,4 +69,9 @@ return [
     'search_by' => 'Buscar por',
     'filter' => 'Filtrar',
     'filtering' => 'Filtrando',
+    'showing' => 'Mostrando',
+    'to' => 'a',
+    'of' => 'De',
+    'result' => 'Resultado',
+    'results' => 'Resultados'
 ];
