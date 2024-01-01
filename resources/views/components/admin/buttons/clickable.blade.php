@@ -1,5 +1,6 @@
 @props([
     'as' => 'button',
+    'external' => false,
     'prependIcon' => null,
     'appendIcon' => null,
     'text' => null,
@@ -63,6 +64,10 @@
 
     if ($loading) {
         $attributes = $attributes->merge(['disabled' => true]);
+    }
+
+    if ($as == 'link' && !$external) {
+        $attributes = $attributes->merge(['wire:navigate' => true]);
     }
 
 @endphp
