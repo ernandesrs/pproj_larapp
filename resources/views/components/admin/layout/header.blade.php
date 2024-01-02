@@ -5,17 +5,7 @@
     <div class="container">
         <div class="flex items-center">
             <div>
-                <x-admin.dropdown
-                    size="small"
-                    location="left">
-                    <x-slot name="activator">
-                        <x-admin.buttons.clickable
-                            prepend-icon="three-dots-vertical"
-                            variant="primary"
-                            link
-                            no-transform />
-                    </x-slot>
-                </x-admin.dropdown>
+                {{--  --}}
             </div>
 
             <div class="ml-auto flex items-center gap-1">
