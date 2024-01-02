@@ -84,7 +84,7 @@ class Index extends Component
         }
 
         if ($this->onlyAdms) {
-            $users = $users->role([\App\Enums\RolesEnum::SUPER_USER, \App\Enums\RolesEnum::ADMIN_USER]);
+            $users = $users->permission(PermissionsEnum::ADMIN_ACCESS->value);
         }
 
         return view('livewire..admin.users.index', [
