@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Roles;
 
 use App\Enums\PermissionsEnum;
+use App\Enums\RolesEnum;
 use App\Helpers\Alert;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -68,6 +69,11 @@ class Index extends Component
     public function deleteRole(Role $role)
     {
         $this->authorize(PermissionsEnum::DELETE_ROLES->value);
+
+        if (in_array($role->name, [RolesEnum::ADMIN_USER->value, RolesEnum::SUPER_USER->value])) {
+            Alert::danger(__('admin/messages.alert.delete_protected_fail', ['resource' => 'função']))->float()->addAlert($this);
+            return;
+        }
 
         if ($total = $role->users()->count()) {
             Alert::danger(__('admin/phrases.role_has_users', ['total' => $total]))->float()->addAlert($this);
