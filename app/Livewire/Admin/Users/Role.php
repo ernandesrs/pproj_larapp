@@ -2,6 +2,7 @@
 
 namespace App\Livewire\Admin\Users;
 
+use App\Enums\PermissionsEnum;
 use App\Models\User;
 use Livewire\Component;
 use Spatie\Permission\Models\Role as RoleModel;
@@ -50,6 +51,8 @@ class Role extends Component
      */
     public function addOrRmRole(RoleModel $role)
     {
+        $this->authorize(PermissionsEnum::EDIT_USER_PERMISSIONS);
+
         if ($this->user->hasRole($role)) {
             $this->user->removeRole($role);
         } else {
