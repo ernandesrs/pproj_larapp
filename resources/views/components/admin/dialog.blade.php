@@ -81,7 +81,7 @@
         x-transition:leave-start="opacity-100 scale-100"
         x-transition:leave-end="opacity-0 scale-90"
 
-        class="w-full max-w-lg bg-admin-light-normal border-admin-light-dark-2 rounded-sm mx-auto shadow-lg dark:bg-admin-dark-light-1">
+        class="w-full max-w-lg bg-admin-light-light-1 border-admin-light-dark-2 rounded-sm mx-auto shadow-lg dark:bg-admin-dark-light-1">
 
         {{-- header --}}
         @if (($header ?? null) || $title)
@@ -103,7 +103,7 @@
         {{-- footer --}}
         @if (($footer ?? null) || !$hiddenClose)
             <div
-                class="flex justify-between items-center px-6 py-4 border-t border-admin-light-dark-1 dark:border-admin-dark-light-2">
+                class="flex justify-between items-center px-6 py-4 border-t border-admin-light-normal dark:border-admin-dark-light-2">
                 {{ $footer ?? null }}
 
                 @if (!$hiddenClose)
