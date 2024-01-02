@@ -44,6 +44,9 @@
                 'label' => __('words.details') . ' ' . strtolower(__('words.user')),
             ],
             [
+                'label' => __('words.role'),
+            ],
+            [
                 'label' => '',
             ],
         ]">
@@ -64,6 +67,15 @@
                             text="{{ $user->first_name }} {{ $user->last_name }}"
                             label="{{ $user->email }}" />
                     </div>
+                </x-admin.list.table.col>
+
+                <x-admin.list.table.col>
+                    @foreach ($user->roles as $role)
+                        <span
+                            class="inline-block px-2 py-1 rounded-sm bg-admin-success-dark-1 text-admin-light-normal text-xs cursor-default">
+                            {{ \App\Enums\RolesEnum::tryFrom($role->name)->label() }}
+                        </span>
+                    @endforeach
                 </x-admin.list.table.col>
 
                 <x-admin.list.table.col
