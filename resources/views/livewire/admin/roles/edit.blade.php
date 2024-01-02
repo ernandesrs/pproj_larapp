@@ -19,6 +19,14 @@
     title="{{ __('words.edit') }} {{ __('words.role') }}"
     subtitle="{{ __('admin/phrases.manage_role') }}">
 
+    @can(\App\Enums\PermissionsEnum::CREATE_ROLES->value)
+        <x-slot name="actions">
+
+            <livewire:admin.roles.create />
+
+        </x-slot>
+    @endcan
+
     {{-- page content --}}
     <x-admin.views.role-fields
         :role=$role
