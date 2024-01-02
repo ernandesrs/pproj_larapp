@@ -10,16 +10,27 @@
     title="{{ __('words.roles') }}"
     subtitle="{{ __('admin/phrases.manage_roles') }}">
 
+    <x-admin.dialog
+        show
+        id="dialog_create_role">
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, cum! Suscipit eligendi non, neque ut alias
+            tempora minima similique iste odit, modi magni, perferendis facilis. Tempora mollitia quo ad at.</p>
+
+    </x-admin.dialog>
+
     @can(\App\Enums\PermissionsEnum::CREATE_ROLES->value)
         <x-slot name="actions">
-            <x-admin.buttons.clickable
-                as="link"
-                href="#"
-                text="{{ __('words.new') }}"
-                prepend-icon="plus-lg"
-                variant="success"
-                flat
-                sm />
+            <x-admin.activator
+                target="dialog_create_role">
+                <x-admin.buttons.clickable
+                    as="button"
+                    text="{{ __('words.new') }}"
+                    prepend-icon="plus-lg"
+                    variant="success"
+                    flat
+                    sm />
+            </x-admin.activator>
         </x-slot>
     @endcan
 
