@@ -38,23 +38,6 @@ class Edit extends Component
     }
 
     /**
-     * Add or remove a permission from current role
-     *
-     * @param Permission $permission
-     * @return void
-     */
-    public function addOrRmPermission(Permission $permission)
-    {
-        $this->authorize(PermissionsEnum::EDIT_ROLES);
-
-        if ($this->role->hasPermissionTo($permission)) {
-            $this->role->revokePermissionTo($permission);
-        } else {
-            $this->role->givePermissionTo($permission);
-        }
-    }
-
-    /**
      * Render view
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
@@ -69,5 +52,22 @@ class Edit extends Component
         ])
             ->layout('livewire.admin.layout')
             ->title(__('admin/phrases.manage_role'));
+    }
+
+    /**
+     * Add or remove a permission from current role
+     *
+     * @param Permission $permission
+     * @return void
+     */
+    public function addOrRmPermission(Permission $permission)
+    {
+        $this->authorize(PermissionsEnum::EDIT_ROLES);
+
+        if ($this->role->hasPermissionTo($permission)) {
+            $this->role->revokePermissionTo($permission);
+        } else {
+            $this->role->givePermissionTo($permission);
+        }
     }
 }
