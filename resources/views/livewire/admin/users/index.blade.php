@@ -44,7 +44,7 @@
                 'label' => __('words.details') . ' ' . strtolower(__('words.user')),
             ],
             [
-                'label' => __('words.role'),
+                'label' => __('words.roles'),
             ],
             [
                 'label' => '',
@@ -55,11 +55,13 @@
             <x-admin.list.table.row>
                 <x-admin.list.table.col>
                     <div class="flex items-center">
-                        <x-common.thumb
-                            type="avatar"
-                            size="small"
-                            image="{{ $user->photo ? \Storage::url($user->photo) : '' }}"
-                            alternative-text="{{ $user->first_name }}" />
+                        <div class="hidden md:block">
+                            <x-common.thumb
+                                type="avatar"
+                                size="small"
+                                image="{{ $user->photo ? \Storage::url($user->photo) : '' }}"
+                                alternative-text="{{ $user->first_name }}" />
+                        </div>
 
                         <x-admin.text.labeled-text
                             class="pl-4"
@@ -70,12 +72,14 @@
                 </x-admin.list.table.col>
 
                 <x-admin.list.table.col>
-                    @foreach ($user->roles as $role)
-                        <span
-                            class="inline-block px-2 py-1 rounded-sm bg-admin-success-dark-1 text-admin-light-normal text-xs cursor-default">
-                            {{ \App\Enums\RolesEnum::tryFrom($role->name)->label() }}
-                        </span>
-                    @endforeach
+                    <div class="flex flex-wrap gap-1">
+                        @foreach ($user->roles as $role)
+                            <span
+                                class="inline-block px-2 py-1 rounded-sm bg-admin-success-dark-1 text-admin-light-normal text-xs cursor-default">
+                                {{ \App\Enums\RolesEnum::tryFrom($role->name)?->label() ?? $role->name }}
+                            </span>
+                        @endforeach
+                    </div>
                 </x-admin.list.table.col>
 
                 <x-admin.list.table.col

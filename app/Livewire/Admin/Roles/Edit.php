@@ -51,7 +51,7 @@ class Edit extends Component
             'permissions' => Permission::all()
         ])
             ->layout('livewire.admin.layout')
-            ->title(__('admin/phrases.manage_role'));
+            ->title(__('words.edit') . ' ' . __('words.role'));
     }
 
     /**
