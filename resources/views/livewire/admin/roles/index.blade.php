@@ -10,18 +10,18 @@
     title="{{ __('words.roles') }}"
     subtitle="{{ __('admin/phrases.manage_roles') }}">
 
-    <x-slot name="actions">
-
-        <x-admin.buttons.clickable
-            as="link"
-            href="#"
-            text="{{ __('words.new') }}"
-            prepend-icon="plus-lg"
-            variant="success"
-            flat
-            sm />
-
-    </x-slot>
+    @can(\App\Enums\PermissionsEnum::CREATE_ROLES->value)
+        <x-slot name="actions">
+            <x-admin.buttons.clickable
+                as="link"
+                href="#"
+                text="{{ __('words.new') }}"
+                prepend-icon="plus-lg"
+                variant="success"
+                flat
+                sm />
+        </x-slot>
+    @endcan
 
     <x-admin.list.table
         :columns="[
@@ -72,7 +72,7 @@
                     class="flex justify-end items-center">
 
                     <x-admin.list.actions
-                        wire-action-edit="e"
+                        wire-action-edit="{{ route('admin.roles.edit', ['role' => $role->id]) }}"
                         action-edit-permission="{{ \App\Enums\PermissionsEnum::EDIT_ROLES->value }}"
 
                         wire-action-delete="a"

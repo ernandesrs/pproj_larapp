@@ -90,6 +90,7 @@ Route::group([
     ], function () {
 
         Route::get('/', \App\Livewire\Admin\Roles\Index::class)->name('admin.roles');
+        Route::get('/{role}/edit', \App\Livewire\Admin\Roles\Edit::class)->name('admin.roles.edit');
 
     });
 
