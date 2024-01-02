@@ -21,6 +21,9 @@ class Index extends Component
     #[Url(except: '')]
     public $search;
 
+    #[Url(except: 0)]
+    public $onlyAdms;
+
     /**
      * Mount
      *
@@ -29,6 +32,7 @@ class Index extends Component
     public function mount()
     {
         $this->search = '';
+        $this->onlyAdms = 0;
     }
 
     /**
@@ -73,12 +77,19 @@ class Index extends Component
      */
     public function applyFilter()
     {
+        if (!empty($this->search)) {
+            $users = User::search($this->search);
+        } else {
+            $users = User::query();
+        }
+
+        if ($this->onlyAdms) {
+            $users = $users->role([\App\Enums\RolesEnum::SUPER_USER, \App\Enums\RolesEnum::ADMIN_USER]);
+        }
+
         return view('livewire..admin.users.index', [
             'title' => __('words.users'),
-            'users' => (empty($this->search) ?
-                User::whereNotNull('id') :
-                User::search($this->search))
-                ->orderBy('created_at', 'desc')->paginate(15)
+            'users' => $users->orderBy('created_at', 'desc')->paginate(15)
         ])->layout('livewire.admin.layout')
             ->title(__('words.users'));
     }

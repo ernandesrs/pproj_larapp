@@ -65,23 +65,10 @@
                     [
                         'text' => __('words.users'),
                         'icon' => 'people-fill',
+                        'href' => route('admin.users'),
+                        'external' => false,
                         'activeIn' => ['admin.users', 'admin.users.create', 'admin.users.show', 'admin.users.edit'],
                         'permissionsNeeded' => [\App\Enums\PermissionsEnum::LIST_USERS->value],
-                        'items' => [
-                            [
-                                'text' => __('words.all') . ' ' . __('words.users'),
-                                'icon' => 'people-fill',
-                                'href' => route('admin.users'),
-                                'external' => false,
-                                'activeIn' => [
-                                    'admin.users',
-                                    'admin.users.create',
-                                    'admin.users.show',
-                                    'admin.users.edit',
-                                ],
-                                'permissionsNeeded' => [\App\Enums\PermissionsEnum::LIST_USERS->value],
-                            ],
-                        ],
                     ],
                 ],
             ],

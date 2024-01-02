@@ -22,7 +22,21 @@
         @endcan
     </x-slot>
 
-    <x-admin.list.filter />
+    <x-admin.list.filter>
+        <x-admin.form.field
+            wire:model="onlyAdms"
+            type="select"
+            :options="[
+                [
+                    'label' => __('words.all'),
+                    'value' => 0,
+                ],
+                [
+                    'label' => __('words.administrators'),
+                    'value' => 1,
+                ],
+            ]" />
+    </x-admin.list.filter>
 
     <x-admin.list.table
         :columns="[
