@@ -70,6 +70,14 @@
                         'activeIn' => ['admin.users', 'admin.users.create', 'admin.users.show', 'admin.users.edit'],
                         'permissionsNeeded' => [\App\Enums\PermissionsEnum::LIST_USERS->value],
                     ],
+                    [
+                        'text' => __('words.roles'),
+                        'icon' => 'person-fill-gear',
+                        'href' => route('admin.roles'),
+                        'external' => false,
+                        'activeIn' => ['admin.roles', 'admin.roles.create', 'admin.roles.show', 'admin.roles.edit'],
+                        'permissionsNeeded' => [\App\Enums\PermissionsEnum::LIST_ROLES->value],
+                    ],
                 ],
             ],
         

@@ -82,6 +82,17 @@ Route::group([
 
     });
 
+    /**
+     * ROLES
+     */
+    Route::group([
+        'prefix' => 'roles'
+    ], function () {
+
+        Route::get('/', \App\Livewire\Admin\Roles\Index::class)->name('admin.roles');
+
+    });
+
     /*
      * ACCOUNT
      */

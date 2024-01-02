@@ -5,7 +5,7 @@
     'actionEditPermission' => null,
     'wireActionDelete' => null,
     'actionDeletePermission' => null,
-    'deleteConfirmText' => __('words.delete') . ' ' . strtolower(__('words.user')) . '?',
+    'deleteConfirmText' => __('words.delete') . ' ' . strtolower(__('words.confirm')) . '?',
 ])
 
 <div

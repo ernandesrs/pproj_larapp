@@ -4,6 +4,9 @@ return [
     'manage_users' => 'Gerencie todos os usuários cadastrados no sistema',
     'manage_user' => 'Gerencie os dados do usuário atual',
 
+    'manage_roles' => 'Gerencie todos os funções(cargos) cadastrados no sistema',
+    'manage_role' => 'Gerencie os dados da função(cargo) atual',
+
     'list_users' => 'Listar usuários',
     'show_users' => 'Mostrar usuários',
     'create_users' => 'Criar usuários',

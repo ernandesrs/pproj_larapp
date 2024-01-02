@@ -23,6 +23,17 @@ enum PermissionsEnum: string
     case EDIT_USER_PERMISSIONS = 'edit_user_permissions';
 
     /**
+     * 
+     * ROLE
+     * 
+     */
+    case LIST_ROLES = 'list_roles';
+    case SHOW_ROLES = 'show_roles';
+    case CREATE_ROLES = 'create_roles';
+    case EDIT_ROLES = 'edit_roles';
+    case DELETE_ROLES = 'delete_roles';
+
+    /**
      * Label
      *
      * @return string
@@ -38,6 +49,12 @@ enum PermissionsEnum: string
             static::EDIT_USERS => __('admin/phrases.edit_users'),
             static::DELETE_USERS => __('admin/phrases.delete_users'),
             static::EDIT_USER_PERMISSIONS => __('admin/phrases.edit_user_permissions'),
+
+            static::LIST_ROLES => __('admin/phrases.list_roles'),
+            static::SHOW_ROLES => __('admin/phrases.show_roles'),
+            static::CREATE_ROLES => __('admin/phrases.create_roles'),
+            static::EDIT_ROLES => __('admin/phrases.edit_roles'),
+            static::DELETE_ROLES => __('admin/phrases.delete_roles'),
         };
     }
 }

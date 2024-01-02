@@ -75,4 +75,6 @@ return [
     'result' => 'Resultado',
     'results' => 'Resultados',
     'list' => 'Listar',
+    'permissions' => 'Permissões',
+    'permission' => 'Permissão'
 ];
