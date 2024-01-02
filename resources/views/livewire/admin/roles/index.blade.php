@@ -15,8 +15,6 @@
 
     </x-slot>
 
-    <x-admin.list.filter />
-
     <x-admin.list.table
         :columns="[
             [
@@ -79,5 +77,8 @@
         @endforeach
 
     </x-admin.list.table>
+
+    <x-admin.list.pagination
+        :model="$roles" each-side="1" />
 
 </x-admin.layout.page>
