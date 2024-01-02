@@ -99,8 +99,9 @@
                         wire-action-edit="{{ route('admin.roles.edit', ['role' => $role->id]) }}"
                         action-edit-permission="{{ \App\Enums\PermissionsEnum::EDIT_ROLES->value }}"
 
-                        wire-action-delete="a"
+                        wire-action-delete="deleteRole({{ $role->id }})"
                         action-delete-permission="{{ \App\Enums\PermissionsEnum::DELETE_ROLES->value }}"
+
                         delete-confirm-text="{{ __('words.delete') }} {{ __('words.role') }}?" />
 
                 </x-admin.list.table.col>

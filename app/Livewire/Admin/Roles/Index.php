@@ -59,4 +59,24 @@ class Index extends Component
         Alert::success(__('messages.alert.register_success'))->float()->addFlash();
         return $this->redirect(route('admin.roles.edit', ['role' => $role->id]), true);
     }
+
+    /**
+     * Delete a role
+     *
+     * @return void
+     */
+    public function deleteRole(Role $role)
+    {
+        $this->authorize(PermissionsEnum::DELETE_ROLES->value);
+
+        if ($total = $role->users()->count()) {
+            Alert::danger(__('admin/phrases.role_has_users', ['total' => $total]))->float()->addAlert($this);
+            return;
+        }
+
+        $role->delete();
+
+        Alert::success(__('messages.alert.delete_success'))->float()->addFlash();
+        return $this->redirect(route('admin.roles'), true);
+    }
 }

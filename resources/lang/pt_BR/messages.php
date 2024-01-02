@@ -30,6 +30,7 @@ return [
         'password_updated' => 'A senha foi atualizada com sucesso!',
 
         'register_success' => 'Cadastrado com sucesso.',
-        'register_has_fail' => 'Erro ao tentar cadastrar.'
+        'register_has_fail' => 'Erro ao tentar cadastrar.',
+        'delete_success' => 'Excluído com sucesso.'
     ],
 ];

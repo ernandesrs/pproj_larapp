@@ -29,4 +29,5 @@ return [
     'role_name' => 'Nome da função',
     'new_role' => 'Nova função',
     'new_roles' => 'Novas funções',
+    'role_has_users' => 'Esta função possui :total usuários vinculados.'
 ];
