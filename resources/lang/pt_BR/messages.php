@@ -28,5 +28,8 @@ return [
         'user_registered' => 'O usuário foi registrado com sucesso!',
         'user_updated' => 'O usuário foi atualizado com sucesso!',
         'password_updated' => 'A senha foi atualizada com sucesso!',
+
+        'register_success' => 'Cadastrado com sucesso.',
+        'register_has_fail' => 'Erro ao tentar cadastrar.'
     ],
 ];

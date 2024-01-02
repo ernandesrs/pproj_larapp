@@ -11,11 +11,24 @@
     subtitle="{{ __('admin/phrases.manage_roles') }}">
 
     <x-admin.dialog
-        show
+        title="{{ __('admin/phrases.new_role') }}"
         id="dialog_create_role">
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, cum! Suscipit eligendi non, neque ut alias
-            tempora minima similique iste odit, modi magni, perferendis facilis. Tempora mollitia quo ad at.</p>
+        <x-admin.form.field
+            wire:model.blur="newRoleName"
+            label="{{ __('admin/phrases.role_name') }}"
+            error="{{ $errors->first('newRoleName') }}" />
+
+        <x-slot name="footer">
+            <x-admin.buttons.clickable
+                prepend-icon="check-lg"
+                wire:click="registerNewRole"
+                wire:loading.class="animate-pulse"
+                wire:loading.attr="disabled"
+                text="{{ __('words.register') }}"
+                sm
+                no-transform />
+        </x-slot>
 
     </x-admin.dialog>
 
@@ -51,7 +64,7 @@
             <x-admin.list.table.row>
                 <x-admin.list.table.col>
                     <x-admin.text.labeled-text
-                        text="{{ \App\Enums\RolesEnum::tryFrom($role->name)->label() }}"
+                        text="{{ \App\Enums\RolesEnum::tryFrom($role->name)?->label() ?? $role->name }}"
                         label="{{ __('words.name') }}: {{ $role->name }}" />
                 </x-admin.list.table.col>
 
@@ -64,7 +77,7 @@
                         @if ($i < 3)
                             <span
                                 class="inline-block bg-admin-light-normal px-3 py-1 text-xs cursor-default dark:bg-admin-dark-normal rounded">
-                                {{ \App\Enums\PermissionsEnum::tryFrom($permissions[$i]->name)->label() }}
+                                {{ \App\Enums\PermissionsEnum::tryFrom($permissions[$i]?->name)?->label() }}
                             </span>
                         @else
                             @php
