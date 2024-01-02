@@ -73,5 +73,6 @@ return [
     'to' => 'a',
     'of' => 'De',
     'result' => 'Resultado',
-    'results' => 'Resultados'
+    'results' => 'Resultados',
+    'list' => 'Listar',
 ];

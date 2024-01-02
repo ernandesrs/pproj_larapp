@@ -20,8 +20,7 @@ enum PermissionsEnum: string
     case CREATE_USERS = 'create_users';
     case EDIT_USERS = 'edit_users';
     case DELETE_USERS = 'delete_users';
-    case PROMOTE_USERS = 'promote_users';
-    case DEMOTE_USERS = 'demote_users';
+    case EDIT_USER_PERMISSIONS = 'edit_user_permissions';
 
     /**
      * Label
@@ -38,8 +37,7 @@ enum PermissionsEnum: string
             static::CREATE_USERS => __('admin/phrases.create_users'),
             static::EDIT_USERS => __('admin/phrases.edit_users'),
             static::DELETE_USERS => __('admin/phrases.delete_users'),
-            static::PROMOTE_USERS => __('admin/phrases.promote_users'),
-            static::DEMOTE_USERS => __('admin/phrases.demote_users'),
+            static::EDIT_USER_PERMISSIONS => __('admin/phrases.edit_user_permissions'),
         };
     }
 }

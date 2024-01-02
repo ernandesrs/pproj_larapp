@@ -9,8 +9,13 @@ return [
     'create_users' => 'Criar usuários',
     'edit_users' => 'Editar usuários',
     'delete_users' => 'Excluir usuários',
-    'promote_users' => 'Promover usuários',
-    'demote_users' => 'Rebaixar usuários',
+    'edit_users_permissions' => 'Editar permissões de usuários',
+
+    'list_roles' => 'Listar funções',
+    'show_roles' => 'Mostrar funções',
+    'create_roles' => 'Criar funções',
+    'edit_roles' => 'Editar funções',
+    'delete_roles' => 'Excluir funções',
 
     'super_user' => 'Super usuário',
     'admin_user' => 'Administrador',
