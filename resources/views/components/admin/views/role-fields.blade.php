@@ -5,11 +5,14 @@
 
 <div class="grid grid-cols-12 gap-6">
 
-    <x-admin.form.field
-        wire:model="data.display_name"
-        class="col-span-12"
-        label="{{ __('words.role') }}"
-        :disabled="$this->data['id'] ?? null ? true : false" />
+    <x-admin.section
+        class="col-span-12 border p-10"
+        title="{{ __('admin/phrases.role_name') }}">
+        <x-admin.form.field
+            wire:model="data.display_name"
+            class="col-span-12"
+            :disabled="$this->data['id'] ?? null ? true : false" />
+    </x-admin.section>
 
     @if ($this->data['id'] ?? null)
         <x-admin.section

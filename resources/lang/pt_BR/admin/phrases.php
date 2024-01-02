@@ -26,4 +26,5 @@ return [
 
     'display_name' => 'Nome de exibição',
     'unique_name' => 'Nome único',
+    'role_name' => 'Nome da função'
 ];
