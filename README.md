@@ -24,6 +24,7 @@ Os requisitos necessários são(_The necessary requirements are_):
 
 5. Execute os comandos abaixo para criar uma key para a aplicação e gerar link simbólico para a pasta de arquivos(_Execute the commands below to create a key for the application and generate a symbolic link to the files directory._):
 > php artisan generate:key
+
 > php artisan storage:link
 
 6. Instale as dependências JS(_Install the JS dependencies_):
