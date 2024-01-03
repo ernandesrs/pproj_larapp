@@ -1,9 +1,9 @@
 @props([])
 
 <div class="p-4 border-l border-t border-r dark:border-front-dark-normal">
-    <div class="flex relative">
+    <div class="flex items-center relative">
 
-        <div class="flex-1 flex">
+        <div class="flex-1 flex items-center gap-1">
 
             {{ $slot }}
 
@@ -17,8 +17,9 @@
         <x-admin.buttons.clickable
             wire:click="applyFilter"
             type="submit"
-            prepend-icon="search"
-            flat
+            prepend-icon="funnel-fill"
+            link
+            no-transform
             variant="primary" />
 
         <span

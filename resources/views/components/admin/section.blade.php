@@ -1,10 +1,11 @@
 @props([
     'title' => null,
     'subtitle' => null,
+    'noContainer' => false,
 ])
 
 <div
-    {{ $attributes->merge(['class' => 'border px-6 py-5 bg-admin-light-light-2 dark:bg-admin-dark-dark-1 dark:border-front-dark-normal']) }}>
+    {{ $attributes->merge(['class' => $noContainer ? '' : 'border px-6 py-5 bg-admin-light-light-2 dark:bg-admin-dark-dark-1 dark:border-front-dark-normal']) }}>
     @if ($title)
         <div class="mb-4">
             <h1

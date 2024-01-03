@@ -3,7 +3,8 @@
     <div class="grid grid-cols-12 gap-6">
 
         <x-admin.section
-            class="col-span-12">
+            class="col-span-12"
+            no-container>
             <div class="grid grid-cols-12 gap-6">
 
                 <x-admin.cards.card
