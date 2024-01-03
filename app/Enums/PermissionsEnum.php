@@ -7,6 +7,7 @@ enum PermissionsEnum: string
     /**
      * 
      * GENERAL
+     * 
      */
     case ADMIN_ACCESS = 'admin_access';
 

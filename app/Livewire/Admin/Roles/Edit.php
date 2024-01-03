@@ -44,7 +44,7 @@ class Edit extends Component
      */
     public function render()
     {
-        $this->authorize(PermissionsEnum::EDIT_ROLES);
+        $this->authorize(PermissionsEnum::EDIT_ROLES->value);
 
         return view('livewire..admin.roles.edit', [
             'role' => $this->role,
@@ -62,7 +62,7 @@ class Edit extends Component
      */
     public function addOrRmPermission(Permission $permission)
     {
-        $this->authorize(PermissionsEnum::EDIT_ROLES);
+        $this->authorize(PermissionsEnum::EDIT_ROLES->value);
 
         if ($this->role->hasPermissionTo($permission)) {
             $this->role->revokePermissionTo($permission);

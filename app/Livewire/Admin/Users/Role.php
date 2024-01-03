@@ -52,7 +52,7 @@ class Role extends Component
      */
     public function addOrRmRole(RoleModel $role)
     {
-        $this->authorize(PermissionsEnum::EDIT_USER_PERMISSIONS);
+        $this->authorize(PermissionsEnum::EDIT_USER_PERMISSIONS->value);
 
         if ($this->user->id === \Auth::user()->id) {
             Alert::error(__('admin/messages.alert.unauthorized_action'))->float()->addAlert($this);
