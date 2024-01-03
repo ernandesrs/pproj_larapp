@@ -49,7 +49,7 @@
 
             <div class="flex-1 hidden md:flex items-center md:justify-center lg:justify-between">
                 <div class="hidden lg:block">
-                    <p class="text-sm text-admin-dark-normal leading-5">
+                    <p class="text-sm text-admin-dark-normal dark:text-admin-light-dark-2 leading-5">
                         <span>{!! __('words.showing') !!}</span>
                         <span class="font-medium">{{ $paginator->firstItem() }}</span>
                         <span>{!! __('words.to') !!}</span>
