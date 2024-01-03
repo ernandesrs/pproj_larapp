@@ -31,7 +31,7 @@
     @resize.window="sidebarStatus"
     class="w-full bg-customer-light-normal flex">
 
-    <x-customer.layout-partials.aside
+    <x-customer.layout.aside
         :items="[
             [
                 'title' => 'Admin tools',
@@ -150,7 +150,7 @@
                                 ],
                             ];
                         @endphp
-                        <x-customer.layout-partials.notification.notification-dropdown
+                        <x-customer.layout.notification.notification-dropdown
                             :notifications="$notifications" />
 
                         <button

@@ -13,13 +13,13 @@
     style="display: none;">
 
     {{-- inner --}}
-    <div class="aside bg-gradient-to-b from-customer-primary-dark-2 to-customer-primary-normal h-full overflow-y-auto rounded-3xl px-6 py-4 shadow-lg">
+    <div class="aside bg-gradient-to-b to-customer-primary-dark-2 from-customer-primary-dark-1 h-full overflow-y-auto rounded-3xl px-6 py-4 shadow-lg">
 
         {{-- head --}}
-        <x-customer.layout-partials.head />
+        <x-customer.layout.head />
 
         @foreach ($items as $item)
-            <x-customer.layout-partials.navigation-group
+            <x-customer.layout.navigation-group
                 title="{{ $item['title'] }}"
                 :items="$item['items']" />
         @endforeach

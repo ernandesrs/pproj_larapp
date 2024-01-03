@@ -22,44 +22,44 @@
 {{--
     bg-customer-white
 
-    from-customer-primary-normal
-    to-customer-primary-light-2
+    to-customer-primary-normal
+    from-customer-primary-light-1
     hover:to-customer-primary-normal
     border-customer-primary-normal
     text-customer-primary-normal
 
-    from-customer-secondary-normal
-    to-customer-secondary-light-2
+    to-customer-secondary-normal
+    from-customer-secondary-light-1
     hover:to-customer-secondary-normal
     border-customer-secondary-normal
     text-customer-secondary-normal
 
-    from-customer-info-normal
-    to-customer-info-light-2
+    to-customer-info-normal
+    from-customer-info-light-1
     hover:to-customer-info-normal
     border-customer-info-normal
     text-customer-info-normal
 
-    from-customer-danger-normal
-    to-customer-danger-light-2
+    to-customer-danger-normal
+    from-customer-danger-light-1
     hover:to-customer-danger-normal
     border-customer-danger-normal
     text-customer-danger-normal
 
-    from-customer-success-normal
-    to-customer-success-light-2
+    to-customer-success-normal
+    from-customer-success-light-1
     hover:to-customer-success-normal
     border-customer-success-normal
     text-customer-success-normal
 
-    from-customer-light-normal
-    to-customer-light-light-2
+    to-customer-light-normal
+    from-customer-light-light-1
     hover:to-customer-light-normal
     border-customer-light-normal
     text-customer-light-normal
 
-    from-customer-dark-normal
-    to-customer-dark-light-2
+    to-customer-dark-normal
+    from-customer-dark-light-1
     hover:to-customer-dark-normal
     border-customer-dark-normal
     text-customer-dark-normal
@@ -72,7 +72,7 @@
         'flex items-center rounded-full shadow duration-300 whitespace-nowrap',
 
         // button background, when the button is not outlined or link
-        !$outlined && !$link ? 'bg-gradient-to-br ' . 'from-customer-' . $variant . '-normal to-customer-' . $variant . '-light-2 hover:to-customer-' . $variant . '-normal' : '',
+        !$outlined && !$link ? 'bg-gradient-to-br ' . 'to-customer-' . $variant . '-normal from-customer-' . $variant . '-light-1 hover:from-customer-' . $variant . '-normal' : '',
 
         // border
         !$link ? ' border border-customer-' . $variant . '-normal' : '',
