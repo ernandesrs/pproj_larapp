@@ -64,16 +64,18 @@
 
             </x-admin.section>
 
-            @can(\App\Enums\PermissionsEnum::EDIT_USER_PERMISSIONS->value)
-                <x-admin.section
-                    title="{{ __('admin/phrases.user_roles') }}"
-                    class="mb-6">
+            @if ($this->user->id !== \Auth::user()->id)
+                @can(\App\Enums\PermissionsEnum::EDIT_USER_PERMISSIONS->value)
+                    <x-admin.section
+                        title="{{ __('admin/phrases.user_roles') }}"
+                        class="mb-6">
 
-                    <livewire:admin.users.role
-                        :user=$user />
+                        <livewire:admin.users.role
+                            :user=$user />
 
-                </x-admin.section>
-            @endcan
+                    </x-admin.section>
+                @endcan
+            @endif
 
         </div>
 

@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Users;
 
 use App\Enums\PermissionsEnum;
+use App\Helpers\Alert;
 use App\Models\User;
 use Livewire\Component;
 use Spatie\Permission\Models\Role as RoleModel;
@@ -53,10 +54,11 @@ class Role extends Component
     {
         $this->authorize(PermissionsEnum::EDIT_USER_PERMISSIONS);
 
-        if ($this->user->hasRole($role)) {
-            $this->user->removeRole($role);
-        } else {
-            $this->user->assignRole($role);
+        if ($this->user->id === \Auth::user()->id) {
+            Alert::error(__('admin/messages.alert.unauthorized_action'))->float()->addAlert($this);
+            return;
         }
+
+        $this->user->hasRole($role) ? $this->user->removeRole($role) : $this->user->assignRole($role);
     }
 }
