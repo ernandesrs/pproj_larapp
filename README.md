@@ -1,23 +1,15 @@
 # LARA APP
-<b>LARA APP</b> é uma aplicação em Laravel 10 criada para fins de estudo de criação de aplicação com as tecnologias Laravel, Livewire e Alpine JS.
-
-`<b>LARA APP</b> is a Laravel 10 application created for the purpose of studying application development using the Laravel, Livewire, and Alpine JS technologies.`
+<b>LARA APP</b> é uma aplicação em Laravel 10 criada para fins de estudo de criação de aplicação com as tecnologias Laravel, Livewire e Alpine JS. (<i><b>LARA APP</b> is a Laravel 10 application created for the purpose of studying application development using the Laravel, Livewire, and Alpine JS technologies.</i>)
 
 # REQUISITOS
-Os requisitos necessários são:
+Os requisitos necessários são(<i>The necessary requirements are</i>):
 
-    - PHP 8.1 ou superior;
-    - Composer 2.4.1 ou super
-    - Node v18.8.0 ou superior.
-
-`The necessary requirements are:`
-
-`    - PHP 8.1 or higher;`
-`    - Composer 2.4.1 or higher;`
-`    - Node v18.8.0 or higher.`
+    - PHP 8.1 ou superior(<i>PHP 8.1 or higher</i>);
+    - Composer 2.4.1 ou super(<i>Composer 2.4.1 or higher</i>);
+    - Node v18.8.0 ou superior(<i>Node v18.8.0 or higher</i>).
 
 # INSTALAÇÃO
-1. Obtenha o código fonte:
+1. Obtenha o código fonte: `Obtenha o código fonte:`
 > git clone https://github.com/ernandesrs/pproj_larapp.git
 
 2. Acesse o projeto:
