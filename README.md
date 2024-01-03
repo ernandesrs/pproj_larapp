@@ -5,10 +5,12 @@
 
 ### PAINEL ADMIN: Tela de edição de usuários
 (_ADMIN PANEL: User editing screen_)
+
 ![admin_print_3](https://github.com/ernandesrs/pproj_larapp/assets/70029077/16075d94-6937-494a-b74b-31833fcf77a3)
 
 ### PAINEL ADMIN: Tela de edição de funções
 (_ADMIN PANEL: Role editing screen_)
+
 ![admin_print_1](https://github.com/ernandesrs/pproj_larapp/assets/70029077/f95af777-fc5c-4ce9-a66c-914f1b05429e)
 
 # REQUISITOS
