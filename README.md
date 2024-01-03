@@ -11,11 +11,10 @@ Os requisitos necessários são:
     - Node v18.8.0 ou superior.
 
 `The necessary requirements are:`
-`
-    - PHP 8.1 or higher;
-    - Composer 2.4.1 or higher;
-    - Node v18.8.0 or higher.
-`
+
+`    - PHP 8.1 or higher;`
+`    - Composer 2.4.1 or higher;`
+`    - Node v18.8.0 or higher.`
 
 # INSTALAÇÃO
 1. Obtenha o código fonte:
