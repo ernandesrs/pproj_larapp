@@ -4,9 +4,9 @@
 # REQUISITOS
 Os requisitos necessários são(<i>The necessary requirements are</i>):
 
-    - PHP 8.1 ou superior(<i>PHP 8.1 or higher</i>);
-    - Composer 2.4.1 ou super(<i>Composer 2.4.1 or higher</i>);
-    - Node v18.8.0 ou superior(<i>Node v18.8.0 or higher</i>).
+    - PHP 8.1 ou superior(_PHP 8.1 or higher_);
+    - Composer 2.4.1 ou super(_Composer 2.4.1 or higher_);
+    - Node v18.8.0 ou superior(_Node v18.8.0 or higher_).
 
 # INSTALAÇÃO
 1. Obtenha o código fonte: `Obtenha o código fonte:`
