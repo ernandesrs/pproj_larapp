@@ -20,16 +20,20 @@
             title="{{ __('words.permissions') }}">
 
             <div class="flex flex-wrap gap-6">
-                @foreach ($permissions as $permission)
-                    <div class="flex items-center">
-                        <x-admin.toggler
-                            :active="$role->hasPermissionTo($permission->name)"
-                            wire:click="addOrRmPermission('{{ $permission->id }}')" /> <span
-                            class="inline-block ml-2 text-sm">
-                            {{ \App\Enums\PermissionsEnum::tryFrom($permission->name)?->label() ?? __('words.undefined') }}
-                        </span>
-                    </div>
-                @endforeach
+                @if ($role->name !== \App\Enums\RolesEnum::SUPER_USER->value)
+                    @foreach ($permissions as $permission)
+                        <div class="flex items-center">
+                            <x-admin.toggler
+                                :active="$role->hasPermissionTo($permission->name)"
+                                wire:click="addOrRmPermission('{{ $permission->id }}')" /> <span
+                                class="inline-block ml-2 text-sm">
+                                {{ \App\Enums\PermissionsEnum::tryFrom($permission->name)?->label() ?? __('words.undefined') }}
+                            </span>
+                        </div>
+                    @endforeach
+                @else
+                    <p class="text-admin-dark-light-2 text-opacity-50">{{ __('admin/messages.alert.cannot_edit_super_user_permissions') }}</p>
+                @endif
             </div>
 
         </x-admin.section>
