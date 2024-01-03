@@ -34,7 +34,7 @@ Os requisitos necessários são(_The necessary requirements are_):
 > npm run build
 
 # DADOS BASE
-Execute o comando abaixo para gerar os dados básicos da aplicação, como as funções básicas, super administrador, gerar usuários, etc(_Execute the command below to generate the basic data of the application, such as basic functions, super administrator, generate users, etc_).
+Execute o comando abaixo para gerar os dados básicos da aplicação, como as funções básicas, super administrador, gerar usuários, etc(_Execute the command below to generate the basic data of the application, such as basic roles, super administrator, generate users, etc_).
 > php artisan app
 
 Caso queira, pode executar o comando abaixo para limpar a base dados e depois realizar as ações citadas acima(_If you want, you can execute the command below to clear the database and then perform the actions mentioned above_).
