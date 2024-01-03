@@ -7,6 +7,8 @@
 
     <title>Admin {{ config('app.name') }} - {{ $title ?? '' }}</title>
 
+    <link rel="shortcut icon" href="{{ asset('assets/img/admin/logo_dark.png') }}" type="image/x-icon">
+
     @vite(['resources/js/admin/app.js', 'resources/css/admin/app.css'])
 </head>
 

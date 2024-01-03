@@ -15,7 +15,9 @@
     style="display: none">
 
     {{-- head --}}
-    <div class="flex flex-wrap items-center justify-center py-8 px-6">
+    <div class="flex flex-col flex-wrap items-center justify-center py-8 px-6">
+        <x-admin.layout.logo class="w-16 h-16 mb-3" />
+
         <a
             wire:navigate
             class="text-xl font-normal"
