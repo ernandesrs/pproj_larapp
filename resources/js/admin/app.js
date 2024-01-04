@@ -1,7 +1,7 @@
 import '../bootstrap';
 
 import ApexCharts from 'apexcharts';
-
+console.log('a')
 let homeUsersChart = document.querySelector("#home_users_chart");
 let homeRadialOne = document.querySelector('#home_radial_one');
 let homeRadialTwo = document.querySelector('#home_radial_two');

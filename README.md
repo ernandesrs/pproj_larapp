@@ -2,6 +2,15 @@
 <b>LARA APP</b> é uma aplicação em Laravel 10 criada para fins de estudo de criação de aplicação com as tecnologias Tailwind CSS, Alpine JS, Laravel e Livewire. (_LARA APP is a Laravel 10 application created for the purpose of studying application development using the Laravel, Livewire, and Alpine JS technologies._)
 
 # PRINTS
+### PAINEL ADMIN: Home
+(_ADMIN PANEL: Home_)
+
+![admin_print_0](https://github.com/ernandesrs/pproj_larapp/assets/70029077/d42a4ca9-f7ec-4df7-9826-03b64e618d3b)
+
+### PAINEL ADMIN: Tela de lista de usuários
+(_ADMIN PANEL: User list screen_)
+
+![admin_print_1](https://github.com/ernandesrs/pproj_larapp/assets/70029077/70b598ca-bd9f-465d-8922-5d6863f0bda4)
 
 ### PAINEL ADMIN: Tela de edição de usuários
 (_ADMIN PANEL: User editing screen_)
