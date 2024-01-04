@@ -31,7 +31,7 @@
                     variant="primary"
                     icon="lock"
                     title="{{ __('words.roles') }}"
-                    class="col-span-12 xl:col-span-4">
+                    class="col-span-12 sm:col-span-6 xl:col-span-4">
 
                     <div class="flex flex-wrap gap-1 text-white">
                         <a wire:navigate href="{{ route('admin.roles') }}">
@@ -47,7 +47,7 @@
                     variant="info"
                     icon="grid"
                     title="{{ __('words.examples') }}"
-                    class="col-span-12 sm:col-span-6 xl:col-span-4">
+                    class="col-span-12 xl:col-span-4">
 
                     <div class="flex flex-wrap gap-1 text-white">
                         <span class="inline-block px-3 py-1 bg-admin-info-normal text-xs rounded-sm">
@@ -63,13 +63,57 @@
         </x-admin.section>
 
         <x-admin.section
-            class="col-span-12 md:col-span-5 lg:col-span-4">
+            title="{{ __('words.users') }}"
+            class="col-span-12 md:col-span-5">
+
+            <div
+                class="relative flex justify-center"
+                id="home_users_chart"
+                data-chart="{{ json_encode([
+                    'total' => [
+                        'value' => \App\Models\User::count(),
+                        'label' => __('words.total'),
+                    ],
+                    'admins' => [
+                        'value' => \App\Models\User::permission(\App\Enums\PermissionsEnum::ADMIN_ACCESS)->count(),
+                        'label' => __('words.administrators'),
+                    ],
+                    'unverifieds' => [
+                        'value' => \App\Models\User::whereNull('email_verified_at')->count(),
+                        'label' => __('words.unverifieds'),
+                    ],
+                ]) }}">
+            </div>
+
+        </x-admin.section>
+
+        <x-admin.section
+            class="col-span-12 md:col-span-7">
+            <div class="grid grid-cols-12 gap-6">
+                <div class="col-span-12 sm:col-span-6 flex justify-center"
+                    id="home_radial_one">
+                </div>
+
+                <div class="col-span-12 sm:col-span-6 flex justify-center"
+                    id="home_radial_two">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-12 gap-6">
+                <div class="col-span-12 sm:col-span-6 flex justify-center"
+                    id="home_radial_three">
+                </div>
+
+                <div class="col-span-12 sm:col-span-6 flex justify-center"
+                    id="home_radial_four">
+                </div>
+            </div>
         </x-admin.section>
 
         <x-admin.section
             title="Lorem dolor"
             subtitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio ducimus tempore corrupti!"
-            class="col-span-12 md:col-span-7 lg:col-span-8">
+            class="col-span-12">
 
             <x-admin.list.table
                 :columns="[

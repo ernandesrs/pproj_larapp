@@ -77,5 +77,8 @@ return [
     'list' => 'Listar',
     'permissions' => 'Permissões',
     'permission' => 'Permissão',
-    'important' => 'Importante'
+    'important' => 'Importante',
+    'total' => 'Total',
+    'unverifieds' => 'Não verificados',
+    'unverified' => 'Não verificado',
 ];
