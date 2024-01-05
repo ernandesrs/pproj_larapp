@@ -66,7 +66,7 @@ Route::group([
     'middleware' => ['auth', 'permission:' . \App\Enums\PermissionsEnum::ADMIN_ACCESS->value]
 ], function () {
 
-    Route::get('/', \App\Livewire\Admin\Home::class)->name('admin.index');
+    Route::get('/', \App\Livewire\Admin\Home\Home::class)->name('admin.index');
 
     /*
      * USERS

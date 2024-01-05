@@ -64,7 +64,9 @@
 
         <x-admin.section
             title="{{ __('words.users') }}"
-            class="col-span-12 md:col-span-5">
+            class="col-span-12 md:col-span-4">
+
+            <livewire:admin.home.charts.users />
 
         </x-admin.section>
 
