@@ -1,11 +1,10 @@
 @props([
     'type' => 'bar',
     'title' => null,
-    'datasetTitle' => null,
     'labels' => [],
-    'values' => [],
-    'colors' => [],
+    'datasets' => [],
 ])
+
 
 @php
     /**
@@ -17,20 +16,13 @@
         'type' => $type,
         'data' => [
             'labels' => $labels,
-            'datasets' => [
-                [
-                    'label' => $datasetTitle,
-                    'data' => $values,
-                    'backgroundColor' => $colors,
-                    'hoverOffset' => 4,
-                ],
-            ],
+            'datasets' => $datasets,
         ],
         'options' => [
             'responsive' => true,
             'plugins' => [
                 'legend' => [
-                    'position' => 'top',
+                    'position' => 'bottom',
                 ],
                 'title' => [
                     'display' => empty($title) ? false : true,
@@ -42,7 +34,9 @@
 @endphp
 
 <canvas x-data="{
+    config: {{ json_encode($config) }},
+
     init() {
-        new Chart($el, {{ json_encode($config) }});
+        new Chart($el, this.config);
     }
 }"></canvas>

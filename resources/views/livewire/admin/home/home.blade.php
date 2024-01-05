@@ -63,30 +63,23 @@
         </x-admin.section>
 
         <x-admin.section
-            class="col-span-12 md:col-span-4">
+            class="col-span-12 md:col-span-6">
+
+            <livewire:admin.home.charts.line />
+
+        </x-admin.section>
+
+        <x-admin.section
+            class="col-span-12 md:col-span-3">
 
             <livewire:admin.home.charts.users />
 
         </x-admin.section>
 
         <x-admin.section
-            class="col-span-12 md:col-span-8">
+            class="col-span-12 md:col-span-3">
 
-            <div class="grid grid-cols-12 gap-6">
-                <div class="col-span-12 sm:col-span-6">
-                    <livewire:admin.home.charts.examples />
-                </div>
-
-                <div class="col-span-12 sm:col-span-6">
-                    <x-common.chart
-                        type="doughnut"
-                        title="Without class"
-                        datasetTitle="Data"
-                        :labels="['Label #1', 'Label #2', 'Label #3', 'Label #4', 'Label #5']"
-                        :values="[20, 25, 35, 15, 5]"
-                        :colors="['pink', 'red', 'blue', 'green', 'purple']" />
-                </div>
-            </div>
+            <livewire:admin.home.charts.doughnut />
 
         </x-admin.section>
 
