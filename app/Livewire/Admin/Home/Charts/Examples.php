@@ -2,30 +2,12 @@
 
 namespace App\Livewire\Admin\Home\Charts;
 
+use App\Livewire\TraitChart;
 use Livewire\Component;
 
 class Examples extends Component
 {
-    /**
-     * Title
-     *
-     * @var string
-     */
-    public string $title;
-
-    /**
-     * Title
-     *
-     * @var string
-     */
-    public string $dataSetLabel;
-
-    /**
-     * Data
-     *
-     * @var array
-     */
-    public array $data;
+    use TraitChart;
 
     /**
      * Mount
@@ -34,30 +16,12 @@ class Examples extends Component
      */
     public function mount()
     {
-        $this->title = 'Lorexample dolorem sit';
-        $this->dataSetLabel = 'Lorem example';
-        $this->data = [
-            [
-                'label' => 'Example #1',
-                'value' => 33,
-                'color' => '#2E9AFE'
-            ],
-            [
-                'label' => 'Example #2',
-                'value' => 12,
-                'color' => '#00DE74'
-            ],
-            [
-                'label' => 'Example #3',
-                'value' => 43,
-                'color' => '#FE4100'
-            ],
-            [
-                'label' => 'Example #4',
-                'value' => 23,
-                'color' => '#5958FB'
-            ],
-        ];
+        $this->typeDoughnut();
+        $this->addTitles('Lorexample dolorem sit');
+        $this->addData('Example #1', 33, '#2E9AFE');
+        $this->addData('Example #2', 12, '#00DE74');
+        $this->addData('Example #3', 43, '#FE4100');
+        $this->addData('Example #4', 23, '#5958FB');
     }
 
     /**

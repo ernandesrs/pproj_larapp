@@ -2,30 +2,12 @@
 
 namespace App\Livewire\Admin\Home\Charts;
 
+use App\Livewire\TraitChart;
 use Livewire\Component;
 
 class Users extends Component
 {
-    /**
-     * Title
-     *
-     * @var string
-     */
-    public string $title;
-
-    /**
-     * Title
-     *
-     * @var string
-     */
-    public string $dataSetLabel;
-
-    /**
-     * Data
-     *
-     * @var array
-     */
-    public array $data;
+    use TraitChart;
 
     /**
      * Mount
@@ -34,25 +16,11 @@ class Users extends Component
      */
     public function mount()
     {
-        $this->title = __('words.users');
-        $this->dataSetLabel = __('words.users');
-        $this->data = [
-            [
-                'label' => __('words.total'),
-                'value' => \App\Models\User::count(),
-                'color' => '#2E9AFE'
-            ],
-            [
-                'label' => __('words.administrators'),
-                'value' => \App\Models\User::permission(\App\Enums\PermissionsEnum::ADMIN_ACCESS->value)->count(),
-                'color' => '#00DE74'
-            ],
-            [
-                'label' => __('words.unverifieds'),
-                'value' => \App\Models\User::whereNull('email_verified_at')->count(),
-                'color' => '#FE4100'
-            ]
-        ];
+        $this->typePie();
+        $this->addTitles(__('words.users'));
+        $this->addData(__('words.total'), \App\Models\User::count(), '#2E9AFE');
+        $this->addData(__('words.administrators'), \App\Models\User::permission(\App\Enums\PermissionsEnum::ADMIN_ACCESS->value)->count(), '#00DE74');
+        $this->addData(__('words.unverifieds'), \App\Models\User::whereNull('email_verified_at')->count(), '#FE4100');
     }
 
     /**

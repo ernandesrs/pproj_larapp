@@ -78,7 +78,13 @@
                 </div>
 
                 <div class="col-span-12 sm:col-span-6">
-                    <livewire:admin.home.charts.examples />
+                    <x-common.chart
+                        type="doughnut"
+                        title="Without class"
+                        datasetTitle="Data"
+                        :labels="['Label #1', 'Label #2', 'Label #3', 'Label #4', 'Label #5']"
+                        :values="[20, 25, 35, 15, 5]"
+                        :colors="['pink', 'red', 'blue', 'green', 'purple']" />
                 </div>
             </div>
 
