@@ -66,48 +66,6 @@
             title="{{ __('words.users') }}"
             class="col-span-12 md:col-span-5">
 
-            <div
-                class="relative flex justify-center"
-                id="home_users_chart"
-                data-chart="{{ json_encode([
-                    'total' => [
-                        'value' => \App\Models\User::count(),
-                        'label' => __('words.total'),
-                    ],
-                    'admins' => [
-                        'value' => \App\Models\User::permission(\App\Enums\PermissionsEnum::ADMIN_ACCESS)->count(),
-                        'label' => __('words.administrators'),
-                    ],
-                    'unverifieds' => [
-                        'value' => \App\Models\User::whereNull('email_verified_at')->count(),
-                        'label' => __('words.unverifieds'),
-                    ],
-                ]) }}">
-            </div>
-
-        </x-admin.section>
-
-        <x-admin.section
-            class="col-span-12 md:col-span-7">
-            <div class="grid grid-cols-12 gap-6">
-                <div class="col-span-12 sm:col-span-6 flex justify-center"
-                    id="home_radial_one">
-                </div>
-
-                <div class="col-span-12 sm:col-span-6 flex justify-center"
-                    id="home_radial_two">
-                </div>
-            </div>
-
-            <div class="grid grid-cols-12 gap-6">
-                <div class="col-span-12 sm:col-span-6 flex justify-center"
-                    id="home_radial_three">
-                </div>
-
-                <div class="col-span-12 sm:col-span-6 flex justify-center"
-                    id="home_radial_four">
-                </div>
-            </div>
         </x-admin.section>
 
         <x-admin.section
