@@ -4,7 +4,7 @@ namespace App\Livewire\Admin\Home\Charts;
 
 use Livewire\Component;
 
-class Users extends Component
+class Examples extends Component
 {
     /**
      * Title
@@ -34,24 +34,29 @@ class Users extends Component
      */
     public function mount()
     {
-        $this->title = __('words.users');
-        $this->dataSetLabel = __('words.users');
+        $this->title = 'Lorexample dolorem sit';
+        $this->dataSetLabel = 'Lorem example';
         $this->data = [
             [
-                'label' => __('words.total'),
-                'value' => \App\Models\User::count(),
+                'label' => 'Example #1',
+                'value' => 33,
                 'color' => '#2E9AFE'
             ],
             [
-                'label' => __('words.administrators'),
-                'value' => \App\Models\User::permission(\App\Enums\PermissionsEnum::ADMIN_ACCESS->value)->count(),
+                'label' => 'Example #2',
+                'value' => 12,
                 'color' => '#00DE74'
             ],
             [
-                'label' => __('words.unverifieds'),
-                'value' => \App\Models\User::whereNull('email_verified_at')->count(),
+                'label' => 'Example #3',
+                'value' => 43,
                 'color' => '#FE4100'
-            ]
+            ],
+            [
+                'label' => 'Example #4',
+                'value' => 23,
+                'color' => '#5958FB'
+            ],
         ];
     }
 
@@ -62,6 +67,6 @@ class Users extends Component
      */
     public function render()
     {
-        return view('livewire..admin.home.charts.users');
+        return view('livewire..admin.home.charts.examples');
     }
 }

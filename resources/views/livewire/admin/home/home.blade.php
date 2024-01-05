@@ -63,10 +63,24 @@
         </x-admin.section>
 
         <x-admin.section
-            title="{{ __('words.users') }}"
             class="col-span-12 md:col-span-4">
 
             <livewire:admin.home.charts.users />
+
+        </x-admin.section>
+
+        <x-admin.section
+            class="col-span-12 md:col-span-8">
+
+            <div class="grid grid-cols-12 gap-6">
+                <div class="col-span-12 sm:col-span-6">
+                    <livewire:admin.home.charts.examples />
+                </div>
+
+                <div class="col-span-12 sm:col-span-6">
+                    <livewire:admin.home.charts.examples />
+                </div>
+            </div>
 
         </x-admin.section>
 
