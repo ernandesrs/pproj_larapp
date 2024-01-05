@@ -17,7 +17,7 @@ class Users extends Component
     public function mount()
     {
         $this->typePie();
-        $this->addTitle(__('words.users'));
+        $this->addTitles(__('words.users'));
 
         $this->addLabels([
             __('words.total'),

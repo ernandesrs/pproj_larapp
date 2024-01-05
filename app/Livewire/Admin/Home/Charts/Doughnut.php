@@ -17,7 +17,7 @@ class Doughnut extends Component
     public function mount()
     {
         $this->typeDoughnut();
-        $this->addTitle('Lorexample dolorem sit');
+        $this->addTitles('Lorexample dolorem sit');
 
         $this->addLabels([
             'Label #1',

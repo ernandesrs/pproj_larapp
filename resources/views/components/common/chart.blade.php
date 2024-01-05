@@ -1,6 +1,7 @@
 @props([
     'type' => 'bar',
     'title' => null,
+    'subtitle' => null,
     'labels' => [],
     'datasets' => [],
 ])
@@ -27,6 +28,20 @@
                 'title' => [
                     'display' => empty($title) ? false : true,
                     'text' => $title,
+                ],
+                'subtitle' => [
+                    'display' => empty($subtitle) ? false : true,
+                    'text' => $subtitle,
+                    'color' => '#B2B2B2',
+                    'font' => [
+                        'size' => 12,
+                        'family' => 'tahoma',
+                        'weight' => 'normal',
+                        'style' => 'italic',
+                    ],
+                    'padding' => [
+                        'bottom' => 10,
+                    ],
                 ],
             ],
         ],

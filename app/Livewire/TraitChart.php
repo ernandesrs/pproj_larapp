@@ -14,9 +14,16 @@ trait TraitChart
     /**
      * Title
      *
-     * @var string
+     * @var null|string
      */
-    public string $title = '';
+    public null|string $title = '';
+
+    /**
+     * Subtitle
+     *
+     * @var null|string
+     */
+    public null|string $subtitle = '';
 
     /**
      * Labels
@@ -66,11 +73,13 @@ trait TraitChart
      * Chart titles
      *
      * @param string|null $title
+     * @param string|null $subtitle
      * @return void
      */
-    public function addTitle(?string $title = null)
+    public function addTitles(?string $title = null, ?string $subtitle = null)
     {
         $this->title = $title;
+        $this->subtitle = $subtitle;
     }
 
     /**

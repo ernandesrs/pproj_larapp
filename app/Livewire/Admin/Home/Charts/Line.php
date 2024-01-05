@@ -17,7 +17,7 @@ class Line extends Component
     public function mount()
     {
         $this->typeLine();
-        $this->addTitle('Lorexample dolorem sit');
+        $this->addTitles('Lorexample dolorem sit', 'Lorem subtitle example');
 
         $this->addLabels([
             'Label #1',
