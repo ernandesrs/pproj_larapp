@@ -2,12 +2,15 @@
 
 namespace App\Livewire\Admin\Home\Charts;
 
-use App\Livewire\TraitChart;
+use App\Helpers\Charts\ChartBuilder;
+use App\Helpers\Charts\Dataset;
 use Livewire\Component;
 
 class Doughnut extends Component
 {
-    use TraitChart;
+    use ChartBuilder;
+
+    public string $id = 'home_doughnut_chart';
 
     /**
      * Mount
@@ -24,11 +27,7 @@ class Doughnut extends Component
             'Label #2'
         ]);
 
-        $this->addDataset('Dataset #1', 33, '#2E9AFE');
-        $this->addDataset('Dataset #1', 12, '#00DE74');
-
-        $this->addDataset('Dataset #2', 24, '#2E9AFE');
-        $this->addDataset('Dataset #2', 72, '#00DE74');
+        $this->startChart();
     }
 
     /**
@@ -39,5 +38,23 @@ class Doughnut extends Component
     public function render()
     {
         return view('livewire..admin.home.charts.doughnut');
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @return \Closure
+     */
+    public function chartDatasetAdderCallback()
+    {
+        return function () {
+            return [
+                new Dataset('Dataset #1', 33, '#2E9AFE'),
+                new Dataset('Dataset #1', 12, '#00DE74'),
+
+                new Dataset('Dataset #2', 24, '#2E9AFE'),
+                new Dataset('Dataset #2', 72, '#00DE74')
+            ];
+        };
     }
 }

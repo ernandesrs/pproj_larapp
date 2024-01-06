@@ -2,12 +2,20 @@
 
 namespace App\Livewire\Admin\Home\Charts;
 
-use App\Livewire\TraitChart;
+use App\Helpers\Charts\ChartBuilder;
+use App\Helpers\Charts\Dataset;
 use Livewire\Component;
 
 class Line extends Component
 {
-    use TraitChart;
+    use ChartBuilder;
+
+    /**
+     * Chart id
+     *
+     * @var string
+     */
+    public string $id = 'home_line_chart';
 
     /**
      * Mount
@@ -28,27 +36,7 @@ class Line extends Component
             'Label #6',
         ]);
 
-        $this->addDataset('Dataset #1', 33, '#2E9AFE');
-        $this->addDataset('Dataset #1', 12, '#2E9AFE');
-        $this->addDataset('Dataset #1', 43, '#2E9AFE');
-        $this->addDataset('Dataset #1', 43, '#2E9AFE');
-        $this->addDataset('Dataset #1', 53, '#2E9AFE');
-        $this->addDataset('Dataset #1', 13, '#2E9AFE');
-
-        $this->addDataset('Dataset #2', 13, '#FE4100');
-        $this->addDataset('Dataset #2', 22, '#FE4100');
-        $this->addDataset('Dataset #2', 101, '#FE4100');
-        $this->addDataset('Dataset #2', 101, '#FE4100');
-        $this->addDataset('Dataset #2', 31, '#FE4100');
-        $this->addDataset('Dataset #2', 81, '#FE4100');
-        $this->addDataset('Dataset #2', 43, '#FE4100');
-
-        $this->addDataset('Dataset #4', 23, '#FFEE00');
-        $this->addDataset('Dataset #4', 12, '#FFEE00');
-        $this->addDataset('Dataset #4', 51, '#FFEE00');
-        $this->addDataset('Dataset #4', 16, '#FFEE00');
-        $this->addDataset('Dataset #4', 29, '#FFEE00');
-        $this->addDataset('Dataset #4', 30, '#FFEE00');
+        $this->startChart();
     }
 
     /**
@@ -59,5 +47,38 @@ class Line extends Component
     public function render()
     {
         return view('livewire..admin.home.charts.line');
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @return \Closure
+     */
+    public function chartDatasetAdderCallback()
+    {
+        return function () {
+            return [
+                new Dataset('Dataset #1', 10, '#F44336'),
+                new Dataset('Dataset #1', 73, '#F44336'),
+                new Dataset('Dataset #1', 45, '#F44336'),
+                new Dataset('Dataset #1', 70, '#F44336'),
+                new Dataset('Dataset #1', 80, '#F44336'),
+                new Dataset('Dataset #1', 90, '#F44336'),
+
+                new Dataset('Dataset #2', 30, '#00FF90'),
+                new Dataset('Dataset #2', 53, '#00FF90'),
+                new Dataset('Dataset #2', 35, '#00FF90'),
+                new Dataset('Dataset #2', 90, '#00FF90'),
+                new Dataset('Dataset #2', 78, '#00FF90'),
+                new Dataset('Dataset #2', 57, '#00FF90'),
+
+                new Dataset('Dataset #3', 40, '#D79090'),
+                new Dataset('Dataset #3', 89, '#D79090'),
+                new Dataset('Dataset #3', 102, '#D79090'),
+                new Dataset('Dataset #3', 78, '#D79090'),
+                new Dataset('Dataset #3', 91, '#D79090'),
+                new Dataset('Dataset #3', 67, '#D79090')
+            ];
+        };
     }
 }

@@ -63,24 +63,18 @@
         </x-admin.section>
 
         <x-admin.section
-            class="col-span-12 md:col-span-6">
-
-            <livewire:admin.home.charts.line />
-
-        </x-admin.section>
-
-        <x-admin.section
-            class="col-span-12 md:col-span-3">
-
+            class="col-span-12 sm:col-span-6 md:col-span-3">
             <livewire:admin.home.charts.users />
-
         </x-admin.section>
 
         <x-admin.section
-            class="col-span-12 md:col-span-3">
-
+            class="col-span-12 sm:col-span-6 md:col-span-3">
             <livewire:admin.home.charts.doughnut />
+        </x-admin.section>
 
+        <x-admin.section
+            class="col-span-12 md:col-span-6">
+            <livewire:admin.home.charts.line />
         </x-admin.section>
 
         <x-admin.section

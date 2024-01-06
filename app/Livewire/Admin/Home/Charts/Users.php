@@ -2,12 +2,19 @@
 
 namespace App\Livewire\Admin\Home\Charts;
 
-use App\Livewire\TraitChart;
+use App\Helpers\Charts\ChartBuilder;
 use Livewire\Component;
 
 class Users extends Component
 {
-    use TraitChart;
+    use ChartBuilder;
+
+    /**
+     * Chart id
+     *
+     * @var string
+     */
+    public string $id = 'home_users_chart';
 
     /**
      * Mount
@@ -25,9 +32,7 @@ class Users extends Component
             __('words.unverifieds')
         ]);
 
-        $this->addDataset('Total', \App\Models\User::count(), '#2E9AFE');
-        $this->addDataset('Total', \App\Models\User::permission(\App\Enums\PermissionsEnum::ADMIN_ACCESS->value)->count(), '#00DE74');
-        $this->addDataset('Total', \App\Models\User::whereNull('email_verified_at')->count(), '#FE4100');
+        $this->startChart();
     }
 
     /**
@@ -38,5 +43,21 @@ class Users extends Component
     public function render()
     {
         return view('livewire..admin.home.charts.users');
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @return \Closure
+     */
+    public function chartDatasetAdderCallback()
+    {
+        return function () {
+            return [
+                new \App\Helpers\Charts\Dataset('Total', \App\Models\User::count(), '#2E9AFE'),
+                new \App\Helpers\Charts\Dataset('Total', \App\Models\User::permission(\App\Enums\PermissionsEnum::ADMIN_ACCESS->value)->count(), '#00DE74'),
+                new \App\Helpers\Charts\Dataset('Total', \App\Models\User::whereNull('email_verified_at')->count(), '#FE4100')
+            ];
+        };
     }
 }

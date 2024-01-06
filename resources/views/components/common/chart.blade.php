@@ -1,11 +1,12 @@
 @props([
+    'id' => null,
     'type' => 'bar',
     'title' => null,
     'subtitle' => null,
     'labels' => [],
     'datasets' => [],
+    'liveUpdate' => null,
 ])
-
 
 @php
     /**
@@ -46,12 +47,38 @@
             ],
         ],
     ];
+
+    if (!empty($liveUpdate)) {
+        if (!is_numeric($liveUpdate)) {
+            throw new \Exception('The liveUpdate prop must be of type number');
+        }
+
+        $attributes = $attributes->merge(['wire:poll.' . $liveUpdate . 's' => 'updateChartData']);
+    }
+
 @endphp
 
-<canvas x-data="{
-    config: {{ json_encode($config) }},
-
-    init() {
-        new Chart($el, this.config);
-    }
-}"></canvas>
+<canvas
+    @chart_data_updated.window="chartUpdatedHandler"
+    x-data="{
+        id: '{{ $id }}',
+        config: {{ json_encode($config) }},
+    
+        init() {
+            if (!window[this.id]) {
+                window[this.id] = new Chart($el, this.config);
+            }
+        },
+        chartUpdatedHandler(e) {
+            if (e.detail[0]?.id != this.id) {
+                return;
+            }
+    
+            for (let i = 0; i < e.detail[0]?.datasets.length; i++) {
+                window[this.id].config.data.datasets[i].data = e.detail[0]?.datasets[i].data;
+            }
+    
+            window[this.id].render();
+            window[this.id].update('active');
+        }
+    }" {{ $attributes }}></canvas>
