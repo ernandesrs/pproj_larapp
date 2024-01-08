@@ -67,6 +67,9 @@
         init() {
             if (!window[this.id]) {
                 window[this.id] = new Chart($el, this.config);
+            } else {
+                window[this.id].destroy();
+                window[this.id] = new Chart($el, this.config);
             }
         },
         chartUpdatedHandler(e) {
