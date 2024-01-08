@@ -3,12 +3,14 @@
 namespace App\Livewire\Admin\Users;
 
 use App\Enums\PermissionsEnum;
-use App\Helpers\Alert;
+use App\Livewire\Traits\ResponseTrait;
 use App\Services\UserService;
 use Livewire\Component;
 
 class Create extends Component
 {
+    use ResponseTrait;
+
     /**
      * Data
      *
@@ -53,9 +55,7 @@ class Create extends Component
 
         $user = UserService::create($validated['data']);
 
-        Alert::success(__('messages.alert.user_registered'))->float()->addFlash();
-
-        $this->redirect(route('admin.users.edit', ['user' => $user->id]));
+        $this->registrationResponse($user, route('admin.users.edit', ['user' => $user->id]));
     }
 
     /**

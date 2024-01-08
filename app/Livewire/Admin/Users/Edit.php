@@ -4,13 +4,15 @@ namespace App\Livewire\Admin\Users;
 
 use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
-use App\Helpers\Alert;
+use App\Livewire\Traits\ResponseTrait;
 use App\Models\User;
 use App\Services\UserService;
 use Livewire\Component;
 
 class Edit extends Component
 {
+    use ResponseTrait;
+
     /**
      * User
      *
@@ -63,12 +65,9 @@ class Edit extends Component
 
         $validated = $this->validate(UserService::getBasicDataRules());
 
-        if (!UserService::update($this->user, $validated['data'])) {
-            Alert::error(__('messages.alert.update_fail'))->float()->addAlert($this);
-            return;
-        }
-
-        Alert::success(__('messages.alert.user_updated'))->float()->addAlert($this);
+        $this->editingResponse(
+            UserService::update($this->user, $validated['data'])
+        );
     }
 
     /**
@@ -82,14 +81,11 @@ class Edit extends Component
 
         $validated = $this->validate(UserService::getPasswordDataRules());
 
-        if (!UserService::update($this->user, $validated['data'])) {
-            Alert::error(__('messages.alert.update_fail'))->float()->addAlert($this);
-            return;
-        }
-
-        Alert::success(__('messages.alert.password_updated'))->float()->addFlash();
-
-        $this->redirect(route('admin.users.edit', ['user' => $this->user->id]), true);
+        $this->editingResponse(
+            UserService::update($this->user, $validated['data']),
+            route('admin.users.edit', ['user' => $this->user->id]),
+            null
+        );
     }
 
     /**
@@ -101,14 +97,10 @@ class Edit extends Component
     {
         $this->authorize(PermissionsEnum::EDIT_USERS->value);
 
-        if (!UserService::deletePhoto($this->user)) {
-            Alert::error(__('messages.alert.update_fail'))->float()->addAlert($this);
-            return;
-        }
-
-        Alert::success(__('messages.alert.user_updated'))->float()->addFlash();
-
-        $this->redirect(route('admin.users.edit', ['user' => $this->user->id]), true);
+        $this->deletionResponse(
+            UserService::deletePhoto($this->user),
+            route('admin.users.edit', ['user' => $this->user->id])
+        );
     }
 
     /**

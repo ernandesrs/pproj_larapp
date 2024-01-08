@@ -3,7 +3,7 @@
 namespace App\Livewire\Admin\Users;
 
 use App\Enums\PermissionsEnum;
-use App\Helpers\Alert;
+use App\Livewire\Traits\ResponseTrait;
 use App\Models\User;
 use Livewire\Attributes\Url;
 use Livewire\Component;
@@ -11,7 +11,7 @@ use Livewire\WithPagination;
 
 class Index extends Component
 {
-    use WithPagination;
+    use WithPagination, ResponseTrait;
 
     /**
      * Search
@@ -21,7 +21,7 @@ class Index extends Component
     #[Url(except: '')]
     public $search;
 
-    #[Url(except: 0)]
+    #[Url(except: [0, '0', ''])]
     public $onlyAdms;
 
     /**
@@ -60,14 +60,14 @@ class Index extends Component
         $user = User::where('id', $id)->firstOrFail();
 
         if ($user->id == \Auth::user()->id) {
-            Alert::error(__('messages.alert.cannot_delete_your_own_account'))->float()->addFlash();
+            $this->alertError(__('messages.alert.cannot_delete_your_own_account'), true);
             return $this->redirect(route('admin.users'), true);
         }
 
-        $user->delete();
-
-        Alert::info(__('messages.alert.user_deleted'))->float()->addFlash();
-        return $this->redirect(route('admin.users'), true);
+        $this->deletionResponse(
+            $user->delete(),
+            route('admin.users')
+        );
     }
 
     /**

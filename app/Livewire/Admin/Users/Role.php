@@ -3,13 +3,15 @@
 namespace App\Livewire\Admin\Users;
 
 use App\Enums\PermissionsEnum;
-use App\Helpers\Alert;
+use App\Livewire\Traits\ResponseTrait;
 use App\Models\User;
 use Livewire\Component;
 use Spatie\Permission\Models\Role as RoleModel;
 
 class Role extends Component
 {
+    use ResponseTrait;
+
     /**
      * User
      *
@@ -55,7 +57,7 @@ class Role extends Component
         $this->authorize(PermissionsEnum::EDIT_USER_PERMISSIONS->value);
 
         if ($this->user->id === \Auth::user()->id) {
-            Alert::error(__('admin/messages.alert.unauthorized_action'))->float()->addAlert($this);
+            $this->alertError(__('admin/messages.alert.unauthorized_action'));
             return;
         }
 
