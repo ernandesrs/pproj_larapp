@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Users;
 
 use App\Enums\PermissionsEnum;
+use App\Enums\RolesEnum;
 use App\Helpers\Alert;
 use App\Models\User;
 use App\Services\UserService;
@@ -108,5 +109,21 @@ class Edit extends Component
         Alert::success(__('messages.alert.user_updated'))->float()->addFlash();
 
         $this->redirect(route('admin.users.edit', ['user' => $this->user->id]), true);
+    }
+
+    /**
+     * Authorize
+     *
+     * @param mixed $ability
+     * @param array $arguments
+     * @return \Illuminate\Auth\Access\Response
+     */
+    public function authorize($ability, $arguments = [])
+    {
+        if (!\Auth::user()->hasRole(RolesEnum::SUPER_USER) && ($this->user->hasRole(RolesEnum::SUPER_USER) || $this->user->hasPermissionTo(PermissionsEnum::ADMIN_ACCESS))) {
+            abort(403);
+        }
+
+        return parent::authorize($ability, $arguments);
     }
 }
