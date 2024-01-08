@@ -11,7 +11,7 @@ class LaraApp extends Command
      *
      * @var string
      */
-    protected $signature = 'app {--fresh : Exceute migrate:fresh }';
+    protected $signature = 'app:start {--fresh : Execute migrate:fresh } {--super : Require super user email and password }';
 
     /**
      * The console command description.
@@ -29,7 +29,15 @@ class LaraApp extends Command
             'RolesAndPermissionsSeeder'
         ];
 
-        $superUserData = $this->getValidSuperAdminData();
+        if ($this->option('super')) {
+            $superUserData = $this->getValidSuperAdminData();
+        } else {
+            $superUserData = [
+                'email' => 'super@mail.com',
+                'password' => 'password'
+            ];
+        }
+
         $seedUsers = $this->choice('Seed users?', ['no', 'yes']);
 
         if ($seedUsers == 'yes') {

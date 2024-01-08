@@ -43,10 +43,12 @@ Os requisitos necessários são(_The necessary requirements are_):
 4. Instale as dependências PHP(_Install the PHP dependencies._):
 > composer install
 
-5. Execute os comandos abaixo para criar uma key para a aplicação e gerar link simbólico para a pasta de arquivos(_Execute the commands below to create a key for the application and generate a symbolic link to the files directory._):
+5. Execute os comandos abaixo para criar uma key para a aplicação, gerar link simbólico para a pasta de arquivos e gerar o banco de dados e tabelas(_Execute the commands below to create a key for the application, generate a symbolic link to the files directory and generate data base and tables._):
 > php artisan generate:key
 
 > php artisan storage:link
+
+> php artisan migrate
 
 6. Instale as dependências JS(_Install the JS dependencies_):
 > npm install
@@ -56,10 +58,12 @@ Os requisitos necessários são(_The necessary requirements are_):
 
 # DADOS BASE
 Execute o comando abaixo para gerar os dados básicos da aplicação, como as funções básicas, super administrador, gerar usuários, etc(_Execute the command below to generate the basic data of the application, such as basic roles, super administrator, generate users, etc_).
-> php artisan app
+> php artisan app --super
+
+Se não informar a flag _--super_, um super usuário com o email _super@mail.com_ e senha _password_ será gerado automaticamente(_If you do not inform the _--super_ _flag, a super user with the email_ _super@mail.com_ _and_ password _password_ _will be automatically generated._).
 
 Caso queira, pode executar o comando abaixo para limpar a base dados e depois realizar as ações citadas acima(_If you want, you can execute the command below to clear the database and then perform the actions mentioned above_).
-> php artisan app --fresh
+> php artisan app --fresh --super
 
 # RODANDO A APLICAÇÃO
 Por fim, execute o comando abaixo para rodar o servidor(_Finally, execute the command below to run the server_):
