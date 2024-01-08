@@ -7,6 +7,7 @@ use App\Enums\RolesEnum;
 use App\Livewire\Traits\ResponseTrait;
 use App\Models\User;
 use App\Services\UserService;
+use Livewire\Attributes\Locked;
 use Livewire\Component;
 
 class Edit extends Component
@@ -18,6 +19,7 @@ class Edit extends Component
      *
      * @var User
      */
+    #[Locked]
     public $user;
 
     /**

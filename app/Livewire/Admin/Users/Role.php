@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\Users;
 use App\Enums\PermissionsEnum;
 use App\Livewire\Traits\ResponseTrait;
 use App\Models\User;
+use Livewire\Attributes\Locked;
 use Livewire\Component;
 use Spatie\Permission\Models\Role as RoleModel;
 
@@ -17,6 +18,7 @@ class Role extends Component
      *
      * @var User
      */
+    #[Locked]
     public $user;
 
     /**
@@ -24,6 +26,7 @@ class Role extends Component
      *
      * @var RoleModel
      */
+    #[Locked]
     public $roles;
 
     /**

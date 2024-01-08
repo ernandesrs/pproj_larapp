@@ -5,6 +5,7 @@ namespace App\Livewire\Admin\Roles;
 use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
 use App\Livewire\Traits\ResponseTrait;
+use Livewire\Attributes\Locked;
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -18,6 +19,7 @@ class Edit extends Component
      *
      * @var Role
      */
+    #[Locked]
     public $role;
 
     /**

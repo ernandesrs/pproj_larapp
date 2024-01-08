@@ -4,6 +4,7 @@ namespace App\Livewire\Admin\Users;
 
 use App\Enums\PermissionsEnum;
 use App\Models\User;
+use Livewire\Attributes\Locked;
 use Livewire\Component;
 
 class Show extends Component
@@ -14,6 +15,7 @@ class Show extends Component
      * @var User
      * 
      */
+    #[Locked]
     public $user;
 
     /**

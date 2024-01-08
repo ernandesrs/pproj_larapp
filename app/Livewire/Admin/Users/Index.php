@@ -21,6 +21,11 @@ class Index extends Component
     #[Url(except: '')]
     public $search;
 
+    /**
+     * Only admins
+     *
+     * @var string
+     */
     #[Url(except: [0, '0', ''])]
     public $onlyAdms;
 
