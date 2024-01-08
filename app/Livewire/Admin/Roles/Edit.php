@@ -4,13 +4,15 @@ namespace App\Livewire\Admin\Roles;
 
 use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
-use App\Helpers\Alert;
+use App\Livewire\Traits\ResponseTrait;
 use Livewire\Component;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class Edit extends Component
 {
+    use ResponseTrait;
+
     /**
      * Role
      *
@@ -66,7 +68,7 @@ class Edit extends Component
         $this->authorize(PermissionsEnum::EDIT_ROLES->value);
 
         if ($this->role->name === RolesEnum::SUPER_USER->value) {
-            Alert::error(__('admin/messages.alert.unauthorized_action'))->float()->addAlert($this);
+            $this->alertError(__('admin/messages.alert.unauthorized_action'));
             return;
         }
 

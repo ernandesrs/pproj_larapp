@@ -3,19 +3,21 @@
 namespace App\Livewire\Admin\Roles;
 
 use App\Enums\PermissionsEnum;
-use App\Helpers\Alert;
+use App\Livewire\Traits\ResponseTrait;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Spatie\Permission\Models\Role;
 
 class Create extends Component
 {
+    use ResponseTrait;
+
     /**
      * New role name
      *
      * @var string
      */
-    #[Validate(['required', 'unique:roles,name', 'min:12'])]
+    #[Validate(['required', 'unique:roles,name', 'min:2'])]
     public $roleName = '';
 
     /**
@@ -46,12 +48,11 @@ class Create extends Component
         }
 
         $role = Role::create(['name' => $roleName]);
-        if (!$role) {
-            Alert::error(__('messages.alert.register_has_fail'))->float()->addFlash();
-            return $this->redirect(route('admin.roles'), true);
-        }
 
-        Alert::success(__('messages.alert.register_success'))->float()->addFlash();
-        return $this->redirect(route('admin.roles.edit', ['role' => $role->id]), true);
+        $this->registrationResponse(
+            $role,
+            route('admin.roles.edit', ['role' => $role->id]),
+            route('admin.roles')
+        );
     }
 }

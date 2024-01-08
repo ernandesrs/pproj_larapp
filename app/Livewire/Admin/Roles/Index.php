@@ -5,11 +5,14 @@ namespace App\Livewire\Admin\Roles;
 use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
 use App\Helpers\Alert;
+use App\Livewire\Traits\ResponseTrait;
 use Livewire\Component;
 use Spatie\Permission\Models\Role;
 
 class Index extends Component
 {
+    use ResponseTrait;
+
     /**
      * Render view
      *
@@ -35,18 +38,15 @@ class Index extends Component
         $this->authorize(PermissionsEnum::DELETE_ROLES->value);
 
         if (in_array($role->name, [RolesEnum::ADMIN_USER->value, RolesEnum::SUPER_USER->value])) {
-            Alert::danger(__('admin/messages.alert.delete_protected_fail', ['resource' => 'função']))->float()->addAlert($this);
+            $this->alertDanger(__('admin/messages.alert.delete_protected_fail', ['resource' => 'função']));
             return;
         }
 
         if ($total = $role->users()->count()) {
-            Alert::danger(__('admin/phrases.role_has_users', ['total' => $total]))->float()->addAlert($this);
+            $this->alertDanger(__('admin/phrases.role_has_users', ['total' => $total]));
             return;
         }
 
-        $role->delete();
-
-        Alert::success(__('messages.alert.delete_success'))->float()->addFlash();
-        return $this->redirect(route('admin.roles'), true);
+        $this->deletionResponse($role->delete(), route('admin.roles'));
     }
 }

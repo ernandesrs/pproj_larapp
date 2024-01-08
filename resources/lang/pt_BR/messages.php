@@ -23,14 +23,17 @@ return [
         'cannot_delete_your_own_account' => 'Não pode excluir sua própria conta.',
         'user_deleted' => 'Usuário excluído com sucesso.',
 
-        'update_fail' => 'Erro desconhecido ao tentar fazer atualização!',
-
         'user_registered' => 'O usuário foi registrado com sucesso!',
         'user_updated' => 'O usuário foi atualizado com sucesso!',
         'password_updated' => 'A senha foi atualizada com sucesso!',
 
-        'register_success' => 'Cadastrado com sucesso.',
         'register_has_fail' => 'Erro ao tentar cadastrar.',
-        'delete_success' => 'Excluído com sucesso.'
+
+        'register_success' => 'Cadastrado efetuado com sucesso.',
+        'register_fail' => 'Erro ao tentar cadastrar.',
+        'update_success' => 'Atualização efetuada com sucesso.',
+        'update_fail' => 'Erro tentar atualizar.',
+        'delete_success' => 'Exclusão efetuada com sucesso.',
+        'delete_fail' => 'Erro ao tentar excluir.'
     ],
 ];
