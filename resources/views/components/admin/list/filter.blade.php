@@ -1,6 +1,6 @@
 @props([])
 
-<div class="p-4 border-l border-t border-r dark:border-front-dark-normal">
+<div class="p-4 border-l border-t border-r bg-admin-light-light-2 dark:bg-admin-dark-dark-1 dark:border-admin-dark-normal">
     <div class="flex items-center relative">
 
         <div class="flex-1 flex items-center gap-1">

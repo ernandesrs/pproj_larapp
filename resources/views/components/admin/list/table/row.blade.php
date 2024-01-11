@@ -1,5 +1,14 @@
 @props([])
 
-<tr {{ $attributes->merge(['class' => 'border-b dark:border-admin-dark-normal transition duration-300 bg-admin-light-light-2 hover:bg-admin-light-light-1 dark:bg-admin-dark-dark-1 dark:hover:bg-admin-dark-normal']) }}>
+<tr
+    {{ $attributes->merge([
+        'class' => implode(' ', [
+            // default
+            'border-b transition duration-300 hover:bg-admin-light-light-1',
+    
+            // dark
+            'dark:border-admin-dark-normal dark:hover:bg-admin-dark-normal',
+        ]),
+    ]) }}>
     {{ $slot }}
 </tr>
