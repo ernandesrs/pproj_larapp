@@ -9,8 +9,9 @@
         class="col-span-12 border p-10"
         title="{{ __('admin/phrases.role_name') }}">
         <x-admin.form.field
-            wire:model="data.display_name"
+            wire:model="{{ $this->data['id'] ?? null ? 'data.display_name' : 'data.name' }}"
             class="col-span-12"
+            error="{{ $errors->first('data.name') }}"
             :disabled="$this->data['id'] ?? null ? true : false" />
     </x-admin.section>
 
@@ -32,7 +33,8 @@
                         </div>
                     @endforeach
                 @else
-                    <p class="text-admin-dark-light-2 text-opacity-50">{{ __('admin/messages.alert.cannot_edit_super_user_permissions') }}</p>
+                    <p class="text-admin-dark-light-2 text-opacity-50">
+                        {{ __('admin/messages.alert.cannot_edit_super_user_permissions') }}</p>
                 @endif
             </div>
 

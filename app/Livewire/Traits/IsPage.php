@@ -28,6 +28,13 @@ trait IsPage
     abstract function pageBreadcrumb();
 
     /**
+     * Create button on page header
+     *
+     * @return null|array Hidden if return null. Show if return array like: ['href' => '#', 'text' => 'Create user', 'permission' => 'create_user']
+     */
+    abstract function pageCreateButton();
+
+    /**
      * Get page title
      *
      * @return null|string
@@ -55,6 +62,16 @@ trait IsPage
     function getPageBreadcrumb()
     {
         return $this->pageBreadcrumb()->get();
+    }
+
+    /**
+     * Create button on page header
+     *
+     * @return null|array
+     */
+    function getPageCreateButton()
+    {
+        return $this->pageCreateButton();
     }
 
     /**

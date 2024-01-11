@@ -81,10 +81,23 @@
             </div>
 
             {{-- page header actions --}}
-            @if ($actions ?? null)
+            @if (($actions ?? null) || ($create = $this->getPageCreateButton()))
                 <div
                     class="basis-full md:basis-6/12 xl:basis-7/12 mt-4 flex items-center justify-start md:mt-0 md:justify-end">
-                    {{ $actions }}
+                    {{ $actions ?? null }}
+
+                    @if ($create && isset($create['permission']))
+                        @can($create['permission'])
+                            <x-admin.buttons.clickable
+                                as="link"
+                                variant="success"
+                                prepend-icon="plus-lg"
+                                href="{{ $create['href'] }}"
+                                text="{{ $create['text'] }}"
+                                sm
+                                no-transform />
+                        @endcan
+                    @endif
                 </div>
             @endif
         </div>

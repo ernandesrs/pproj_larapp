@@ -1,19 +1,5 @@
 <x-admin.layout.page>
 
-    @can(\App\Enums\PermissionsEnum::CREATE_USERS->value)
-        <x-slot name="actions">
-
-            <x-admin.buttons.clickable
-                as="link"
-                href="{{ route('admin.users.create') }}"
-                prepend-icon="plus-lg"
-                variant="success"
-                text="{{ __('words.new') }}"
-                sm flat />
-
-        </x-slot>
-    @endcan
-
     <div class="grid grid-cols-12 gap-6">
 
         <div class="col-span-full md:col-span-4">

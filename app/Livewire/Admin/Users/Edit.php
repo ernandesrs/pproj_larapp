@@ -153,4 +153,18 @@ class Edit extends Component
             ->add(__('words.users'), ['name' => 'admin.users'])
             ->add(__('words.edit') . ' ' . __('words.user'), ['name' => 'admin.users.create', 'params' => ['user' => $this->user->id]]);
     }
+
+    /**
+     * Data to create button from page header
+     *
+     * @return array
+     */
+    function pageCreateButton()
+    {
+        return [
+            'href' => route('admin.users.create'),
+            'text' => __('words.create') . ' ' . __('words.user'),
+            'permission' => PermissionsEnum::CREATE_USERS->value
+        ];
+    }
 }

@@ -3,22 +3,34 @@
 namespace App\Livewire\Admin\Roles;
 
 use App\Enums\PermissionsEnum;
+use App\Livewire\Builder\Breadcrumb;
+use App\Livewire\Traits\IsPage;
 use App\Livewire\Traits\ResponseTrait;
-use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Spatie\Permission\Models\Role;
 
 class Create extends Component
 {
-    use ResponseTrait;
+    use ResponseTrait, IsPage;
 
     /**
-     * New role name
+     * Data
      *
-     * @var string
+     * @var array
      */
-    #[Validate(['required', 'unique:roles,name', 'min:2'])]
-    public $roleName = '';
+    public $data;
+
+    /**
+     * Mount
+     *
+     * @return void
+     */
+    public function mount()
+    {
+        $this->data = [
+            'name' => null
+        ];
+    }
 
     /**
      * Render view
@@ -27,32 +39,65 @@ class Create extends Component
      */
     public function render()
     {
-        return view('livewire..admin.roles.create');
+        return view('livewire..admin.roles.create')
+            ->layout('livewire.admin.layout')->title($this->getLayoutTitle());
     }
 
     /**
-     * Register new role
+     * save new role
      *
      * @return void
      */
-    public function register()
+    public function save()
     {
         $this->authorize(PermissionsEnum::CREATE_ROLES->value);
 
-        $validated = $this->validate();
-        $roleName = \Str::slug($validated['roleName'], '_');
+        $validated = $this->validate([
+            'data.name' => ['required', 'unique:roles,name']
+        ]);
 
-        if (Role::where('name', $roleName)->count()) {
-            $this->addError('roleName', __('validation.unique'));
+        $name = \Str::slug($validated['data']['name'], '_');
+
+        if (Role::where('name', $name)->count()) {
+            $this->addError('data.name', __('validation.unique'));
             return;
         }
 
-        $role = Role::create(['name' => $roleName]);
+        $role = Role::create(['name' => $name]);
 
         $this->registrationResponse(
             $role,
             route('admin.roles.edit', ['role' => $role->id]),
             route('admin.roles')
         );
+    }
+
+    /**
+     * 
+     * 
+     * IsPage method
+     * 
+     * 
+     */
+    function pageTitle()
+    {
+        return __('words.register') . ' ' . __('words.role');
+    }
+
+    function pageSubtitle()
+    {
+        return __('admin/phrases.create_roles');
+    }
+
+    function pageBreadcrumb()
+    {
+        return (new Breadcrumb)
+            ->add(__('words.roles'), ['name' => 'admin.roles'])
+            ->add(__('words.register') . ' ' . __('words.role'), ['name' => 'admin.roles']);
+    }
+
+    function pageCreateButton()
+    {
+        return null;
     }
 }

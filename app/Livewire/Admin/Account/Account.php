@@ -53,5 +53,15 @@ class Account extends Component
         return (new Breadcrumb())
             ->add(__('phrases.my_profile'), ['name' => 'admin.account']);
     }
+
+    /**
+     * Data to create button from page header
+     *
+     * @return null|array
+     */
+    function pageCreateButton()
+    {
+        return null;
+    }
 }
 

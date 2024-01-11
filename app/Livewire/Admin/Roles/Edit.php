@@ -107,4 +107,18 @@ class Edit extends Component
             ->add(__('words.roles'), ['name' => 'admin.roles'])
             ->add(__('words.edit'), ['name' => 'admin.roles.edit', 'params' => ['role' => $this->role->id]]);
     }
+
+    /**
+     * Data to create button from page header
+     *
+     * @return array
+     */
+    function pageCreateButton()
+    {
+        return [
+            'href' => route('admin.roles.create'),
+            'text' => __('words.create') . ' ' . __('words.role'),
+            'permission' => PermissionsEnum::CREATE_ROLES->value
+        ];
+    }
 }

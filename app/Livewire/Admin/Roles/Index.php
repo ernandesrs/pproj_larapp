@@ -74,6 +74,15 @@ class Index extends Component
             ->add(__('words.roles'), ['name' => 'admin.roles']);
     }
 
+    function pageCreateButton()
+    {
+        return [
+            'href' => route('admin.roles.create'),
+            'text' => __('words.create') . ' ' . __('words.role'),
+            'permission' => PermissionsEnum::CREATE_ROLES->value
+        ];
+    }
+
     function modelClass()
     {
         return Role::class;

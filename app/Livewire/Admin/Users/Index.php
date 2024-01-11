@@ -81,6 +81,20 @@ class Index extends Component
     }
 
     /**
+     * Data to create button from page header
+     *
+     * @return array
+     */
+    function pageCreateButton()
+    {
+        return [
+            'href' => route('admin.users.create'),
+            'text' => __('words.create') . ' ' . __('words.user'),
+            'permission' => PermissionsEnum::CREATE_USERS->value
+        ];
+    }
+
+    /**
      * List labels
      *
      * @return array

@@ -101,4 +101,14 @@ class Create extends Component
             ->add(__('words.users'), ['name' => 'admin.users'])
             ->add(__('words.register') . ' ' . __('words.user'), ['name' => 'admin.users.create']);
     }
+
+    /**
+     * Data to create button from page header
+     *
+     * @return null|array
+     */
+    function pageCreateButton()
+    {
+        return null;
+    }
 }
