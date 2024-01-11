@@ -23,13 +23,13 @@ enum RolePermissionsEnum: string implements BaseEnum
     function label()
     {
         return match ($this) {
-            static::VIEW_ANY => __('admin/phrases.list_roles'),
-            static::VIEW => __('admin/phrases.show_roles'),
-            static::CREATE => __('admin/phrases.create_roles'),
-            static::UPDATE => __('admin/phrases.edit_roles'),
-            static::DELETE => __('admin/phrases.delete_roles'),
-            static::FORCE_DELETE => __('admin/phrases.force_delete_roles'),
-            static::RESTORE => __('admin/phrases.restore_roles')
+            static::VIEW_ANY => __('admin/permissions.roles.view_any'),
+            static::VIEW => __('admin/permissions.roles.view'),
+            static::CREATE => __('admin/permissions.roles.create'),
+            static::UPDATE => __('admin/permissions.roles.update'),
+            static::DELETE => __('admin/permissions.roles.delete'),
+            static::FORCE_DELETE => __('admin/permissions.roles.force_delete'),
+            static::RESTORE => __('admin/permissions.roles.restore')
         };
     }
 

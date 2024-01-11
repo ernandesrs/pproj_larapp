@@ -27,17 +27,17 @@ enum UserPermissionsEnum: string implements BaseEnum
     function label()
     {
         return match ($this) {
-            static::ADMIN_ACCESS => __('admin/phrases.admin_access'),
+            static::ADMIN_ACCESS => __('admin/permissions.users.admin_access'),
 
-            static::VIEW_ANY => __('admin/phrases.list_users'),
-            static::VIEW => __('admin/phrases.show_users'),
-            static::CREATE => __('admin/phrases.create_users'),
-            static::UPDATE => __('admin/phrases.edit_users'),
-            static::DELETE => __('admin/phrases.delete_users'),
-            static::FORCE_DELETE => __('admin/phrases.force_delete_users'),
-            static::RESTORE => __('admin/phrases.restore_users'),
+            static::VIEW_ANY => __('admin/permissions.users.view_any'),
+            static::VIEW => __('admin/permissions.users.view'),
+            static::CREATE => __('admin/permissions.users.create'),
+            static::UPDATE => __('admin/permissions.users.update'),
+            static::DELETE => __('admin/permissions.users.delete'),
+            static::FORCE_DELETE => __('admin/permissions.users.force_delete'),
+            static::RESTORE => __('admin/permissions.users.restore'),
 
-            static::UPDATE_PERMISSIONS => __('admin/phrases.edit_user_permissions')
+            static::UPDATE_PERMISSIONS => __('admin/permissions.users.update_permissions')
         };
     }
 
