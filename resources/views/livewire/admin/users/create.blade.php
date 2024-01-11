@@ -1,20 +1,4 @@
-<x-admin.layout.page
-    :breadcrumbs="[
-        [
-            'label' => __('words.users'),
-            'route' => [
-                'name' => 'admin.users',
-            ],
-        ],
-        [
-            'label' => __('words.new'),
-            'route' => [
-                'name' => 'admin.users.create',
-            ],
-        ],
-    ]"
-    title="{{ __('words.register') }} {{ strtolower(__('words.user')) }}"
-    subtitle="{{ __('admin/phrases.manage_user') }}">
+<x-admin.layout.page>
 
     <x-admin.section>
 
