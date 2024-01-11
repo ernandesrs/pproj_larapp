@@ -5,7 +5,7 @@ namespace App\Livewire\Admin\Roles;
 use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
 use App\Livewire\Traits\IsPage;
-use App\Livewire\Traits\Models\Breadcrumb;
+use App\Livewire\Builder\Breadcrumb;
 use App\Livewire\Traits\ResponseTrait;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
