@@ -37,7 +37,7 @@ class Create extends Component
      */
     public function render()
     {
-        $this->authorize(PermissionsEnum::CREATE_USERS->value);
+        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::CREATE->value);
 
         return view('livewire..admin.users.create')
             ->layout('livewire.admin.layout')
@@ -51,7 +51,7 @@ class Create extends Component
      */
     public function save()
     {
-        $this->authorize(PermissionsEnum::CREATE_USERS->value);
+        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::CREATE->value);
 
         $validated = $this->validate();
 

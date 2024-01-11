@@ -50,7 +50,7 @@ class Edit extends Component
      */
     public function render()
     {
-        $this->authorize(PermissionsEnum::EDIT_USERS->value);
+        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::UPDATE->value);
 
         return view('livewire..admin.users.edit', [
             'user' => $this->user
@@ -64,7 +64,7 @@ class Edit extends Component
      */
     public function update()
     {
-        $this->authorize(PermissionsEnum::EDIT_USERS->value);
+        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::UPDATE->value);
 
         $validated = $this->validate(UserService::getBasicDataRules());
 
@@ -80,7 +80,7 @@ class Edit extends Component
      */
     public function updatePassword()
     {
-        $this->authorize(PermissionsEnum::EDIT_USERS->value);
+        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::UPDATE->value);
 
         $validated = $this->validate(UserService::getPasswordDataRules());
 
@@ -98,7 +98,7 @@ class Edit extends Component
      */
     public function deletePhoto()
     {
-        $this->authorize(PermissionsEnum::EDIT_USERS->value);
+        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::UPDATE->value);
 
         $this->deletionResponse(
             UserService::deletePhoto($this->user),
@@ -115,7 +115,7 @@ class Edit extends Component
      */
     public function authorize($ability, $arguments = [])
     {
-        if (!\Auth::user()->hasRole(RolesEnum::SUPER_USER) && ($this->user->hasRole(RolesEnum::SUPER_USER) || $this->user->hasPermissionTo(PermissionsEnum::ADMIN_ACCESS))) {
+        if (!\Auth::user()->hasRole(RolesEnum::SUPER_USER) && ($this->user->hasRole(RolesEnum::SUPER_USER) || $this->user->hasPermissionTo(\App\Enums\Admin\UserPermissionsEnum::ADMIN_ACCESS))) {
             abort(403);
         }
 
@@ -164,7 +164,7 @@ class Edit extends Component
         return [
             'href' => route('admin.users.create'),
             'text' => __('words.create') . ' ' . __('words.user'),
-            'permission' => PermissionsEnum::CREATE_USERS->value
+            'permission' => \App\Enums\Admin\UserPermissionsEnum::CREATE->value
         ];
     }
 }

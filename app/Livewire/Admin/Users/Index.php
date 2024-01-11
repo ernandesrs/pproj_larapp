@@ -20,7 +20,7 @@ class Index extends Component
      */
     public function render()
     {
-        $this->authorize(PermissionsEnum::LIST_USERS->value);
+        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::VIEW_ANY->value);
 
         return view('livewire..admin.users.index')
             ->layout('livewire.admin.layout')->title($this->getLayoutTitle());
@@ -34,7 +34,7 @@ class Index extends Component
      */
     public function delete($id)
     {
-        $this->authorize([PermissionsEnum::DELETE_USERS->value]);
+        $this->authorize([\App\Enums\Admin\UserPermissionsEnum::DELETE->value]);
 
         $user = User::where('id', $id)->firstOrFail();
 
@@ -90,7 +90,7 @@ class Index extends Component
         return [
             'href' => route('admin.users.create'),
             'text' => __('words.create') . ' ' . __('words.user'),
-            'permission' => PermissionsEnum::CREATE_USERS->value
+            'permission' => \App\Enums\Admin\UserPermissionsEnum::CREATE->value
         ];
     }
 
@@ -139,7 +139,7 @@ class Index extends Component
     function listEditButton()
     {
         return [
-            'permission' => PermissionsEnum::EDIT_USERS->value,
+            'permission' => \App\Enums\Admin\UserPermissionsEnum::UPDATE->value,
             'href' => route('admin.users.edit', ['user' => '_id_'])
         ];
     }
@@ -153,7 +153,7 @@ class Index extends Component
     {
         return [
             'action' => 'delete',
-            'permission' => PermissionsEnum::DELETE_USERS->value
+            'permission' => \App\Enums\Admin\UserPermissionsEnum::DELETE->value
         ];
     }
 }

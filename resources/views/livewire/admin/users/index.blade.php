@@ -37,9 +37,9 @@
                     class="flex justify-end items-center">
                     <x-admin.list.actions
                         id="{{ $user->id }}"
-                        action-edit-permission="{{ \App\Enums\PermissionsEnum::EDIT_USERS->value }}"
+                        action-edit-permission="{{ \App\Enums\Admin\UserPermissionsEnum::UPDATE->value }}"
                         wire-action-edit="{{ route('admin.users.edit', ['user' => $user->id]) }}"
-                        action-delete-permission="{{ \App\Enums\PermissionsEnum::DELETE_USERS->value }}"
+                        action-delete-permission="{{ \App\Enums\Admin\UserPermissionsEnum::DELETE->value }}"
                         wire-action-delete="delete({{ $user->id }})" />
                 </x-admin.list.table.col>
             </x-admin.list.table.row>

@@ -55,7 +55,7 @@ class Users extends Component
         return function () {
             return [
                 new \App\Helpers\Charts\Dataset('Total', \App\Models\User::count(), '#2E9AFE'),
-                new \App\Helpers\Charts\Dataset('Total', \App\Models\User::permission(\App\Enums\PermissionsEnum::ADMIN_ACCESS->value)->count(), '#00DE74'),
+                new \App\Helpers\Charts\Dataset('Total', \App\Models\User::permission(\App\Enums\Admin\User\App\Enums\Admin\UserPermissionsEnum::ADMIN_ACCESS->value)->count(), '#00DE74'),
                 new \App\Helpers\Charts\Dataset('Total', \App\Models\User::whereNull('email_verified_at')->count(), '#FE4100')
             ];
         };

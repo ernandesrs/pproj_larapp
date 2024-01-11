@@ -51,7 +51,7 @@ class Edit extends Component
      */
     public function render()
     {
-        $this->authorize(PermissionsEnum::EDIT_ROLES->value);
+        $this->authorize(\App\Enums\Admin\RolePermissionsEnum::UPDATE->value);
 
         return view('livewire..admin.roles.edit', [
             'role' => $this->role,
@@ -69,7 +69,7 @@ class Edit extends Component
      */
     public function addOrRmPermission(Permission $permission)
     {
-        $this->authorize(PermissionsEnum::EDIT_ROLES->value);
+        $this->authorize(\App\Enums\Admin\RolePermissionsEnum::UPDATE->value);
 
         if ($this->role->name === RolesEnum::SUPER_USER->value) {
             $this->alertError(__('admin/messages.alert.unauthorized_action'));
@@ -118,7 +118,7 @@ class Edit extends Component
         return [
             'href' => route('admin.roles.create'),
             'text' => __('words.create') . ' ' . __('words.role'),
-            'permission' => PermissionsEnum::CREATE_ROLES->value
+            'permission' => \App\Enums\Admin\RolePermissionsEnum::CREATE->value
         ];
     }
 }

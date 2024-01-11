@@ -36,7 +36,7 @@ class Show extends Component
      */
     public function render()
     {
-        $this->authorize(PermissionsEnum::SHOW_USERS->value);
+        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::VIEW->value);
 
         return view('livewire..admin.users.show', [
             'title' => __('words.see') . ' ' . __('words.user')

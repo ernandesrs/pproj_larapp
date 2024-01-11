@@ -70,7 +70,7 @@
                         'href' => route('admin.users'),
                         'external' => false,
                         'activeIn' => ['admin.users', 'admin.users.create', 'admin.users.show', 'admin.users.edit'],
-                        'permissionsNeeded' => [\App\Enums\PermissionsEnum::LIST_USERS->value],
+                        'permissionsNeeded' => [\App\Enums\Admin\UserPermissionsEnum::VIEW_ANY->value],
                     ],
                     [
                         'text' => __('words.roles'),
@@ -78,7 +78,7 @@
                         'href' => route('admin.roles'),
                         'external' => false,
                         'activeIn' => ['admin.roles', 'admin.roles.create', 'admin.roles.show', 'admin.roles.edit'],
-                        'permissionsNeeded' => [\App\Enums\PermissionsEnum::LIST_ROLES->value],
+                        'permissionsNeeded' => [\App\Enums\Admin\RolePermissionsEnum::VIEW_ANY->value],
                     ],
                 ],
             ],

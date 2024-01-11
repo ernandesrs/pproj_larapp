@@ -21,7 +21,7 @@
                         </a>
 
                         <span class="inline-block px-3 py-1 bg-admin-dark-normal text-xs rounded-sm">
-                            Adms: {{ \App\Models\User::permission(\App\Enums\PermissionsEnum::ADMIN_ACCESS)->count() }}
+                            Adms: {{ \App\Models\User::permission(\App\Enums\Admin\User\App\Enums\Admin\UserPermissionsEnum::ADMIN_ACCESS)->count() }}
                         </span>
                     </div>
 

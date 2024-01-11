@@ -50,7 +50,7 @@ class Create extends Component
      */
     public function save()
     {
-        $this->authorize(PermissionsEnum::CREATE_ROLES->value);
+        $this->authorize(\App\Enums\Admin\RolePermissionsEnum::CREATE->value);
 
         $validated = $this->validate([
             'data.name' => ['required', 'unique:roles,name']

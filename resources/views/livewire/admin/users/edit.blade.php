@@ -34,7 +34,7 @@
             </x-admin.section>
 
             @if ($this->user->id !== \Auth::user()->id)
-                @can(\App\Enums\PermissionsEnum::EDIT_USER_PERMISSIONS->value)
+                @can(\App\Enums\Admin\UserPermissionsEnum::UPDATE_PERMISSIONS->value)
                     <x-admin.section
                         title="{{ __('admin/phrases.user_roles') }}"
                         class="mb-6">

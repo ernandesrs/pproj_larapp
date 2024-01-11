@@ -40,10 +40,10 @@
 
                     <x-admin.list.actions
                         wire-action-edit="{{ route('admin.roles.edit', ['role' => $role->id]) }}"
-                        action-edit-permission="{{ \App\Enums\PermissionsEnum::EDIT_ROLES->value }}"
+                        action-edit-permission="{{ \App\Enums\Admin\RolePermissionsEnum::UPDATE->value }}"
 
                         wire-action-delete="deleteRole({{ $role->id }})"
-                        action-delete-permission="{{ \App\Enums\PermissionsEnum::DELETE_ROLES->value }}"
+                        action-delete-permission="{{ \App\Enums\Admin\RolePermissionsEnum::DELETE->value }}"
 
                         delete-confirm-text="{{ __('words.delete') }} {{ __('words.role') }}?" />
 
