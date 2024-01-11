@@ -1,4 +1,5 @@
 @props([
+    'id' => null,
     'wireActionShow' => null,
     'actionShowPermission' => null,
     'wireActionEdit' => null,
@@ -7,6 +8,31 @@
     'actionDeletePermission' => null,
     'deleteConfirmText' => __('words.delete') . ' ' . strtolower(__('words.confirm')) . '?',
 ])
+
+@php
+
+    if (empty($wireActionShow) && method_exists($this, 'getListShowButton')) {
+        if ($show = $this->getListShowButton()) {
+            $wireActionShow = str_replace('_id_', $id, $show['href']);
+            $actionShowPermission = $show['permission'];
+        }
+    }
+
+    if (empty($wireActionEdit) && method_exists($this, 'getListEditButton')) {
+        if ($edit = $this->getListEditButton()) {
+            $wireActionEdit = str_replace('_id_', $id, $edit['href']);
+            $actionEditPermission = $edit['permission'];
+        }
+    }
+
+    if (empty($wireActionDelete) && method_exists($this, 'getListDeleteButton')) {
+        if ($delete = $this->getListDeleteButton()) {
+            $wireActionDelete = $delete['action'] . '(' . $id . ')';
+            $actionDeletePermission = $delete['permission'];
+        }
+    }
+
+@endphp
 
 <div
     {{ $attributes->only(['class'])->merge(['class' => 'flex flex-wrap items-center justify-center h-full']) }}>

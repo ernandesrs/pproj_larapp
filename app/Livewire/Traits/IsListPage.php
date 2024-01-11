@@ -32,6 +32,25 @@ trait IsListPage
     public abstract function listLabels();
 
     /**
+     * List show button
+     *
+     * @return null|array Hidden button when return null.
+     * Show if return array like:
+     * [
+     *      'permission' => 'show_users',
+     *      'href' => 'https://ww.../admin/users/_id_/show
+     * ]
+     */
+    public abstract function listShowButton();
+
+    /**
+     * List delete button
+     *
+     * @return null|array Hidden button when return null. Show if return array like: ['permission' => 'delete_user', 'methodName' => 'delete']
+     */
+    public abstract function listDeleteButton();
+
+    /**
      * Get list
      *
      * @return mixed
@@ -49,5 +68,35 @@ trait IsListPage
     public function getListLabels()
     {
         return $this->listLabels();
+    }
+
+    /**
+     * Get show button
+     *
+     * @return null|array
+     */
+    public function getListShowButton()
+    {
+        return $this->listShowButton();
+    }
+
+    /**
+     * Get edit button
+     *
+     * @return null|array
+     */
+    public function getListEditButton()
+    {
+        return $this->listEditButton();
+    }
+
+    /**
+     * Get delete button
+     *
+     * @return null|array
+     */
+    public function getListDeleteButton()
+    {
+        return $this->listDeleteButton();
     }
 }

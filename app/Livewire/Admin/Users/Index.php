@@ -120,4 +120,40 @@ class Index extends Component
     {
         return User::class;
     }
+
+    /**
+     * Show button
+     *
+     * @return null|array
+     */
+    function listShowButton()
+    {
+        return null;
+    }
+
+    /**
+     * Edit button
+     *
+     * @return array
+     */
+    function listEditButton()
+    {
+        return [
+            'permission' => PermissionsEnum::EDIT_USERS->value,
+            'href' => route('admin.users.edit', ['user' => '_id_'])
+        ];
+    }
+
+    /**
+     * Delete button
+     *
+     * @return null|array
+     */
+    function listDeleteButton()
+    {
+        return [
+            'action' => 'delete',
+            'permission' => PermissionsEnum::DELETE_USERS->value
+        ];
+    }
 }

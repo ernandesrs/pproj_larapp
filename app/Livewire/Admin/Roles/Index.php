@@ -99,4 +99,24 @@ class Index extends Component
             ]
         ];
     }
+
+    function listShowButton()
+    {
+        return null;
+    }
+
+    function listEditButton()
+    {
+        return [
+            'permission' => PermissionsEnum::EDIT_ROLES->value,
+            'href' => route('admin.roles.edit', ['role' => '_id_'])
+        ];
+    }
+
+    function listDeleteButton()
+    {
+        return [
+            'permission' => PermissionsEnum::DELETE_ROLES->value
+        ];
+    }
 }
