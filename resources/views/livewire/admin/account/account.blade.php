@@ -1,6 +1,4 @@
-<x-admin.layout.page
-    icon="person-fill"
-    title="{{ __('phrases.my_account') }}">
+<x-admin.layout.page>
 
     <x-common.tab
         borderless
