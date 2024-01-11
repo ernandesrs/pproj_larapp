@@ -2,10 +2,14 @@
 
 namespace App\Livewire\Admin\Account;
 
+use App\Livewire\Traits\IsPage;
+use App\Livewire\Traits\Models\Breadcrumb;
 use Livewire\Component;
 
 class Account extends Component
 {
+    use IsPage;
+
     /**
      * Contructor
      */
@@ -23,6 +27,31 @@ class Account extends Component
     {
         return view('livewire..admin.account.account')
             ->layout('livewire.admin.layout')
-            ->title(__('phrases.my_account'));
+            ->title($this->getLayoutTitle());
+    }
+
+    /**
+     * 
+     * 
+     * IsPage methods
+     * 
+     * 
+     */
+
+    function pageTitle()
+    {
+        return __('phrases.my_profile');
+    }
+
+    function pageSubtitle()
+    {
+        return __('phrases.manage_profile_data');
+    }
+
+    function pageBreadcrumb()
+    {
+        return (new Breadcrumb())
+            ->add(__('phrases.my_profile'), ['name' => 'admin.account']);
     }
 }
+

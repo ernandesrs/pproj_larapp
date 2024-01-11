@@ -1,14 +1,4 @@
-<x-admin.layout.page
-    :breadcrumbs="[
-        [
-            'label' => __('words.roles'),
-            'route' => [
-                'name' => 'admin.roles',
-            ],
-        ],
-    ]"
-    title="{{ __('words.roles') }}"
-    subtitle="{{ __('admin/phrases.manage_roles') }}">
+<x-admin.layout.page>
     @can(\App\Enums\PermissionsEnum::CREATE_ROLES->value)
         <x-slot name="actions">
 

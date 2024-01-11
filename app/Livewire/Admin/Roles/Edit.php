@@ -4,6 +4,8 @@ namespace App\Livewire\Admin\Roles;
 
 use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
+use App\Livewire\Traits\IsPage;
+use App\Livewire\Traits\Models\Breadcrumb;
 use App\Livewire\Traits\ResponseTrait;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
@@ -12,7 +14,7 @@ use Spatie\Permission\Models\Role;
 
 class Edit extends Component
 {
-    use ResponseTrait;
+    use ResponseTrait, IsPage;
 
     /**
      * Role
@@ -56,7 +58,7 @@ class Edit extends Component
             'permissions' => Permission::all()
         ])
             ->layout('livewire.admin.layout')
-            ->title(__('words.edit') . ' ' . __('words.role'));
+            ->title($this->getLayoutTitle());
     }
 
     /**
@@ -79,5 +81,30 @@ class Edit extends Component
         } else {
             $this->role->givePermissionTo($permission);
         }
+    }
+
+    /**
+     * 
+     * 
+     * IsPage methods
+     * 
+     * 
+     */
+
+    function pageTitle()
+    {
+        return __('admin/phrases.edit_roles');
+    }
+
+    function pageSubtitle()
+    {
+        return __('admin/phrases.manage_role');
+    }
+
+    function pageBreadcrumb()
+    {
+        return (new Breadcrumb)
+            ->add(__('words.roles'), ['name' => 'admin.roles'])
+            ->add(__('words.edit'), ['name' => 'admin.roles.edit', 'params' => ['role' => $this->role->id]]);
     }
 }

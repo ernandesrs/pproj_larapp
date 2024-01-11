@@ -4,13 +4,15 @@ namespace App\Livewire\Admin\Roles;
 
 use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
+use App\Livewire\Traits\IsPage;
+use App\Livewire\Traits\Models\Breadcrumb;
 use App\Livewire\Traits\ResponseTrait;
 use Livewire\Component;
 use Spatie\Permission\Models\Role;
 
 class Index extends Component
 {
-    use ResponseTrait;
+    use ResponseTrait, IsPage;
 
     /**
      * Render view
@@ -23,8 +25,7 @@ class Index extends Component
 
         return view('livewire..admin.roles.index', [
             'roles' => Role::query()->paginate(15)
-        ])->layout('livewire.admin.layout')
-            ->title(__('words.roles'));
+        ])->layout('livewire.admin.layout')->title($this->getLayoutTitle());
     }
 
     /**
@@ -47,5 +48,29 @@ class Index extends Component
         }
 
         $this->deletionResponse($role->delete(), route('admin.roles'));
+    }
+
+    /**
+     * 
+     * 
+     * IsPage methods
+     * 
+     * 
+     */
+
+    function pageTitle()
+    {
+        return __('words.roles');
+    }
+
+    function pageSubtitle()
+    {
+        return __('admin/phrases.manage_roles');
+    }
+
+    function pageBreadcrumb()
+    {
+        return (new Breadcrumb)
+            ->add(__('words.roles'), ['name' => 'admin.roles']);
     }
 }
