@@ -14,8 +14,8 @@ trait IsListPage
      *
      * @var string
      */
-    #[Url(except: ['', null, 'null'])]
-    public $search;
+    #[Url(except: '')]
+    public $search = '';
 
     /**
      * Model class

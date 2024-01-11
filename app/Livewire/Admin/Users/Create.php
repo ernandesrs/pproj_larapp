@@ -45,11 +45,11 @@ class Create extends Component
     }
 
     /**
-     * Register a user
+     * Save a user
      *
      * @return void
      */
-    public function register()
+    public function save()
     {
         $this->authorize(PermissionsEnum::CREATE_USERS->value);
 

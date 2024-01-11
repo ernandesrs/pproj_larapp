@@ -3,7 +3,7 @@
     <x-admin.section>
 
         <x-admin.form.form
-            action="register"
+            action="save"
             submit-text="{{ __('words.register') }} {{ __('words.user') }}">
 
             <x-admin.views.user-basic-data />
