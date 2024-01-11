@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Admin\Roles;
 
-use App\Enums\PermissionsEnum;
+use App\Enums\Admin\RolePermissionsEnum;
 use App\Enums\RolesEnum;
 use App\Livewire\Traits\IsPage;
 use App\Livewire\Builder\Breadcrumb;
@@ -51,7 +51,7 @@ class Edit extends Component
      */
     public function render()
     {
-        $this->authorize(\App\Enums\Admin\RolePermissionsEnum::UPDATE->value);
+        $this->authorize(RolePermissionsEnum::UPDATE->value);
 
         return view('livewire..admin.roles.edit', [
             'role' => $this->role,
@@ -69,7 +69,7 @@ class Edit extends Component
      */
     public function addOrRmPermission(Permission $permission)
     {
-        $this->authorize(\App\Enums\Admin\RolePermissionsEnum::UPDATE->value);
+        $this->authorize(RolePermissionsEnum::UPDATE->value);
 
         if ($this->role->name === RolesEnum::SUPER_USER->value) {
             $this->alertError(__('admin/messages.alert.unauthorized_action'));
@@ -118,7 +118,7 @@ class Edit extends Component
         return [
             'href' => route('admin.roles.create'),
             'text' => __('words.create') . ' ' . __('words.role'),
-            'permission' => \App\Enums\Admin\RolePermissionsEnum::CREATE->value
+            'permission' => RolePermissionsEnum::CREATE->value
         ];
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Admin\Users;
 
-use App\Enums\PermissionsEnum;
+use App\Enums\Admin\UserPermissionsEnum;
 use App\Enums\RolesEnum;
 use App\Livewire\Traits\IsPage;
 use App\Livewire\Builder\Breadcrumb;
@@ -50,7 +50,7 @@ class Edit extends Component
      */
     public function render()
     {
-        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::UPDATE->value);
+        $this->authorize(UserPermissionsEnum::UPDATE->value);
 
         return view('livewire..admin.users.edit', [
             'user' => $this->user
@@ -64,7 +64,7 @@ class Edit extends Component
      */
     public function update()
     {
-        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::UPDATE->value);
+        $this->authorize(UserPermissionsEnum::UPDATE->value);
 
         $validated = $this->validate(UserService::getBasicDataRules());
 
@@ -80,7 +80,7 @@ class Edit extends Component
      */
     public function updatePassword()
     {
-        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::UPDATE->value);
+        $this->authorize(UserPermissionsEnum::UPDATE->value);
 
         $validated = $this->validate(UserService::getPasswordDataRules());
 
@@ -98,7 +98,7 @@ class Edit extends Component
      */
     public function deletePhoto()
     {
-        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::UPDATE->value);
+        $this->authorize(UserPermissionsEnum::UPDATE->value);
 
         $this->deletionResponse(
             UserService::deletePhoto($this->user),
@@ -115,7 +115,10 @@ class Edit extends Component
      */
     public function authorize($ability, $arguments = [])
     {
-        if (!\Auth::user()->hasRole(RolesEnum::SUPER_USER) && ($this->user->hasRole(RolesEnum::SUPER_USER) || $this->user->hasPermissionTo(\App\Enums\Admin\UserPermissionsEnum::ADMIN_ACCESS))) {
+        if (
+            !\Auth::user()->isSuperAdmin() &&
+            ($this->user->isSuperAdmin() || $this->user->hasPermissionTo(UserPermissionsEnum::ADMIN_ACCESS->value))
+        ) {
             abort(403);
         }
 
@@ -164,7 +167,7 @@ class Edit extends Component
         return [
             'href' => route('admin.users.create'),
             'text' => __('words.create') . ' ' . __('words.user'),
-            'permission' => \App\Enums\Admin\UserPermissionsEnum::CREATE->value
+            'permission' => UserPermissionsEnum::CREATE->value
         ];
     }
 }

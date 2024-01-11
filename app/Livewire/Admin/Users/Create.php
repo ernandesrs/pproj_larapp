@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Admin\Users;
 
-use App\Enums\PermissionsEnum;
+use App\Enums\Admin\UserPermissionsEnum;
 use App\Livewire\Traits\IsPage;
 use App\Livewire\Builder\Breadcrumb;
 use App\Livewire\Traits\ResponseTrait;
@@ -37,7 +37,7 @@ class Create extends Component
      */
     public function render()
     {
-        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::CREATE->value);
+        $this->authorize(UserPermissionsEnum::CREATE->value);
 
         return view('livewire..admin.users.create')
             ->layout('livewire.admin.layout')
@@ -51,7 +51,7 @@ class Create extends Component
      */
     public function save()
     {
-        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::CREATE->value);
+        $this->authorize(UserPermissionsEnum::CREATE->value);
 
         $validated = $this->validate();
 

@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Admin\Users;
 
-use App\Enums\PermissionsEnum;
+use App\Enums\Admin\UserPermissionsEnum;
 use App\Livewire\Traits\ResponseTrait;
 use App\Models\User;
 use Livewire\Attributes\Locked;
@@ -57,7 +57,7 @@ class Role extends Component
      */
     public function addOrRmRole(RoleModel $role)
     {
-        $this->authorize(\App\Enums\Admin\UserPermissionsEnum::UPDATE_PERMISSIONS->value);
+        $this->authorize(UserPermissionsEnum::UPDATE_PERMISSIONS->value);
 
         if ($this->user->id === \Auth::user()->id) {
             $this->alertError(__('admin/messages.alert.unauthorized_action'));

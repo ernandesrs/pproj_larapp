@@ -58,12 +58,12 @@ Os requisitos necessários são(_The necessary requirements are_):
 
 # DADOS BASE
 Execute o comando abaixo para gerar os dados básicos da aplicação, como as funções básicas, super administrador, gerar usuários, etc(_Execute the command below to generate the basic data of the application, such as basic roles, super administrator, generate users, etc_).
-> php artisan app --super
+> php artisan app:start --super
 
 Se não informar a flag _--super_, um super usuário com o email _super@mail.com_ e senha _password_ será gerado automaticamente(_If you do not inform the _--super_ _flag, a super user with the email_ _super@mail.com_ _and_ password _password_ _will be automatically generated._).
 
 Caso queira, pode executar o comando abaixo para limpar a base dados e depois realizar as ações citadas acima(_If you want, you can execute the command below to clear the database and then perform the actions mentioned above_).
-> php artisan app --fresh --super
+> php artisan app:start --fresh --super
 
 # RODANDO A APLICAÇÃO
 Por fim, execute o comando abaixo para rodar o servidor(_Finally, execute the command below to run the server_):

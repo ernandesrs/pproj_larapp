@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Admin\Roles;
 
-use App\Enums\PermissionsEnum;
+use App\Enums\Admin\RolePermissionsEnum;
 use App\Livewire\Builder\Breadcrumb;
 use App\Livewire\Traits\IsPage;
 use App\Livewire\Traits\ResponseTrait;
@@ -50,7 +50,7 @@ class Create extends Component
      */
     public function save()
     {
-        $this->authorize(\App\Enums\Admin\RolePermissionsEnum::CREATE->value);
+        $this->authorize(RolePermissionsEnum::CREATE->value);
 
         $validated = $this->validate([
             'data.name' => ['required', 'unique:roles,name']

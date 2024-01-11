@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -26,10 +25,10 @@ class RolesAndPermissionsSeeder extends Seeder
         /**
          * 
          * Register all permissions defined
-         * in \App\Enums\PermissionsEnum
+         * in \App\Enums\Admins
          * 
          */
-        foreach (PermissionsEnum::cases() as $permission) {
+        foreach ([...\App\Enums\Admin\UserPermissionsEnum::cases(), ...\App\Enums\Admin\RolePermissionsEnum::cases()] as $permission) {
             Permission::create(['name' => $permission->value]);
         }
 
@@ -41,7 +40,7 @@ class RolesAndPermissionsSeeder extends Seeder
          */
         foreach (RolesEnum::cases() as $role) {
             $role = Role::create(['name' => $role->value]);
-            $role->givePermissionTo(\App\Enums\Admin\UserPermissionsEnum::ADMIN_ACCESS);
+            $role->givePermissionTo(\App\Enums\Admin\UserPermissionsEnum::ADMIN_ACCESS->value);
         }
     }
 }

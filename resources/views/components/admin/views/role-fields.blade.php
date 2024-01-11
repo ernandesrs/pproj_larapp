@@ -28,7 +28,7 @@
                                 :active="$role->hasPermissionTo($permission->name)"
                                 wire:click="addOrRmPermission('{{ $permission->id }}')" /> <span
                                 class="inline-block ml-2 text-sm">
-                                {{ \App\Enums\PermissionsEnum::tryFrom($permission->name)?->label() ?? __('words.undefined') }}
+                                {{ \App\Enums\Admin\RolePermissionsEnum::tryFrom($permission->name)?->label() ?? $permission->name }}
                             </span>
                         </div>
                     @endforeach

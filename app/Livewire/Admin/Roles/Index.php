@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Admin\Roles;
 
-use App\Enums\PermissionsEnum;
+use App\Enums\Admin\RolePermissionsEnum;
 use App\Enums\RolesEnum;
 use App\Livewire\Traits\IsListPage;
 use App\Livewire\Builder\Breadcrumb;
@@ -21,7 +21,7 @@ class Index extends Component
      */
     public function render()
     {
-        $this->authorize(\App\Enums\Admin\RolePermissionsEnum::VIEW_ANY->value);
+        $this->authorize(RolePermissionsEnum::VIEW_ANY->value);
 
         return view('livewire..admin.roles.index', [
             'roles' => Role::query()->paginate(15)
@@ -35,7 +35,7 @@ class Index extends Component
      */
     public function deleteRole(Role $role)
     {
-        $this->authorize(\App\Enums\Admin\RolePermissionsEnum::DELETE->value);
+        $this->authorize(RolePermissionsEnum::DELETE->value);
 
         if (in_array($role->name, [RolesEnum::ADMIN_USER->value, RolesEnum::SUPER_USER->value])) {
             $this->alertDanger(__('admin/messages.alert.delete_protected_fail', ['resource' => 'função']));
@@ -79,7 +79,7 @@ class Index extends Component
         return [
             'href' => route('admin.roles.create'),
             'text' => __('words.create') . ' ' . __('words.role'),
-            'permission' => \App\Enums\Admin\RolePermissionsEnum::CREATE->value
+            'permission' => RolePermissionsEnum::CREATE->value
         ];
     }
 
@@ -108,7 +108,7 @@ class Index extends Component
     function listEditButton()
     {
         return [
-            'permission' => \App\Enums\Admin\RolePermissionsEnum::UPDATE->value,
+            'permission' => RolePermissionsEnum::UPDATE->value,
             'href' => route('admin.roles.edit', ['role' => '_id_'])
         ];
     }
@@ -116,7 +116,7 @@ class Index extends Component
     function listDeleteButton()
     {
         return [
-            'permission' => \App\Enums\Admin\RolePermissionsEnum::DELETE->value
+            'permission' => RolePermissionsEnum::DELETE->value
         ];
     }
 }

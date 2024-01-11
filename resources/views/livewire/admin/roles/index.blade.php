@@ -19,7 +19,7 @@
                             @if ($i < 3)
                                 <span
                                     class="inline-block bg-admin-light-normal px-3 py-1 text-xs cursor-default dark:bg-admin-dark-normal rounded">
-                                    {{ \App\Enums\PermissionsEnum::tryFrom($permissions[$i]?->name)?->label() }}
+                                    {{ \App\Enums\Admin\RolePermissionsEnum::tryFrom($permissions[$i]?->name)?->label() }}
                                 </span>
                             @else
                                 @php
