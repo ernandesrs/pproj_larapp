@@ -4,6 +4,8 @@ namespace App\Livewire\Admin\Users;
 
 use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
+use App\Livewire\Traits\IsPage;
+use App\Livewire\Traits\Models\Breadcrumb;
 use App\Livewire\Traits\ResponseTrait;
 use App\Models\User;
 use App\Services\UserService;
@@ -12,7 +14,7 @@ use Livewire\Component;
 
 class Edit extends Component
 {
-    use ResponseTrait;
+    use ResponseTrait, IsPage;
 
     /**
      * User
@@ -51,9 +53,8 @@ class Edit extends Component
         $this->authorize(PermissionsEnum::EDIT_USERS->value);
 
         return view('livewire..admin.users.edit', [
-            'title' => __('words.edit') . ' ' . __('words.user'),
             'user' => $this->user
-        ])->layout('livewire.admin.layout')->title(__('words.edit') . ' ' . __('words.user'));
+        ])->layout('livewire.admin.layout')->title($this->getLayoutTitle());
     }
 
     /**
@@ -119,5 +120,37 @@ class Edit extends Component
         }
 
         return parent::authorize($ability, $arguments);
+    }
+
+    /**
+     * Page title
+     *
+     * @return string
+     */
+    public function pageTitle()
+    {
+        return __('words.edit') . ' ' . __('words.user');
+    }
+
+    /**
+     * Page subtitle
+     *
+     * @return string
+     */
+    public function pageSubtitle()
+    {
+        return __('admin/phrases.manage_user');
+    }
+
+    /**
+     * Page breadcrumb
+     *
+     * @return Breadcrumb
+     */
+    public function pageBreadcrumb()
+    {
+        return (new Breadcrumb())
+            ->add(__('words.users'), ['name' => 'admin.users'])
+            ->add(__('words.edit') . ' ' . __('words.user'), ['name' => 'admin.users.create', 'params' => ['user' => $this->user->id]]);
     }
 }

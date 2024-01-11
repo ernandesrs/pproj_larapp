@@ -3,13 +3,15 @@
 namespace App\Livewire\Admin\Users;
 
 use App\Enums\PermissionsEnum;
+use App\Livewire\Traits\IsPage;
+use App\Livewire\Traits\Models\Breadcrumb;
 use App\Livewire\Traits\ResponseTrait;
 use App\Services\UserService;
 use Livewire\Component;
 
 class Create extends Component
 {
-    use ResponseTrait;
+    use ResponseTrait, IsPage;
 
     /**
      * Data
@@ -37,9 +39,9 @@ class Create extends Component
     {
         $this->authorize(PermissionsEnum::CREATE_USERS->value);
 
-        return view('livewire..admin.users.create', [
-            'title' => __('words.register') . ' ' . __('words.user')
-        ])->layout('livewire.admin.layout')->title(__('words.register') . ' ' . __('words.user'));
+        return view('livewire..admin.users.create')
+            ->layout('livewire.admin.layout')
+            ->title($this->getLayoutTitle());
     }
 
     /**
@@ -66,5 +68,37 @@ class Create extends Component
     public function rules()
     {
         return UserService::getCreateDataRules();
+    }
+
+    /**
+     * Page title
+     *
+     * @return string
+     */
+    public function pageTitle()
+    {
+        return __('words.register') . ' ' . __('words.user');
+    }
+
+    /**
+     * Page subtitle
+     *
+     * @return string
+     */
+    public function pageSubtitle()
+    {
+        return __('admin/phrases.manage_user');
+    }
+
+    /**
+     * Page breadcrumb
+     *
+     * @return Breadcrumb
+     */
+    public function pageBreadcrumb()
+    {
+        return (new Breadcrumb())
+            ->add(__('words.users'), ['name' => 'admin.users'])
+            ->add(__('words.register') . ' ' . __('words.user'), ['name' => 'admin.users.create']);
     }
 }

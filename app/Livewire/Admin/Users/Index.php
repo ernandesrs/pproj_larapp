@@ -3,6 +3,8 @@
 namespace App\Livewire\Admin\Users;
 
 use App\Enums\PermissionsEnum;
+use App\Livewire\Traits\IsPage;
+use App\Livewire\Traits\Models\Breadcrumb;
 use App\Livewire\Traits\ResponseTrait;
 use App\Models\User;
 use Livewire\Attributes\Url;
@@ -11,7 +13,7 @@ use Livewire\WithPagination;
 
 class Index extends Component
 {
-    use WithPagination, ResponseTrait;
+    use WithPagination, ResponseTrait, IsPage;
 
     /**
      * Search
@@ -93,9 +95,39 @@ class Index extends Component
         }
 
         return view('livewire..admin.users.index', [
-            'title' => __('words.users'),
             'users' => $users->orderBy('created_at', 'desc')->paginate(15)
         ])->layout('livewire.admin.layout')
-            ->title(__('words.users'));
+            ->title($this->getLayoutTitle());
+    }
+
+    /**
+     * Page title
+     *
+     * @return string
+     */
+    function pageTitle()
+    {
+        return __('words.users');
+    }
+
+    /**
+     * Page subtitle
+     *
+     * @return string
+     */
+    function pageSubtitle()
+    {
+        return __('admin/phrases.manage_users');
+    }
+
+    /**
+     * Page breadcrumb
+     *
+     * @return Breadcrumb
+     */
+    function pageBreadcrumb()
+    {
+        return (new Breadcrumb)
+            ->add(__('words.users'), ['name' => 'admin.index']);
     }
 }

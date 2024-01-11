@@ -1,14 +1,4 @@
-<x-admin.layout.page
-    :breadcrumbs="[
-        [
-            'label' => __('words.users'),
-            'route' => [
-                'name' => 'admin.users',
-            ],
-        ],
-    ]"
-    title="{{ __('words.users') }}"
-    subtitle="{{ __('admin/phrases.manage_users') }}">
+<x-admin.layout.page>
 
     <x-slot name="actions">
         @can(\App\Enums\PermissionsEnum::CREATE_USERS->value)

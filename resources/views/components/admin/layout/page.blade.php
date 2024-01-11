@@ -1,8 +1,8 @@
 @props([
-    'breadcrumbs' => [],
+    'breadcrumbs' => method_exists($this, 'getPageBreadcrumb') ? $this->getPageBreadcrumb() : [],
     'icon' => null,
-    'title' => null,
-    'subtitle' => null,
+    'title' => method_exists($this, 'getPageTitle') ? $this->getPageTitle() : null,
+    'subtitle' => method_exists($this, 'getPageSubtitle') ? $this->getPageSubtitle() : null,
     'contained' => false,
 ])
 
