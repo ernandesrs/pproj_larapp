@@ -1,24 +1,6 @@
-<x-admin.layout.page>
-    @can(\App\Enums\PermissionsEnum::CREATE_ROLES->value)
-        <x-slot name="actions">
+<x-admin.layout.page-list>
 
-            <livewire:admin.roles.create />
-
-        </x-slot>
-    @endcan
-
-    <x-admin.list.table
-        :columns="[
-            [
-                'label' => __('words.details'),
-            ],
-            [
-                'label' => __('words.permissions'),
-            ],
-            [
-                'label' => '',
-            ],
-        ]">
+    <x-admin.list.table>
 
         @foreach ($roles as $role)
             <x-admin.list.table.row>
@@ -27,7 +9,6 @@
                         text="{{ \App\Enums\RolesEnum::tryFrom($role->name)?->label() ?? $role->name }}"
                         label="{{ __('words.name') }}: {{ $role->name }}" />
                 </x-admin.list.table.col>
-
 
                 <x-admin.list.table.col>
                     @php
@@ -73,7 +54,4 @@
 
     </x-admin.list.table>
 
-    <x-admin.list.pagination
-        :model="$roles" each-side="1" />
-
-</x-admin.layout.page>
+</x-admin.layout.page-list>

@@ -3,44 +3,15 @@
 namespace App\Livewire\Admin\Users;
 
 use App\Enums\PermissionsEnum;
-use App\Livewire\Traits\IsPage;
+use App\Livewire\Traits\IsListPage;
 use App\Livewire\Builder\Breadcrumb;
 use App\Livewire\Traits\ResponseTrait;
 use App\Models\User;
-use Livewire\Attributes\Url;
 use Livewire\Component;
-use Livewire\WithPagination;
 
 class Index extends Component
 {
-    use WithPagination, ResponseTrait, IsPage;
-
-    /**
-     * Search
-     *
-     * @var string
-     */
-    #[Url(except: '')]
-    public $search;
-
-    /**
-     * Only admins
-     *
-     * @var string
-     */
-    #[Url(except: [0, '0', ''])]
-    public $onlyAdms;
-
-    /**
-     * Mount
-     *
-     * @return void
-     */
-    public function mount()
-    {
-        $this->search = '';
-        $this->onlyAdms = 0;
-    }
+    use ResponseTrait, IsListPage;
 
     /**
      * Render view
@@ -51,7 +22,8 @@ class Index extends Component
     {
         $this->authorize(PermissionsEnum::LIST_USERS->value);
 
-        return $this->applyFilter();
+        return view('livewire..admin.users.index')
+            ->layout('livewire.admin.layout')->title($this->getLayoutTitle());
     }
 
     /**
@@ -75,29 +47,6 @@ class Index extends Component
             $user->delete(),
             route('admin.users')
         );
-    }
-
-    /**
-     * Apply filter and render view
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
-     */
-    public function applyFilter()
-    {
-        if (!empty($this->search)) {
-            $users = User::search($this->search);
-        } else {
-            $users = User::query();
-        }
-
-        if ($this->onlyAdms) {
-            $users = $users->permission(PermissionsEnum::ADMIN_ACCESS->value);
-        }
-
-        return view('livewire..admin.users.index', [
-            'users' => $users->orderBy('created_at', 'desc')->paginate(15)
-        ])->layout('livewire.admin.layout')
-            ->title($this->getLayoutTitle());
     }
 
     /**
@@ -129,5 +78,32 @@ class Index extends Component
     {
         return (new Breadcrumb)
             ->add(__('words.users'), ['name' => 'admin.index']);
+    }
+
+    /**
+     * List labels
+     *
+     * @return array
+     */
+    function listLabels()
+    {
+        return [
+            [
+                'label' => __('words.details') . ' ' . strtolower(__('words.user')),
+            ],
+            [
+                'label' => __('words.roles'),
+            ]
+        ];
+    }
+
+    /**
+     * Model class
+     *
+     * @return string
+     */
+    function modelClass()
+    {
+        return User::class;
     }
 }

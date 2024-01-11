@@ -4,7 +4,7 @@ namespace App\Livewire\Admin\Roles;
 
 use App\Enums\PermissionsEnum;
 use App\Enums\RolesEnum;
-use App\Livewire\Traits\IsPage;
+use App\Livewire\Traits\IsListPage;
 use App\Livewire\Builder\Breadcrumb;
 use App\Livewire\Traits\ResponseTrait;
 use Livewire\Component;
@@ -12,7 +12,7 @@ use Spatie\Permission\Models\Role;
 
 class Index extends Component
 {
-    use ResponseTrait, IsPage;
+    use ResponseTrait, IsListPage;
 
     /**
      * Render view
@@ -53,7 +53,7 @@ class Index extends Component
     /**
      * 
      * 
-     * IsPage methods
+     * IsListPage methods
      * 
      * 
      */
@@ -72,5 +72,22 @@ class Index extends Component
     {
         return (new Breadcrumb)
             ->add(__('words.roles'), ['name' => 'admin.roles']);
+    }
+
+    function modelClass()
+    {
+        return Role::class;
+    }
+
+    function listLabels()
+    {
+        return [
+            [
+                'label' => __('words.role')
+            ],
+            [
+                'label' => __('words.permissions')
+            ]
+        ];
     }
 }

@@ -1,5 +1,5 @@
 @props([
-    'columns' => [],
+    'columns' => $columns ?? $this->getListLabels(),
 ])
 
 <div class="overflow-x-auto">
