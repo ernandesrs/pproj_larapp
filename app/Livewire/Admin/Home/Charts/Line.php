@@ -2,9 +2,9 @@
 
 namespace App\Livewire\Admin\Home\Charts;
 
-use App\Livewire\Builders\Charts\ChartBuilder;
-use App\Livewire\Builders\Charts\Colors;
-use App\Livewire\Builders\Charts\Dataset;
+use App\Livewire\Admin\Builders\Charts\ChartBuilder;
+use App\Livewire\Admin\Builders\Charts\Colors;
+use App\Livewire\Admin\Builders\Charts\Dataset;
 use Livewire\Component;
 
 class Line extends Component

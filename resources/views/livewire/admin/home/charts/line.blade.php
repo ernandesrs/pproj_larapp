@@ -1,4 +1,4 @@
-<x-common.chart
+<x-admin.chart
     :id="$this->id"
     :type="$this->type"
     :title="$this->title"

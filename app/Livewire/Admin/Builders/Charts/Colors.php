@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Builders\Charts;
+namespace App\Livewire\Admin\Builders\Charts;
 
 class Colors
 {

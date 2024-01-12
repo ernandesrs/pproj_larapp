@@ -26,13 +26,13 @@
                 'legend' => [
                     'position' => 'bottom',
                     'labels' => [
-                        'color' => \App\Livewire\Builders\Charts\Colors::labels(),
+                        'color' => \App\Livewire\Admin\Builders\Charts\Colors::labels(),
                     ],
                 ],
                 'title' => [
                     'display' => empty($title) ? false : true,
                     'text' => $title,
-                    'color' => \App\Livewire\Builders\Charts\Colors::title(),
+                    'color' => \App\Livewire\Admin\Builders\Charts\Colors::title(),
                     'font' => [
                         'weight' => '600',
                         'size' => '13px',
@@ -41,7 +41,7 @@
                 'subtitle' => [
                     'display' => empty($subtitle) ? false : true,
                     'text' => $subtitle,
-                    'color' => \App\Livewire\Builders\Charts\Colors::subtitle(),
+                    'color' => \App\Livewire\Admin\Builders\Charts\Colors::subtitle(),
                     'font' => [
                         'size' => 12,
                         'family' => 'tahoma',

@@ -1,4 +1,4 @@
-<x-common.chart
+<x-admin.chart
     live-update="30"
     :id="$this->id"
     :type="$this->type"
