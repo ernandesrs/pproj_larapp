@@ -4,7 +4,7 @@ namespace App\Livewire\Builders\Charts;
 
 class Colors
 {
-    static $theme = 'dark';
+    static $theme = 'light';
 
     static $colors = [
         'blue' => [
