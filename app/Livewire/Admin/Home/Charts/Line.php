@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Home\Charts;
 
 use App\Livewire\Builders\Charts\ChartBuilder;
+use App\Livewire\Builders\Charts\Colors;
 use App\Livewire\Builders\Charts\Dataset;
 use Livewire\Component;
 
@@ -58,26 +59,33 @@ class Line extends Component
     {
         return function () {
             return [
-                new Dataset('Dataset #1', 10, '#F44336'),
-                new Dataset('Dataset #1', 73, '#F44336'),
-                new Dataset('Dataset #1', 45, '#F44336'),
-                new Dataset('Dataset #1', 70, '#F44336'),
-                new Dataset('Dataset #1', 80, '#F44336'),
-                new Dataset('Dataset #1', 90, '#F44336'),
+                new Dataset('Dataset #1', 10, Colors::red()),
+                new Dataset('Dataset #1', 73, Colors::red()),
+                new Dataset('Dataset #1', 45, Colors::red()),
+                new Dataset('Dataset #1', 70, Colors::red()),
+                new Dataset('Dataset #1', 80, Colors::red()),
+                new Dataset('Dataset #1', 90, Colors::red()),
 
-                new Dataset('Dataset #2', 30, '#00FF90'),
-                new Dataset('Dataset #2', 53, '#00FF90'),
-                new Dataset('Dataset #2', 35, '#00FF90'),
-                new Dataset('Dataset #2', 90, '#00FF90'),
-                new Dataset('Dataset #2', 78, '#00FF90'),
-                new Dataset('Dataset #2', 57, '#00FF90'),
+                new Dataset('Dataset #2', 30, Colors::green()),
+                new Dataset('Dataset #2', 53, Colors::green()),
+                new Dataset('Dataset #2', 35, Colors::green()),
+                new Dataset('Dataset #2', 90, Colors::green()),
+                new Dataset('Dataset #2', 78, Colors::green()),
+                new Dataset('Dataset #2', 57, Colors::green()),
 
-                new Dataset('Dataset #3', 40, '#D79090'),
-                new Dataset('Dataset #3', 89, '#D79090'),
-                new Dataset('Dataset #3', 102, '#D79090'),
-                new Dataset('Dataset #3', 78, '#D79090'),
-                new Dataset('Dataset #3', 91, '#D79090'),
-                new Dataset('Dataset #3', 67, '#D79090')
+                new Dataset('Dataset #3', 40, Colors::orange()),
+                new Dataset('Dataset #3', 89, Colors::orange()),
+                new Dataset('Dataset #3', 102, Colors::orange()),
+                new Dataset('Dataset #3', 78, Colors::orange()),
+                new Dataset('Dataset #3', 91, Colors::orange()),
+                new Dataset('Dataset #3', 67, Colors::orange()),
+
+                new Dataset('Dataset #4', 80, Colors::violet()),
+                new Dataset('Dataset #4', 8, Colors::violet()),
+                new Dataset('Dataset #4', 73, Colors::violet()),
+                new Dataset('Dataset #4', 8, Colors::violet()),
+                new Dataset('Dataset #4', 105, Colors::violet()),
+                new Dataset('Dataset #4', 75, Colors::violet()),
             ];
         };
     }

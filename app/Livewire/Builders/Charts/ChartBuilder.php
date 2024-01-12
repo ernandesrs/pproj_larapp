@@ -138,7 +138,7 @@ trait ChartBuilder
     {
         foreach ($datasets as $dataset) {
             if (get_class($dataset) !== Dataset::class) {
-                throw new \Exception("The 'datasets' parameter must be an array of '\App\Helpers\Charts\Dataset'");
+                throw new \Exception("The 'datasets' parameter must be an array of '\App\Livewire\Builders\Charts\Dataset'");
             }
 
             $this->addDataset($dataset->dataset, $dataset->value, $dataset->color);
@@ -150,10 +150,10 @@ trait ChartBuilder
      *
      * @param string $dataset
      * @param mixed $value
-     * @param string $color
+     * @param null|array|string $color
      * @return void
      */
-    private function addDataset(string $dataset, mixed $value, string $color)
+    private function addDataset(string $dataset, mixed $value, null|array|string $color)
     {
         $datasetName = \Str::slug($dataset, '_');
         $datasetIndex = array_search($datasetName, array_column($this->datasets, 'name'));
@@ -172,7 +172,7 @@ trait ChartBuilder
         }
 
         $this->datasets[$datasetIndex]['data'][] = $value;
-        $this->datasets[$datasetIndex]['borderColor'][] = in_array($this->type, ['line']) ? $color : '#ffffff';
+        $this->datasets[$datasetIndex]['borderColor'][] = in_array($this->type, ['line']) ? $color : Colors::border();
         $this->datasets[$datasetIndex]['backgroundColor'][] = $color;
     }
 }

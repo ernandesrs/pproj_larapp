@@ -3,6 +3,7 @@
 namespace App\Livewire\Admin\Home\Charts;
 
 use App\Livewire\Builders\Charts\ChartBuilder;
+use App\Livewire\Builders\Charts\Colors;
 use App\Livewire\Builders\Charts\Dataset;
 use Livewire\Component;
 
@@ -24,7 +25,9 @@ class Doughnut extends Component
 
         $this->addLabels([
             'Label #1',
-            'Label #2'
+            'Label #2',
+            'Label #3',
+            'Label #4',
         ]);
 
         $this->startChart();
@@ -49,11 +52,15 @@ class Doughnut extends Component
     {
         return function () {
             return [
-                new Dataset('Dataset #1', 33, '#2E9AFE'),
-                new Dataset('Dataset #1', 12, '#00DE74'),
+                new Dataset('Dataset #1', 33, Colors::violet()),
+                new Dataset('Dataset #1', 12, Colors::orange()),
+                new Dataset('Dataset #1', 12, Colors::yellow()),
+                new Dataset('Dataset #1', 12, Colors::gray()),
 
-                new Dataset('Dataset #2', 24, '#2E9AFE'),
-                new Dataset('Dataset #2', 72, '#00DE74')
+                new Dataset('Dataset #2', 24, Colors::violet()),
+                new Dataset('Dataset #2', 72, Colors::orange()),
+                new Dataset('Dataset #2', 12, Colors::yellow()),
+                new Dataset('Dataset #2', 12, Colors::gray())
             ];
         };
     }

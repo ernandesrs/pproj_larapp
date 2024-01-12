@@ -2,8 +2,11 @@
 
 namespace App\Livewire\Admin\Home\Charts;
 
+use App\Enums\Admin\UserPermissionsEnum;
 use App\Livewire\Builders\Charts\ChartBuilder;
+use App\Livewire\Builders\Charts\Colors;
 use App\Livewire\Builders\Charts\Dataset;
+use App\Models\User;
 use Livewire\Component;
 
 class Users extends Component
@@ -55,9 +58,9 @@ class Users extends Component
     {
         return function () {
             return [
-                new Dataset('Total', \App\Models\User::count(), '#2E9AFE'),
-                new Dataset('Total', \App\Models\User::permission(\App\Enums\Admin\UserPermissionsEnum::ADMIN_ACCESS->value)->count(), '#00DE74'),
-                new Dataset('Total', \App\Models\User::whereNull('email_verified_at')->count(), '#FE4100')
+                new Dataset('Total', User::count(), Colors::blue()),
+                new Dataset('Total', User::permission(UserPermissionsEnum::ADMIN_ACCESS->value)->count(), Colors::green()),
+                new Dataset('Total', User::whereNull('email_verified_at')->count(), Colors::red())
             ];
         };
     }
