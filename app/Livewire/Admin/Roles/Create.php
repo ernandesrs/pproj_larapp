@@ -3,7 +3,7 @@
 namespace App\Livewire\Admin\Roles;
 
 use App\Enums\Admin\RolePermissionsEnum;
-use App\Livewire\Builder\Breadcrumb;
+use App\Livewire\Builders\Breadcrumb;
 use App\Livewire\Traits\IsPage;
 use App\Livewire\Traits\ResponseTrait;
 use Livewire\Component;

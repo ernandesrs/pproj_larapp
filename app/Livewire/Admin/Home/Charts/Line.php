@@ -2,8 +2,8 @@
 
 namespace App\Livewire\Admin\Home\Charts;
 
-use App\Helpers\Charts\ChartBuilder;
-use App\Helpers\Charts\Dataset;
+use App\Livewire\Builders\Charts\ChartBuilder;
+use App\Livewire\Builders\Charts\Dataset;
 use Livewire\Component;
 
 class Line extends Component

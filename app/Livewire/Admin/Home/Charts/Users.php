@@ -2,7 +2,8 @@
 
 namespace App\Livewire\Admin\Home\Charts;
 
-use App\Helpers\Charts\ChartBuilder;
+use App\Livewire\Builders\Charts\ChartBuilder;
+use App\Livewire\Builders\Charts\Dataset;
 use Livewire\Component;
 
 class Users extends Component
@@ -54,9 +55,9 @@ class Users extends Component
     {
         return function () {
             return [
-                new \App\Helpers\Charts\Dataset('Total', \App\Models\User::count(), '#2E9AFE'),
-                new \App\Helpers\Charts\Dataset('Total', \App\Models\User::permission(\App\Enums\Admin\UserPermissionsEnum::ADMIN_ACCESS->value)->count(), '#00DE74'),
-                new \App\Helpers\Charts\Dataset('Total', \App\Models\User::whereNull('email_verified_at')->count(), '#FE4100')
+                new Dataset('Total', \App\Models\User::count(), '#2E9AFE'),
+                new Dataset('Total', \App\Models\User::permission(\App\Enums\Admin\UserPermissionsEnum::ADMIN_ACCESS->value)->count(), '#00DE74'),
+                new Dataset('Total', \App\Models\User::whereNull('email_verified_at')->count(), '#FE4100')
             ];
         };
     }

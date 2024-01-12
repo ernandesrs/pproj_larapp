@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Helpers\Charts;
+namespace App\Livewire\Builders\Charts;
 
 trait ChartBuilder
 {

@@ -4,7 +4,7 @@ namespace App\Livewire\Admin\Users;
 
 use App\Enums\Admin\UserPermissionsEnum;
 use App\Livewire\Traits\IsPage;
-use App\Livewire\Builder\Breadcrumb;
+use App\Livewire\Builders\Breadcrumb;
 use App\Livewire\Traits\ResponseTrait;
 use App\Services\UserService;
 use Livewire\Component;

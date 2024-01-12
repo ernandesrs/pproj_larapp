@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Livewire\Builder;
+namespace App\Livewire\Builders;
 
 class Breadcrumb
 {

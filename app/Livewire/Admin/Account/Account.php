@@ -3,7 +3,7 @@
 namespace App\Livewire\Admin\Account;
 
 use App\Livewire\Traits\IsPage;
-use App\Livewire\Builder\Breadcrumb;
+use App\Livewire\Builders\Breadcrumb;
 use Livewire\Component;
 
 class Account extends Component
