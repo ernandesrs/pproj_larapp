@@ -131,7 +131,7 @@ trait ChartBuilder
     /**
      * Add chart data
      *
-     * @param array<\App\Helpers\Charts\Dataset> $datasets
+     * @param array<\App\Livewire\Builders\Charts\Dataset> $datasets
      * @return void
      */
     private function addData(array $datasets)
