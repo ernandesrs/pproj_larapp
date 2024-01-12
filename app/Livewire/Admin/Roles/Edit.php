@@ -9,8 +9,8 @@ use App\Livewire\Builder\Breadcrumb;
 use App\Livewire\Traits\ResponseTrait;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
-use Spatie\Permission\Models\Permission;
-use Spatie\Permission\Models\Role;
+use App\Models\Permission;
+use App\Models\Role;
 
 class Edit extends Component
 {

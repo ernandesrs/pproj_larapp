@@ -7,7 +7,7 @@ use App\Livewire\Builder\Breadcrumb;
 use App\Livewire\Traits\IsPage;
 use App\Livewire\Traits\ResponseTrait;
 use Livewire\Component;
-use Spatie\Permission\Models\Role;
+use App\Models\Role;
 
 class Create extends Component
 {

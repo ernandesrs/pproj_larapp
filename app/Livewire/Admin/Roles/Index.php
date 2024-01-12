@@ -8,7 +8,7 @@ use App\Livewire\Traits\IsListPage;
 use App\Livewire\Builder\Breadcrumb;
 use App\Livewire\Traits\ResponseTrait;
 use Livewire\Component;
-use Spatie\Permission\Models\Role;
+use App\Models\Role;
 
 class Index extends Component
 {

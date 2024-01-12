@@ -7,7 +7,7 @@ use App\Livewire\Traits\ResponseTrait;
 use App\Models\User;
 use Livewire\Attributes\Locked;
 use Livewire\Component;
-use Spatie\Permission\Models\Role as RoleModel;
+use App\Models\Role as RoleModel;
 
 class Role extends Component
 {
