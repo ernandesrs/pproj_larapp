@@ -68,6 +68,7 @@
 
 <canvas
     @chart_data_updated.window="chartUpdatedHandler"
+    @theme_has_change.window="themeChangeHandler"
     x-data="{
         id: '{{ $id }}',
         config: {{ json_encode($config) }},
@@ -91,5 +92,9 @@
     
             window[this.id].render();
             window[this.id].update('active');
+        },
+        themeChangeHandler(e) {
+            let newTheme = window.adminTheme.getTheme();
+            console.log(newTheme, e)
         }
     }" {{ $attributes }}></canvas>

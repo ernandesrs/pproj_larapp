@@ -19,16 +19,11 @@
     
         init() {
             this.show_sidebar = window.innerWidth >= 1024 ? true : false;
-            this.current_theme = localStorage.getItem('admin_theme') ?? 'light';
-            this.setTheme();
-        },
-        setTheme() {
-            document.querySelector('html').setAttribute('theme', this.current_theme);
+            this.current_theme = window.adminTheme.getTheme();
         },
         toggleTheme() {
-            this.current_theme = this.current_theme == 'light' ? 'dark' : 'light';
-            localStorage.setItem('admin_theme', this.current_theme);
-            this.setTheme();
+            window.adminTheme.toggleTheme();
+            this.current_theme = window.adminTheme.getTheme();
         },
         toggleSidebar() {
             this.show_sidebar ? this.closeSidebar() : this.showSidebar();
