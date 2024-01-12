@@ -57,7 +57,7 @@ trait IsListPage
      */
     public function getList()
     {
-        return ($this->modelClass())::query()->orderBy('created_at', 'desc')->paginate(15);
+        return ($this->modelClass())::query()->orderBy('created_at', 'asc')->paginate(15);
     }
 
     /**

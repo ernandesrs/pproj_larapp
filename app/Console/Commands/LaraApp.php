@@ -25,9 +25,11 @@ class LaraApp extends Command
      */
     public function handle()
     {
-        $importantSeeders = [
+        $rolePermissionSeeder = [
             'RolesAndPermissionsSeeder'
         ];
+
+        $othersImportantSeeders = [];
 
         if ($this->option('super')) {
             $superUserData = $this->getValidSuperAdminData();
@@ -41,8 +43,8 @@ class LaraApp extends Command
         $seedUsers = $this->choice('Seed users?', ['no', 'yes']);
 
         if ($seedUsers == 'yes') {
-            $importantSeeders = [
-                ...$importantSeeders,
+            $othersImportantSeeders = [
+                ...$othersImportantSeeders,
                 'UserSeeder'
             ];
         }
@@ -52,16 +54,27 @@ class LaraApp extends Command
             $this->info('Database cleared!');
         }
 
+        // Execute role and permission seeder
+        foreach ($rolePermissionSeeder as $rpSeeder) {
+            $this->call('db:seed', [
+                '--class' => $rpSeeder
+            ]);
+        }
+        $this->info('Roles registered!');
+
+        $this->registerSuperUser($superUserData);
+        $this->registerAdminUser();
+
+        sleep(1);
+
         // Execute seeders
-        foreach ($importantSeeders as $seeder) {
+        foreach ($othersImportantSeeders as $seeder) {
             $this->call('db:seed', [
                 '--class' => $seeder
             ]);
         }
 
-        $this->info('Basic data generated!');
-
-        $this->registerSuperUser($superUserData);
+        $this->info('Others basic data generated!');
     }
 
     /**
@@ -110,7 +123,7 @@ class LaraApp extends Command
      */
     private function registerSuperUser(array $data)
     {
-        $superRole = \Spatie\Permission\Models\Role::findByName(\App\Enums\RolesEnum::SUPER_USER->value);
+        $superRole = \App\Models\Role::findByName(\App\Enums\RolesEnum::SUPER_USER->value);
         $superUser = \App\Services\UserService::create([
             'first_name' => 'Super',
             'last_name' => 'User',
@@ -122,5 +135,27 @@ class LaraApp extends Command
         $superUser->assignRole($superRole);
 
         $this->info('Super user created!');
+    }
+
+    /**
+     * Register admin user
+     *
+     * @return void
+     */
+    private function registerAdminUser()
+    {
+        $adminRole = \App\Models\Role::findByName(\App\Enums\RolesEnum::ADMIN_USER->value);
+        $adminUser = \App\Services\UserService::create([
+            'first_name' => 'Admin',
+            'last_name' => 'User',
+            'username' => 'Adminuser',
+            'gender' => 'n',
+            'password' => 'password',
+            'email' => 'admin@mail.com'
+        ]);
+
+        $adminUser->assignRole($adminRole);
+
+        $this->info('Admin user created!');
     }
 }
