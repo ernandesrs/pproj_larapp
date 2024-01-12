@@ -20,15 +20,26 @@
             class="col-span-12 border p-10"
             title="{{ __('words.permissions') }}">
 
-            <div class="flex flex-wrap gap-6">
+            <div class="flex flex-wrap gap-6 py-4">
                 @if ($role->name !== \App\Enums\RolesEnum::SUPER_USER->value)
+                    @php
+                        $oldGroup = '';
+                    @endphp
                     @foreach ($permissions as $permission)
+                        @php
+                            $group = explode('_', $permission->name)[1];
+                            if ($group !== $oldGroup) {
+                                echo '<hr class="w-full border-b dark:border-admin-dark-normal">';
+
+                                $oldGroup = $group;
+                            }
+                        @endphp
                         <div class="flex items-center">
                             <x-admin.toggler
                                 :active="$role->hasPermissionTo($permission->name)"
                                 wire:click="addOrRmPermission('{{ $permission->id }}')" /> <span
                                 class="inline-block ml-2 text-sm">
-                                {{ \App\Enums\Admin\RolePermissionsEnum::tryFrom($permission->name)?->label() ?? $permission->name }}
+                                {{ $permission->label() }}
                             </span>
                         </div>
                     @endforeach
