@@ -27,7 +27,7 @@
 
     if (empty($wireActionDelete) && method_exists($this, 'getListDeleteButton')) {
         if ($delete = $this->getListDeleteButton()) {
-            $wireActionDelete = $delete['action'] . '(' . $id . ')';
+            $wireActionDelete = ($delete['action'] ?? 'delete') . '(' . $id . ')';
             $actionDeletePermission = $delete['permission'];
         }
     }

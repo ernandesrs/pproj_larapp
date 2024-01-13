@@ -33,7 +33,7 @@ class Index extends Component
      *
      * @return void
      */
-    public function deleteRole(Role $role)
+    public function delete(Role $role)
     {
         $this->authorize(RolePermissionsEnum::DELETE->value);
 

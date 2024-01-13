@@ -44,6 +44,18 @@ trait IsListPage
     public abstract function listShowButton();
 
     /**
+     * List edit button
+     *
+     * @return null|array Hidden button when return null.
+     * Edit if return array like:
+     * [
+     *      'permission' => 'edit_users',
+     *      'href' => 'https://ww.../admin/users/_id_/edit
+     * ]
+     */
+    public abstract function listEditButton();
+
+    /**
      * List delete button
      *
      * @return null|array Hidden button when return null. Show if return array like: ['permission' => 'delete_user', 'methodName' => 'delete']
@@ -98,5 +110,15 @@ trait IsListPage
     public function getListDeleteButton()
     {
         return $this->listDeleteButton();
+    }
+
+    /**
+     * Check if list has actions defined
+     *
+     * @return bool
+     */
+    public function listHasActions()
+    {
+        return $this->getListShowButton() || $this->getListEditButton() || $this->getListDeleteButton();
     }
 }

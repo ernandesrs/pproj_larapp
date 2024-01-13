@@ -41,6 +41,7 @@
             this.clickOutMonitorRemove();
         },
         methodConfirmed() {
+            this.clickOutMonitorRemove();
             this.confirmed = true;
         },
         clickOutMonitor() {

@@ -134,7 +134,7 @@ class Index extends Component
     /**
      * Edit button
      *
-     * @return array
+     * @return null|array
      */
     function listEditButton()
     {

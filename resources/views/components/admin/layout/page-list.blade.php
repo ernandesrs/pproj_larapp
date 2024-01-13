@@ -4,7 +4,11 @@
     <x-admin.list.filter />
 
     {{-- list --}}
-    {{ $slot }}
+    <x-admin.list.table
+        :hasActions="$this->listHasActions()"
+        :columns="$this->getListLabels()">
+        {{ $slot }}
+    </x-admin.list.table>
 
     {{-- pagination --}}
     <x-admin.list.pagination

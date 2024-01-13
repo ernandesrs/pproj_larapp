@@ -1,6 +1,19 @@
 @props([
-    'columns' => $columns ?? $this->getListLabels(),
+    'hasActions' => false,
+    'columns' => [],
 ])
+
+@php
+    if ($hasActions) {
+        $columns = [
+            ...$columns,
+            [
+                'label' => __('words.actions'),
+                'class' => 'text-right',
+            ],
+        ];
+    }
+@endphp
 
 <div class="overflow-x-auto">
     <table
@@ -8,7 +21,8 @@
         <thead>
             <x-admin.list.table.row class="">
                 @foreach ($columns as $column)
-                    <th class="whitespace-nowrap px-4 py-2 font-medium text-admin-dark-light-2 text-left">
+                    <th
+                        class="whitespace-nowrap px-4 py-2 font-medium text-admin-dark-light-2 {{ $column['class'] ?? 'text-left' }}">
                         <span class="block py-1">
                             {{ $column['label'] }}
                         </span>
