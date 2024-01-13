@@ -56,6 +56,8 @@
         ],
     ];
 
+    $colors = \App\Livewire\Admin\Builders\Charts\Colors::$colors;
+
     if (!empty($liveUpdate)) {
         if (!is_numeric($liveUpdate)) {
             throw new \Exception('The liveUpdate prop must be of type number');
@@ -72,14 +74,44 @@
     x-data="{
         id: '{{ $id }}',
         config: {{ json_encode($config) }},
+        colors: {{ json_encode($colors) }},
     
         init() {
+            const config = JSON.parse(JSON.stringify(this.config));
+    
             if (!window[this.id]) {
-                window[this.id] = new Chart($el, this.config);
+                window[this.id] = new Chart($el, config);
             } else {
                 window[this.id].destroy();
-                window[this.id] = new Chart($el, this.config);
+                window[this.id] = new Chart($el, config);
             }
+    
+            this.defineColors();
+        },
+        defineColors() {
+            let theme = window.adminTheme.getTheme();
+    
+            {{-- define dataset colors --}}
+            this.config.data.datasets.forEach((datasetValue, datasetIndex) => {
+                {{-- define bg color --}}
+                datasetValue.backgroundColor.forEach((bgValue, bgIndex) => {
+                    window[this.id].config.data.datasets[datasetIndex].backgroundColor[bgIndex] = this.colors[bgValue][theme];
+                });
+    
+                {{-- define border color --}}
+                datasetValue.borderColor.forEach((borderValue, borderIndex) => {
+                    window[this.id].config.data.datasets[datasetIndex].borderColor[borderIndex] = this.colors[borderValue][theme];
+                });
+            });
+    
+            {{-- define title, subtitle and labels colors --}}
+            window[this.id].config.options.plugins.title.color = this.colors['title'][theme];
+            window[this.id].config.options.plugins.subtitle.color = this.colors['title'][theme];
+            window[this.id].config.options.plugins.legend.labels.color = this.colors['labels'][theme];
+    
+            {{-- render/update --}}
+            window[this.id].render();
+            window[this.id].update('active');
         },
         chartUpdatedHandler(e) {
             if (e.detail[0]?.id != this.id) {
@@ -94,7 +126,6 @@
             window[this.id].update('active');
         },
         themeChangeHandler(e) {
-            let newTheme = window.adminTheme.getTheme();
-            console.log(newTheme, e)
+            this.defineColors();
         }
     }" {{ $attributes }}></canvas>

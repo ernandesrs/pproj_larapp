@@ -4,8 +4,6 @@ namespace App\Livewire\Admin\Builders\Charts;
 
 class Colors
 {
-    static $theme = 'light';
-
     static $colors = [
         'blue' => [
             'light' => '#38bdf8',
@@ -50,23 +48,13 @@ class Colors
     ];
 
     /**
-     * Theme
-     *
-     * @return string
-     */
-    static function theme()
-    {
-        return static::$theme;
-    }
-
-    /**
      * Blue colors
      *
      * @return string|array
      */
     static function blue()
     {
-        return static::$colors['blue'][static::theme()];
+        return 'blue';
     }
 
     /**
@@ -76,7 +64,7 @@ class Colors
      */
     static function red()
     {
-        return static::$colors['red'][static::theme()];
+        return 'red';
     }
 
     /**
@@ -86,7 +74,7 @@ class Colors
      */
     static function green()
     {
-        return static::$colors['green'][static::theme()];
+        return 'green';
     }
 
     /**
@@ -96,7 +84,7 @@ class Colors
      */
     static function orange()
     {
-        return static::$colors['orange'][static::theme()];
+        return 'orange';
     }
 
     /**
@@ -106,7 +94,7 @@ class Colors
      */
     static function violet()
     {
-        return static::$colors['violet'][static::theme()];
+        return 'violet';
     }
 
     /**
@@ -116,7 +104,7 @@ class Colors
      */
     static function yellow()
     {
-        return static::$colors['yellow'][static::theme()];
+        return 'yellow';
     }
 
     /**
@@ -126,7 +114,7 @@ class Colors
      */
     static function gray()
     {
-        return static::$colors['gray'][static::theme()];
+        return 'gray';
     }
 
     /**
@@ -136,7 +124,7 @@ class Colors
      */
     static function border()
     {
-        return static::$colors['border'][static::theme()];
+        return 'border';
     }
 
     /**
@@ -146,7 +134,7 @@ class Colors
      */
     static function title()
     {
-        return static::$colors['title'][static::theme()];
+        return 'title';
     }
 
     /**
@@ -156,7 +144,7 @@ class Colors
      */
     static function subtitle()
     {
-        return static::title();
+        return 'title';
     }
 
     /**
@@ -166,6 +154,6 @@ class Colors
      */
     static function labels()
     {
-        return static::$colors['labels'][static::theme()];
+        return 'labels';
     }
 }
