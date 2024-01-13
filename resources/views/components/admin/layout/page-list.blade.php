@@ -1,7 +1,15 @@
 <x-admin.layout.page>
 
     {{-- filter --}}
-    <x-admin.list.filter />
+    @if ($this->showFilterAndSearchBar())
+        <x-admin.list.filter
+            :show-search="$this->isSearchable()"
+            :show-filters="$this->isFilterable()">
+            <x-slot name="filters">
+                {{ $filters ?? null }}
+            </x-slot>
+        </x-admin.list.filter>
+    @endif
 
     {{-- list --}}
     <x-admin.list.table

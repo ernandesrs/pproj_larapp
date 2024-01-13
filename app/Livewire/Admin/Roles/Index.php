@@ -58,6 +58,26 @@ class Index extends Component
      * 
      */
 
+    /**
+     * Searchable fields
+     *
+     * @return null|array
+     */
+    function searchableFields()
+    {
+        return null;
+    }
+
+    /**
+     * Filterable fields
+     *
+     * @return null|array
+     */
+    function filterableFields()
+    {
+        return null;
+    }
+
     function pageTitle()
     {
         return __('words.roles');

@@ -1,5 +1,10 @@
 <x-admin.layout.page-list>
 
+    <x-slot name="filters">
+
+        {{--  --}}
+
+    </x-slot>
 
     @foreach ($this->getList() as $user)
         <x-admin.list.table.row>

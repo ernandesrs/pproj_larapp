@@ -2,20 +2,11 @@
 
 namespace App\Livewire\Traits;
 
-use Livewire\Attributes\Url;
 use Livewire\WithPagination;
 
 trait IsListPage
 {
-    use IsPage, WithPagination;
-
-    /**
-     * Search
-     *
-     * @var string
-     */
-    #[Url(except: '')]
-    public $search = '';
+    use IsPage, WithPagination, IsFilterable;
 
     /**
      * Model class
@@ -69,7 +60,9 @@ trait IsListPage
      */
     public function getList()
     {
-        return ($this->modelClass())::query()->orderBy('created_at', 'asc')->paginate(15);
+        $modelInstance = new($this->modelClass())();
+
+        return ($this->needsFilter() ? $this->filter($modelInstance) : $modelInstance->orderBy('created_at', 'asc'))->paginate(15);
     }
 
     /**

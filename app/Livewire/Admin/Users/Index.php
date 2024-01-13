@@ -50,6 +50,26 @@ class Index extends Component
     }
 
     /**
+     * Searchable fields
+     *
+     * @return null|array
+     */
+    function searchableFields()
+    {
+        return User::searchableFields();
+    }
+
+    /**
+     * Filterable fields
+     *
+     * @return null|array
+     */
+    function filterableFields()
+    {
+        return [];
+    }
+
+    /**
      * Page title
      *
      * @return string
