@@ -25,10 +25,9 @@
                 <x-admin.list.table.col>
                     <div class="flex flex-wrap gap-1">
                         @foreach ($user->roles as $role)
-                            <span
-                                class="inline-block px-2 py-1 rounded-sm bg-admin-success-dark-1 text-admin-light-normal text-xs cursor-default">
-                                {{ \App\Enums\RolesEnum::tryFrom($role->name)?->label() ?? $role->name }}
-                            </span>
+                            <x-admin.badge
+                                variant="success"
+                                text="{{ \App\Enums\RolesEnum::tryFrom($role->name)?->label() ?? $role->name }}" />
                         @endforeach
                     </div>
                 </x-admin.list.table.col>
