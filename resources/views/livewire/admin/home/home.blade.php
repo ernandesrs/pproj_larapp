@@ -7,7 +7,7 @@
             no-container>
             <div class="grid grid-cols-12 gap-6">
 
-                <x-admin.cards.card
+                <x-admin.cards.simple-info-card
                     variant="dark"
                     icon="people"
                     title="{{ __('words.users') }}"
@@ -25,9 +25,9 @@
                         </span>
                     </div>
 
-                </x-admin.cards.card>
+                </x-admin.cards.simple-info-card>
 
-                <x-admin.cards.card
+                <x-admin.cards.simple-info-card
                     variant="primary"
                     icon="lock"
                     title="{{ __('words.roles') }}"
@@ -41,9 +41,9 @@
                         </a>
                     </div>
 
-                </x-admin.cards.card>
+                </x-admin.cards.simple-info-card>
 
-                <x-admin.cards.card
+                <x-admin.cards.simple-info-card
                     variant="info"
                     icon="grid"
                     title="{{ __('words.examples') }}"
@@ -58,7 +58,7 @@
                         </span>
                     </div>
 
-                </x-admin.cards.card>
+                </x-admin.cards.simple-info-card>
             </div>
         </x-admin.section>
 
