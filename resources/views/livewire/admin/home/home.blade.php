@@ -15,14 +15,16 @@
 
                     <div class="flex flex-wrap gap-1 text-white">
                         <a wire:navigate href="{{ route('admin.users') }}">
-                            <span class="inline-block px-3 py-1 bg-admin-dark-normal text-xs rounded-sm">
-                                Total: {{ \App\Models\User::all()->count() }}
-                            </span>
+                            <x-admin.badge
+                                variant="dark"
+                                sm
+                                text="Total: {{ \App\Models\User::all()->count() }}" />
                         </a>
 
-                        <span class="inline-block px-3 py-1 bg-admin-dark-normal text-xs rounded-sm">
-                            Adms: {{ \App\Models\User::permission(\App\Enums\Admin\UserPermissionsEnum::ADMIN_ACCESS)->count() }}
-                        </span>
+                        <x-admin.badge
+                            variant="dark"
+                            sm
+                            text="Adms: {{ \App\Models\User::permission(\App\Enums\Admin\UserPermissionsEnum::ADMIN_ACCESS)->count() }}" />
                     </div>
 
                 </x-admin.cards.simple-info-card>
@@ -35,9 +37,10 @@
 
                     <div class="flex flex-wrap gap-1 text-white">
                         <a wire:navigate href="{{ route('admin.roles') }}">
-                            <span class="inline-block px-3 py-1 bg-admin-primary-normal text-xs rounded-sm">
-                                Total: {{ \Spatie\Permission\Models\Role::all()->count() }}
-                            </span>
+                            <x-admin.badge
+                                variant="primary"
+                                sm
+                                text="Total: {{ \Spatie\Permission\Models\Role::all()->count() }}" />
                         </a>
                     </div>
 
@@ -50,12 +53,15 @@
                     class="col-span-12 xl:col-span-4">
 
                     <div class="flex flex-wrap gap-1 text-white">
-                        <span class="inline-block px-3 py-1 bg-admin-info-normal text-xs rounded-sm">
-                            Lorem dolor
-                        </span>
-                        <span class="inline-block px-3 py-1 bg-admin-info-normal text-xs rounded-sm">
-                            Sit natus
-                        </span>
+                        <x-admin.badge
+                            variant="info"
+                            sm
+                            text="Lorem dolor" />
+                        <x-admin.badge
+                            variant="info"
+                            outlined
+                            sm
+                            text="Sit natus" />
                     </div>
 
                 </x-admin.cards.simple-info-card>

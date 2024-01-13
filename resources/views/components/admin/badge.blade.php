@@ -5,6 +5,8 @@
     'text' => '',
     'outlined' => false,
     'dot' => false,
+    'sm' => false,
+    'lg' => false,
 ])
 
 @php
@@ -20,12 +22,18 @@
         'danger' => ($outlined ? 'text-admin-danger-normal dark:text-admin-danger-dark-2' : 'bg-admin-danger-normal dark:bg-admin-danger-dark-2 text-admin-light-normal') . ' border border-admin-danger-normal dark:border-admin-danger-dark-2',
 
         'light' => ($outlined ? 'text-admin-light-dark-2 dark:text-opacity-60' : 'bg-admin-light-normal dark:bg-admin-dark-normal text-admin-dark-light-2 text-opacity-60 dark:text-admin-light-dark-2') . ' border border-admin-light-normal dark:border-admin-dark-normal',
+
+        'dark' => ($outlined ? 'text-admin-dark-normal dark:text-admin-dark-dark-1' : 'bg-admin-dark-normal dark:bg-admin-dark-dark-1 text-admin-light-normal') . ' border border-admin-dark-normal dark:border-admin-dark-dark-1',
     ];
 @endphp
 
 <span
     {{ $attributes->only(['class'])->merge([
-        'class' => 'text-xs ' . ($dot ? 'p-1 rounded-full ' : 'px-2 py-1 rounded ') . $variants[$variant],
+        'class' =>
+            ($dot
+                ? 'p-1 rounded-full '
+                : ($sm ? 'px-2 py-1 text-xs' : ($lg ? 'px-2 py-1 text-normal' : 'px-2 py-1 text-sm')) . ' rounded ') .
+            $variants[$variant],
     ]) }}>
     @if ($prependIcon)
         <x-admin.icon name="{{ $prependIcon }}"

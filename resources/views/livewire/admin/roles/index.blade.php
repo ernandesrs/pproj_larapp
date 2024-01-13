@@ -17,7 +17,7 @@
                     <div class="flex flex-wrap gap-1">
                         @for ($i = 0; $i < count($permissions); $i++)
                             @if ($i < 3)
-                                <x-admin.badge variant="light" text="{{ $permissions[$i]->label() }}" />
+                                <x-admin.badge variant="light" sm text="{{ $permissions[$i]->label() }}" />
                             @else
                                 @php
                                     $left = count($permissions) - $i;

@@ -26,6 +26,7 @@
                     <div class="flex flex-wrap gap-1">
                         @foreach ($user->roles as $role)
                             <x-admin.badge
+                                sm
                                 variant="success"
                                 text="{{ \App\Enums\RolesEnum::tryFrom($role->name)?->label() ?? $role->name }}" />
                         @endforeach
