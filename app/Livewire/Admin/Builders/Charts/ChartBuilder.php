@@ -131,7 +131,7 @@ trait ChartBuilder
     /**
      * Add chart data
      *
-     * @param array<\App\Livewire\Builders\Charts\Dataset> $datasets
+     * @param array<\App\Livewire\Admin\Builders\Charts\Dataset> $datasets
      * @return void
      */
     private function addData(array $datasets)
@@ -150,10 +150,10 @@ trait ChartBuilder
      *
      * @param string $dataset
      * @param mixed $value
-     * @param null|array|string $color
+     * @param string $color
      * @return void
      */
-    private function addDataset(string $dataset, mixed $value, null|array|string $color)
+    private function addDataset(string $dataset, mixed $value, string $color)
     {
         $datasetName = \Str::slug($dataset, '_');
         $datasetIndex = array_search($datasetName, array_column($this->datasets, 'name'));
@@ -165,7 +165,8 @@ trait ChartBuilder
                 'data' => [],
                 'borderColor' => [],
                 'backgroundColor' => [],
-                'tension' => .4
+                'tension' => .4, // type line
+                'hoverOffset' => 5
             ];
 
             $datasetIndex = array_key_last($this->datasets);

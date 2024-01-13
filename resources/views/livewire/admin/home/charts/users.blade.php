@@ -1,5 +1,5 @@
 <x-admin.chart
-    live-update="30"
+    live-update="3"
     :id="$this->id"
     :type="$this->type"
     :title="$this->title"

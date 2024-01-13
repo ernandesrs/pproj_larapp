@@ -22,6 +22,14 @@
         ],
         'options' => [
             'responsive' => true,
+            'hover' => [
+                'mode' => 'nearest',
+            ],
+            'elements' => [
+                'arc' => [
+                    'borderWidth' => 1,
+                ],
+            ],
             'plugins' => [
                 'legend' => [
                     'position' => 'bottom',
@@ -110,8 +118,7 @@
             window[this.id].config.options.plugins.legend.labels.color = this.colors['labels'][theme];
     
             {{-- render/update --}}
-            window[this.id].render();
-            window[this.id].update('active');
+            this.updateAndRender();
         },
         chartUpdatedHandler(e) {
             if (e.detail[0]?.id != this.id) {
@@ -122,8 +129,11 @@
                 window[this.id].config.data.datasets[i].data = e.detail[0]?.datasets[i].data;
             }
     
+            this.updateAndRender(true);
+        },
+        updateAndRender(updating = false) {
+            window[this.id].update(updating ? 'none' : 'show');
             window[this.id].render();
-            window[this.id].update('active');
         },
         themeChangeHandler(e) {
             this.defineColors();
