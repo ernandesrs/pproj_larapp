@@ -9,36 +9,86 @@
 
         <div class="flex justify-center gap-x-6 py-6">
             <div class="flex flex-col">
-                <label class="mb-2" for="">Button variant</label>
-                <select wire:model.blur="variant">
-                    <option value="primary">Primary</option>
-                    <option value="secondary">Secondary</option>
-                    <option value="success">Success</option>
-                    <option value="info">Info</option>
-                    <option value="danger">Danger</option>
-                    <option value="dark">Dark</option>
-                    <option value="light">Light</option>
-                </select>
+                <x-admin.form.field
+                    label="Button variant"
+                    type="select"
+                    wire:model.blur="variant"
+                    :options="[
+                        [
+                            'label' => 'Primary',
+                            'value' => 'primary',
+                        ],
+                        [
+                            'label' => 'Secondary',
+                            'value' => 'secondary',
+                        ],
+                        [
+                            'label' => 'Success',
+                            'value' => 'success',
+                        ],
+                        [
+                            'label' => 'Info',
+                            'value' => 'info',
+                        ],
+                        [
+                            'label' => 'Danger',
+                            'value' => 'danger',
+                        ],
+                        [
+                            'label' => 'Dark',
+                            'value' => 'dark',
+                        ],
+                        [
+                            'label' => 'Light',
+                            'value' => 'light',
+                        ],
+                    ]" />
             </div>
 
             <div class="flex flex-col">
-                <label class="mb-2" for="">Button size</label>
-                <select wire:model.blur="size">
-                    <option {{ $this->size == null ? 'selected' : '' }}>Default</option>
-                    <option value="xs">XS</option>
-                    <option value="sm">SM</option>
-                    <option value="lg">LG</option>
-                </select>
+                <x-admin.form.field
+                    label="Button size"
+                    type="select"
+                    wire:model.blur="size"
+                    :options="[
+                        [
+                            'label' => 'XS',
+                            'value' => 'xs',
+                        ],
+                        [
+                            'label' => 'SM',
+                            'value' => 'sm',
+                        ],
+                        [
+                            'label' => 'LG',
+                            'value' => 'lg',
+                        ],
+                    ]" />
             </div>
 
             <div class="flex flex-col">
-                <label class="mb-2" for="">Button style</label>
-                <select wire:model.blur="style">
-                    <option {{ $this->size == null ? 'selected' : '' }}>Default</option>
-                    <option value="outlined">Outlined</option>
-                    <option value="flat">Flat</option>
-                    <option value="link">Link</option>
-                </select>
+                <x-admin.form.field
+                    label="Button style"
+                    type="select"
+                    wire:model.blur="style"
+                    :options="[
+                        [
+                            'label' => 'Default',
+                            'value' => null,
+                        ],
+                        [
+                            'label' => 'Outlined',
+                            'value' => 'outlined',
+                        ],
+                        [
+                            'label' => 'Flat',
+                            'value' => 'flat',
+                        ],
+                        [
+                            'label' => 'Link',
+                            'value' => 'link',
+                        ],
+                    ]" />
             </div>
         </div>
 

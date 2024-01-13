@@ -2,10 +2,14 @@
 
 namespace App\Livewire\Admin\Examples;
 
+use App\Livewire\Admin\Builders\Breadcrumb;
+use App\Livewire\Traits\IsPage;
 use Livewire\Component;
 
 class Buttons extends Component
 {
+    use IsPage;
+
     public $variant = 'primary';
     public $size = null;
     public $style = null;
@@ -21,4 +25,25 @@ class Buttons extends Component
             ->layout('livewire.admin.layout')
             ->title('Buttons');
     }
+
+    function pageTitle()
+    {
+        return __('Buttons');
+    }
+
+    function pageSubtitle()
+    {
+        return '';
+    }
+
+    function pageBreadcrumb()
+    {
+        return (new Breadcrumb);
+    }
+
+    function pageCreateButton()
+    {
+        return null;
+    }
+
 }

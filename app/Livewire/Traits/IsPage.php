@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Traits;
 
-use App\Livewire\Builders\Breadcrumb;
+use App\Livewire\Admin\Builders\Breadcrumb;
 
 trait IsPage
 {

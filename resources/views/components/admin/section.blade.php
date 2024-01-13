@@ -14,7 +14,7 @@
             </h1>
             @if ($subtitle)
                 <p
-                    class="text-base font-semibold text-admin-dark-normal text-opacity-50 dark:text-admin-light-normal dark:opacity-80">
+                    class="text-base text-admin-dark-normal text-opacity-50 dark:text-admin-light-normal dark:opacity-80">
                     {{ $subtitle }}
                 </p>
             @endif
