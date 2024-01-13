@@ -20,13 +20,55 @@
 @php
     $variants = [
         'default' => [
-            'primary' => 'from-admin-primary-dark-1 to-admin-primary-normal text-admin-white border-admin-primary-normal',
-            'secondary' => 'from-admin-secondary-dark-1 to-admin-secondary-normal text-admin-white border-admin-secondary-normal',
-            'success' => 'from-admin-success-dark-1 to-admin-success-normal text-admin-white border-admin-success-normal',
-            'danger' => 'from-admin-danger-dark-1 to-admin-danger-normal text-admin-white border-admin-danger-normal',
-            'info' => 'from-admin-info-dark-1 to-admin-info-normal text-admin-white border-admin-info-normal',
-            'light' => 'from-admin-light-normal to-admin-light-light-2 text-admin-dark-light-2 border-admin-light-normal',
-            'dark' => 'from-admin-dark-dark-1 to-admin-dark-normal text-admin-light-normal border-admin-dark-normal',
+            'primary' => implode(' ', [
+                // default
+                'from-admin-primary-dark-1 to-admin-primary-normal text-admin-white border-admin-primary-normal',
+
+                // dark
+                'dark:from-admin-primary-dark-2 dark:to-admin-primary-dark-1 dark:border-admin-primary-dark-2',
+            ]),
+            'secondary' => implode(' ', [
+                // default
+                'from-admin-secondary-dark-1 to-admin-secondary-normal text-admin-white border-admin-secondary-normal',
+
+                // dark
+                'dark:from-admin-secondary-dark-2 dark:to-admin-secondary-dark-1 dark:border-admin-secondary-dark-2',
+            ]),
+            'success' => implode(' ', [
+                // default
+                'from-admin-success-dark-1 to-admin-success-normal text-admin-white border-admin-success-normal',
+
+                // dark
+                'dark:from-admin-success-dark-2 dark:to-admin-success-dark-1 dark:border-admin-success-dark-2',
+            ]),
+            'danger' => implode(' ', [
+                // default
+                'from-admin-danger-dark-1 to-admin-danger-normal text-admin-white border-admin-danger-normal',
+
+                // dark
+                'dark:from-admin-danger-dark-2 dark:to-admin-danger-dark-1 dark:border-admin-danger-dark-2',
+            ]),
+            'info' => implode(' ', [
+                // default
+                'from-admin-info-dark-1 to-admin-info-normal text-admin-white border-admin-info-normal',
+
+                // dark
+                'dark:from-admin-info-dark-2 dark:to-admin-info-dark-1 dark:border-admin-info-dark-2',
+            ]),
+            'light' => implode(' ', [
+                // default
+                'from-admin-light-normal to-admin-light-light-2 text-admin-dark-light-2 border-admin-light-normal',
+
+                // dark
+                'dark:from-admin-light-dark-2 dark:to-admin-light-dark-1 dark:border-admin-light-dark-2',
+            ]),
+            'dark' => implode(' ', [
+                // default
+                'from-admin-dark-dark-1 to-admin-dark-normal text-admin-light-normal border-admin-dark-normal',
+
+                // dark
+                'dark:from-admin-dark-dark-2 dark:to-admin-dark-dark-1 dark:border-admin-dark-dark-1',
+            ]),
         ],
         'outlined' => [
             'primary' => 'text-admin-primary-normal border-admin-primary-normal',
